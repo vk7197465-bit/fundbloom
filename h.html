@@ -1,0 +1,5130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>FundBloom | How It Works</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<style>
+
+/* =========================================================
+   FUNDBLOOM — HOW IT WORKS
+   PREMIUM 2026 SYSTEM
+   NO HEADER / NO FOOTER
+========================================================= */
+
+
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
+
+:root{
+
+    --primary:#5B5CE2;
+    --secondary:#F4A261;
+
+    --primary-soft:rgba(91,92,226,.10);
+    --secondary-soft:rgba(244,162,97,.13);
+
+    --bg:#F7F7FC;
+    --bg-soft:#F0F0FA;
+
+    --surface:#FFFFFF;
+    --surface-soft:#FAFAFE;
+
+    --text:#15172A;
+    --text-soft:#64677A;
+    --text-muted:#9699AA;
+
+    --border:#E6E6F1;
+
+    --dark:#111225;
+    --dark-soft:#191A34;
+
+    --shadow:
+        0 25px 80px rgba(28,29,75,.10);
+
+    --shadow-heavy:
+        0 35px 100px rgba(28,29,75,.18);
+
+    --radius-sm:12px;
+    --radius-md:22px;
+    --radius-lg:34px;
+    --radius-xl:44px;
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"]{
+
+    --bg:#0D0E1B;
+    --bg-soft:#141526;
+
+    --surface:#17182A;
+    --surface-soft:#1D1E31;
+
+    --text:#F4F4FB;
+    --text-soft:#B4B5C8;
+    --text-muted:#81839A;
+
+    --border:rgba(255,255,255,.09);
+
+    --dark:#070811;
+    --dark-soft:#111226;
+
+    --primary-soft:rgba(91,92,226,.16);
+    --secondary-soft:rgba(244,162,97,.14);
+
+    --shadow:
+        0 25px 80px rgba(0,0,0,.25);
+
+    --shadow-heavy:
+        0 35px 100px rgba(0,0,0,.35);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:"DM Sans",sans-serif;
+
+    overflow-x:hidden;
+
+    transition:
+        background .35s ease,
+        color .35s ease;
+
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.hw-container{
+
+    width:min(1240px,92%);
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   GLOBAL EYEBROW
+========================================================= */
+
+.hw-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:2.8px;
+
+}
+
+.hw-eyebrow::before{
+
+    content:"";
+
+    width:27px;
+
+    height:2px;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+}
+
+.hw-eyebrow::after{
+
+    content:"";
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    box-shadow:
+        0 0 0 5px var(--secondary-soft);
+
+}
+
+
+/* =========================================================
+   PREMIUM BUTTON
+========================================================= */
+
+.hw-btn{
+
+    min-height:50px;
+
+    padding:0 22px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    border-radius:13px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.hw-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.hw-btn-primary{
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #7778EA
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(91,92,226,.27);
+
+}
+
+.hw-btn-secondary{
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+}
+
+
+/* =========================================================
+   SECTION 01
+   HERO
+========================================================= */
+
+.hw-hero{
+
+    position:relative;
+
+    min-height:790px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 72% 25%,
+            rgba(91,92,226,.14),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 18% 80%,
+            rgba(244,162,97,.11),
+            transparent 28%
+        ),
+
+        var(--bg);
+
+}
+
+
+/* decorative grid */
+
+.hw-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.38;
+
+    background-image:
+
+        linear-gradient(
+            rgba(91,92,226,.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(91,92,226,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+}
+
+
+/* glow */
+
+.hw-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    right:-180px;
+
+    top:-180px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(244,162,97,.14),
+            transparent 68%
+        );
+
+    filter:blur(20px);
+
+}
+
+
+.hw-hero-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        .92fr
+        1.08fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+/* HERO COPY */
+
+.hw-hero-copy{
+
+    max-width:620px;
+
+}
+
+
+.hw-hero-copy .hw-eyebrow{
+
+    margin-bottom:24px;
+
+}
+
+
+.hw-hero-title{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:
+        clamp(48px,6vw,82px);
+
+    line-height:.98;
+
+    letter-spacing:-4.5px;
+
+    font-weight:700;
+
+}
+
+
+.hw-hero-title span{
+
+    display:block;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--primary),
+            #7778EA 48%,
+            var(--secondary)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+
+.hw-hero-text{
+
+    max-width:570px;
+
+    margin-top:26px;
+
+    color:var(--text-soft);
+
+    font-size:15px;
+
+    line-height:1.9;
+
+}
+
+
+.hw-hero-actions{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:32px;
+
+}
+
+
+/* trust */
+
+.hw-hero-trust{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:34px;
+
+}
+
+
+.hw-trust{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:var(--text-muted);
+
+    font-size:10px;
+
+}
+
+
+.hw-trust i{
+
+    color:var(--primary);
+
+}
+
+
+/* =========================================================
+   3D HERO VISUAL
+========================================================= */
+
+.hw-hero-visual{
+
+    position:relative;
+
+    height:590px;
+
+    perspective:1400px;
+
+}
+
+
+.hw-scene{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transform-style:preserve-3d;
+
+}
+
+
+/* orbital rings */
+
+.hw-orbit{
+
+    position:absolute;
+
+    border:1px solid
+        rgba(91,92,226,.22);
+
+    border-radius:50%;
+
+    transform-style:preserve-3d;
+
+}
+
+
+.hw-orbit-one{
+
+    width:470px;
+
+    height:470px;
+
+    transform:
+        rotateX(68deg)
+        rotateY(-18deg);
+
+    animation:
+        orbitSpin 16s linear infinite;
+
+}
+
+
+.hw-orbit-two{
+
+    width:380px;
+
+    height:380px;
+
+    transform:
+        rotateX(67deg)
+        rotateY(25deg);
+
+    border-color:
+        rgba(244,162,97,.25);
+
+    animation:
+        orbitSpinReverse 12s linear infinite;
+
+}
+
+
+.hw-orbit-three{
+
+    width:280px;
+
+    height:280px;
+
+    transform:
+        rotateX(70deg)
+        rotateY(-10deg);
+
+    border-style:dashed;
+
+    opacity:.55;
+
+    animation:
+        orbitSpin 9s linear infinite reverse;
+
+}
+
+
+/* 3D CARD */
+
+.hw-3d-card{
+
+    position:relative;
+
+    z-index:4;
+
+    width:355px;
+
+    min-height:420px;
+
+    padding:20px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(245,245,255,.80)
+        );
+
+    border:1px solid
+        rgba(255,255,255,.75);
+
+    box-shadow:
+        0 45px 90px
+        rgba(34,35,90,.22);
+
+    backdrop-filter:blur(20px);
+
+    transform-style:preserve-3d;
+
+    transform:
+        rotateY(-14deg)
+        rotateX(7deg);
+
+    animation:
+        card3D 7s ease-in-out infinite;
+
+}
+
+
+html[data-theme="dark"] .hw-3d-card{
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31,32,53,.94),
+            rgba(21,22,39,.88)
+        );
+
+    border-color:
+        rgba(255,255,255,.08);
+
+}
+
+
+/* card image */
+
+.hw-3d-image{
+
+    position:relative;
+
+    height:185px;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #8687F0
+        );
+
+}
+
+
+.hw-3d-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+
+    height:190px;
+
+    right:-35px;
+
+    top:-50px;
+
+    border-radius:50%;
+
+    border:1px solid
+        rgba(255,255,255,.4);
+
+    box-shadow:
+        0 0 0 30px rgba(255,255,255,.05),
+        0 0 0 60px rgba(255,255,255,.04);
+
+}
+
+
+.hw-3d-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:75px;
+
+    height:75px;
+
+    left:50px;
+
+    top:48px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 28%,
+            #fff,
+            #D9D9FF 12%,
+            #7375E8 58%,
+            #4647B7
+        );
+
+    box-shadow:
+        0 20px 40px
+        rgba(20,20,80,.30);
+
+    animation:
+        planetFloat 4s ease-in-out infinite;
+
+}
+
+
+.hw-3d-content{
+
+    padding:20px 6px 8px;
+
+}
+
+
+.hw-3d-label{
+
+    color:var(--secondary);
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+}
+
+
+.hw-3d-content h3{
+
+    margin-top:9px;
+
+    font-family:"Space Grotesk";
+
+    font-size:22px;
+
+}
+
+
+.hw-3d-content p{
+
+    margin-top:7px;
+
+    color:var(--text-muted);
+
+    font-size:10px;
+
+}
+
+
+.hw-progress{
+
+    height:8px;
+
+    margin-top:22px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:
+        rgba(91,92,226,.10);
+
+}
+
+
+.hw-progress span{
+
+    display:block;
+
+    width:72%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    animation:
+        progressGrow 3s ease forwards;
+
+}
+
+
+.hw-3d-stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:7px;
+
+    margin-top:18px;
+
+}
+
+
+.hw-3d-stat{
+
+    padding:10px;
+
+    border-radius:12px;
+
+    background:
+        rgba(91,92,226,.055);
+
+}
+
+
+.hw-3d-stat strong{
+
+    display:block;
+
+    font-size:12px;
+
+}
+
+
+.hw-3d-stat span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:var(--text-muted);
+
+    font-size:7px;
+
+}
+
+
+/* floating badges */
+
+.hw-float-card{
+
+    position:absolute;
+
+    z-index:8;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 14px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    border:1px solid
+        rgba(255,255,255,.8);
+
+    box-shadow:
+        0 20px 45px
+        rgba(25,26,70,.13);
+
+    backdrop-filter:blur(18px);
+
+}
+
+
+html[data-theme="dark"] .hw-float-card{
+
+    background:
+        rgba(29,30,50,.88);
+
+    border-color:
+        rgba(255,255,255,.08);
+
+}
+
+
+.hw-float-card i{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    background:var(--primary);
+
+}
+
+
+.hw-float-card strong{
+
+    display:block;
+
+    font-size:9px;
+
+}
+
+
+.hw-float-card span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:var(--text-muted);
+
+    font-size:8px;
+
+}
+
+
+.hw-float-one{
+
+    left:10px;
+
+    top:115px;
+
+    animation:
+        floatOne 5s ease-in-out infinite;
+
+}
+
+
+.hw-float-two{
+
+    right:0;
+
+    bottom:105px;
+
+    animation:
+        floatTwo 5.5s ease-in-out infinite;
+
+}
+
+
+.hw-float-two i{
+
+    background:var(--secondary);
+
+}
+
+
+/* =========================================================
+   SECTION 02
+   SIX STEP TIMELINE
+========================================================= */
+
+.hw-timeline-section{
+
+    position:relative;
+
+    padding:125px 0;
+
+    background:var(--surface);
+
+}
+
+
+.hw-section-head{
+
+    max-width:730px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+
+.hw-section-head h2{
+
+    margin-top:18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:
+        clamp(38px,5vw,60px);
+
+    line-height:1.03;
+
+    letter-spacing:-2.7px;
+
+}
+
+
+.hw-section-head h2 span{
+
+    color:var(--primary);
+
+}
+
+
+.hw-section-head p{
+
+    max-width:610px;
+
+    margin:20px auto 0;
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* timeline */
+
+.hw-timeline{
+
+    position:relative;
+
+    max-width:1000px;
+
+    margin:auto;
+
+}
+
+
+.hw-timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    left:50%;
+
+    width:2px;
+
+    transform:translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--primary),
+            var(--secondary),
+            transparent
+        );
+
+}
+
+
+.hw-timeline-item{
+
+    position:relative;
+
+    width:50%;
+
+    padding:0 55px 70px 0;
+
+}
+
+
+.hw-timeline-item:nth-child(even){
+
+    margin-left:50%;
+
+    padding:
+        0 0 70px 55px;
+
+}
+
+
+.hw-timeline-dot{
+
+    position:absolute;
+
+    top:7px;
+
+    right:-9px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    border:5px solid var(--surface);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(91,92,226,.12);
+
+}
+
+
+.hw-timeline-item:nth-child(even)
+.hw-timeline-dot{
+
+    left:-9px;
+
+    right:auto;
+
+    background:var(--secondary);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(244,162,97,.14);
+
+}
+
+
+.hw-timeline-card{
+
+    position:relative;
+
+    padding:27px;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    background:var(--surface);
+
+    box-shadow:
+        0 18px 50px
+        rgba(28,29,75,.06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.hw-timeline-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.hw-step-tag{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.hw-step-number{
+
+    color:var(--primary);
+
+    font-family:"Space Grotesk";
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+
+.hw-timeline-item:nth-child(even)
+.hw-step-number{
+
+    color:var(--secondary);
+
+}
+
+
+.hw-step-icon{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    color:var(--primary);
+
+    background:var(--primary-soft);
+
+}
+
+
+.hw-timeline-item:nth-child(even)
+.hw-step-icon{
+
+    color:#C86E28;
+
+    background:var(--secondary-soft);
+
+}
+
+
+.hw-timeline-card h3{
+
+    margin-top:19px;
+
+    font-family:"Space Grotesk";
+
+    font-size:20px;
+
+}
+
+
+.hw-timeline-card p{
+
+    margin-top:9px;
+
+    color:var(--text-soft);
+
+    font-size:11px;
+
+    line-height:1.75;
+
+}
+
+
+/* =========================================================
+   SECTION 03
+   AUTO FLIP FLOP GOAL
+========================================================= */
+
+.hw-goal-section{
+
+    padding:130px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bg-soft),
+            var(--bg)
+        );
+
+}
+
+
+.hw-goal-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        .9fr
+        1.1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+
+.hw-goal-copy{
+
+    max-width:560px;
+
+}
+
+
+.hw-goal-copy h2{
+
+    margin-top:18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:
+        clamp(40px,4.8vw,60px);
+
+    line-height:1.02;
+
+    letter-spacing:-2.8px;
+
+}
+
+
+.hw-goal-copy h2 span{
+
+    color:var(--secondary);
+
+}
+
+
+.hw-goal-copy p{
+
+    margin-top:20px;
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+    line-height:1.85;
+
+}
+
+
+/* flip stage */
+
+.hw-flip-stage{
+
+    position:relative;
+
+    min-height:500px;
+
+    perspective:1200px;
+
+}
+
+
+.hw-flip-card{
+
+    position:absolute;
+
+    inset:30px;
+
+    transform-style:preserve-3d;
+
+    animation:
+        autoFlip 8s ease-in-out infinite;
+
+}
+
+
+.hw-flip-face{
+
+    position:absolute;
+
+    inset:0;
+
+    padding:30px;
+
+    border-radius:32px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-heavy);
+
+    backface-visibility:hidden;
+
+}
+
+
+.hw-flip-front{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
+
+
+.hw-flip-back{
+
+    transform:rotateY(180deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            #7475E9
+        );
+
+    color:#fff;
+
+}
+
+
+.hw-goal-card-label{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.hw-goal-card-label span{
+
+    font-size:9px;
+
+    letter-spacing:1.5px;
+
+    font-weight:900;
+
+}
+
+
+.hw-goal-icon{
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:17px;
+
+    color:#fff;
+
+    background:var(--secondary);
+
+}
+
+
+.hw-flip-face h3{
+
+    margin-top:28px;
+
+    font-family:"Space Grotesk";
+
+    font-size:28px;
+
+}
+
+
+.hw-flip-face p{
+
+    margin-top:12px;
+
+    color:var(--text-soft);
+
+    font-size:12px;
+
+    line-height:1.8;
+
+}
+
+
+.hw-goal-list{
+
+    display:grid;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+
+.hw-goal-list div{
+
+    display:flex;
+
+    gap:9px;
+
+    align-items:center;
+
+    font-size:10px;
+
+    font-weight:700;
+
+}
+
+
+.hw-goal-list i{
+
+    color:var(--primary);
+
+}
+
+
+.hw-flip-back p{
+
+    color:rgba(255,255,255,.78);
+
+}
+
+
+.hw-flip-back .hw-goal-icon{
+
+    color:var(--primary);
+
+    background:#fff;
+
+}
+
+
+/* =========================================================
+   SECTION 04
+   CAMPAIGN SEARCH
+========================================================= */
+
+.hw-campaign-section{
+
+    padding:130px 0;
+
+    background:var(--surface);
+
+}
+
+
+.hw-campaign-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:75px;
+
+    align-items:center;
+
+}
+
+
+.hw-campaign-copy{
+
+    max-width:560px;
+
+}
+
+
+.hw-campaign-copy h2{
+
+    margin-top:18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:
+        clamp(40px,4.8vw,60px);
+
+    line-height:1.02;
+
+    letter-spacing:-2.8px;
+
+}
+
+
+.hw-campaign-copy h2 span{
+
+    color:var(--primary);
+
+}
+
+
+.hw-campaign-copy p{
+
+    margin-top:20px;
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+    line-height:1.85;
+
+}
+
+
+/* search builder */
+
+.hw-campaign-builder{
+
+    padding:25px;
+
+    border-radius:30px;
+
+    background:var(--surface-soft);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.hw-search{
+
+    position:relative;
+
+}
+
+
+.hw-search i{
+
+    position:absolute;
+
+    left:16px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--text-muted);
+
+}
+
+
+.hw-search input{
+
+    width:100%;
+
+    height:50px;
+
+    padding:
+        0 16px 0 45px;
+
+    outline:none;
+
+    color:var(--text);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:13px;
+
+}
+
+
+.hw-search input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(91,92,226,.08);
+
+}
+
+
+/* filter */
+
+.hw-filters{
+
+    display:flex;
+
+    gap:7px;
+
+    margin-top:15px;
+
+    overflow:auto;
+
+    padding-bottom:4px;
+
+}
+
+
+.hw-filter{
+
+    flex:none;
+
+    padding:8px 12px;
+
+    border-radius:9px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+    color:var(--text-soft);
+
+    font-size:9px;
+
+    cursor:pointer;
+
+}
+
+
+.hw-filter.active{
+
+    color:#fff;
+
+    border-color:var(--primary);
+
+    background:var(--primary);
+
+}
+
+
+/* options */
+
+.hw-options{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+    margin-top:18px;
+
+}
+
+
+.hw-option{
+
+    position:relative;
+
+    padding:17px;
+
+    cursor:pointer;
+
+    border-radius:17px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    transition:
+        transform .3s ease,
+        border .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.hw-option:hover{
+
+    transform:translateY(-4px);
+
+    border-color:
+        rgba(91,92,226,.4);
+
+    box-shadow:
+        0 14px 30px
+        rgba(91,92,226,.08);
+
+}
+
+
+.hw-option i{
+
+    width:35px;
+
+    height:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:10px;
+
+    color:var(--primary);
+
+    background:var(--primary-soft);
+
+}
+
+
+.hw-option h4{
+
+    margin-top:12px;
+
+    font-size:12px;
+
+}
+
+
+.hw-option span{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:var(--text-muted);
+
+    font-size:8px;
+
+}
+
+
+/* =========================================================
+   SECTION 05
+   ACTIVE COMMUNITY
+========================================================= */
+
+.hw-community-section{
+
+    position:relative;
+
+    padding:130px 0;
+
+    overflow:hidden;
+
+    background:
+        var(--dark);
+
+    color:#fff;
+
+}
+
+
+.hw-community-section .hw-eyebrow{
+
+    color:#9B9CF4;
+
+}
+
+
+.hw-community-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        .8fr
+        1.2fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+
+.hw-community-copy{
+
+    max-width:510px;
+
+}
+
+
+.hw-community-copy h2{
+
+    margin-top:18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:
+        clamp(40px,4.7vw,62px);
+
+    line-height:1.02;
+
+    letter-spacing:-3px;
+
+}
+
+
+.hw-community-copy h2 span{
+
+    color:var(--secondary);
+
+}
+
+
+.hw-community-copy p{
+
+    margin-top:20px;
+
+    color:#A9AAC0;
+
+    font-size:14px;
+
+    line-height:1.85;
+
+}
+
+
+/* network */
+
+.hw-network{
+
+    position:relative;
+
+    min-height:480px;
+
+}
+
+
+.hw-network-line{
+
+    position:absolute;
+
+    height:1px;
+
+    transform-origin:left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(91,92,226,.1),
+            rgba(244,162,97,.7)
+        );
+
+}
+
+
+.hw-line-one{
+
+    width:280px;
+
+    top:150px;
+
+    left:100px;
+
+    transform:rotate(20deg);
+
+}
+
+
+.hw-line-two{
+
+    width:250px;
+
+    top:250px;
+
+    left:150px;
+
+    transform:rotate(-20deg);
+
+}
+
+
+.hw-line-three{
+
+    width:230px;
+
+    top:180px;
+
+    right:80px;
+
+    transform:rotate(-30deg);
+
+}
+
+
+.hw-line-four{
+
+    width:230px;
+
+    top:280px;
+
+    right:100px;
+
+    transform:rotate(28deg);
+
+}
+
+
+.hw-network-center{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:155px;
+
+    height:155px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #7778EA
+        );
+
+    box-shadow:
+        0 0 0 25px
+        rgba(91,92,226,.08),
+        0 0 0 55px
+        rgba(91,92,226,.04),
+        0 25px 70px
+        rgba(0,0,0,.35);
+
+    z-index:3;
+
+    animation:
+        networkPulse 4s ease-in-out infinite;
+
+}
+
+
+.hw-network-center i{
+
+    font-size:28px;
+
+}
+
+
+.hw-network-center strong{
+
+    margin-top:9px;
+
+    font-size:12px;
+
+}
+
+
+.hw-node{
+
+    position:absolute;
+
+    width:75px;
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        #20213A;
+
+    border:1px solid
+        rgba(255,255,255,.12);
+
+    color:#D8D9EA;
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,.20);
+
+    animation:
+        nodeFloat 5s ease-in-out infinite;
+
+}
+
+
+.hw-node-one{
+
+    top:80px;
+    left:35px;
+
+}
+
+
+.hw-node-two{
+
+    top:75px;
+    right:50px;
+
+    animation-delay:.7s;
+
+}
+
+
+.hw-node-three{
+
+    bottom:70px;
+    left:70px;
+
+    animation-delay:1.2s;
+
+}
+
+
+.hw-node-four{
+
+    bottom:60px;
+    right:45px;
+
+    animation-delay:1.8s;
+
+}
+
+
+.hw-node i{
+
+    color:var(--secondary);
+
+}
+
+
+/* =========================================================
+   SECTION 06
+   CONTRIBUTIONS CONNECTED
+========================================================= */
+
+.hw-contribution-section{
+
+    padding:130px 0;
+
+    background:var(--bg);
+
+}
+
+
+.hw-contribution-head{
+
+    max-width:680px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.hw-contribution-head h2{
+
+    margin-top:18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:
+        clamp(40px,5vw,60px);
+
+    line-height:1.02;
+
+    letter-spacing:-2.8px;
+
+}
+
+
+.hw-contribution-head h2 span{
+
+    color:var(--secondary);
+
+}
+
+
+.hw-contribution-head p{
+
+    margin-top:18px;
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* connected cards */
+
+.hw-money-flow{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:45px;
+
+    max-width:1050px;
+
+    margin:70px auto 0;
+
+}
+
+
+.hw-money-flow::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:16%;
+
+    right:16%;
+
+    top:70px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    opacity:.25;
+
+}
+
+
+.hw-money-card{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+
+.hw-money-icon{
+
+    width:140px;
+
+    height:140px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.hw-money-icon i{
+
+    color:var(--primary);
+
+    font-size:28px;
+
+}
+
+
+.hw-money-card:nth-child(2)
+.hw-money-icon i{
+
+    color:var(--secondary);
+
+}
+
+
+.hw-money-card:nth-child(3)
+.hw-money-icon i{
+
+    color:var(--primary);
+
+}
+
+
+.hw-money-icon strong{
+
+    margin-top:8px;
+
+    font-size:11px;
+
+}
+
+
+.hw-money-card h3{
+
+    margin-top:22px;
+
+    font-family:"Space Grotesk";
+
+    font-size:18px;
+
+}
+
+
+.hw-money-card p{
+
+    margin-top:7px;
+
+    color:var(--text-soft);
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   SECTION 07
+   TRACK & TRANSFORM
+========================================================= */
+
+.hw-transform-section{
+
+    padding:130px 0;
+
+    background:var(--surface);
+
+}
+
+
+.hw-transform-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+
+.hw-transform-copy{
+
+    max-width:560px;
+
+}
+
+
+.hw-transform-copy h2{
+
+    margin-top:18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:
+        clamp(40px,4.8vw,62px);
+
+    line-height:1.02;
+
+    letter-spacing:-3px;
+
+}
+
+
+.hw-transform-copy h2 span{
+
+    color:var(--primary);
+
+}
+
+
+.hw-transform-copy p{
+
+    margin-top:20px;
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+    line-height:1.85;
+
+}
+
+
+/* transformation visual */
+
+.hw-transform-visual{
+
+    position:relative;
+
+    min-height:520px;
+
+}
+
+
+.hw-transform-card{
+
+    position:absolute;
+
+    width:370px;
+
+    padding:28px;
+
+    border-radius:28px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-heavy);
+
+}
+
+
+.hw-transform-before{
+
+    left:0;
+
+    top:20px;
+
+    transform:rotate(-5deg);
+
+}
+
+
+.hw-transform-after{
+
+    right:0;
+
+    bottom:20px;
+
+    transform:rotate(5deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            #7475E8
+        );
+
+    color:#fff;
+
+}
+
+
+.hw-transform-card-label{
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+}
+
+
+.hw-transform-card h3{
+
+    margin-top:15px;
+
+    font-family:"Space Grotesk";
+
+    font-size:22px;
+
+}
+
+
+.hw-transform-card p{
+
+    margin-top:8px;
+
+    color:var(--text-soft);
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+
+.hw-transform-after p{
+
+    color:rgba(255,255,255,.72);
+
+}
+
+
+.hw-transform-bar{
+
+    height:8px;
+
+    margin-top:23px;
+
+    border-radius:20px;
+
+    background:
+        rgba(91,92,226,.08);
+
+    overflow:hidden;
+
+}
+
+
+.hw-transform-bar span{
+
+    display:block;
+
+    width:48%;
+
+    height:100%;
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+
+.hw-transform-after .hw-transform-bar{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+
+.hw-transform-after .hw-transform-bar span{
+
+    width:100%;
+
+    background:var(--secondary);
+
+}
+
+
+.hw-transform-arrow{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#fff;
+
+    background:var(--secondary);
+
+    box-shadow:
+        0 18px 40px
+        rgba(244,162,97,.28);
+
+    z-index:4;
+
+}
+
+
+/* =========================================================
+   SECTION 08
+   FINAL CTA
+========================================================= */
+
+.hw-final{
+
+    padding:120px 0;
+
+    background:var(--bg);
+
+}
+
+
+.hw-final-card{
+
+    position:relative;
+
+    width:80%;
+
+    height:40vh;
+
+    min-height:300px;
+
+    max-height:470px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            125deg,
+            #4F50D3,
+            var(--primary) 45%,
+            #7778E8
+        );
+
+    box-shadow:
+        0 40px 100px
+        rgba(70,71,170,.30);
+
+}
+
+
+/* decorative circles */
+
+.hw-final-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+
+    height:360px;
+
+    left:-100px;
+
+    top:-180px;
+
+    border-radius:50%;
+
+    border:1px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:
+        0 0 0 50px rgba(255,255,255,.035),
+        0 0 0 100px rgba(255,255,255,.025);
+
+}
+
+
+.hw-final-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    right:-80px;
+
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(244,162,97,.45),
+            transparent 65%
+        );
+
+    filter:blur(15px);
+
+}
+
+
+.hw-final-content{
+
+    position:relative;
+
+    z-index:3;
+
+    width:min(700px,90%);
+
+    color:#fff;
+
+}
+
+
+.hw-final-content .hw-eyebrow{
+
+    color:#E3E3FF;
+
+}
+
+
+.hw-final-content .hw-eyebrow::before{
+
+    background:#E3E3FF;
+
+}
+
+
+.hw-final-content h2{
+
+    margin-top:18px;
+
+    font-family:"Space Grotesk";
+
+    font-size:
+        clamp(38px,5vw,62px);
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+}
+
+
+.hw-final-content h2 span{
+
+    color:#FFD0A9;
+
+}
+
+
+.hw-final-content p{
+
+    max-width:570px;
+
+    margin:17px auto 0;
+
+    color:rgba(255,255,255,.76);
+
+    font-size:13px;
+
+    line-height:1.75;
+
+}
+
+
+.hw-final-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:11px;
+
+    margin-top:25px;
+
+}
+
+
+.hw-final-card .hw-btn-primary{
+
+    color:var(--primary);
+
+    background:#fff;
+
+    box-shadow:
+        0 14px 30px
+        rgba(0,0,0,.13);
+
+}
+
+
+.hw-final-card .hw-btn-secondary{
+
+    color:#fff;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border-color:
+        rgba(255,255,255,.22);
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes orbitSpin{
+
+    from{
+        transform:
+            rotateX(68deg)
+            rotateY(-18deg)
+            rotateZ(0deg);
+    }
+
+    to{
+        transform:
+            rotateX(68deg)
+            rotateY(-18deg)
+            rotateZ(360deg);
+    }
+
+}
+
+
+@keyframes orbitSpinReverse{
+
+    from{
+        transform:
+            rotateX(67deg)
+            rotateY(25deg)
+            rotateZ(360deg);
+    }
+
+    to{
+        transform:
+            rotateX(67deg)
+            rotateY(25deg)
+            rotateZ(0deg);
+    }
+
+}
+
+
+@keyframes card3D{
+
+    0%,100%{
+
+        transform:
+            rotateY(-14deg)
+            rotateX(7deg)
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            rotateY(12deg)
+            rotateX(-5deg)
+            translateY(-12px);
+
+    }
+
+}
+
+
+@keyframes planetFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+
+@keyframes progressGrow{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:72%;
+    }
+
+}
+
+
+@keyframes floatOne{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+
+@keyframes floatTwo{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(9px);
+    }
+
+}
+
+
+@keyframes autoFlip{
+
+    0%,
+    38%{
+
+        transform:rotateY(0deg);
+
+    }
+
+    50%,
+    88%{
+
+        transform:rotateY(180deg);
+
+    }
+
+    100%{
+
+        transform:rotateY(360deg);
+
+    }
+
+}
+
+
+@keyframes networkPulse{
+
+    0%,100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.05);
+
+    }
+
+}
+
+
+@keyframes nodeFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media
+(min-width:600px)
+and (max-width:1000px){
+
+    .hw-hero{
+
+        min-height:auto;
+
+        padding:100px 0;
+
+    }
+
+    .hw-hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .hw-hero-copy{
+
+        max-width:750px;
+
+        margin:auto;
+
+        text-align:center;
+
+    }
+
+    .hw-hero-copy .hw-eyebrow{
+
+        justify-content:center;
+
+    }
+
+    .hw-hero-text{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .hw-hero-actions,
+    .hw-hero-trust{
+
+        justify-content:center;
+
+    }
+
+    .hw-hero-visual{
+
+        height:520px;
+
+    }
+
+    .hw-goal-layout,
+    .hw-campaign-layout,
+    .hw-community-layout,
+    .hw-transform-layout{
+
+        grid-template-columns:1fr;
+
+        gap:55px;
+
+    }
+
+    .hw-goal-copy,
+    .hw-campaign-copy,
+    .hw-community-copy,
+    .hw-transform-copy{
+
+        max-width:700px;
+
+        margin:auto;
+
+        text-align:center;
+
+    }
+
+    .hw-options{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .hw-community-layout{
+
+        display:flex;
+
+        flex-direction:column;
+
+    }
+
+    .hw-network{
+
+        width:100%;
+
+    }
+
+    .hw-final-card{
+
+        width:90%;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:599px){
+
+    .hw-container{
+
+        width:92%;
+
+    }
+
+    .hw-hero{
+
+        min-height:auto;
+
+        padding:80px 0 65px;
+
+    }
+
+    .hw-hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+    .hw-hero-copy{
+
+        text-align:center;
+
+    }
+
+    .hw-hero-copy .hw-eyebrow{
+
+        justify-content:center;
+
+    }
+
+    .hw-hero-title{
+
+        font-size:
+            clamp(42px,12vw,54px);
+
+        letter-spacing:-2.7px;
+
+    }
+
+    .hw-hero-text{
+
+        font-size:13px;
+
+    }
+
+    .hw-hero-actions{
+
+        flex-direction:column;
+
+    }
+
+    .hw-btn{
+
+        width:100%;
+
+    }
+
+    .hw-hero-trust{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .hw-hero-visual{
+
+        height:420px;
+
+    }
+
+    .hw-orbit-one{
+
+        width:310px;
+        height:310px;
+
+    }
+
+    .hw-orbit-two{
+
+        width:260px;
+        height:260px;
+
+    }
+
+    .hw-orbit-three{
+
+        width:205px;
+        height:205px;
+
+    }
+
+    .hw-3d-card{
+
+        width:280px;
+
+        min-height:345px;
+
+        padding:15px;
+
+    }
+
+    .hw-3d-image{
+
+        height:135px;
+
+    }
+
+    .hw-3d-content h3{
+
+        font-size:18px;
+
+    }
+
+    .hw-float-one{
+
+        left:-3px;
+
+        top:55px;
+
+    }
+
+    .hw-float-two{
+
+        right:-3px;
+
+        bottom:50px;
+
+    }
+
+    .hw-timeline-section,
+    .hw-goal-section,
+    .hw-campaign-section,
+    .hw-community-section,
+    .hw-contribution-section,
+    .hw-transform-section{
+
+        padding:85px 0;
+
+    }
+
+    .hw-section-head{
+
+        margin-bottom:55px;
+
+    }
+
+    .hw-section-head h2{
+
+        font-size:38px;
+
+        letter-spacing:-2px;
+
+    }
+
+    .hw-timeline::before{
+
+        left:18px;
+
+        transform:none;
+
+    }
+
+    .hw-timeline-item,
+    .hw-timeline-item:nth-child(even){
+
+        width:100%;
+
+        margin-left:0;
+
+        padding:
+            0 0 35px 52px;
+
+    }
+
+    .hw-timeline-dot,
+    .hw-timeline-item:nth-child(even)
+    .hw-timeline-dot{
+
+        left:9px;
+
+        right:auto;
+
+        top:8px;
+
+    }
+
+    .hw-timeline-card{
+
+        padding:21px;
+
+    }
+
+    .hw-goal-layout,
+    .hw-campaign-layout,
+    .hw-community-layout,
+    .hw-transform-layout{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+    .hw-goal-copy,
+    .hw-campaign-copy,
+    .hw-community-copy,
+    .hw-transform-copy{
+
+        text-align:center;
+
+    }
+
+    .hw-goal-copy h2,
+    .hw-campaign-copy h2,
+    .hw-community-copy h2,
+    .hw-transform-copy h2{
+
+        font-size:39px;
+
+        letter-spacing:-2px;
+
+    }
+
+    .hw-flip-stage{
+
+        min-height:390px;
+
+    }
+
+    .hw-flip-card{
+
+        inset:10px 0;
+
+    }
+
+    .hw-campaign-builder{
+
+        padding:17px;
+
+    }
+
+    .hw-options{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hw-network{
+
+        min-height:380px;
+
+    }
+
+    .hw-network-center{
+
+        width:125px;
+
+        height:125px;
+
+    }
+
+    .hw-node{
+
+        width:62px;
+
+        height:62px;
+
+    }
+
+    .hw-node-one{
+
+        left:5px;
+
+        top:55px;
+
+    }
+
+    .hw-node-two{
+
+        right:5px;
+
+        top:50px;
+
+    }
+
+    .hw-node-three{
+
+        left:20px;
+
+        bottom:45px;
+
+    }
+
+    .hw-node-four{
+
+        right:20px;
+
+        bottom:40px;
+
+    }
+
+    .hw-line-one{
+
+        width:190px;
+
+        left:70px;
+
+        top:140px;
+
+    }
+
+    .hw-line-two{
+
+        width:175px;
+
+        left:80px;
+
+        top:240px;
+
+    }
+
+    .hw-line-three{
+
+        width:160px;
+
+        right:60px;
+
+        top:145px;
+
+    }
+
+    .hw-line-four{
+
+        width:165px;
+
+        right:55px;
+
+        top:250px;
+
+    }
+
+    .hw-money-flow{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .hw-money-flow::before{
+
+        left:50%;
+
+        right:auto;
+
+        top:70px;
+
+        width:2px;
+
+        height:330px;
+
+        transform:none;
+
+    }
+
+    .hw-money-icon{
+
+        width:115px;
+
+        height:115px;
+
+        background:var(--surface);
+
+    }
+
+    .hw-transform-visual{
+
+        min-height:460px;
+
+    }
+
+    .hw-transform-card{
+
+        width:270px;
+
+    }
+
+    .hw-transform-before{
+
+        left:0;
+
+    }
+
+    .hw-transform-after{
+
+        right:0;
+
+    }
+
+    .hw-transform-arrow{
+
+        width:55px;
+
+        height:55px;
+
+    }
+
+    .hw-final{
+
+        padding:70px 0;
+
+    }
+
+    .hw-final-card{
+
+        width:92%;
+
+        height:40vh;
+
+        min-height:320px;
+
+        border-radius:28px;
+
+    }
+
+    .hw-final-content h2{
+
+        font-size:40px;
+
+        letter-spacing:-2px;
+
+    }
+
+    .hw-final-actions{
+
+        flex-direction:column;
+
+        width:85%;
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     01 — HERO
+========================================================= -->
+
+<section class="hw-hero">
+
+<div class="hw-container">
+
+<div class="hw-hero-grid">
+
+
+<div class="hw-hero-copy">
+
+<div class="hw-eyebrow">
+HOW FUNDBLOOM WORKS
+</div>
+
+
+<h1 class="hw-hero-title">
+
+From one idea
+
+<span>to real impact.</span>
+
+</h1>
+
+
+<p class="hw-hero-text">
+
+FundBloom turns school goals into connected community
+campaigns. Set a purpose, build your campaign, activate
+supporters, track contributions, and watch your shared
+effort become something meaningful.
+
+</p>
+
+
+<div class="hw-hero-actions">
+
+<a
+href="campaign-templates.html"
+class="hw-btn hw-btn-primary">
+
+Start a Campaign
+
+<i data-lucide="arrow-up-right"></i>
+
+</a>
+
+
+<a
+href="#hw-journey"
+class="hw-btn hw-btn-secondary">
+
+See How It Works
+
+<i data-lucide="arrow-down"></i>
+
+</a>
+
+</div>
+
+
+<div class="hw-hero-trust">
+
+<div class="hw-trust">
+
+<i data-lucide="check-circle-2"></i>
+
+Simple to launch
+
+</div>
+
+
+<div class="hw-trust">
+
+<i data-lucide="users"></i>
+
+Community powered
+
+</div>
+
+
+<div class="hw-trust">
+
+<i data-lucide="chart-no-axes-combined"></i>
+
+Clear progress
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     3D ROTATING HERO
+===================================================== -->
+
+<div class="hw-hero-visual">
+
+<div class="hw-scene">
+
+
+<div class="hw-orbit hw-orbit-one"></div>
+
+<div class="hw-orbit hw-orbit-two"></div>
+
+<div class="hw-orbit hw-orbit-three"></div>
+
+
+<div class="hw-3d-card">
+
+
+<div class="hw-3d-image"></div>
+
+
+<div class="hw-3d-content">
+
+<span class="hw-3d-label">
+ACTIVE SCHOOL CAMPAIGN
+</span>
+
+
+<h3>
+Build a Brighter School
+</h3>
+
+
+<p>
+Annual Community Fundraiser
+</p>
+
+
+<div class="hw-progress">
+<span></span>
+</div>
+
+
+<div class="hw-3d-stats">
+
+<div class="hw-3d-stat">
+
+<strong>$18.4K</strong>
+
+<span>RAISED</span>
+
+</div>
+
+
+<div class="hw-3d-stat">
+
+<strong>72%</strong>
+
+<span>FUNDED</span>
+
+</div>
+
+
+<div class="hw-3d-stat">
+
+<strong>326</strong>
+
+<span>SUPPORTERS</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hw-float-card hw-float-one">
+
+<i data-lucide="heart"></i>
+
+<div>
+
+<strong>New contribution</strong>
+
+<span>+$250 received</span>
+
+</div>
+
+</div>
+
+
+<div class="hw-float-card hw-float-two">
+
+<i data-lucide="users"></i>
+
+<div>
+
+<strong>Community growing</strong>
+
+<span>326 supporters joined</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     02 — SIX STEP TIMELINE
+========================================================= -->
+
+<section
+class="hw-timeline-section"
+id="hw-journey">
+
+<div class="hw-container">
+
+
+<div class="hw-section-head">
+
+<div class="hw-eyebrow">
+THE FUNDBLOOM JOURNEY
+</div>
+
+
+<h2>
+
+Six steps.
+
+<span>One shared purpose.</span>
+
+</h2>
+
+
+<p>
+
+A clear path from your first school idea to the
+moment your community sees what it accomplished together.
+
+</p>
+
+</div>
+
+
+<div class="hw-timeline">
+
+
+<div class="hw-timeline-item">
+
+<div class="hw-timeline-dot"></div>
+
+<div class="hw-timeline-card">
+
+<div class="hw-step-tag">
+
+<span class="hw-step-number">01</span>
+
+<span class="hw-step-icon">
+<i data-lucide="target"></i>
+</span>
+
+</div>
+
+<h3>
+Define Your Goal
+</h3>
+
+<p>
+Choose the school need that matters most and
+give your community a clear reason to support it.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hw-timeline-item">
+
+<div class="hw-timeline-dot"></div>
+
+<div class="hw-timeline-card">
+
+<div class="hw-step-tag">
+
+<span class="hw-step-number">02</span>
+
+<span class="hw-step-icon">
+<i data-lucide="layout-template"></i>
+</span>
+
+</div>
+
+<h3>
+Build Your Campaign
+</h3>
+
+<p>
+Shape your idea with a compelling story, visuals,
+goal, and campaign structure.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hw-timeline-item">
+
+<div class="hw-timeline-dot"></div>
+
+<div class="hw-timeline-card">
+
+<div class="hw-step-tag">
+
+<span class="hw-step-number">03</span>
+
+<span class="hw-step-icon">
+<i data-lucide="users-round"></i>
+</span>
+
+</div>
+
+<h3>
+Activate Your Community
+</h3>
+
+<p>
+Bring teachers, PTAs, families, alumni, and supporters
+into one connected campaign.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hw-timeline-item">
+
+<div class="hw-timeline-dot"></div>
+
+<div class="hw-timeline-card">
+
+<div class="hw-step-tag">
+
+<span class="hw-step-number">04</span>
+
+<span class="hw-step-icon">
+<i data-lucide="hand-heart"></i>
+</span>
+
+</div>
+
+<h3>
+Collect Contributions
+</h3>
+
+<p>
+Make it simple for supporters to contribute toward
+the school goals they care about.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hw-timeline-item">
+
+<div class="hw-timeline-dot"></div>
+
+<div class="hw-timeline-card">
+
+<div class="hw-step-tag">
+
+<span class="hw-step-number">05</span>
+
+<span class="hw-step-icon">
+<i data-lucide="chart-no-axes-combined"></i>
+</span>
+
+</div>
+
+<h3>
+Track Progress
+</h3>
+
+<p>
+See contributions, supporters, milestones, and
+campaign momentum in one clear view.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hw-timeline-item">
+
+<div class="hw-timeline-dot"></div>
+
+<div class="hw-timeline-card">
+
+<div class="hw-step-tag">
+
+<span class="hw-step-number">06</span>
+
+<span class="hw-step-icon">
+<i data-lucide="sparkles"></i>
+</span>
+
+</div>
+
+<h3>
+Transform & Celebrate
+</h3>
+
+<p>
+Turn collective support into meaningful school outcomes
+and celebrate the community behind them.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     03 — DEFINE THE GOAL
+========================================================= -->
+
+<section class="hw-goal-section">
+
+<div class="hw-container">
+
+<div class="hw-goal-layout">
+
+
+<div class="hw-goal-copy">
+
+<div class="hw-eyebrow">
+STEP 01 — DEFINE
+</div>
+
+
+<h2>
+
+Start with the goal
+
+<span>that matters.</span>
+
+</h2>
+
+
+<p>
+
+Great campaigns begin with a meaningful purpose.
+Choose what your school wants to improve, explain
+why it matters, and turn that purpose into a goal
+your community can understand immediately.
+
+</p>
+
+</div>
+
+
+<div class="hw-flip-stage">
+
+
+<div class="hw-flip-card">
+
+
+<!-- FRONT -->
+
+<div class="hw-flip-face hw-flip-front">
+
+<div>
+
+<div class="hw-goal-card-label">
+
+<span>
+YOUR SCHOOL GOAL
+</span>
+
+<div class="hw-goal-icon">
+
+<i data-lucide="target"></i>
+
+</div>
+
+</div>
+
+
+<h3>
+New Learning Resources
+</h3>
+
+
+<p>
+
+Create better learning experiences with updated
+classroom resources for students.
+
+</p>
+
+
+<div class="hw-goal-list">
+
+<div>
+
+<i data-lucide="check"></i>
+
+Clear fundraising target
+
+</div>
+
+<div>
+
+<i data-lucide="check"></i>
+
+Purpose supporters understand
+
+</div>
+
+<div>
+
+<i data-lucide="check"></i>
+
+Measurable outcome
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BACK -->
+
+<div class="hw-flip-face hw-flip-back">
+
+<div>
+
+<div class="hw-goal-card-label">
+
+<span>
+TURN PURPOSE INTO ACTION
+</span>
+
+<div class="hw-goal-icon">
+
+<i data-lucide="sparkles"></i>
+
+</div>
+
+</div>
+
+
+<h3>
+Make the Goal Visible
+</h3>
+
+
+<p>
+
+A strong campaign gives people a clear destination.
+When everyone knows what they're working toward,
+every contribution feels connected to the outcome.
+
+</p>
+
+
+<div class="hw-goal-list">
+
+<div>
+
+<i data-lucide="arrow-right"></i>
+
+Set your target
+
+</div>
+
+<div>
+
+<i data-lucide="arrow-right"></i>
+
+Explain the impact
+
+</div>
+
+<div>
+
+<i data-lucide="arrow-right"></i>
+
+Invite people into the story
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     04 — BUILD CAMPAIGN
+========================================================= -->
+
+<section class="hw-campaign-section">
+
+<div class="hw-container">
+
+<div class="hw-campaign-layout">
+
+
+<div class="hw-campaign-copy">
+
+<div class="hw-eyebrow">
+STEP 02 — BUILD
+</div>
+
+
+<h2>
+
+Find the right campaign
+
+<span>for your goal.</span>
+
+</h2>
+
+
+<p>
+
+FundBloom makes campaign creation easier with
+purpose-built options. Search by campaign type,
+browse ideas, and choose a structure that fits
+your school's goal.
+
+</p>
+
+
+<div style="
+margin-top:28px;
+display:flex;
+gap:9px;
+flex-wrap:wrap;
+">
+
+<span style="
+padding:8px 11px;
+border-radius:9px;
+background:var(--primary-soft);
+color:var(--primary);
+font-size:9px;
+font-weight:800;
+">
+SEARCH
+</span>
+
+<span style="
+padding:8px 11px;
+border-radius:9px;
+background:var(--secondary-soft);
+color:#C86E28;
+font-size:9px;
+font-weight:800;
+">
+FILTER
+</span>
+
+<span style="
+padding:8px 11px;
+border-radius:9px;
+background:var(--primary-soft);
+color:var(--primary);
+font-size:9px;
+font-weight:800;
+">
+SELECT
+</span>
+
+</div>
+
+</div>
+
+
+<!-- SEARCH BUILDER -->
+
+<div class="hw-campaign-builder">
+
+
+<div class="hw-search">
+
+<i data-lucide="search"></i>
+
+<input
+type="text"
+id="campaignSearch"
+placeholder="Search campaign ideas..."
+autocomplete="off">
+
+</div>
+
+
+<div class="hw-filters">
+
+<button
+class="hw-filter active"
+data-filter="all">
+All
+</button>
+
+<button
+class="hw-filter"
+data-filter="learning">
+Learning
+</button>
+
+<button
+class="hw-filter"
+data-filter="events">
+Events
+</button>
+
+<button
+class="hw-filter"
+data-filter="community">
+Community
+</button>
+
+<button
+class="hw-filter"
+data-filter="resources">
+Resources
+</button>
+
+</div>
+
+
+<div class="hw-options" id="campaignOptions">
+
+
+<div
+class="hw-option"
+data-category="learning"
+data-name="classroom">
+
+<i data-lucide="book-open"></i>
+
+<h4>
+Classroom Resources
+</h4>
+
+<span>
+Learning • Students
+</span>
+
+</div>
+
+
+<div
+class="hw-option"
+data-category="events"
+data-name="school event">
+
+<i data-lucide="calendar-days"></i>
+
+<h4>
+School Event
+</h4>
+
+<span>
+Events • Community
+</span>
+
+</div>
+
+
+<div
+class="hw-option"
+data-category="community"
+data-name="community project">
+
+<i data-lucide="heart-handshake"></i>
+
+<h4>
+Community Project
+</h4>
+
+<span>
+Community • Impact
+</span>
+
+</div>
+
+
+<div
+class="hw-option"
+data-category="resources"
+data-name="technology">
+
+<i data-lucide="laptop"></i>
+
+<h4>
+Technology Upgrade
+</h4>
+
+<span>
+Resources • School
+</span>
+
+</div>
+
+
+<div
+class="hw-option"
+data-category="learning"
+data-name="library">
+
+<i data-lucide="library"></i>
+
+<h4>
+Library Project
+</h4>
+
+<span>
+Learning • Resources
+</span>
+
+</div>
+
+
+<div
+class="hw-option"
+data-category="community"
+data-name="wellness">
+
+<i data-lucide="heart-pulse"></i>
+
+<h4>
+Student Wellness
+</h4>
+
+<span>
+Community • Students
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     05 — ACTIVE COMMUNITY
+========================================================= -->
+
+<section class="hw-community-section">
+
+<div class="hw-container">
+
+<div class="hw-community-layout">
+
+
+<div class="hw-community-copy">
+
+<div class="hw-eyebrow">
+STEP 03 — ACTIVATE
+</div>
+
+
+<h2>
+
+Turn supporters into
+
+<span>a community.</span>
+
+</h2>
+
+
+<p>
+
+Fundraising becomes powerful when people feel
+connected to the same purpose. FundBloom brings
+your school network together around one visible
+campaign journey.
+
+</p>
+
+
+<div style="
+margin-top:28px;
+display:grid;
+gap:12px;
+">
+
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+color:#C8C9D8;
+font-size:11px;
+">
+
+<i
+data-lucide="check"
+style="color:#9B9CF4">
+</i>
+
+Families can follow campaign progress
+
+</div>
+
+
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+color:#C8C9D8;
+font-size:11px;
+">
+
+<i
+data-lucide="check"
+style="color:#F4A261">
+</i>
+
+PTAs and teachers can rally support
+
+</div>
+
+
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+color:#C8C9D8;
+font-size:11px;
+">
+
+<i
+data-lucide="check"
+style="color:#9B9CF4">
+</i>
+
+Alumni and community members can participate
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hw-network">
+
+
+<div class="hw-network-line hw-line-one"></div>
+
+<div class="hw-network-line hw-line-two"></div>
+
+<div class="hw-network-line hw-line-three"></div>
+
+<div class="hw-network-line hw-line-four"></div>
+
+
+<div class="hw-network-center">
+
+<i data-lucide="school"></i>
+
+<strong>
+FundBloom
+</strong>
+
+</div>
+
+
+<div class="hw-node hw-node-one">
+
+<i data-lucide="user-round"></i>
+
+</div>
+
+
+<div class="hw-node hw-node-two">
+
+<i data-lucide="users"></i>
+
+</div>
+
+
+<div class="hw-node hw-node-three">
+
+<i data-lucide="heart"></i>
+
+</div>
+
+
+<div class="hw-node hw-node-four">
+
+<i data-lucide="hand-heart"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     06 — CONTRIBUTIONS
+========================================================= -->
+
+<section class="hw-contribution-section">
+
+<div class="hw-container">
+
+
+<div class="hw-contribution-head">
+
+<div class="hw-eyebrow">
+STEP 04 — CONTRIBUTE
+</div>
+
+
+<h2>
+
+Every contribution becomes
+
+<span>part of the journey.</span>
+
+</h2>
+
+
+<p>
+
+Keep the experience simple for supporters while
+making every contribution visible as part of the
+larger school goal.
+
+</p>
+
+</div>
+
+
+<div class="hw-money-flow">
+
+
+<div class="hw-money-card">
+
+<div class="hw-money-icon">
+
+<i data-lucide="heart"></i>
+
+<strong>
+Support
+</strong>
+
+</div>
+
+<h3>
+A supporter joins
+</h3>
+
+<p>
+Someone discovers your campaign and chooses
+to become part of the goal.
+</p>
+
+</div>
+
+
+<div class="hw-money-card">
+
+<div class="hw-money-icon">
+
+<i data-lucide="arrow-right-left"></i>
+
+<strong>
+Connect
+</strong>
+
+</div>
+
+<h3>
+The contribution moves forward
+</h3>
+
+<p>
+Every contribution is connected to the campaign
+goal and its visible progress.
+</p>
+
+</div>
+
+
+<div class="hw-money-card">
+
+<div class="hw-money-icon">
+
+<i data-lucide="trending-up"></i>
+
+<strong>
+Impact
+</strong>
+
+</div>
+
+<h3>
+The goal gets closer
+</h3>
+
+<p>
+The entire community can see momentum building
+toward the outcome they care about.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     07 — TRACK & TRANSFORM
+========================================================= -->
+
+<section class="hw-transform-section">
+
+<div class="hw-container">
+
+<div class="hw-transform-layout">
+
+
+<div class="hw-transform-copy">
+
+<div class="hw-eyebrow">
+STEP 05 — TRACK & TRANSFORM
+</div>
+
+
+<h2>
+
+See progress.
+
+<span>Feel the impact.</span>
+
+</h2>
+
+
+<p>
+
+FundBloom turns campaign progress into something
+your community can see and celebrate. Follow the
+numbers, recognize milestones, and connect every
+achievement back to the original school goal.
+
+</p>
+
+
+<a
+href="dashboard.html"
+class="hw-btn hw-btn-primary"
+style="margin-top:28px;">
+
+Open Dashboard
+
+<i data-lucide="arrow-up-right"></i>
+
+</a>
+
+</div>
+
+
+<div class="hw-transform-visual">
+
+
+<div class="hw-transform-card hw-transform-before">
+
+<span class="hw-transform-card-label">
+STARTING POINT
+</span>
+
+
+<h3>
+A School Need
+</h3>
+
+
+<p>
+The school identifies a project that needs
+community support.
+</p>
+
+
+<div class="hw-transform-bar">
+
+<span></span>
+
+</div>
+
+</div>
+
+
+<div class="hw-transform-arrow">
+
+<i data-lucide="arrow-right"></i>
+
+</div>
+
+
+<div class="hw-transform-card hw-transform-after">
+
+<span class="hw-transform-card-label">
+TRANSFORMED
+</span>
+
+
+<h3>
+A Shared Achievement
+</h3>
+
+
+<p>
+The community reaches the goal and turns
+collective support into meaningful impact.
+
+</p>
+
+
+<div class="hw-transform-bar">
+
+<span></span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     08 — FINAL CTA
+========================================================= -->
+
+<section class="hw-final">
+
+<div class="hw-final-card">
+
+
+<div class="hw-final-content">
+
+
+<div class="hw-eyebrow">
+YOUR NEXT STEP
+</div>
+
+
+<h2>
+
+Your next school goal
+
+<span>starts here.</span>
+
+</h2>
+
+
+<p>
+
+Bring your idea, your community, and your purpose
+together with FundBloom.
+
+</p>
+
+
+<div class="hw-final-actions">
+
+
+<a
+href="campaign-templates.html"
+class="hw-btn hw-btn-primary">
+
+Start a Campaign
+
+<i data-lucide="arrow-up-right"></i>
+
+</a>
+
+
+<a
+href="pricing.html"
+class="hw-btn hw-btn-secondary">
+
+Explore FundBloom
+
+<i data-lucide="arrow-right"></i>
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+   LUCIDE
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        if(
+            window.lucide &&
+            typeof lucide.createIcons === "function"
+        ){
+
+            lucide.createIcons();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CAMPAIGN SEARCH + FILTER
+========================================================= */
+
+const searchInput =
+    document.getElementById(
+        "campaignSearch"
+    );
+
+const options =
+    document.querySelectorAll(
+        ".hw-option"
+    );
+
+const filters =
+    document.querySelectorAll(
+        ".hw-filter"
+    );
+
+let activeFilter = "all";
+
+
+function filterCampaigns(){
+
+    const search =
+        searchInput
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    options.forEach(
+        option => {
+
+            const name =
+                option.dataset.name
+                .toLowerCase();
+
+            const category =
+                option.dataset.category
+                .toLowerCase();
+
+
+            const matchesSearch =
+                !search ||
+                name.includes(search);
+
+
+            const matchesFilter =
+                activeFilter === "all" ||
+                category === activeFilter;
+
+
+            option.style.display =
+                matchesSearch &&
+                matchesFilter
+                    ? ""
+                    : "none";
+
+        }
+    );
+
+}
+
+
+if(searchInput){
+
+    searchInput.addEventListener(
+        "input",
+        filterCampaigns
+    );
+
+}
+
+
+filters.forEach(
+    filter => {
+
+        filter.addEventListener(
+            "click",
+            function(){
+
+                filters.forEach(
+                    item =>
+                    item.classList.remove(
+                        "active"
+                    )
+                );
+
+
+                this.classList.add(
+                    "active"
+                );
+
+
+                activeFilter =
+                    this.dataset.filter;
+
+
+                filterCampaigns();
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   OPTIONAL THEME SUPPORT
+   Existing site theme can control:
+   html[data-theme="dark"]
+========================================================= */
+
+</script>
+
+</body>
+
+</html>

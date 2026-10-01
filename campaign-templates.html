@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FundBloom | School Fundraising Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="campign.css">
+
+<link rel="icon" type="image/png" href="images/l.png">
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+
+<header class="fb-header" id="fbHeader">
+
+    <div class="fb-header-inner">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="fb-brand">
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+                    <span class="fb-brand-primary">Fund</span><span class="fb-brand-secondary">Bloom</span>
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING 
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <!-- DESKTOP NAV -->
+
+        <nav class="fb-main-nav">
+
+
+            <!-- HOME -->
+
+            <div class="fb-home-dropdown">
+
+                <a href="index.html" class="fb-nav-link">
+
+                    Home
+
+                    <i data-lucide="chevron-down"></i>
+
+                </a>
+
+
+                <div class="fb-dropdown">
+
+                    <div class="fb-dropdown-heading">
+                        Explore FundBloom
+                    </div>
+
+
+                    <a href="index.html" class="fb-dropdown-link">
+
+                        <strong>Home 1</strong>
+
+                       
+                    </a>
+
+
+                    <a href="home-2.html" class="fb-dropdown-link">
+
+                        <strong>Home 2</strong>
+
+                      
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- OTHER NAV -->
+
+            <a href="how-it-works.html" class="fb-nav-link">
+                How It Works
+            </a>
+
+            <a href="campaign-templates.html" class="fb-nav-link">
+                Campaign Templates
+            </a>
+
+            <a href="pricing.html" class="fb-nav-link">
+                Pricing
+            </a>
+
+            <a href="contact.html" class="fb-nav-link">
+                Contact
+            </a>
+
+            <a href="dashboard.html" class="fb-nav-link">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <!-- ACTIONS -->
+
+        <div class="fb-header-actions">
+
+
+            <!-- DARK -->
+
+            <button
+                class="fb-control-btn"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
+                title="Dark / Light"
+            >
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+            <!-- RTL -->
+
+            <button
+                class="fb-control-btn"
+                id="rtlToggle"
+                aria-label="Toggle RTL"
+                title="RTL / LTR"
+            >
+
+                <i data-lucide="arrow-left-right"></i>
+
+            </button>
+
+
+            <!-- DESKTOP LOGIN -->
+
+            <a
+                href="login.html"
+                class="fb-login-btn"
+            >
+                Login
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="fb-menu-btn"
+                id="menuToggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         MOBILE MENU
+    ========================================================= -->
+
+    <div class="fb-mobile-menu" id="mobileMenu">
+
+
+        <!-- HOME -->
+
+        <div class="fb-mobile-home">
+
+            <div
+                class="fb-mobile-home-head"
+                id="mobileHomeToggle"
+            >
+
+                <span>Home</span>
+
+                <i data-lucide="chevron-down"></i>
+
+            </div>
+
+
+            <div
+                class="fb-mobile-submenu"
+                id="mobileHomeSubmenu"
+            >
+
+                <a
+                    href="index.html"
+                    class="fb-mobile-sub-link"
+                >
+                    Home 1
+                </a>
+
+                <a
+                    href="home-2.html"
+                    class="fb-mobile-sub-link"
+                >
+                    Home 2
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALL NAV ITEMS -->
+
+        <a
+            href="how-it-works.html"
+            class="fb-mobile-link"
+        >
+            <span>How It Works</span>
+        </a>
+
+
+        <a
+            href="campaign-templates.html"
+            class="fb-mobile-link"
+        >
+            <span>Campaign Templates</span>
+        </a>
+
+
+        <a
+            href="pricing.html"
+            class="fb-mobile-link"
+        >
+            <span>Pricing</span>
+        </a>
+
+
+        <a
+            href="contact.html"
+            class="fb-mobile-link"
+        >
+            <span>Contact</span>
+        </a>
+
+
+        <a
+            href="dashboard.html"
+            class="fb-mobile-link"
+        >
+            <span>Dashboard</span>
+        </a>
+
+
+        <!-- LOGIN ALSO INSIDE MENU -->
+
+        <a
+            href="login.html"
+            class="fb-mobile-login"
+        >
+            Login
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     CAMPAIGN TEMPLATES PAGE
+========================================================= -->
+
+<main class="fbtemplates-premium">
+
+
+<!-- =========================================================
+     01 — HERO
+========================================================= -->
+
+<section class="fbtemp-hero">
+
+    <div class="fbtemp-container">
+
+        <div class="fbtemp-hero-grid">
+
+
+            <!-- COPY -->
+
+            <div class="fbtemp-hero-copy">
+
+                <div class="fbtemp-eyebrow">
+                    CAMPAIGN TEMPLATES
+                </div>
+
+                <h1>
+                    Start with an idea.
+                    <span>Build something meaningful.</span>
+                </h1>
+
+                <p>
+                    Choose a professionally structured fundraising template
+                    and turn your school's next idea into a campaign your
+                    community can understand, support, and share.
+                </p>
+
+                <div class="fbtemp-hero-actions">
+
+                    <a href="#featured"
+                       class="fbtemp-btn fbtemp-btn-primary">
+
+                        Explore Templates
+
+                        <i data-lucide="arrow-down-right"></i>
+
+                    </a>
+
+                    <a href="#editor"
+                       class="fbtemp-btn fbtemp-btn-outline">
+
+                        See Editor Preview
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- VISUAL -->
+
+            <div class="fbtemp-hero-visual">
+
+                <div class="fbtemp-hero-image">
+
+                    <img
+                        src="images/edu.webp"
+                        alt="School community fundraising">
+
+                </div>
+
+
+                <div class="fbtemp-hero-tag">
+                    READY TO CUSTOMIZE
+                </div>
+
+
+                <div class="fbtemp-hero-card">
+
+                    <span class="fbtemp-mini-label">
+                        Featured Campaign
+                    </span>
+
+                    <h3>
+                        Build a Better Learning Space
+                    </h3>
+
+                    <div class="fbtemp-progress">
+                        <span></span>
+                    </div>
+
+                    <div class="fbtemp-card-meta">
+
+                        <span>
+                            68% prepared
+                        </span>
+
+                        <span>
+                            School project
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     02 — CATEGORY RAIL
+========================================================= -->
+
+<section class="fbtemp-categories">
+
+    <div class="fbtemp-container">
+
+        <div class="fbtemp-category-rail">
+
+            <button class="fbtemp-category active"
+                    type="button">
+
+                <i data-lucide="layout-grid"></i>
+
+                <span>All</span>
+
+            </button>
+
+
+            <button class="fbtemp-category"
+                    type="button">
+
+                <i data-lucide="book-open"></i>
+
+                <span>Academic</span>
+
+            </button>
+
+
+            <button class="fbtemp-category"
+                    type="button">
+
+                <i data-lucide="trophy"></i>
+
+                <span>Sports</span>
+
+            </button>
+
+
+            <button class="fbtemp-category"
+                    type="button">
+
+                <i data-lucide="palette"></i>
+
+                <span>Arts</span>
+
+            </button>
+
+
+            <button class="fbtemp-category"
+                    type="button">
+
+                <i data-lucide="monitor"></i>
+
+                <span>Technology</span>
+
+            </button>
+
+
+            <button class="fbtemp-category"
+                    type="button">
+
+                <i data-lucide="map"></i>
+
+                <span>Trips</span>
+
+            </button>
+
+
+            <button class="fbtemp-category"
+                    type="button">
+
+                <i data-lucide="users"></i>
+
+                <span>Community</span>
+
+            </button>
+
+
+            <button class="fbtemp-category"
+                    type="button">
+
+                <i data-lucide="building-2"></i>
+
+                <span>Facilities</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     03 — FEATURED TEMPLATE
+========================================================= -->
+
+<section class="fbtemp-featured"
+         id="featured">
+
+    <div class="fbtemp-container">
+
+        <div class="fbtemp-section-head">
+
+            <div class="fbtemp-eyebrow">
+                FEATURED TEMPLATE
+            </div>
+
+            <h2>
+                A strong starting point
+                for a bigger school idea.
+            </h2>
+
+            <p>
+                Begin with a campaign structure that already knows
+                where the important information belongs.
+            </p>
+
+        </div>
+
+
+        <div class="fbtemp-featured-wrap">
+
+
+            <div class="fbtemp-featured-image">
+
+                <img
+                    src="images/smc.jpg"
+                    alt="Smart classroom fundraising template">
+
+            </div>
+
+
+            <div class="fbtemp-featured-content">
+
+                <span class="fbtemp-featured-kicker">
+                    ACADEMIC • TECHNOLOGY
+                </span>
+
+                <h2>
+                    Smart Classroom Upgrade
+                </h2>
+
+                <p>
+                    Present your classroom improvement idea with a
+                    clear story, practical goal, transparent progress,
+                    and a simple supporter journey.
+                </p>
+
+
+                <div class="fbtemp-featured-details">
+
+                    <div class="fbtemp-detail">
+
+                        <small>
+                            Suggested goal
+                        </small>
+
+                        <strong>
+                            Flexible
+                        </strong>
+
+                    </div>
+
+
+                    <div class="fbtemp-detail">
+
+                        <small>
+                            Setup
+                        </small>
+
+                        <strong>
+                            5–10 min
+                        </strong>
+
+                    </div>
+
+
+                    <div class="fbtemp-detail">
+
+                        <small>
+                            Story layout
+                        </small>
+
+                        <strong>
+                            Pre-structured
+                        </strong>
+
+                    </div>
+
+
+                    <div class="fbtemp-detail">
+
+                        <small>
+                            Customization
+                        </small>
+
+                        <strong>
+                            Full
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#editor"
+                   class="fbtemp-btn fbtemp-btn-primary">
+
+                    Use This Template
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     04 — ASYMMETRIC TEMPLATE GALLERY
+========================================================= -->
+
+<section class="fbtemp-gallery">
+
+    <div class="fbtemp-container">
+
+        <div class="fbtemp-section-head">
+
+            <div class="fbtemp-eyebrow">
+                TEMPLATE COLLECTION
+            </div>
+
+            <h2>
+                Different goals.
+                One polished starting point.
+            </h2>
+
+            <p>
+                Browse campaign concepts designed around the
+                real moments schools ask their communities to support.
+            </p>
+
+        </div>
+
+
+        <div class="fbtemp-gallery-grid">
+
+
+            <!-- LARGE -->
+
+            <article class="fbtemp-gallery-card">
+
+                <img
+                    src="images/fl.avif"
+                    alt="Library development campaign">
+
+                <div class="fbtemp-gallery-overlay">
+
+                    <span>
+                        ACADEMIC
+                    </span>
+
+                    <h3>
+                        Library Development
+                    </h3>
+
+                    <p>
+                        Give students better access to books,
+                        reading spaces, and learning resources.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- SPORTS -->
+
+            <article class="fbtemp-gallery-card">
+
+                <img
+                    src="images/sp.avif"
+                    alt="Sports equipment campaign">
+
+                <div class="fbtemp-gallery-overlay">
+
+                    <span>
+                        SPORTS
+                    </span>
+
+                    <h3>
+                        Sports Equipment
+                    </h3>
+
+                    <p>
+                        Support equipment, training,
+                        and school athletics.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTS -->
+
+            <article class="fbtemp-gallery-card">
+
+                <img
+                    src="images/a.png"
+                    alt="Arts program campaign">
+
+                <div class="fbtemp-gallery-overlay">
+
+                    <span>
+                        ARTS & CULTURE
+                    </span>
+
+                    <h3>
+                        Creative Programs
+                    </h3>
+
+                    <p>
+                        Bring music, theatre, art,
+                        and creativity closer to students.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- FIELD TRIP -->
+
+            <article class="fbtemp-gallery-card">
+
+                <img
+                    src="images/t.avif"
+                    alt="Educational field trip campaign">
+
+                <div class="fbtemp-gallery-overlay">
+
+                    <span>
+                        EXPERIENCES
+                    </span>
+
+                    <h3>
+                        Educational Field Trip
+                    </h3>
+
+                    <p>
+                        Turn an upcoming educational experience
+                        into a clear community fundraising story.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     05 — EDITOR PREVIEW
+========================================================= -->
+
+<section class="fbtemp-editor"
+         id="editor">
+
+    <div class="fbtemp-container">
+
+        <div class="fbtemp-section-head">
+
+            <div class="fbtemp-eyebrow">
+                CUSTOMIZE
+            </div>
+
+            <h2>
+                Make the template
+                unmistakably yours.
+            </h2>
+
+            <p>
+                Change your campaign story, goal, imagery,
+                and message while keeping a polished structure.
+            </p>
+
+        </div>
+
+
+        <div class="fbtemp-editor-shell">
+
+
+            <!-- EDITOR TOP BAR -->
+
+            <div class="fbtemp-editor-top">
+
+                <div class="fbtemp-browser-dots">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <div class="fbtemp-editor-name">
+                    Campaign editor / Preview
+                </div>
+
+                <div class="fbtemp-editor-status">
+
+                    <span></span>
+
+                    Draft saved
+
+                </div>
+
+            </div>
+
+
+            <!-- EDITOR BODY -->
+
+            <div class="fbtemp-editor-body">
+
+
+                <!-- LEFT -->
+
+                <aside class="fbtemp-editor-sidebar">
+
+                    <div class="fbtemp-sidebar-title">
+                        Campaign settings
+                    </div>
+
+
+                    <div class="fbtemp-editor-field">
+
+                        <label>
+                            Campaign title
+                        </label>
+
+                        <div class="fbtemp-fake-input">
+                            Smart Classroom Upgrade
+                        </div>
+
+                    </div>
+
+
+                    <div class="fbtemp-editor-field">
+
+                        <label>
+                            Goal
+                        </label>
+
+                        <div class="fbtemp-fake-input">
+                            Set your fundraising goal
+                        </div>
+
+                    </div>
+
+
+                    <div class="fbtemp-editor-field">
+
+                        <label>
+                            Campaign category
+                        </label>
+
+                        <div class="fbtemp-fake-input">
+                            Academic
+                        </div>
+
+                    </div>
+
+
+                    <div class="fbtemp-editor-field">
+
+                        <label>
+                            Short description
+                        </label>
+
+                        <div class="fbtemp-fake-input">
+                            Add your campaign story
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- CENTER -->
+
+                <div class="fbtemp-editor-canvas">
+
+                    <div class="fbtemp-live-page">
+
+
+                        <div class="fbtemp-live-image">
+
+                            <img
+                                src="images/sc0.png"
+                                alt="Campaign preview">
+
+                        </div>
+
+
+                        <div class="fbtemp-live-body">
+
+                            <small>
+                                OUR SCHOOL CAMPAIGN
+                            </small>
+
+                            <h3>
+                                Smart Classroom Upgrade
+                            </h3>
+
+                            <p>
+                                Help us create a more engaging
+                                and connected learning environment
+                                for students.
+                            </p>
+
+
+                            <div class="fbtemp-live-progress">
+
+                                <div class="fbtemp-live-progress-top">
+
+                                    <span>
+                                        Campaign progress
+                                    </span>
+
+                                    <strong>
+                                        74%
+                                    </strong>
+
+                                </div>
+
+                                <div class="fbtemp-live-bar">
+                                    <span></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT -->
+
+                <aside class="fbtemp-editor-inspector">
+
+                    <div class="fbtemp-sidebar-title">
+                        Appearance
+                    </div>
+
+
+                    <div class="fbtemp-editor-field">
+
+                        <label>
+                            Primary color
+                        </label>
+
+                        <div class="fbtemp-color-row">
+
+                            <span class="fbtemp-color primary"></span>
+
+                            <span class="fbtemp-color secondary"></span>
+
+                            <span class="fbtemp-color neutral"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fbtemp-inspector-card">
+
+                        <strong>
+                            Campaign image
+                        </strong>
+
+                        <p>
+                            Replace the template image
+                            with a photo that represents
+                            your school community.
+                        </p>
+
+                    </div>
+
+
+                    <div class="fbtemp-inspector-card">
+
+                        <strong>
+                            Story blocks
+                        </strong>
+
+                        <p>
+                            Reorder your campaign sections
+                            and keep the important information
+                            easy to scan.
+                        </p>
+
+                    </div>
+
+
+                    <div class="fbtemp-inspector-card">
+
+                        <strong>
+                            Preview ready
+                        </strong>
+
+                        <p>
+                            Review your campaign before
+                            sharing it with your community.
+                        </p>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     06 — POPULAR TEMPLATES
+========================================================= -->
+
+<section class="fbtemp-popular">
+
+    <div class="fbtemp-container">
+
+        <div class="fbtemp-section-head">
+
+            <div class="fbtemp-eyebrow">
+                EXPLORE MORE
+            </div>
+
+            <h2>
+                Templates built for
+                different school moments.
+            </h2>
+
+            <p>
+                Pick a direction, customize the details,
+                and shape the campaign around your community.
+            </p>
+
+        </div>
+
+
+        <div class="fbtemp-popular-grid">
+
+
+            <!-- CARD 1 -->
+
+            <article class="fbtemp-popular-card">
+
+                <div class="fbtemp-popular-image">
+
+                    <img
+                        src="https://hips.hearstapps.com/hmg-prod/images/this-picture-taken-in-paris-on-february-13-2024-shows-a-news-photo-1717519234.jpg?crop=0.66699xw:1xh;center,top"
+                        alt="Library campaign">
+
+                    <span class="fbtemp-popular-badge">
+                        ACADEMIC
+                    </span>
+
+                </div>
+
+
+                <div class="fbtemp-popular-content">
+
+                    <h3>
+                        Library Renewal
+                    </h3>
+
+                    <p>
+                        A focused campaign structure for
+                        books, reading spaces, and learning resources.
+                    </p>
+
+
+                    <div class="fbtemp-popular-bottom">
+
+                        <span class="fbtemp-goal">
+                            Flexible goal
+                        </span>
+
+                        <a href="#editor"
+                           class="fbtemp-use">
+
+                            Use template
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 2 -->
+
+            <article class="fbtemp-popular-card">
+
+                <div class="fbtemp-popular-image">
+
+                    <img
+                        src="images/cr.jpg"
+                        alt="Sports campaign">
+
+                    <span class="fbtemp-popular-badge">
+                        SPORTS
+                    </span>
+
+                </div>
+
+
+                <div class="fbtemp-popular-content">
+
+                    <h3>
+                        Sports Equipment
+                    </h3>
+
+                    <p>
+                        A campaign format for equipment,
+                        team programs, and student athletics.
+                    </p>
+
+
+                    <div class="fbtemp-popular-bottom">
+
+                        <span class="fbtemp-goal">
+                            Flexible goal
+                        </span>
+
+                        <a href="#editor"
+                           class="fbtemp-use">
+
+                            Use template
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 3 -->
+
+            <article class="fbtemp-popular-card">
+
+                <div class="fbtemp-popular-image">
+
+                    <img
+                        src="images/arc.webp"
+                        alt="Arts campaign">
+
+                    <span class="fbtemp-popular-badge">
+                        CREATIVE
+                    </span>
+
+                </div>
+
+
+                <div class="fbtemp-popular-content">
+
+                    <h3>
+                        Arts & Culture
+                    </h3>
+
+                    <p>
+                        Build a campaign around music,
+                        theatre, visual arts, and creative programs.
+                    </p>
+
+
+                    <div class="fbtemp-popular-bottom">
+
+                        <span class="fbtemp-goal">
+                            Flexible goal
+                        </span>
+
+                        <a href="#editor"
+                           class="fbtemp-use">
+
+                            Use template
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     07 — FAQ
+========================================================= -->
+
+<section class="fbtemp-faq">
+
+    <div class="fbtemp-container">
+
+        <div class="fbtemp-section-head">
+
+            <div class="fbtemp-eyebrow">
+                TEMPLATE FAQ
+            </div>
+
+            <h2>
+                Before you choose
+                your starting point.
+            </h2>
+
+            <p>
+                A few simple answers about using and
+                customizing FundBloom campaign templates.
+            </p>
+
+        </div>
+
+
+        <div class="fbtemp-faq-list">
+
+
+            <!-- FAQ 1 -->
+
+            <div class="fbtemp-faq-item open">
+
+                <button
+                    class="fbtemp-faq-question"
+                    type="button">
+
+                    <span>
+                        Can I edit a template after selecting it?
+                    </span>
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+                <div class="fbtemp-faq-answer">
+
+                    <p>
+                        Yes. A template is a starting structure.
+                        You can customize the campaign title,
+                        story, imagery, goal information, and
+                        other available campaign details.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 2 -->
+
+            <div class="fbtemp-faq-item">
+
+                <button
+                    class="fbtemp-faq-question"
+                    type="button">
+
+                    <span>
+                        Can I upload our school's own images?
+                    </span>
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+                <div class="fbtemp-faq-answer">
+
+                    <p>
+                        Yes. Replace the template imagery with
+                        photos that better represent your students,
+                        school, project, or community.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 3 -->
+
+            <div class="fbtemp-faq-item">
+
+                <button
+                    class="fbtemp-faq-question"
+                    type="button">
+
+                    <span>
+                        Can I change the fundraising goal?
+                    </span>
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+                <div class="fbtemp-faq-answer">
+
+                    <p>
+                        The suggested goal is only a starting point.
+                        Your school can define the campaign target
+                        based on the project's actual requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 4 -->
+
+            <div class="fbtemp-faq-item">
+
+                <button
+                    class="fbtemp-faq-question"
+                    type="button">
+
+                    <span>
+                        Do I have to use a template?
+                    </span>
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+                <div class="fbtemp-faq-answer">
+
+                    <p>
+                        No. Templates are designed to speed up
+                        campaign creation. Schools can also build
+                        their campaign structure from the beginning.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 5 -->
+
+            <div class="fbtemp-faq-item">
+
+                <button
+                    class="fbtemp-faq-question"
+                    type="button">
+
+                    <span>
+                        Can one template be used for different projects?
+                    </span>
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+                <div class="fbtemp-faq-answer">
+
+                    <p>
+                        The structure can be adapted to different
+                        projects. You can change the content and
+                        imagery to fit the campaign you are creating.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     08 — FINAL CTA
+========================================================= -->
+
+<section class="fbtemp-final">
+
+    <div class="fbtemp-container">
+
+        <div class="fbtemp-final-card">
+
+            <div class="fbtemp-eyebrow">
+                YOUR NEXT CAMPAIGN
+            </div>
+
+            <h2>
+                Your next school idea
+                deserves a beautiful beginning.
+            </h2>
+
+            <p>
+                Choose a template, shape the story,
+                and create a campaign your community
+                can understand and support.
+            </p>
+
+
+            <div class="fbtemp-final-actions">
+
+                <a href="#featured"
+                   class="fbtemp-btn fbtemp-btn-primary">
+
+                    Browse Templates
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+
+                <a href="#editor"
+                   class="fbtemp-btn fbtemp-btn-outline">
+
+                    Create Your Own
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   LUCIDE ICONS
+========================================================= */
+
+if (window.lucide) {
+
+    lucide.createIcons();
+
+}
+
+
+/* =========================================================
+   CATEGORY RAIL
+========================================================= */
+
+const fbTemplateCategories =
+    document.querySelectorAll(
+        ".fbtemplates-premium .fbtemp-category"
+    );
+
+
+fbTemplateCategories.forEach((category) => {
+
+    category.addEventListener("click", () => {
+
+        fbTemplateCategories.forEach((item) => {
+
+            item.classList.remove("active");
+
+        });
+
+        category.classList.add("active");
+
+    });
+
+});
+
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+
+const fbTemplateFaqItems =
+    document.querySelectorAll(
+        ".fbtemplates-premium .fbtemp-faq-item"
+    );
+
+
+fbTemplateFaqItems.forEach((item) => {
+
+    const button =
+        item.querySelector(".fbtemp-faq-question");
+
+
+    if (!button) return;
+
+
+    button.addEventListener("click", () => {
+
+        const wasOpen =
+            item.classList.contains("open");
+
+
+        fbTemplateFaqItems.forEach((otherItem) => {
+
+            otherItem.classList.remove("open");
+
+        });
+
+
+        if (!wasOpen) {
+
+            item.classList.add("open");
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   RE-CREATE ICONS AFTER INTERACTION
+========================================================= */
+
+if (window.lucide) {
+
+    lucide.createIcons();
+
+}
+
+</script>
+
+
+
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="fb-footer">
+
+    <div class="fb-footer-inner">
+
+
+        <div class="fb-footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="fb-footer-brand">
+
+   <a href="index.html" class="fb-brand">
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+                    <span class="fb-brand-primary">Fund</span><span class="fb-brand-secondary">Bloom</span>
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING 
+                </span>
+
+            </span>
+
+        </a>
+
+
+                <p class="fb-footer-description">
+
+                    FundBloom brings schools, PTAs, families and
+                    supporters together through simple, engaging
+                    and community-powered fundraising.
+
+                </p>
+
+
+                <span class="fb-footer-badge">
+
+                    SCHOOL • COMMUNITY • IMPACT
+
+                </span>
+
+
+                <div class="fb-socials">
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="Facebook"
+                    >
+                     <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="Instagram"
+                    >
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="YouTube"
+                    >
+                             <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="LinkedIn"
+                    >
+                         <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLORE -->
+
+            <div class="fb-footer-column">
+
+                <h3>Explore</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    
+
+                    <a href="how-it-works.html">
+                        How It Works
+                    </a>
+
+                    <a href="campaign-templates.html">
+                        Campaign Templates
+                    </a>
+
+                    <a href="pricing.html">
+                        Pricing
+                    </a>
+<a href="contact.html">
+                       Contact
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- PLATFORM -->
+
+            <div class="fb-footer-column">
+
+                <h3>Platform</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                    <a href="login.html">
+                        Coordinator Login
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="#">
+                        Start a Campaign
+                    </a>
+
+                    <a href="#">
+                        Fundraising Ideas
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCHOOL -->
+
+            <div class="fb-footer-column">
+
+                <h3>For Schools</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="#">
+                        PTA Events
+                    </a>
+
+                    <a href="#">
+                        School Campaigns
+                    </a>
+
+                    <a href="#">
+                        Community Giving
+                    </a>
+
+                    <a href="#">
+                        Coordinator Resources
+                    </a>
+
+                    <a href="#">
+                        Support Center
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWSLETTER -->
+<div class="fb-footer-column">
+
+    <h3>For Contact</h3>
+
+    <div class="fb-footer-contact-links">
+
+        <a href="tel:6361199543" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                <i data-lucide="phone"></i>
+            </span>
+            <span>999999543</span>
+        </a>
+
+        <a href="mailto:fundblom@gmail.com" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                <i data-lucide="mail"></i>
+            </span>
+            <span>fundblom@gmail.com</span>
+        </a>
+
+        <a href="#" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                     <i class="fa-brands fa-facebook-f"></i>
+            </span>
+            <span>fundfacebook.com</span>
+        </a>
+
+        <a href="#" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                      <i class="fa-brands fa-instagram"></i>
+            </span>
+            <span>fundInstagram.com</span>
+        </a>
+
+      
+
+    </div>
+
+</div>
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="fb-footer-bottom">
+
+
+            <p class="fb-copyright">
+
+                © <span id="currentYear"></span>
+                FundBloom. All rights reserved.
+
+            </p>
+
+
+            <div class="fb-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    /* =========================================================
+       INITIALIZE LUCIDE
+    ========================================================= */
+
+    lucide.createIcons();
+
+
+    /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
+
+    const header = document.getElementById("fbHeader");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 15) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+    /* =========================================================
+       DARK / LIGHT MODE
+    ========================================================= */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const savedTheme =
+        localStorage.getItem("fundBloomTheme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-theme");
+
+    }
+
+
+    function updateThemeIcon() {
+
+        themeToggle.innerHTML =
+            document.body.classList.contains("dark-theme")
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+
+        lucide.createIcons();
+
+    }
+
+
+    updateThemeIcon();
+
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-theme");
+
+        const dark =
+            document.body.classList.contains("dark-theme");
+
+        localStorage.setItem(
+            "fundBloomTheme",
+            dark ? "dark" : "light"
+        );
+
+        updateThemeIcon();
+
+    });
+
+
+    /* =========================================================
+       RTL / LTR
+    ========================================================= */
+
+    const rtlToggle =
+        document.getElementById("rtlToggle");
+
+    const savedDirection =
+        localStorage.getItem("fundBloomDirection");
+
+    if (savedDirection === "rtl") {
+
+        document.documentElement.dir = "rtl";
+
+    } else {
+
+        document.documentElement.dir = "ltr";
+
+    }
+
+
+    rtlToggle.addEventListener("click", () => {
+
+        const isRTL =
+            document.documentElement.dir === "rtl";
+
+        document.documentElement.dir =
+            isRTL ? "ltr" : "rtl";
+
+        localStorage.setItem(
+            "fundBloomDirection",
+            isRTL ? "ltr" : "rtl"
+        );
+
+    });
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+
+    menuToggle.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("active");
+
+        const opened =
+            mobileMenu.classList.contains("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            opened
+        );
+
+        menuToggle.innerHTML =
+            opened
+                ? '<i data-lucide="x"></i>'
+                : '<i data-lucide="menu"></i>';
+
+        lucide.createIcons();
+
+    });
+
+
+    /* =========================================================
+       MOBILE HOME DROPDOWN
+    ========================================================= */
+
+    const mobileHomeToggle =
+        document.getElementById("mobileHomeToggle");
+
+    const mobileHomeSubmenu =
+        document.getElementById("mobileHomeSubmenu");
+
+
+    mobileHomeToggle.addEventListener("click", () => {
+
+        mobileHomeSubmenu.classList.toggle("active");
+
+        mobileHomeToggle.classList.toggle("open");
+
+    });
+
+
+    /* =========================================================
+       CLOSE MOBILE MENU AFTER NAVIGATION
+    ========================================================= */
+
+    document
+        .querySelectorAll(".fb-mobile-link, .fb-mobile-sub-link, .fb-mobile-login")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.innerHTML =
+                    '<i data-lucide="menu"></i>';
+
+                lucide.createIcons();
+
+            });
+
+        });
+
+
+    /* =========================================================
+       ESCAPE CLOSE
+    ========================================================= */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            mobileMenu.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.innerHTML =
+                '<i data-lucide="menu"></i>';
+
+            lucide.createIcons();
+
+        }
+
+    });
+
+
+    /* =========================================================
+       NEWSLETTER
+    ========================================================= */
+
+    const newsletterForm =
+        document.getElementById("newsletterForm");
+
+
+    newsletterForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("newsletterEmail");
+
+        if (!email.value.trim()) {
+            return;
+        }
+
+        email.value = "";
+
+        alert(
+            "Thank you! You are now subscribed to FundBloom."
+        );
+
+    });
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+
+    /* =========================================================
+       RE-INITIALIZE ICONS
+    ========================================================= */
+
+    lucide.createIcons();
+
+</script>
+<script>
+/* =========================================================
+   FUNDBLOOM
+   UNIVERSAL CURRENT PAGE ACTIVE SYSTEM
+   Works for:
+   - Header navigation
+   - Dropdown navigation
+   - Dashboard sidebar
+   - Mobile navigation
+   - RTL
+   - Dark mode
+   - index.html
+   - Query strings
+   - Hash links
+========================================================= */
+
+(function () {
+
+    "use strict";
+
+
+    function normalizePath(url) {
+
+        try {
+
+            const parsed =
+                new URL(
+                    url,
+                    window.location.origin
+                );
+
+            let path =
+                parsed.pathname
+                    .replace(/\\/g, "/")
+                    .replace(/\/+/g, "/");
+
+            /*
+             * Remove final slash
+             */
+            if (
+                path.length > 1 &&
+                path.endsWith("/")
+            ) {
+                path =
+                    path.slice(
+                        0,
+                        -1
+                    );
+            }
+
+            /*
+             * Convert root to index.html
+             */
+            if (
+                path === "" ||
+                path === "/"
+            ) {
+                return "index.html";
+            }
+
+            /*
+             * Get filename only
+             */
+            return path
+                .split("/")
+                .pop()
+                .toLowerCase();
+
+        }
+
+        catch (error) {
+
+            return "";
+
+        }
+
+    }
+
+
+    function setActivePage() {
+
+        const currentPage =
+            normalizePath(
+                window.location.href
+            );
+
+
+        /*
+         * IMPORTANT:
+         * Search all navigation links.
+         *
+         * This means the same code works
+         * for header + sidebar + mobile menu.
+         */
+
+        const links =
+            document.querySelectorAll(
+                "a[href]"
+            );
+
+
+        links.forEach(function (link) {
+
+            /*
+             * Remove previous state
+             */
+            link.classList.remove(
+                "active"
+            );
+
+            link.removeAttribute(
+                "aria-current"
+            );
+
+
+            const href =
+                link.getAttribute(
+                    "href"
+                );
+
+
+            if (!href) {
+                return;
+            }
+
+
+            const cleanHref =
+                href.trim();
+
+
+            /*
+             * Ignore:
+             * # links
+             * javascript links
+             * mail links
+             * telephone links
+             * external websites
+             */
+
+            if (
+                cleanHref === "#" ||
+                cleanHref.startsWith("#") ||
+                cleanHref.startsWith(
+                    "javascript:"
+                ) ||
+                cleanHref.startsWith(
+                    "mailto:"
+                ) ||
+                cleanHref.startsWith(
+                    "tel:"
+                )
+            ) {
+                return;
+            }
+
+
+            /*
+             * External URL?
+             */
+            let targetURL;
+
+            try {
+
+                targetURL =
+                    new URL(
+                        cleanHref,
+                        window.location.href
+                    );
+
+            }
+
+            catch (error) {
+
+                return;
+
+            }
+
+
+            /*
+             * Don't activate external websites
+             */
+            if (
+                targetURL.origin !==
+                window.location.origin
+            ) {
+                return;
+            }
+
+
+            const targetPage =
+                normalizePath(
+                    targetURL.href
+                );
+
+
+            /*
+             * Exact page match
+             */
+
+            if (
+                targetPage ===
+                currentPage
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+            }
+
+        });
+
+
+        /*
+         * Special case:
+         * Root URL / should activate index.html
+         */
+
+        if (
+            currentPage ===
+            "index.html"
+        ) {
+
+            links.forEach(function (link) {
+
+                const href =
+                    link.getAttribute(
+                        "href"
+                    );
+
+                if (!href) return;
+
+
+                const targetPage =
+                    normalizePath(
+                        href
+                    );
+
+
+                if (
+                    targetPage ===
+                    "index.html"
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                    link.setAttribute(
+                        "aria-current",
+                        "page"
+                    );
+
+                }
+
+            });
+
+        }
+
+    }
+
+
+    /*
+     * Run after the entire document
+     * has loaded.
+     */
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            setActivePage
+        );
+
+    }
+    else {
+
+        setActivePage();
+
+    }
+
+
+})();
+</script>
+</body>
+</html>

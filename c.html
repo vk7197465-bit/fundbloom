@@ -1,0 +1,2945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FundBloom | Pricing</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --primary:#5B5CE2;
+    --secondary:#F4A261;
+
+    --bg:#F8F8FC;
+    --bg-soft:#F0F1F8;
+    --surface:#FFFFFF;
+    --surface-2:#F4F4F9;
+
+    --text:#171827;
+    --text-soft:#686A7B;
+    --text-light:#9294A5;
+
+    --border:rgba(23,24,39,.10);
+    --border-strong:rgba(23,24,39,.16);
+
+    --shadow:0 25px 70px rgba(27,29,70,.08);
+
+    --radius-xl:34px;
+    --radius-lg:24px;
+    --radius-md:16px;
+
+    --transition:.35s cubic-bezier(.2,.8,.2,1);
+}
+
+[data-theme="dark"]{
+    --bg:#0F1020;
+    --bg-soft:#15162A;
+    --surface:#18192D;
+    --surface-2:#202137;
+
+    --text:#F7F7FB;
+    --text-soft:#B4B5C5;
+    --text-light:#77798E;
+
+    --border:rgba(255,255,255,.09);
+    --border-strong:rgba(255,255,255,.15);
+
+    --shadow:0 30px 80px rgba(0,0,0,.30);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+button,
+a{
+    font:inherit;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    border:0;
+    cursor:pointer;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+section{
+    position:relative;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* =========================================================
+   GLOBAL ELEMENTS
+========================================================= */
+
+.section-head{
+    max-width:760px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:11px;
+    letter-spacing:.20em;
+    font-weight:700;
+    color:var(--primary);
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:28px;
+    height:1px;
+    background:var(--secondary);
+}
+
+.section-head h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(38px,5vw,64px);
+    line-height:1.02;
+    letter-spacing:-.04em;
+    font-weight:600;
+}
+
+.section-head p{
+    margin:22px auto 0;
+    max-width:600px;
+    color:var(--text-soft);
+    font-size:16px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.fb-btn{
+    min-height:50px;
+    padding:0 22px;
+    border-radius:12px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-size:13px;
+    font-weight:700;
+    transition:var(--transition);
+}
+
+.fb-btn svg{
+    width:16px;
+    height:16px;
+}
+
+.fb-btn-primary{
+    background:var(--primary);
+    color:#fff;
+}
+
+.fb-btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 30px rgba(91,92,226,.25);
+}
+
+.fb-btn-secondary{
+    background:var(--secondary);
+    color:#171827;
+}
+
+.fb-btn-secondary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 30px rgba(244,162,97,.22);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.fb-pricing-hero{
+    min-height:760px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:90px 0 80px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:48% 52%;
+    align-items:center;
+    gap:20px;
+}
+
+/* LEFT ORBIT SIDE */
+
+.hero-orbit-area{
+    min-height:570px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.orbit-stage{
+    width:500px;
+    height:500px;
+    position:relative;
+}
+
+/* soft glow */
+
+.orbit-stage::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:
+        radial-gradient(
+            circle,
+            rgba(91,92,226,.16),
+            transparent 68%
+        );
+    filter:blur(10px);
+}
+
+/* rings */
+
+.orbit-ring{
+    position:absolute;
+    left:50%;
+    top:50%;
+    border:1px solid var(--border-strong);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+}
+
+.orbit-ring-1{
+    width:500px;
+    height:500px;
+    border-style:dashed;
+    animation:orbitRotate 28s linear infinite;
+}
+
+.orbit-ring-2{
+    width:380px;
+    height:380px;
+    border-color:rgba(91,92,226,.28);
+    animation:orbitRotateReverse 20s linear infinite;
+}
+
+.orbit-ring-3{
+    width:260px;
+    height:260px;
+    border-color:rgba(244,162,97,.42);
+    animation:orbitRotate 15s linear infinite;
+}
+
+.orbit-ring-4{
+    width:150px;
+    height:150px;
+    border-color:var(--border-strong);
+}
+
+/* orbit paths */
+
+.orbit-path{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.orbit-path-a{
+    width:500px;
+    height:500px;
+    animation:orbitRotate 24s linear infinite;
+}
+
+.orbit-path-b{
+    width:380px;
+    height:380px;
+    animation:orbitRotateReverse 18s linear infinite;
+}
+
+.orbit-path-c{
+    width:260px;
+    height:260px;
+    animation:orbitRotate 13s linear infinite;
+}
+
+/* orbit nodes */
+
+.orbit-node{
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translate(-50%,-50%);
+    white-space:nowrap;
+}
+
+.orbit-path-b .orbit-node{
+    left:100%;
+}
+
+.orbit-path-c .orbit-node{
+    left:50%;
+    top:0;
+}
+
+.node-card{
+    min-width:126px;
+    padding:10px 13px;
+    border:1px solid var(--border);
+    background:var(--surface);
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    box-shadow:var(--shadow);
+}
+
+.node-card span{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--primary);
+}
+
+.node-card.secondary-node span{
+    background:var(--secondary);
+}
+
+.node-card small{
+    font-size:10px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--text-soft);
+}
+
+/* center */
+
+.orbit-center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:132px;
+    height:132px;
+    border-radius:50%;
+    background:var(--surface);
+    border:1px solid var(--border-strong);
+    box-shadow:
+        0 20px 70px rgba(91,92,226,.15),
+        inset 0 0 0 10px var(--bg-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:4;
+}
+
+.center-inner{
+    width:78px;
+    height:78px;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #7475EB
+    );
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.center-inner strong{
+    font-family:"Playfair Display",serif;
+    font-size:26px;
+}
+
+.center-inner span{
+    font-size:8px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    opacity:.8;
+}
+
+/* static orbit labels */
+
+.orbit-label{
+    position:absolute;
+    z-index:5;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:10px;
+    font-weight:700;
+    color:var(--text-light);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.orbit-label i{
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:var(--secondary);
+}
+
+.orbit-label-one{
+    top:72px;
+    left:30px;
+}
+
+.orbit-label-two{
+    right:10px;
+    top:180px;
+}
+
+.orbit-label-three{
+    bottom:75px;
+    left:80px;
+}
+
+@keyframes orbitRotate{
+    from{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+@keyframes orbitRotateReverse{
+    from{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+    to{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+    padding-left:30px;
+}
+
+.hero-content .eyebrow{
+    margin-bottom:20px;
+}
+
+.hero-title{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(52px,6vw,88px);
+    line-height:.95;
+    letter-spacing:-.055em;
+    font-weight:600;
+    max-width:700px;
+}
+
+.hero-title em{
+    color:var(--primary);
+    font-style:normal;
+}
+
+.hero-typing{
+    min-height:32px;
+    margin:26px 0 18px;
+    font-size:18px;
+    font-weight:600;
+    color:var(--secondary);
+}
+
+.hero-description{
+    max-width:570px;
+    color:var(--text-soft);
+    line-height:1.85;
+    font-size:16px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.hero-proof{
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-top:38px;
+    padding-top:24px;
+    border-top:1px solid var(--border);
+}
+
+.proof-item{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--text-soft);
+    font-size:11px;
+    font-weight:600;
+}
+
+.proof-item svg{
+    width:15px;
+    color:var(--primary);
+}
+
+/* =========================================================
+   PLANS
+========================================================= */
+
+.fb-plans{
+    padding:120px 0;
+    background:var(--bg-soft);
+}
+
+.billing-bar{
+    width:max-content;
+    margin:-35px auto 55px;
+    padding:6px;
+    border:1px solid var(--border);
+    background:var(--surface);
+    border-radius:50px;
+    display:flex;
+    gap:4px;
+}
+
+.billing-option{
+    padding:10px 18px;
+    border-radius:50px;
+    background:transparent;
+    color:var(--text-soft);
+    font-size:11px;
+    font-weight:700;
+    transition:var(--transition);
+}
+
+.billing-option.active{
+    background:var(--primary);
+    color:#fff;
+}
+
+.plan-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    align-items:stretch;
+}
+
+.plan-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-xl);
+    padding:38px 32px 32px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    min-height:520px;
+    transition:var(--transition);
+}
+
+.plan-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(91,92,226,.3);
+}
+
+.plan-card.popular{
+    transform:translateY(-20px);
+    border:1.5px solid var(--primary);
+    box-shadow:0 30px 70px rgba(91,92,226,.15);
+}
+
+.plan-card.popular:hover{
+    transform:translateY(-27px);
+}
+
+.popular-badge{
+    position:absolute;
+    right:24px;
+    top:24px;
+    padding:7px 11px;
+    border-radius:50px;
+    background:var(--primary);
+    color:#fff;
+    font-size:9px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-weight:700;
+}
+
+.plan-number{
+    font-family:"Playfair Display",serif;
+    color:var(--text-light);
+    font-size:14px;
+}
+
+.plan-name{
+    margin-top:22px;
+    font-size:24px;
+    font-weight:700;
+}
+
+.plan-description{
+    margin-top:10px;
+    color:var(--text-soft);
+    font-size:13px;
+    line-height:1.7;
+    min-height:44px;
+}
+
+.plan-price{
+    margin:32px 0;
+    display:flex;
+    align-items:flex-end;
+    gap:5px;
+}
+
+.plan-price strong{
+    font-family:"Playfair Display",serif;
+    font-size:52px;
+    line-height:.9;
+}
+
+.plan-price span{
+    color:var(--text-soft);
+    font-size:12px;
+    padding-bottom:5px;
+}
+
+.plan-divider{
+    height:1px;
+    background:var(--border);
+    margin-bottom:24px;
+}
+
+.plan-features{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    flex:1;
+}
+
+.plan-feature{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--text-soft);
+    font-size:12px;
+}
+
+.plan-feature svg{
+    width:15px;
+    color:var(--primary);
+    flex:none;
+}
+
+.plan-card:not(.popular) .plan-feature svg{
+    color:var(--secondary);
+}
+
+.plan-button{
+    width:100%;
+    margin-top:30px;
+}
+
+/* =========================================================
+   COMPARISON
+========================================================= */
+
+.fb-comparison{
+    padding:130px 0;
+}
+
+.comparison-board{
+    border:1px solid var(--border);
+    border-radius:28px;
+    overflow:hidden;
+    background:var(--surface);
+    box-shadow:var(--shadow);
+}
+
+.comparison-head,
+.comparison-row{
+    display:grid;
+    grid-template-columns:2fr repeat(3,1fr);
+}
+
+.comparison-head{
+    background:var(--surface-2);
+    border-bottom:1px solid var(--border);
+}
+
+.comparison-head > div{
+    padding:25px 20px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.comparison-head > div:not(:first-child){
+    text-align:center;
+}
+
+.comparison-head .highlight{
+    color:var(--primary);
+}
+
+.comparison-row{
+    border-bottom:1px solid var(--border);
+    transition:var(--transition);
+}
+
+.comparison-row:last-child{
+    border-bottom:0;
+}
+
+.comparison-row:hover{
+    background:rgba(91,92,226,.035);
+}
+
+.comparison-row > div{
+    min-height:67px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+}
+
+.comparison-row > div:not(:first-child){
+    justify-content:center;
+}
+
+.feature-name{
+    font-size:13px;
+    font-weight:600;
+}
+
+.feature-note{
+    display:block;
+    margin-top:4px;
+    font-size:10px;
+    color:var(--text-light);
+    font-weight:400;
+}
+
+.check{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--bg-soft);
+    color:var(--text-light);
+}
+
+.check.active{
+    background:rgba(91,92,226,.10);
+    color:var(--primary);
+}
+
+.check.secondary{
+    background:rgba(244,162,97,.14);
+    color:#D77B30;
+}
+
+.comparison-row.reveal{
+    opacity:0;
+    transform:translateY(15px);
+}
+
+.comparison-row.visible{
+    opacity:1;
+    transform:translateY(0);
+    transition:.6s ease;
+}
+
+/* =========================================================
+   HOW PRICING WORKS
+========================================================= */
+
+.fb-how{
+    padding:130px 0 150px;
+    background:var(--bg-soft);
+    overflow:hidden;
+}
+
+.journey-wrap{
+    position:relative;
+    max-width:1100px;
+    height:500px;
+    margin:auto;
+}
+
+.journey-svg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    overflow:visible;
+}
+
+.journey-line{
+    fill:none;
+    stroke:var(--border-strong);
+    stroke-width:2;
+}
+
+.journey-line-accent{
+    fill:none;
+    stroke:var(--primary);
+    stroke-width:2;
+    stroke-dasharray:8 12;
+    opacity:.5;
+}
+
+.journey-dot{
+    fill:var(--secondary);
+    filter:drop-shadow(0 0 7px rgba(244,162,97,.5));
+}
+
+.journey-point{
+    position:absolute;
+    width:255px;
+}
+
+.journey-point:nth-of-type(1){
+    left:0;
+    top:55px;
+}
+
+.journey-point:nth-of-type(2){
+    left:50%;
+    top:235px;
+    transform:translateX(-50%);
+}
+
+.journey-point:nth-of-type(3){
+    right:0;
+    bottom:35px;
+}
+
+.journey-number{
+    font-family:"Playfair Display",serif;
+    font-size:60px;
+    color:var(--primary);
+    line-height:1;
+}
+
+.journey-point h3{
+    margin:10px 0 8px;
+    font-size:20px;
+}
+
+.journey-point p{
+    color:var(--text-soft);
+    font-size:12px;
+    line-height:1.7;
+}
+
+.journey-tag{
+    display:inline-flex;
+    margin-top:16px;
+    padding:7px 10px;
+    border:1px solid var(--border);
+    border-radius:50px;
+    color:var(--text-light);
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:700;
+}
+
+/* =========================================================
+   VALUE / IMPACT
+========================================================= */
+
+.fb-impact{
+    padding:130px 0;
+}
+
+.impact-intro{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:end;
+    margin-bottom:80px;
+}
+
+.impact-intro h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(40px,5vw,68px);
+    line-height:1;
+    letter-spacing:-.05em;
+}
+
+.impact-intro p{
+    color:var(--text-soft);
+    line-height:1.8;
+    max-width:450px;
+}
+
+.impact-list{
+    border-top:1px solid var(--border);
+}
+
+.impact-item{
+    display:grid;
+    grid-template-columns:130px 1fr 1.1fr 80px;
+    align-items:center;
+    gap:30px;
+    min-height:145px;
+    border-bottom:1px solid var(--border);
+    transition:var(--transition);
+    position:relative;
+}
+
+.impact-item::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:0;
+    background:var(--primary);
+    transition:var(--transition);
+}
+
+.impact-item:hover{
+    padding-left:18px;
+    background:var(--bg-soft);
+}
+
+.impact-item:hover::before{
+    width:3px;
+}
+
+.impact-number{
+    font-family:"Playfair Display",serif;
+    font-size:58px;
+    color:var(--text-light);
+}
+
+.impact-title{
+    font-size:21px;
+    font-weight:700;
+}
+
+.impact-copy{
+    color:var(--text-soft);
+    font-size:12px;
+    line-height:1.7;
+}
+
+.impact-icon{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:var(--surface-2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--primary);
+}
+
+.impact-icon svg{
+    width:18px;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.fb-faq{
+    padding:130px 0;
+    background:var(--bg-soft);
+}
+
+.faq-grid{
+    display:grid;
+    grid-template-columns:38% 62%;
+    gap:80px;
+}
+
+.faq-intro{
+    position:sticky;
+    top:100px;
+    align-self:start;
+}
+
+.faq-intro h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(40px,5vw,62px);
+    line-height:1;
+    letter-spacing:-.04em;
+}
+
+.faq-intro p{
+    color:var(--text-soft);
+    margin-top:20px;
+    line-height:1.8;
+    max-width:400px;
+}
+
+.faq-list{
+    border-top:1px solid var(--border);
+}
+
+.faq-item{
+    border-bottom:1px solid var(--border);
+}
+
+.faq-question{
+    width:100%;
+    padding:25px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:none;
+    color:var(--text);
+    text-align:left;
+    font-weight:700;
+    font-size:15px;
+}
+
+.faq-question span{
+    transition:var(--transition);
+}
+
+.faq-question svg{
+    width:18px;
+    color:var(--text-light);
+    transition:var(--transition);
+}
+
+.faq-item.active .faq-question{
+    color:var(--primary);
+}
+
+.faq-item.active .faq-question svg{
+    transform:rotate(45deg);
+    color:var(--primary);
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .45s ease;
+}
+
+.faq-answer p{
+    max-width:700px;
+    padding:0 35px 25px 0;
+    color:var(--text-soft);
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.fb-final{
+    padding:120px 0;
+}
+
+.final-cta{
+    width:75%;
+    min-height:40vh;
+    margin:auto;
+    border:1px solid var(--border);
+    border-radius:34px;
+    background:var(--surface);
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 30px;
+    position:relative;
+    overflow:hidden;
+}
+
+.final-cta::before,
+.final-cta::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    border:1px solid var(--border);
+    pointer-events:none;
+}
+
+.final-cta::before{
+    width:400px;
+    height:400px;
+    left:-200px;
+    top:-220px;
+}
+
+.final-cta::after{
+    width:330px;
+    height:330px;
+    right:-180px;
+    bottom:-210px;
+}
+
+.final-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+}
+
+.final-content h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(38px,5vw,65px);
+    line-height:1;
+    letter-spacing:-.045em;
+}
+
+.final-content p{
+    max-width:520px;
+    margin:20px auto 28px;
+    color:var(--text-soft);
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.theme-control{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:100;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:var(--surface);
+    color:var(--text);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.theme-control svg{
+    width:17px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .hero-grid{
+        grid-template-columns:46% 54%;
+    }
+
+    .orbit-stage{
+        width:420px;
+        height:420px;
+    }
+
+    .orbit-ring-1,
+    .orbit-path-a{
+        width:420px;
+        height:420px;
+    }
+
+    .orbit-ring-2,
+    .orbit-path-b{
+        width:320px;
+        height:320px;
+    }
+
+    .orbit-ring-3,
+    .orbit-path-c{
+        width:220px;
+        height:220px;
+    }
+
+    .hero-content{
+        padding-left:10px;
+    }
+
+    .journey-wrap{
+        height:460px;
+    }
+
+    .impact-item{
+        grid-template-columns:100px 1fr 1fr 60px;
+    }
+}
+
+@media(max-width:900px){
+
+    .fb-pricing-hero{
+        padding-top:70px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .hero-orbit-area{
+        min-height:470px;
+        order:1;
+    }
+
+    .hero-content{
+        order:2;
+        padding-left:0;
+        text-align:center;
+    }
+
+    .hero-content .eyebrow{
+        justify-content:center;
+    }
+
+    .hero-title{
+        margin:auto;
+        max-width:720px;
+    }
+
+    .hero-description{
+        margin:auto;
+    }
+
+    .hero-actions,
+    .hero-proof{
+        justify-content:center;
+    }
+
+    .plan-grid{
+        grid-template-columns:1fr;
+        max-width:500px;
+        margin:auto;
+    }
+
+    .plan-card.popular{
+        transform:none;
+        order:-1;
+    }
+
+    .plan-card.popular:hover{
+        transform:translateY(-8px);
+    }
+
+    .journey-wrap{
+        height:auto;
+        display:flex;
+        flex-direction:column;
+        gap:50px;
+        padding-left:30px;
+    }
+
+    .journey-svg{
+        display:none;
+    }
+
+    .journey-point,
+    .journey-point:nth-of-type(1),
+    .journey-point:nth-of-type(2),
+    .journey-point:nth-of-type(3){
+        position:relative;
+        left:auto;
+        right:auto;
+        top:auto;
+        bottom:auto;
+        transform:none;
+        width:100%;
+        max-width:500px;
+    }
+
+    .impact-intro{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .impact-item{
+        grid-template-columns:90px 1fr 60px;
+    }
+
+    .impact-copy{
+        display:none;
+    }
+
+    .faq-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .faq-intro{
+        position:relative;
+        top:auto;
+    }
+
+    .final-cta{
+        width:90%;
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:90%;
+    }
+
+    .fb-pricing-hero{
+        min-height:auto;
+        padding:60px 0 80px;
+    }
+
+    .hero-orbit-area{
+        min-height:350px;
+    }
+
+    .orbit-stage{
+        width:320px;
+        height:320px;
+    }
+
+    .orbit-ring-1,
+    .orbit-path-a{
+        width:320px;
+        height:320px;
+    }
+
+    .orbit-ring-2,
+    .orbit-path-b{
+        width:245px;
+        height:245px;
+    }
+
+    .orbit-ring-3,
+    .orbit-path-c{
+        width:165px;
+        height:165px;
+    }
+
+    .orbit-ring-4{
+        width:100px;
+        height:100px;
+    }
+
+    .orbit-center{
+        width:100px;
+        height:100px;
+    }
+
+    .center-inner{
+        width:60px;
+        height:60px;
+    }
+
+    .center-inner strong{
+        font-size:20px;
+    }
+
+    .node-card{
+        min-width:95px;
+        padding:8px 9px;
+    }
+
+    .node-card small{
+        font-size:8px;
+    }
+
+    .orbit-label{
+        display:none;
+    }
+
+    .hero-title{
+        font-size:48px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .hero-proof{
+        gap:14px;
+    }
+
+    .proof-item{
+        font-size:10px;
+    }
+
+    .fb-plans,
+    .fb-comparison,
+    .fb-how,
+    .fb-impact,
+    .fb-faq{
+        padding:90px 0;
+    }
+
+    .section-head{
+        margin-bottom:55px;
+    }
+
+    .section-head h2{
+        font-size:42px;
+    }
+
+    .billing-bar{
+        margin:-25px auto 45px;
+    }
+
+    .plan-card{
+        padding:30px 24px;
+        min-height:500px;
+    }
+
+    .comparison-board{
+        overflow-x:auto;
+        border-radius:20px;
+    }
+
+    .comparison-head,
+    .comparison-row{
+        min-width:700px;
+    }
+
+    .comparison-head > div,
+    .comparison-row > div{
+        padding-left:15px;
+        padding-right:15px;
+    }
+
+    .impact-item{
+        grid-template-columns:65px 1fr 45px;
+        gap:15px;
+        min-height:120px;
+    }
+
+    .impact-number{
+        font-size:42px;
+    }
+
+    .impact-title{
+        font-size:16px;
+    }
+
+    .impact-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .final-cta{
+        width:94%;
+        min-height:40vh;
+        border-radius:25px;
+        padding:40px 20px;
+    }
+
+    .final-content h2{
+        font-size:40px;
+    }
+
+    .final-content p{
+        font-size:13px;
+    }
+
+}
+
+@media(max-width:380px){
+
+    .hero-title{
+        font-size:43px;
+    }
+
+    .hero-orbit-area{
+        min-height:315px;
+    }
+
+    .orbit-stage{
+        transform:scale(.88);
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .hero-actions .fb-btn{
+        width:100%;
+    }
+
+    .hero-proof{
+        display:grid;
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="fb-pricing-hero">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+            <!-- LEFT : ORBIT -->
+            <div class="hero-orbit-area">
+
+                <div class="orbit-stage">
+
+                    <div class="orbit-ring orbit-ring-1"></div>
+                    <div class="orbit-ring orbit-ring-2"></div>
+                    <div class="orbit-ring orbit-ring-3"></div>
+                    <div class="orbit-ring orbit-ring-4"></div>
+
+                    <div class="orbit-path orbit-path-a">
+                        <div class="orbit-node">
+                            <div class="node-card">
+                                <span></span>
+                                <small>Campaigns</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbit-path orbit-path-b">
+                        <div class="orbit-node">
+                            <div class="node-card secondary-node">
+                                <span></span>
+                                <small>Donations</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbit-path orbit-path-c">
+                        <div class="orbit-node">
+                            <div class="node-card">
+                                <span></span>
+                                <small>Insights</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbit-center">
+                        <div class="center-inner">
+                            <strong>FB</strong>
+                            <span>FundBloom</span>
+                        </div>
+                    </div>
+
+                    <div class="orbit-label orbit-label-one">
+                        <i></i>
+                        Community
+                    </div>
+
+                    <div class="orbit-label orbit-label-two">
+                        <i></i>
+                        Growth
+                    </div>
+
+                    <div class="orbit-label orbit-label-three">
+                        <i></i>
+                        Impact
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT : HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    FUND BLOOM PRICING
+                </div>
+
+                <h1 class="hero-title">
+                    Pricing that
+                    <em>moves</em>
+                    your mission forward.
+                </h1>
+
+                <div class="hero-typing">
+                    <span id="typingText"></span>
+                </div>
+
+                <p class="hero-description">
+                    Flexible tools for school fundraising teams,
+                    designed to help you build campaigns, coordinate
+                    communities, understand progress and report impact
+                    without unnecessary complexity.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#plans" class="fb-btn fb-btn-primary">
+                        Explore Plans
+                        <i data-lucide="arrow-down-right"></i>
+                    </a>
+
+                    <a href="#comparison" class="fb-btn fb-btn-secondary">
+                        Compare Features
+                        <i data-lucide="layout-list"></i>
+                    </a>
+
+                </div>
+
+                <div class="hero-proof">
+
+                    <div class="proof-item">
+                        <i data-lucide="check"></i>
+                        No complicated setup
+                    </div>
+
+                    <div class="proof-item">
+                        <i data-lucide="refresh-cw"></i>
+                        Flexible upgrades
+                    </div>
+
+                    <div class="proof-item">
+                        <i data-lucide="bar-chart-3"></i>
+                        Clear reporting
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     PLANS
+====================================================== -->
+
+<section class="fb-plans" id="plans">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">
+                SIMPLE PLANS
+            </div>
+
+            <h2>
+                Choose the room
+                your campaign needs.
+            </h2>
+
+            <p>
+                Start with the essentials, expand your community tools,
+                or bring deeper coordination and reporting into one place.
+            </p>
+
+        </div>
+
+
+        <div class="billing-bar">
+
+            <button class="billing-option active" data-billing="monthly">
+                Monthly
+            </button>
+
+            <button class="billing-option" data-billing="yearly">
+                Yearly
+            </button>
+
+        </div>
+
+
+        <div class="plan-grid">
+
+            <!-- PLAN 1 -->
+
+            <article class="plan-card">
+
+                <span class="plan-number">01</span>
+
+                <h3 class="plan-name">
+                    Starter
+                </h3>
+
+                <p class="plan-description">
+                    A focused foundation for small school campaigns.
+                </p>
+
+                <div class="plan-price">
+
+                    <strong
+                        data-monthly="$19"
+                        data-yearly="$15"
+                    >
+                        $19
+                    </strong>
+
+                    <span>/ month</span>
+
+                </div>
+
+                <div class="plan-divider"></div>
+
+                <div class="plan-features">
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Campaign creation
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Donation tracking
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Basic campaign insights
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Community sharing
+                    </div>
+
+                </div>
+
+                <a href="#" class="fb-btn fb-btn-secondary plan-button">
+                    Start with Starter
+                </a>
+
+            </article>
+
+
+            <!-- PLAN 2 -->
+
+            <article class="plan-card popular">
+
+                <span class="popular-badge">
+                    Popular
+                </span>
+
+                <span class="plan-number">02</span>
+
+                <h3 class="plan-name">
+                    Community
+                </h3>
+
+                <p class="plan-description">
+                    Built for schools growing participation and reach.
+                </p>
+
+                <div class="plan-price">
+
+                    <strong
+                        data-monthly="$49"
+                        data-yearly="$39"
+                    >
+                        $49
+                    </strong>
+
+                    <span>/ month</span>
+
+                </div>
+
+                <div class="plan-divider"></div>
+
+                <div class="plan-features">
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Everything in Starter
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Volunteer coordination
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Team collaboration
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Advanced campaign insights
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Financial summaries
+                    </div>
+
+                </div>
+
+                <a href="#" class="fb-btn fb-btn-primary plan-button">
+                    Choose Community
+                </a>
+
+            </article>
+
+
+            <!-- PLAN 3 -->
+
+            <article class="plan-card">
+
+                <span class="plan-number">03</span>
+
+                <h3 class="plan-name">
+                    Impact
+                </h3>
+
+                <p class="plan-description">
+                    Deeper coordination for larger fundraising programs.
+                </p>
+
+                <div class="plan-price">
+
+                    <strong
+                        data-monthly="$89"
+                        data-yearly="$71"
+                    >
+                        $89
+                    </strong>
+
+                    <span>/ month</span>
+
+                </div>
+
+                <div class="plan-divider"></div>
+
+                <div class="plan-features">
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Everything in Community
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Multi-campaign management
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Detailed reporting
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Financial analytics
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Priority support
+                    </div>
+
+                </div>
+
+                <a href="#" class="fb-btn fb-btn-secondary plan-button">
+                    Build Your Impact
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     COMPARISON
+====================================================== -->
+
+<section class="fb-comparison" id="comparison">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">
+                FEATURE MAP
+            </div>
+
+            <h2>
+                See exactly
+                what grows with you.
+            </h2>
+
+            <p>
+                Compare the core capabilities across every FundBloom plan
+                before deciding how much support your campaign needs.
+            </p>
+
+        </div>
+
+
+        <div class="comparison-board">
+
+            <div class="comparison-head">
+
+                <div>
+                    Capability
+                </div>
+
+                <div>
+                    Starter
+                </div>
+
+                <div class="highlight">
+                    Community
+                </div>
+
+                <div>
+                    Impact
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Campaign Builder
+                    <span class="feature-note">
+                        Create and organize fundraising campaigns
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Donation Tracking
+                    <span class="feature-note">
+                        Monitor incoming contributions
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Volunteer Coordination
+                    <span class="feature-note">
+                        Organize people around campaign events
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Advanced Insights
+                    <span class="feature-note">
+                        Understand campaign performance
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check secondary">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Financial Reporting
+                    <span class="feature-note">
+                        Review structured financial summaries
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check secondary">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Multi-Campaign Management
+                    <span class="feature-note">
+                        Coordinate multiple fundraising initiatives
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     HOW PRICING WORKS
+====================================================== -->
+
+<section class="fb-how">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">
+                HOW IT WORKS
+            </div>
+
+            <h2>
+                Your plan can evolve
+                with the campaign.
+            </h2>
+
+            <p>
+                FundBloom keeps the path simple: establish your foundation,
+                grow participation, then unlock deeper campaign intelligence.
+            </p>
+
+        </div>
+
+
+        <div class="journey-wrap">
+
+            <svg
+                class="journey-svg"
+                viewBox="0 0 1100 500"
+                preserveAspectRatio="none"
+            >
+
+                <path
+                    class="journey-line"
+                    d="M40 105 C280 30, 370 410, 570 250 S820 120, 1060 390"
+                />
+
+                <path
+                    class="journey-line-accent"
+                    d="M40 105 C280 30, 370 410, 570 250 S820 120, 1060 390"
+                />
+
+                <circle
+                    class="journey-dot"
+                    r="7"
+                >
+
+                    <animateMotion
+                        dur="7s"
+                        repeatCount="indefinite"
+                        path="M40 105 C280 30, 370 410, 570 250 S820 120, 1060 390"
+                    />
+
+                </circle>
+
+            </svg>
+
+
+            <article class="journey-point">
+
+                <div class="journey-number">
+                    01
+                </div>
+
+                <h3>
+                    Start with clarity.
+                </h3>
+
+                <p>
+                    Choose the foundation that gives your school
+                    the tools needed to launch a focused campaign.
+                </p>
+
+                <span class="journey-tag">
+                    Foundation
+                </span>
+
+            </article>
+
+
+            <article class="journey-point">
+
+                <div class="journey-number">
+                    02
+                </div>
+
+                <h3>
+                    Grow participation.
+                </h3>
+
+                <p>
+                    Bring volunteers, teams and community activity
+                    into one coordinated fundraising experience.
+                </p>
+
+                <span class="journey-tag">
+                    Community
+                </span>
+
+            </article>
+
+
+            <article class="journey-point">
+
+                <div class="journey-number">
+                    03
+                </div>
+
+                <h3>
+                    Understand impact.
+                </h3>
+
+                <p>
+                    Move beyond campaign activity with deeper
+                    insights, financial summaries and reporting.
+                </p>
+
+                <span class="journey-tag">
+                    Impact
+                </span>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     VALUE / IMPACT
+====================================================== -->
+
+<section class="fb-impact">
+
+    <div class="container">
+
+        <div class="impact-intro">
+
+            <div>
+
+                <div class="eyebrow">
+                    VALUE IN MOTION
+                </div>
+
+                <h2>
+                    One platform.
+                    Four kinds of momentum.
+                </h2>
+
+            </div>
+
+            <p>
+                The value of FundBloom is not only in collecting donations.
+                It connects campaign planning, community participation,
+                financial visibility and measurable progress.
+            </p>
+
+        </div>
+
+
+        <div class="impact-list">
+
+            <article class="impact-item">
+
+                <div class="impact-number">
+                    01
+                </div>
+
+                <div class="impact-title">
+                    Build
+                </div>
+
+                <div class="impact-copy">
+                    Turn an idea into a structured campaign with
+                    clear goals and organized fundraising activity.
+                </div>
+
+                <div class="impact-icon">
+                    <i data-lucide="layers-3"></i>
+                </div>
+
+            </article>
+
+
+            <article class="impact-item">
+
+                <div class="impact-number">
+                    02
+                </div>
+
+                <div class="impact-title">
+                    Engage
+                </div>
+
+                <div class="impact-copy">
+                    Give families, volunteers and school communities
+                    clearer ways to participate.
+                </div>
+
+                <div class="impact-icon">
+                    <i data-lucide="users"></i>
+                </div>
+
+            </article>
+
+
+            <article class="impact-item">
+
+                <div class="impact-number">
+                    03
+                </div>
+
+                <div class="impact-title">
+                    Understand
+                </div>
+
+                <div class="impact-copy">
+                    Bring campaign activity and financial information
+                    into a clearer operational picture.
+                </div>
+
+                <div class="impact-icon">
+                    <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+
+            </article>
+
+
+            <article class="impact-item">
+
+                <div class="impact-number">
+                    04
+                </div>
+
+                <div class="impact-title">
+                    Report
+                </div>
+
+                <div class="impact-copy">
+                    Turn campaign progress into useful summaries
+                    for coordinators and school teams.
+                </div>
+
+                <div class="impact-icon">
+                    <i data-lucide="file-chart-column"></i>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FAQ
+====================================================== -->
+
+<section class="fb-faq">
+
+    <div class="container">
+
+        <div class="faq-grid">
+
+            <div class="faq-intro">
+
+                <div class="eyebrow">
+                    QUESTIONS
+                </div>
+
+                <h2>
+                    Pricing,
+                    without the guesswork.
+                </h2>
+
+                <p>
+                    Explore the most common questions about plans,
+                    upgrades, campaign management and reporting.
+                </p>
+
+            </div>
+
+
+            <div class="faq-list">
+
+                <div class="faq-item active">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can I change my plan later?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. The plan structure is designed to let
+                            your school move to a different level as
+                            campaign requirements change.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can we manage multiple campaigns?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Multi-campaign management is included in the
+                            Impact plan, allowing larger fundraising programs
+                            to organize multiple initiatives.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Is volunteer coordination included?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Volunteer coordination is available from the
+                            Community plan and is expanded within the
+                            Impact experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can coordinators review financial reports?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Financial summaries and deeper reporting
+                            capabilities become available as you move
+                            into the Community and Impact plans.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Is yearly billing available?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Use the Monthly and Yearly selector above
+                            to preview the yearly pricing structure.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Do all plans include campaign creation?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Campaign creation is included across all three
+                            plans, with additional coordination, insights
+                            and reporting capabilities added at higher levels.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="fb-final">
+
+    <div class="container">
+
+        <div class="final-cta">
+
+            <div class="final-content">
+
+                <div class="eyebrow">
+                    READY TO GROW
+                </div>
+
+                <h2>
+                    Give your next campaign
+                    room to bloom.
+                </h2>
+
+                <p>
+                    Start with the tools you need today and expand
+                    when your fundraising community is ready.
+                </p>
+
+                <a href="#plans" class="fb-btn fb-btn-primary">
+                    Explore FundBloom Plans
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     THEME CONTROL
+====================================================== -->
+
+<button
+    class="theme-control"
+    id="themeControl"
+    aria-label="Toggle theme"
+>
+    <i data-lucide="moon"></i>
+</button>
+
+
+<script>
+
+/* =========================================================
+   LUCIDE
+========================================================= */
+
+lucide.createIcons();
+
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+const typingElement = document.getElementById("typingText");
+
+const typingWords = [
+    "Start with clarity.",
+    "Grow with confidence.",
+    "Build community.",
+    "Measure impact."
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    const currentWord = typingWords[wordIndex];
+
+    if(!deleting){
+
+        typingElement.textContent =
+            currentWord.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === currentWord.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1800);
+
+            return;
+        }
+
+    }else{
+
+        typingElement.textContent =
+            currentWord.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex =
+                (wordIndex + 1) % typingWords.length;
+
+        }
+
+    }
+
+    setTimeout(
+        typeEffect,
+        deleting ? 45 : 75
+    );
+
+}
+
+typeEffect();
+
+
+/* =========================================================
+   BILLING SWITCH
+========================================================= */
+
+const billingButtons =
+    document.querySelectorAll(".billing-option");
+
+const priceElements =
+    document.querySelectorAll(".plan-price strong");
+
+billingButtons.forEach(button => {
+
+    button.addEventListener("click",() => {
+
+        billingButtons.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const billing =
+            button.dataset.billing;
+
+        priceElements.forEach(price => {
+
+            price.textContent =
+                price.dataset[billing];
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+const faqItems =
+    document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+    const question =
+        item.querySelector(".faq-question");
+
+    const answer =
+        item.querySelector(".faq-answer");
+
+    if(item.classList.contains("active")){
+        answer.style.maxHeight =
+            answer.scrollHeight + "px";
+    }
+
+    question.addEventListener("click",() => {
+
+        const wasActive =
+            item.classList.contains("active");
+
+        faqItems.forEach(other => {
+
+            other.classList.remove("active");
+
+            const otherAnswer =
+                other.querySelector(".faq-answer");
+
+            otherAnswer.style.maxHeight = null;
+
+        });
+
+        if(!wasActive){
+
+            item.classList.add("active");
+
+            answer.style.maxHeight =
+                answer.scrollHeight + "px";
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   COMPARISON SCROLL REVEAL
+========================================================= */
+
+const comparisonRows =
+    document.querySelectorAll(".comparison-row.reveal");
+
+const rowObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    rowObserver.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.15
+        }
+    );
+
+comparisonRows.forEach(row => {
+    rowObserver.observe(row);
+});
+
+
+/* =========================================================
+   THEME
+========================================================= */
+
+const themeControl =
+    document.getElementById("themeControl");
+
+const savedTheme =
+    localStorage.getItem("fundbloom-theme");
+
+if(savedTheme){
+    document.documentElement.dataset.theme =
+        savedTheme;
+}
+
+function updateThemeIcon(){
+
+    const isDark =
+        document.documentElement.dataset.theme === "dark";
+
+    themeControl.innerHTML =
+        `<i data-lucide="${isDark ? "sun" : "moon"}"></i>`;
+
+    lucide.createIcons();
+
+}
+
+updateThemeIcon();
+
+themeControl.addEventListener("click",() => {
+
+    const isDark =
+        document.documentElement.dataset.theme === "dark";
+
+    document.documentElement.dataset.theme =
+        isDark ? "light" : "dark";
+
+    localStorage.setItem(
+        "fundbloom-theme",
+        isDark ? "light" : "dark"
+    );
+
+    updateThemeIcon();
+
+});
+
+
+/* =========================================================
+   SMOOTH PLAN LINKS
+========================================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click",event => {
+
+        const target =
+            document.querySelector(link.getAttribute("href"));
+
+        if(target){
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

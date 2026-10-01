@@ -1,0 +1,2719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FundBloom | School Fundraising Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="how.css">
+<link rel="icon" type="image/png" href="images/l.png">
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+
+<header class="fb-header" id="fbHeader">
+
+    <div class="fb-header-inner">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="fb-brand">
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+                    <span class="fb-brand-primary">Fund</span><span class="fb-brand-secondary">Bloom</span>
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING 
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <!-- DESKTOP NAV -->
+
+        <nav class="fb-main-nav">
+
+
+            <!-- HOME -->
+
+            <div class="fb-home-dropdown">
+
+                <a href="index.html" class="fb-nav-link">
+
+                    Home
+
+                    <i data-lucide="chevron-down"></i>
+
+                </a>
+
+
+                <div class="fb-dropdown">
+
+                    <div class="fb-dropdown-heading">
+                        Explore FundBloom
+                    </div>
+
+
+                    <a href="index.html" class="fb-dropdown-link">
+
+                        <strong>Home 1</strong>
+
+                       
+                    </a>
+
+
+                    <a href="home-2.html" class="fb-dropdown-link">
+
+                        <strong>Home 2</strong>
+
+                      
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- OTHER NAV -->
+
+            <a href="how-it-works.html" class="fb-nav-link">
+                How It Works
+            </a>
+
+            <a href="campaign-templates.html" class="fb-nav-link">
+                Campaign Templates
+            </a>
+
+            <a href="pricing.html" class="fb-nav-link">
+                Pricing
+            </a>
+
+            <a href="contact.html" class="fb-nav-link">
+                Contact
+            </a>
+
+            <a href="dashboard.html" class="fb-nav-link">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <!-- ACTIONS -->
+
+        <div class="fb-header-actions">
+
+
+            <!-- DARK -->
+
+            <button
+                class="fb-control-btn"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
+                title="Dark / Light"
+            >
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+            <!-- RTL -->
+
+            <button
+                class="fb-control-btn"
+                id="rtlToggle"
+                aria-label="Toggle RTL"
+                title="RTL / LTR"
+            >
+
+                <i data-lucide="arrow-left-right"></i>
+
+            </button>
+
+
+            <!-- DESKTOP LOGIN -->
+
+            <a
+                href="login.html"
+                class="fb-login-btn"
+            >
+                Login
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="fb-menu-btn"
+                id="menuToggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         MOBILE MENU
+    ========================================================= -->
+
+    <div class="fb-mobile-menu" id="mobileMenu">
+
+
+        <!-- HOME -->
+
+        <div class="fb-mobile-home">
+
+            <div
+                class="fb-mobile-home-head"
+                id="mobileHomeToggle"
+            >
+
+                <span>Home</span>
+
+                <i data-lucide="chevron-down"></i>
+
+            </div>
+
+
+            <div
+                class="fb-mobile-submenu"
+                id="mobileHomeSubmenu"
+            >
+
+                <a
+                    href="index.html"
+                    class="fb-mobile-sub-link"
+                >
+                    Home 1
+                </a>
+
+                <a
+                    href="home-2.html"
+                    class="fb-mobile-sub-link"
+                >
+                    Home 2
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALL NAV ITEMS -->
+
+        <a
+            href="how-it-works.html"
+            class="fb-mobile-link"
+        >
+            <span>How It Works</span>
+        </a>
+
+
+        <a
+            href="campaign-templates.html"
+            class="fb-mobile-link"
+        >
+            <span>Campaign Templates</span>
+        </a>
+
+
+        <a
+            href="pricing.html"
+            class="fb-mobile-link"
+        >
+            <span>Pricing</span>
+        </a>
+
+
+        <a
+            href="contact.html"
+            class="fb-mobile-link"
+        >
+            <span>Contact</span>
+        </a>
+
+
+        <a
+            href="dashboard.html"
+            class="fb-mobile-link"
+        >
+            <span>Dashboard</span>
+        </a>
+
+
+        <!-- LOGIN ALSO INSIDE MENU -->
+
+        <a
+            href="login.html"
+            class="fb-mobile-login"
+        >
+            Login
+        </a>
+
+    </div>
+
+</header>
+
+
+
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="fb-hero">
+
+<div class="fb-container">
+
+<div class="fb-hero-grid">
+
+
+<div class="fb-hero-copy">
+
+<div class="fb-hero-label">
+
+<i></i>
+
+FUNDRAISING, REIMAGINED
+
+</div>
+
+
+<h1>
+
+Give an idea
+a place to
+<span>grow.</span>
+
+</h1>
+
+
+<p>
+
+Create a focused school campaign, bring your community
+together and turn collective contributions into meaningful
+student impact.
+
+</p>
+
+
+<div class="fb-hero-actions">
+
+<a
+href="#builder"
+class="fb-btn fb-btn-primary"
+>
+
+Build Your Campaign
+
+<i data-lucide="arrow-up-right"></i>
+
+</a>
+
+
+<a
+href="#journey"
+class="fb-btn fb-btn-light"
+>
+
+See How It Works
+
+</a>
+
+</div>
+
+
+<div class="fb-hero-trust">
+
+<div class="fb-trust-item">
+
+<i data-lucide="badge-check"></i>
+
+Verified Campaigns
+
+</div>
+
+
+<div class="fb-trust-item">
+
+<i data-lucide="users"></i>
+
+Active Communities
+
+</div>
+
+
+<div class="fb-trust-item">
+
+<i data-lucide="activity"></i>
+
+Live Progress
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- 3D HERO -->
+
+<div class="fb-hero-stage">
+
+<div class="fb-orbit"></div>
+
+<div class="fb-orbit"></div>
+
+<div class="fb-orbit-dot"></div>
+
+
+<div class="fb-hero-object">
+
+<img
+src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1100&q=90"
+alt="Students working together"
+>
+
+
+<div class="fb-object-content">
+
+<small>
+
+Campaign story
+
+</small>
+
+<h3>
+
+Small contributions.
+Big possibilities.
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="fb-floating-card">
+
+<span>
+
+Community raised
+
+</span>
+
+<strong>
+
+$24.8K
+
+</strong>
+
+<small>
+
+18 active campaigns
+
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     JOURNEY
+====================================================== -->
+
+<section
+class="fb-section fb-journey"
+id="journey"
+>
+
+<div class="fb-container">
+
+
+<div class="fb-section-heading">
+
+<div class="fb-eyebrow">
+
+THE CAMPAIGN JOURNEY
+
+</div>
+
+<h2>
+
+From an idea
+to visible impact.
+
+</h2>
+
+<p>
+
+Six connected stages keep your campaign focused,
+transparent and easy for your community to follow.
+
+</p>
+
+</div>
+
+
+
+<div class="fb-journey-line">
+
+
+<div class="fb-journey-step">
+
+<div class="fb-journey-node"></div>
+
+<div class="fb-journey-card">
+
+<span class="fb-step-label">
+
+01 / DEFINE
+
+</span>
+
+<h3>
+
+Define the Goal
+
+</h3>
+
+<p>
+
+Choose the purpose, audience and measurable outcome
+your campaign is designed to achieve.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-journey-step">
+
+<div class="fb-journey-node"></div>
+
+<div class="fb-journey-card">
+
+<span class="fb-step-label">
+
+02 / BUILD
+
+</span>
+
+<h3>
+
+Build the Campaign
+
+</h3>
+
+<p>
+
+Shape the story, target, visuals and contribution
+structure around your school's goal.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-journey-step">
+
+<div class="fb-journey-node"></div>
+
+<div class="fb-journey-card">
+
+<span class="fb-step-label">
+
+03 / CONNECT
+
+</span>
+
+<h3>
+
+Activate Community
+
+</h3>
+
+<p>
+
+Invite families, alumni, teachers and local supporters
+into a shared purpose.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-journey-step">
+
+<div class="fb-journey-node"></div>
+
+<div class="fb-journey-card">
+
+<span class="fb-step-label">
+
+04 / CONTRIBUTE
+
+</span>
+
+<h3>
+
+Collect Contributions
+
+</h3>
+
+<p>
+
+Make participation simple with clear contribution
+choices and transparent campaign progress.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-journey-step">
+
+<div class="fb-journey-node"></div>
+
+<div class="fb-journey-card">
+
+<span class="fb-step-label">
+
+05 / TRACK
+
+</span>
+
+<h3>
+
+Track Progress
+
+</h3>
+
+<p>
+
+Follow milestones, contribution activity and
+campaign movement in one connected view.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-journey-step">
+
+<div class="fb-journey-node"></div>
+
+<div class="fb-journey-card">
+
+<span class="fb-step-label">
+
+06 / TRANSFORM
+
+</span>
+
+<h3>
+
+Transform the Goal
+
+</h3>
+
+<p>
+
+Turn collective support into the learning,
+experience or community improvement you planned.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     DEFINE GOAL
+====================================================== -->
+
+<section class="fb-section fb-goals">
+
+<div class="fb-container">
+
+
+<div class="fb-section-heading">
+
+<div class="fb-eyebrow">
+
+DEFINE YOUR GOAL
+
+</div>
+
+<h2>
+
+Start with something
+worth building.
+
+</h2>
+
+<p>
+
+Choose a meaningful direction and let the goal
+shape the campaign that follows.
+
+</p>
+
+</div>
+
+
+
+<div class="fb-goal-grid">
+
+
+<div class="fb-goal-card">
+
+<div class="fb-goal-inner">
+
+
+<div class="fb-goal-front">
+
+<img
+src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=90"
+alt="Classroom learning"
+>
+
+<div class="fb-goal-info">
+
+<small>
+
+LEARNING
+
+</small>
+
+<h3>
+
+Classroom Growth
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="fb-goal-back">
+
+<h3>
+
+Create better
+learning spaces.
+
+</h3>
+
+<p>
+
+Support classroom resources, technology,
+learning tools and educational environments.
+
+</p>
+
+<span>
+
+LEARNING FIRST
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-goal-card">
+
+<div class="fb-goal-inner">
+
+
+<div class="fb-goal-front">
+
+<img
+src="images/educa.jpg"
+alt="Students"
+>
+
+<div class="fb-goal-info">
+
+<small>
+
+STUDENT LIFE
+
+</small>
+
+<h3>
+
+Student Experiences
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="fb-goal-back">
+
+<h3>
+
+Make experiences
+possible.
+
+</h3>
+
+<p>
+
+Support activities, trips, sports,
+creative programs and memorable experiences.
+
+</p>
+
+<span>
+
+STUDENT IMPACT
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-goal-card">
+
+<div class="fb-goal-inner">
+
+
+<div class="fb-goal-front">
+
+<img
+src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1000&q=90"
+alt="Community"
+>
+
+<div class="fb-goal-info">
+
+<small>
+
+COMMUNITY
+
+</small>
+
+<h3>
+
+Community Projects
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="fb-goal-back">
+
+<h3>
+
+Build something
+together.
+
+</h3>
+
+<p>
+
+Connect families, schools and local supporters
+around a shared community purpose.
+
+</p>
+
+<span>
+
+SHARED PURPOSE
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     BUILD CAMPAIGN
+====================================================== -->
+
+<section
+class="fb-section fb-builder"
+id="builder"
+>
+
+<div class="fb-container">
+
+
+<div class="fb-section-heading">
+
+<div class="fb-eyebrow">
+
+BUILD YOUR CAMPAIGN
+
+</div>
+
+<h2>
+
+Shape the story
+your community sees.
+
+</h2>
+
+<p>
+
+Select a stage. The visual story and supporting
+content update automatically.
+
+</p>
+
+</div>
+
+
+
+<div class="fb-builder-layout">
+
+
+<!-- OPTIONS -->
+
+<div class="fb-builder-options">
+
+
+<button
+class="fb-builder-option active"
+data-title="Tell Your Story"
+data-number="01"
+data-image="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=90"
+data-description="Introduce the reason behind your campaign with a clear story that helps your community understand the people and purpose behind the goal."
+data-points="Campaign Story|Impact Message|School Vision"
+>
+
+<div class="fb-option-icon">
+
+<i data-lucide="book-open"></i>
+
+</div>
+
+<div>
+
+<strong>Tell Your Story</strong>
+
+<span>Explain the purpose</span>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</button>
+
+
+
+<button
+class="fb-builder-option"
+data-title="Set Your Target"
+data-number="02"
+data-image="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=90"
+data-description="Give your community a clear destination by defining the target, milestones and outcome your campaign is working toward."
+data-points="Target Amount|Milestones|Clear Outcome"
+>
+
+<div class="fb-option-icon">
+
+<i data-lucide="target"></i>
+
+</div>
+
+<div>
+
+<strong>Set Your Target</strong>
+
+<span>Define the destination</span>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</button>
+
+
+
+<button
+class="fb-builder-option"
+data-title="Contributions"
+data-number="03"
+data-image="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=90"
+data-description="Create accessible ways for different supporters to participate while keeping the campaign contribution structure easy to understand."
+data-points="Flexible Giving|Suggested Amounts|Simple Participation"
+>
+
+<div class="fb-option-icon">
+
+<i data-lucide="hand-coins"></i>
+
+</div>
+
+<div>
+
+<strong>Choose Contributions</strong>
+
+<span>Make giving accessible</span>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</button>
+
+
+
+<button
+class="fb-builder-option"
+data-title="Add Milestones"
+data-number="04"
+data-image="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=90"
+data-description="Break the larger goal into visible milestones so supporters can understand how progress builds over time."
+data-points="Mini Goals|Progress Markers|Visible Wins"
+>
+
+<div class="fb-option-icon">
+
+<i data-lucide="milestone"></i>
+
+</div>
+
+<div>
+
+<strong>Add Milestones</strong>
+
+<span>Make progress visible</span>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</button>
+
+
+
+<button
+class="fb-builder-option"
+data-title=" Community"
+data-number="05"
+data-image="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=90"
+data-description="Publish the campaign and connect the story with families, alumni, teachers and local supporters."
+data-points="Families|Alumni|Local Supporters"
+>
+
+<div class="fb-option-icon">
+
+<i data-lucide="send"></i>
+
+</div>
+
+<div>
+
+<strong>Launch to Community</strong>
+
+<span>Activate your network</span>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</button>
+
+
+</div>
+
+
+
+<!-- PREVIEW -->
+
+<div class="fb-builder-preview">
+
+
+<div class="fb-builder-image">
+
+<img
+id="builderImage"
+src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=90"
+alt="Campaign builder"
+>
+
+</div>
+
+
+<div class="fb-builder-content">
+
+<div
+class="fb-builder-number"
+id="builderNumber"
+>
+
+01 / CAMPAIGN
+
+</div>
+
+
+<h3
+id="builderTitle"
+>
+
+Tell Your Story
+
+</h3>
+
+
+<p
+id="builderDescription"
+>
+
+Introduce the reason behind your campaign with a clear
+story that helps your community understand the people
+and purpose behind the goal.
+
+</p>
+
+
+<div
+class="fb-builder-list"
+id="builderList"
+>
+
+<div class="fb-builder-list-item">
+
+<i data-lucide="check-circle-2"></i>
+
+Campaign Story
+
+</div>
+
+<div class="fb-builder-list-item">
+
+<i data-lucide="check-circle-2"></i>
+
+Impact Message
+
+</div>
+
+<div class="fb-builder-list-item">
+
+<i data-lucide="check-circle-2"></i>
+
+School Vision
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     ACTIVE COMMUNITY
+====================================================== -->
+
+<section class="fb-section">
+
+<div class="fb-container">
+
+
+<div class="fb-section-heading">
+
+<div class="fb-eyebrow">
+
+ACTIVE COMMUNITY
+
+</div>
+
+<h2>
+
+A campaign grows
+through connection.
+
+</h2>
+
+<p>
+
+Build momentum by keeping the people behind
+your campaign connected to the story.
+
+</p>
+
+</div>
+
+
+
+<div class="fb-community-grid">
+
+
+<div class="fb-community-image">
+
+<img
+src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1500&q=90"
+alt="Community collaboration"
+>
+
+<div class="fb-community-copy">
+
+<small>
+
+ACTIVE COMMUNITY
+
+</small>
+
+<h3>
+
+Bring more people
+into the story.
+
+</h3>
+
+<p>
+
+Share milestones, celebrate progress and make
+supporters feel connected to the outcome.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-community-data">
+
+
+<div class="fb-data-card">
+
+<div class="fb-data-icon">
+
+<i data-lucide="users-round"></i>
+
+</div>
+
+<strong>
+
+1,284
+
+</strong>
+
+<span>
+
+Active community supporters
+
+</span>
+
+</div>
+
+
+<div class="fb-data-card">
+
+<div class="fb-data-icon">
+
+<i data-lucide="message-circle"></i>
+
+</div>
+
+<strong>
+
+86%
+
+</strong>
+
+<span>
+
+Campaign update engagement
+
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     TRACK & TRANSFORM
+====================================================== -->
+
+<section
+class="fb-section fb-track-section"
+>
+
+<div class="fb-container">
+
+
+<div class="fb-section-heading">
+
+<div class="fb-eyebrow">
+
+TRACK & TRANSFORM
+
+</div>
+
+<h2>
+
+Make every contribution
+part of the journey.
+
+</h2>
+
+<p>
+
+Connect contributions, milestones and outcomes
+through one visible progress track.
+
+</p>
+
+</div>
+
+
+
+<div class="fb-track-wrapper">
+
+
+<div class="fb-track-top">
+
+<div>
+
+<h3>
+
+New Learning Lab
+
+</h3>
+
+<p>
+
+A campaign creating a flexible learning environment
+for students and teachers.
+
+</p>
+
+</div>
+
+
+<div class="fb-track-total">
+
+<strong>
+
+$36,200
+
+</strong>
+
+<span>
+
+of $50,000 goal
+
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-progress">
+
+<div class="fb-progress-fill"></div>
+
+</div>
+
+
+
+<div class="fb-progress-points">
+
+<div class="fb-progress-point">
+
+<strong>
+
+25%
+
+</strong>
+
+Materials
+
+</div>
+
+<div class="fb-progress-point">
+
+<strong>
+
+50%
+
+</strong>
+
+Technology
+
+</div>
+
+<div class="fb-progress-point">
+
+<strong>
+
+75%
+
+</strong>
+
+Furniture
+
+</div>
+
+<div class="fb-progress-point">
+
+<strong>
+
+100%
+
+</strong>
+
+Launch
+
+</div>
+
+</div>
+
+
+
+<div class="fb-contribution-grid">
+
+
+<div class="fb-contribution">
+
+<div class="fb-contribution-top">
+
+<div class="fb-contribution-icon">
+
+<i data-lucide="heart-handshake"></i>
+
+</div>
+
+<small>
+
+COMMUNITY
+
+</small>
+
+</div>
+
+<div>
+
+<h4>
+
+248
+
+</h4>
+
+<p>
+
+Individual supporters contributing
+to the campaign.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-contribution">
+
+<div class="fb-contribution-top">
+
+<div class="fb-contribution-icon">
+
+<i data-lucide="layers-3"></i>
+
+</div>
+
+<small>
+
+MILESTONES
+
+</small>
+
+</div>
+
+<div>
+
+<h4>
+
+3 / 4
+
+</h4>
+
+<p>
+
+Campaign milestones currently
+moving toward completion.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fb-contribution">
+
+<div class="fb-contribution-top">
+
+<div class="fb-contribution-icon">
+
+<i data-lucide="sparkles"></i>
+
+</div>
+
+<small>
+
+IMPACT
+
+</small>
+
+</div>
+
+<div>
+
+<h4>
+
+72%
+
+</h4>
+
+<p>
+
+Current movement toward
+the campaign goal.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="fb-final">
+
+<div class="fb-final-box">
+
+<div class="fb-final-content">
+
+<div class="fb-eyebrow">
+
+READY TO BUILD
+
+</div>
+
+<h2>
+
+Give your next idea
+somewhere to grow.
+
+</h2>
+
+<p>
+
+Start with the goal. Shape the story.
+Bring your community with you.
+
+</p>
+
+<a
+href="#builder"
+class="fb-btn"
+>
+
+Start Building
+
+<i data-lucide="arrow-up-right"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<script>
+
+/* =========================================================
+   LUCIDE
+========================================================= */
+
+lucide.createIcons();
+
+
+
+
+
+/* =========================================================
+   AUTOMATIC FLIP-FLOP
+========================================================= */
+
+const goalCards =
+document.querySelectorAll(
+    ".fb-goal-card"
+);
+
+let flipIndex = 0;
+
+function autoFlip(){
+
+    goalCards.forEach(card => {
+
+        card.classList.remove("auto");
+
+    });
+
+    goalCards[
+        flipIndex
+    ].classList.add("auto");
+
+    flipIndex++;
+
+    if(
+        flipIndex >=
+        goalCards.length
+    ){
+
+        flipIndex = 0;
+
+    }
+
+}
+
+setTimeout(autoFlip,1800);
+
+setInterval(
+    autoFlip,
+    4200
+);
+
+
+/* =========================================================
+   CAMPAIGN BUILDER
+========================================================= */
+
+const builderOptions =
+document.querySelectorAll(
+    ".fb-builder-option"
+);
+
+const builderImage =
+document.getElementById(
+    "builderImage"
+);
+
+const builderTitle =
+document.getElementById(
+    "builderTitle"
+);
+
+const builderNumber =
+document.getElementById(
+    "builderNumber"
+);
+
+const builderDescription =
+document.getElementById(
+    "builderDescription"
+);
+
+const builderList =
+document.getElementById(
+    "builderList"
+);
+
+
+builderOptions.forEach(option => {
+
+    option.addEventListener(
+        "click",
+        () => {
+
+            builderOptions
+                .forEach(item =>
+                    item.classList
+                        .remove("active")
+                );
+
+            option.classList
+                .add("active");
+
+
+            const title =
+                option.dataset.title;
+
+            const number =
+                option.dataset.number;
+
+            const image =
+                option.dataset.image;
+
+            const description =
+                option.dataset.description;
+
+            const points =
+                option.dataset.points
+                    .split("|");
+
+
+            builderImage
+                .classList
+                .add("switching");
+
+
+            setTimeout(() => {
+
+                builderImage.src =
+                    image;
+
+                builderTitle.textContent =
+                    title;
+
+                builderNumber.textContent =
+                    `${number} / CAMPAIGN`;
+
+                builderDescription
+                    .textContent =
+                    description;
+
+
+                builderList.innerHTML =
+                    points.map(
+                        point => {
+
+                            return `
+
+                            <div
+                            class="fb-builder-list-item"
+                            >
+
+                            <i
+                            data-lucide="check-circle-2"
+                            ></i>
+
+                            ${point}
+
+                            </div>
+
+                            `;
+
+                        }
+                    ).join("");
+
+
+                builderImage
+                    .classList
+                    .remove("switching");
+
+                lucide.createIcons();
+
+            },300);
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+document
+.querySelectorAll("img")
+.forEach(img => {
+
+    img.addEventListener(
+        "error",
+        () => {
+
+            img.style.background =
+                `
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                )
+                `;
+
+        }
+    );
+
+});
+
+</script>
+
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="fb-footer">
+
+    <div class="fb-footer-inner">
+
+
+        <div class="fb-footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="fb-footer-brand">
+
+   <a href="index.html" class="fb-brand">
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+                    <span class="fb-brand-primary">Fund</span><span class="fb-brand-secondary">Bloom</span>
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING 
+                </span>
+
+            </span>
+
+        </a>
+
+
+                <p class="fb-footer-description">
+
+                    FundBloom brings schools, PTAs, families and
+                    supporters together through simple, engaging
+                    and community-powered fundraising.
+
+                </p>
+
+
+                <span class="fb-footer-badge">
+
+                    SCHOOL • COMMUNITY • IMPACT
+
+                </span>
+
+
+                <div class="fb-socials">
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="Facebook"
+                    >
+                     <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="Instagram"
+                    >
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="YouTube"
+                    >
+                             <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="LinkedIn"
+                    >
+                         <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLORE -->
+
+            <div class="fb-footer-column">
+
+                <h3>Explore</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    
+
+                    <a href="how-it-works.html">
+                        How It Works
+                    </a>
+
+                    <a href="campaign-templates.html">
+                        Campaign Templates
+                    </a>
+
+                    <a href="pricing.html">
+                        Pricing
+                    </a>
+<a href="contact.html">
+                       Contact
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- PLATFORM -->
+
+            <div class="fb-footer-column">
+
+                <h3>Platform</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                    <a href="login.html">
+                        Coordinator Login
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="#">
+                        Start a Campaign
+                    </a>
+
+                    <a href="#">
+                        Fundraising Ideas
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCHOOL -->
+
+            <div class="fb-footer-column">
+
+                <h3>For Schools</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="#">
+                        PTA Events
+                    </a>
+
+                    <a href="#">
+                        School Campaigns
+                    </a>
+
+                    <a href="#">
+                        Community Giving
+                    </a>
+
+                    <a href="#">
+                        Coordinator Resources
+                    </a>
+
+                    <a href="#">
+                        Support Center
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWSLETTER -->
+<div class="fb-footer-column">
+
+    <h3>For Contact</h3>
+
+    <div class="fb-footer-contact-links">
+
+        <a href="tel:6361199543" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                <i data-lucide="phone"></i>
+            </span>
+            <span>999999543</span>
+        </a>
+
+        <a href="mailto:fundblom@gmail.com" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                <i data-lucide="mail"></i>
+            </span>
+            <span>fundblom@gmail.com</span>
+        </a>
+
+        <a href="#" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                     <i class="fa-brands fa-facebook-f"></i>
+            </span>
+            <span>fundfacebook.com</span>
+        </a>
+
+        <a href="#" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                      <i class="fa-brands fa-instagram"></i>
+            </span>
+            <span>fundInstagram.com</span>
+        </a>
+
+      
+
+    </div>
+
+</div>
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="fb-footer-bottom">
+
+
+            <p class="fb-copyright">
+
+                © <span id="currentYear"></span>
+                FundBloom. All rights reserved.
+
+            </p>
+
+
+            <div class="fb-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    /* =========================================================
+       INITIALIZE LUCIDE
+    ========================================================= */
+
+    lucide.createIcons();
+
+
+    /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
+
+    const header = document.getElementById("fbHeader");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 15) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+    /* =========================================================
+       DARK / LIGHT MODE
+    ========================================================= */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const savedTheme =
+        localStorage.getItem("fundBloomTheme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-theme");
+
+    }
+
+
+    function updateThemeIcon() {
+
+        themeToggle.innerHTML =
+            document.body.classList.contains("dark-theme")
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+
+        lucide.createIcons();
+
+    }
+
+
+    updateThemeIcon();
+
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-theme");
+
+        const dark =
+            document.body.classList.contains("dark-theme");
+
+        localStorage.setItem(
+            "fundBloomTheme",
+            dark ? "dark" : "light"
+        );
+
+        updateThemeIcon();
+
+    });
+
+
+    /* =========================================================
+       RTL / LTR
+    ========================================================= */
+
+    const rtlToggle =
+        document.getElementById("rtlToggle");
+
+    const savedDirection =
+        localStorage.getItem("fundBloomDirection");
+
+    if (savedDirection === "rtl") {
+
+        document.documentElement.dir = "rtl";
+
+    } else {
+
+        document.documentElement.dir = "ltr";
+
+    }
+
+
+    rtlToggle.addEventListener("click", () => {
+
+        const isRTL =
+            document.documentElement.dir === "rtl";
+
+        document.documentElement.dir =
+            isRTL ? "ltr" : "rtl";
+
+        localStorage.setItem(
+            "fundBloomDirection",
+            isRTL ? "ltr" : "rtl"
+        );
+
+    });
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+
+    menuToggle.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("active");
+
+        const opened =
+            mobileMenu.classList.contains("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            opened
+        );
+
+        menuToggle.innerHTML =
+            opened
+                ? '<i data-lucide="x"></i>'
+                : '<i data-lucide="menu"></i>';
+
+        lucide.createIcons();
+
+    });
+
+
+    /* =========================================================
+       MOBILE HOME DROPDOWN
+    ========================================================= */
+
+    const mobileHomeToggle =
+        document.getElementById("mobileHomeToggle");
+
+    const mobileHomeSubmenu =
+        document.getElementById("mobileHomeSubmenu");
+
+
+    mobileHomeToggle.addEventListener("click", () => {
+
+        mobileHomeSubmenu.classList.toggle("active");
+
+        mobileHomeToggle.classList.toggle("open");
+
+    });
+
+
+    /* =========================================================
+       CLOSE MOBILE MENU AFTER NAVIGATION
+    ========================================================= */
+
+    document
+        .querySelectorAll(".fb-mobile-link, .fb-mobile-sub-link, .fb-mobile-login")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.innerHTML =
+                    '<i data-lucide="menu"></i>';
+
+                lucide.createIcons();
+
+            });
+
+        });
+
+
+    /* =========================================================
+       ESCAPE CLOSE
+    ========================================================= */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            mobileMenu.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.innerHTML =
+                '<i data-lucide="menu"></i>';
+
+            lucide.createIcons();
+
+        }
+
+    });
+
+
+    /* =========================================================
+       NEWSLETTER
+    ========================================================= */
+
+    const newsletterForm =
+        document.getElementById("newsletterForm");
+
+
+    newsletterForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("newsletterEmail");
+
+        if (!email.value.trim()) {
+            return;
+        }
+
+        email.value = "";
+
+        alert(
+            "Thank you! You are now subscribed to FundBloom."
+        );
+
+    });
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+
+    /* =========================================================
+       RE-INITIALIZE ICONS
+    ========================================================= */
+
+    lucide.createIcons();
+
+</script>
+<script>
+/* =========================================================
+   FUNDBLOOM
+   UNIVERSAL CURRENT PAGE ACTIVE SYSTEM
+   Works for:
+   - Header navigation
+   - Dropdown navigation
+   - Dashboard sidebar
+   - Mobile navigation
+   - RTL
+   - Dark mode
+   - index.html
+   - Query strings
+   - Hash links
+========================================================= */
+
+(function () {
+
+    "use strict";
+
+
+    function normalizePath(url) {
+
+        try {
+
+            const parsed =
+                new URL(
+                    url,
+                    window.location.origin
+                );
+
+            let path =
+                parsed.pathname
+                    .replace(/\\/g, "/")
+                    .replace(/\/+/g, "/");
+
+            /*
+             * Remove final slash
+             */
+            if (
+                path.length > 1 &&
+                path.endsWith("/")
+            ) {
+                path =
+                    path.slice(
+                        0,
+                        -1
+                    );
+            }
+
+            /*
+             * Convert root to index.html
+             */
+            if (
+                path === "" ||
+                path === "/"
+            ) {
+                return "index.html";
+            }
+
+            /*
+             * Get filename only
+             */
+            return path
+                .split("/")
+                .pop()
+                .toLowerCase();
+
+        }
+
+        catch (error) {
+
+            return "";
+
+        }
+
+    }
+
+
+    function setActivePage() {
+
+        const currentPage =
+            normalizePath(
+                window.location.href
+            );
+
+
+        /*
+         * IMPORTANT:
+         * Search all navigation links.
+         *
+         * This means the same code works
+         * for header + sidebar + mobile menu.
+         */
+
+        const links =
+            document.querySelectorAll(
+                "a[href]"
+            );
+
+
+        links.forEach(function (link) {
+
+            /*
+             * Remove previous state
+             */
+            link.classList.remove(
+                "active"
+            );
+
+            link.removeAttribute(
+                "aria-current"
+            );
+
+
+            const href =
+                link.getAttribute(
+                    "href"
+                );
+
+
+            if (!href) {
+                return;
+            }
+
+
+            const cleanHref =
+                href.trim();
+
+
+            /*
+             * Ignore:
+             * # links
+             * javascript links
+             * mail links
+             * telephone links
+             * external websites
+             */
+
+            if (
+                cleanHref === "#" ||
+                cleanHref.startsWith("#") ||
+                cleanHref.startsWith(
+                    "javascript:"
+                ) ||
+                cleanHref.startsWith(
+                    "mailto:"
+                ) ||
+                cleanHref.startsWith(
+                    "tel:"
+                )
+            ) {
+                return;
+            }
+
+
+            /*
+             * External URL?
+             */
+            let targetURL;
+
+            try {
+
+                targetURL =
+                    new URL(
+                        cleanHref,
+                        window.location.href
+                    );
+
+            }
+
+            catch (error) {
+
+                return;
+
+            }
+
+
+            /*
+             * Don't activate external websites
+             */
+            if (
+                targetURL.origin !==
+                window.location.origin
+            ) {
+                return;
+            }
+
+
+            const targetPage =
+                normalizePath(
+                    targetURL.href
+                );
+
+
+            /*
+             * Exact page match
+             */
+
+            if (
+                targetPage ===
+                currentPage
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+            }
+
+        });
+
+
+        /*
+         * Special case:
+         * Root URL / should activate index.html
+         */
+
+        if (
+            currentPage ===
+            "index.html"
+        ) {
+
+            links.forEach(function (link) {
+
+                const href =
+                    link.getAttribute(
+                        "href"
+                    );
+
+                if (!href) return;
+
+
+                const targetPage =
+                    normalizePath(
+                        href
+                    );
+
+
+                if (
+                    targetPage ===
+                    "index.html"
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                    link.setAttribute(
+                        "aria-current",
+                        "page"
+                    );
+
+                }
+
+            });
+
+        }
+
+    }
+
+
+    /*
+     * Run after the entire document
+     * has loaded.
+     */
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            setActivePage
+        );
+
+    }
+    else {
+
+        setActivePage();
+
+    }
+
+
+})();
+</script>
+</body>
+</html>

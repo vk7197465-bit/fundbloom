@@ -1,0 +1,4100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>FundBloom | School Fundraising</title>
+
+<link rel="icon" href="images/l.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+/* =========================================================
+   FUNDBLOOM HOME 2
+   PREMIUM COMMUNITY EXPERIENCE
+========================================================= */
+
+:root{
+
+    --primary:#5B5CE2;
+    --secondary:#F4A261;
+
+    --bg:#F7F8FC;
+    --surface:#FFFFFF;
+    --surface-soft:#F1F2FA;
+
+    --text:#17182A;
+    --text-soft:#66697C;
+    --text-muted:#9295A7;
+
+    --border:#E4E5EF;
+
+    --primary-soft:#EEEEFF;
+    --secondary-soft:#FFF1E6;
+
+    --success:#42A77A;
+
+    --radius-sm:12px;
+    --radius-md:20px;
+    --radius-lg:30px;
+    --radius-xl:42px;
+
+    --shadow-sm:
+        0 10px 30px rgba(32,34,70,.07);
+
+    --shadow:
+        0 25px 70px rgba(32,34,70,.10);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    width:100%;
+
+    font-family:"DM Sans",sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+button{
+    border:0;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.fb-section{
+
+    width:100%;
+
+    position:relative;
+
+    padding:
+        110px
+        7vw;
+}
+
+.fb-container{
+
+    width:min(1180px,100%);
+
+    margin:auto;
+}
+
+.fb-heading{
+
+    max-width:760px;
+
+    margin:
+        0 auto
+        65px;
+
+    text-align:center;
+}
+
+.fb-eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:13px;
+
+    color:var(--primary);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.fb-eyebrow::before,
+.fb-eyebrow::after{
+
+    content:"";
+
+    width:26px;
+
+    height:1px;
+
+    background:currentColor;
+}
+
+.fb-heading h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(35px,4.5vw,58px);
+
+    line-height:1.04;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:17px;
+}
+
+.fb-heading h2 span{
+    color:var(--primary);
+}
+
+.fb-heading p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--text-soft);
+
+    font-size:15px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.fb-btn{
+
+    min-height:46px;
+
+    padding:
+        0 21px;
+
+    border-radius:13px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.fb-btn:hover{
+    transform:translateY(-3px);
+}
+
+.fb-btn-primary{
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #7778E8
+        );
+
+    box-shadow:
+        0 14px 28px
+        rgba(91,92,226,.22);
+}
+
+.fb-btn-secondary{
+
+    color:var(--text);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.fb-hero{
+
+    min-height:760px;
+
+    padding:
+        70px
+        7vw
+        80px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(91,92,226,.15),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(244,162,97,.16),
+            transparent 30%
+        ),
+
+        var(--bg);
+}
+
+.fb-hero-grid{
+
+    width:min(1180px,100%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        .95fr
+        1.05fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.fb-hero-copy{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.fb-hero-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:
+        8px
+        12px;
+
+    border-radius:30px;
+
+    color:var(--primary);
+
+    background:var(--primary-soft);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    margin-bottom:22px;
+}
+
+.fb-hero-copy h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(47px,6vw,78px);
+
+    line-height:.98;
+
+    letter-spacing:-3px;
+
+    margin-bottom:23px;
+}
+
+.fb-hero-copy h1 span{
+    color:var(--primary);
+}
+
+.fb-hero-copy p{
+
+    max-width:540px;
+
+    color:var(--text-soft);
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+.fb-hero-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+
+
+/* HERO VISUAL */
+
+.fb-community-visual{
+
+    min-height:500px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.fb-orbit{
+
+    width:410px;
+
+    height:410px;
+
+    border:
+        1px solid
+        rgba(91,92,226,.16);
+
+    border-radius:50%;
+
+    position:absolute;
+
+    animation:
+        fbOrbit 18s linear infinite;
+}
+
+.fb-orbit::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    top:38px;
+
+    left:70px;
+
+    box-shadow:
+        0 0 0 7px
+        rgba(244,162,97,.10);
+}
+
+.fb-orbit-two{
+
+    width:300px;
+
+    height:300px;
+
+    border-color:
+        rgba(244,162,97,.20);
+
+    animation-duration:13s;
+
+    animation-direction:reverse;
+}
+
+.fb-community-center{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            var(--primary),
+            #8586EC
+        );
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    box-shadow:
+        0 30px 70px
+        rgba(91,92,226,.28);
+
+    position:relative;
+
+    z-index:3;
+}
+
+.fb-community-center i{
+    width:38px;
+    height:38px;
+    margin-bottom:10px;
+}
+
+.fb-community-center strong{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:29px;
+}
+
+.fb-community-center span{
+
+    font-size:10px;
+
+    opacity:.82;
+
+    letter-spacing:1px;
+}
+
+.fb-floating-card{
+
+    position:absolute;
+
+    padding:15px 17px;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    box-shadow:var(--shadow-sm);
+
+    z-index:5;
+
+    animation:
+        fbFloat 4s ease-in-out infinite;
+}
+
+.fb-floating-card strong{
+
+    display:block;
+
+    font-size:17px;
+
+    margin-bottom:3px;
+}
+
+.fb-floating-card span{
+
+    color:var(--text-muted);
+
+    font-size:9px;
+}
+
+.fb-floating-card.one{
+    top:65px;
+    left:8%;
+}
+
+.fb-floating-card.two{
+    right:0;
+    top:170px;
+    animation-delay:1s;
+}
+
+.fb-floating-card.three{
+    bottom:45px;
+    left:8%;
+    animation-delay:2s;
+}
+
+@keyframes fbOrbit{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes fbFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+
+/* =========================================================
+   COMMUNITY PULSE
+========================================================= */
+
+.fb-pulse{
+    background:var(--surface);
+}
+
+.fb-pulse-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.fb-pulse-card{
+
+    min-height:190px;
+
+    padding:25px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:23px;
+
+    background:var(--surface);
+
+    box-shadow:var(--shadow-sm);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease;
+}
+
+.fb-pulse-card:hover{
+    transform:translateY(-7px);
+}
+
+.fb-pulse-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:var(--primary-soft);
+
+    right:-35px;
+
+    bottom:-35px;
+}
+
+.fb-pulse-icon{
+
+    width:43px;
+
+    height:43px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:13px;
+
+    color:var(--primary);
+
+    background:var(--primary-soft);
+
+    margin-bottom:22px;
+}
+
+.fb-pulse-card:nth-child(even)
+.fb-pulse-icon{
+
+    color:#D57A32;
+
+    background:var(--secondary-soft);
+}
+
+.fb-pulse-card strong{
+
+    display:block;
+
+    font-size:29px;
+
+    margin-bottom:4px;
+}
+
+.fb-pulse-card span{
+
+    color:var(--text-soft);
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   IDEA TO IMPACT
+========================================================= */
+
+.fb-journey{
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--bg),
+            #F1F2FA
+        );
+}
+
+.fb-journey-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+.fb-journey-row{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    min-height:350px;
+
+    overflow:hidden;
+
+    border-radius:32px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+}
+
+.fb-journey-row:nth-child(even){
+
+    direction:rtl;
+}
+
+.fb-journey-image{
+
+    min-height:350px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.fb-journey-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .7s ease;
+}
+
+.fb-journey-row:hover
+.fb-journey-image img{
+
+    transform:scale(1.04);
+}
+
+.fb-journey-content{
+
+    padding:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    direction:ltr;
+}
+
+.fb-step{
+
+    color:var(--secondary);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+}
+
+.fb-journey-content h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:35px;
+
+    margin-bottom:13px;
+}
+
+.fb-journey-content p{
+
+    color:var(--text-soft);
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    max-width:470px;
+
+    margin-bottom:20px;
+}
+
+.fb-mini-link{
+
+    color:var(--primary);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+}
+
+
+/* =========================================================
+   CAMPAIGN BUILDER
+========================================================= */
+
+.fb-builder{
+
+    background:var(--surface);
+}
+
+.fb-builder-shell{
+
+    display:grid;
+
+    grid-template-columns:
+        .72fr
+        1.28fr;
+
+    gap:20px;
+
+    padding:20px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:35px;
+
+    background:var(--surface-soft);
+
+    box-shadow:var(--shadow);
+}
+
+.fb-builder-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.fb-builder-option{
+
+    padding:17px;
+
+    border-radius:15px;
+
+    border:1px solid transparent;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    color:var(--text);
+
+    transition:.25s ease;
+}
+
+.fb-builder-option.active,
+.fb-builder-option:hover{
+
+    background:var(--surface);
+
+    border-color:var(--border);
+
+    box-shadow:var(--shadow-sm);
+}
+
+.fb-builder-option strong{
+
+    display:block;
+
+    font-size:13px;
+
+    margin-bottom:5px;
+}
+
+.fb-builder-option span{
+
+    font-size:10px;
+
+    color:var(--text-muted);
+}
+
+.fb-builder-preview{
+
+    min-height:400px;
+
+    padding:34px;
+
+    border-radius:28px;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(244,162,97,.25),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #5B5CE2,
+            #7778E8
+        );
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.fb-builder-preview::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    border:1px solid
+        rgba(255,255,255,.18);
+
+    border-radius:50%;
+
+    right:-90px;
+
+    bottom:-100px;
+}
+
+.fb-builder-label{
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    opacity:.7;
+
+    margin-bottom:30px;
+}
+
+.fb-builder-preview h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:37px;
+
+    max-width:460px;
+
+    margin-bottom:15px;
+}
+
+.fb-builder-preview p{
+
+    max-width:480px;
+
+    color:rgba(255,255,255,.78);
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+.fb-builder-progress{
+
+    width:100%;
+
+    max-width:480px;
+
+    height:8px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.18);
+
+    overflow:hidden;
+}
+
+.fb-builder-progress span{
+
+    display:block;
+
+    width:68%;
+
+    height:100%;
+
+    border-radius:inherit;
+
+    background:var(--secondary);
+}
+
+
+/* =========================================================
+   PTA EVENTS — AUTO FLIP CARDS
+========================================================= */
+
+.fb-events{
+
+    background:var(--bg);
+
+    overflow:hidden;
+}
+
+.fb-event-track{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.fb-flip{
+
+    height:370px;
+
+    perspective:1000px;
+
+    cursor:pointer;
+}
+
+.fb-flip-inner{
+
+    width:100%;
+
+    height:100%;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.fb-flip:hover
+.fb-flip-inner{
+
+    transform:rotateY(180deg);
+}
+
+.fb-flip-front,
+.fb-flip-back{
+
+    position:absolute;
+
+    inset:0;
+
+    backface-visibility:hidden;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+}
+
+.fb-flip-front{
+
+    background:var(--surface);
+}
+
+.fb-flip-front img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+}
+
+.fb-event-info{
+
+    padding:19px;
+}
+
+.fb-event-info small{
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+}
+
+.fb-event-info h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:23px;
+
+    margin-top:7px;
+}
+
+.fb-flip-back{
+
+    transform:rotateY(180deg);
+
+    padding:30px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            #8182EC
+        );
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.fb-flip-back h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:30px;
+
+    margin-bottom:14px;
+}
+
+.fb-flip-back p{
+
+    color:rgba(255,255,255,.8);
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-bottom:22px;
+}
+
+
+/* =========================================================
+   VOLUNTEER WALL
+========================================================= */
+
+.fb-volunteers{
+
+    background:var(--surface);
+}
+
+.fb-volunteer-wall{
+
+    display:grid;
+
+    grid-template-columns:
+        1.2fr .8fr .8fr;
+
+    grid-auto-rows:170px;
+
+    gap:15px;
+}
+
+.fb-volunteer-card{
+
+    border-radius:25px;
+
+    padding:25px;
+
+    background:var(--surface-soft);
+
+    border:1px solid var(--border);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.fb-volunteer-card.large{
+
+    grid-row:span 2;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            #8586EC
+        );
+
+    color:#fff;
+}
+
+.fb-volunteer-card.orange{
+
+    background:var(--secondary-soft);
+}
+
+.fb-volunteer-card i{
+
+    width:35px;
+
+    height:35px;
+
+    margin-bottom:17px;
+}
+
+.fb-volunteer-card strong{
+
+    display:block;
+
+    font-size:20px;
+
+    margin-bottom:7px;
+}
+
+.fb-volunteer-card span{
+
+    color:var(--text-soft);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+.fb-volunteer-card.large span{
+    color:rgba(255,255,255,.75);
+}
+
+
+/* =========================================================
+   CAMPAIGN TEMPLATES
+========================================================= */
+
+.fb-templates{
+
+    background:
+        linear-gradient(
+            180deg,
+            #F1F2FA,
+            var(--bg)
+        );
+}
+
+.fb-template-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+}
+
+.fb-template{
+
+    min-height:245px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+    box-shadow:var(--shadow-sm);
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.fb-template:hover{
+
+    transform:
+        translateY(-8px)
+        rotate(-1deg);
+
+    border-color:
+        rgba(91,92,226,.35);
+}
+
+.fb-template-number{
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.fb-template-icon{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:17px;
+
+    background:var(--primary-soft);
+
+    color:var(--primary);
+
+    margin:
+        35px
+        0
+        22px;
+}
+
+.fb-template:nth-child(even)
+.fb-template-icon{
+
+    background:var(--secondary-soft);
+
+    color:#D57A32;
+}
+
+.fb-template h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+}
+
+.fb-template p{
+
+    color:var(--text-soft);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   IMPACT STORIES
+========================================================= */
+
+.fb-stories{
+
+    background:var(--surface);
+}
+
+.fb-story-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        1.3fr .7fr;
+
+    gap:20px;
+}
+
+.fb-story-main{
+
+    min-height:470px;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.fb-story-main img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+.fb-story-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    padding:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(10,11,25,.82)
+        );
+
+    color:#fff;
+}
+
+.fb-story-overlay small{
+
+    color:var(--secondary);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:9px;
+}
+
+.fb-story-overlay h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:35px;
+
+    max-width:600px;
+
+    margin-bottom:8px;
+}
+
+.fb-story-overlay p{
+
+    max-width:580px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+.fb-story-side{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.fb-story-stat{
+
+    flex:1;
+
+    padding:27px;
+
+    border-radius:25px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface-soft);
+
+}
+
+.fb-story-stat strong{
+
+    display:block;
+
+    color:var(--primary);
+
+    font-size:36px;
+
+    margin-bottom:4px;
+}
+
+.fb-story-stat span{
+
+    color:var(--text-soft);
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   COORDINATOR DASHBOARD PREVIEW
+========================================================= */
+
+.fb-dashboard-preview{
+
+    background:
+        linear-gradient(
+            135deg,
+            #15162A,
+            #20234B
+        );
+
+    color:#fff;
+}
+
+.fb-dashboard-shell{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    background:#202238;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 35px 90px
+        rgba(20,22,50,.25);
+}
+
+.fb-dashboard-top{
+
+    height:65px;
+
+    padding:
+        0 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.fb-dashboard-top strong{
+    font-size:13px;
+}
+
+.fb-dashboard-top span{
+
+    padding:7px 10px;
+
+    border-radius:9px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    color:#AEB0C3;
+
+    font-size:9px;
+}
+
+.fb-dashboard-content{
+
+    padding:25px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:14px;
+}
+
+.fb-dashboard-card{
+
+    min-height:135px;
+
+    padding:20px;
+
+    border-radius:19px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.fb-dashboard-card small{
+
+    color:#AEB0C3;
+
+    font-size:9px;
+}
+
+.fb-dashboard-card strong{
+
+    display:block;
+
+    font-size:27px;
+
+    margin-top:18px;
+}
+
+.fb-progress-card{
+
+    grid-column:
+        span 2;
+}
+
+.fb-progress{
+
+    height:7px;
+
+    border-radius:20px;
+
+    margin-top:18px;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+.fb-progress span{
+
+    display:block;
+
+    width:76%;
+
+    height:100%;
+
+    border-radius:inherit;
+
+    background:var(--secondary);
+}
+
+
+/* =========================================================
+   WHY FUNDBLOOM
+========================================================= */
+
+.fb-why{
+
+    background:var(--bg);
+}
+
+.fb-why-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
+}
+
+.fb-why-card{
+
+    padding:30px;
+
+    min-height:245px;
+
+    border-radius:27px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:.3s ease;
+}
+
+.fb-why-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:var(--shadow);
+}
+
+.fb-why-card:nth-child(2){
+
+    transform:translateY(25px);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            #8586EC
+        );
+
+    color:#fff;
+}
+
+.fb-why-card:nth-child(2):hover{
+    transform:translateY(18px);
+}
+
+.fb-why-icon{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    color:var(--primary);
+
+    background:var(--primary-soft);
+
+    margin-bottom:25px;
+}
+
+.fb-why-card:nth-child(2)
+.fb-why-icon{
+
+    color:#fff;
+
+    background:
+        rgba(255,255,255,.12);
+}
+
+.fb-why-card h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:24px;
+
+    margin-bottom:9px;
+}
+
+.fb-why-card p{
+
+    color:var(--text-soft);
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+.fb-why-card:nth-child(2) p{
+    color:rgba(255,255,255,.72);
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.fb-final{
+
+    padding:
+        80px
+        7vw
+        100px;
+
+    background:var(--bg);
+}
+
+.fb-final-box{
+
+    min-height:390px;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    border-radius:40px;
+
+    padding:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    color:#fff;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(244,162,97,.35),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #7778E8
+        );
+}
+
+.fb-final-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:380px;
+
+    height:380px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius:50%;
+
+    right:-90px;
+
+    bottom:-190px;
+}
+
+.fb-final-copy{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.fb-final-copy small{
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+    opacity:.75;
+}
+
+.fb-final-copy h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(36px,5vw,59px);
+
+    line-height:1;
+
+    max-width:650px;
+
+    margin:
+        13px 0
+        15px;
+}
+
+.fb-final-copy p{
+
+    max-width:580px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+.fb-final-box .fb-btn{
+
+    position:relative;
+
+    z-index:2;
+
+    flex-shrink:0;
+
+    color:var(--primary);
+
+    background:#fff;
+
+    min-width:170px;
+}
+
+
+/* =========================================================
+   AUTO REVEAL
+========================================================= */
+
+.fb-reveal{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.fb-reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   NEST HUB
+   1024 × 600
+========================================================= */
+
+@media
+(max-width:1100px)
+and (min-height:500px)
+and (max-height:700px){
+
+    .fb-section{
+        padding:
+            75px
+            5vw;
+    }
+
+    .fb-hero{
+
+        min-height:620px;
+
+        padding:
+            45px
+            5vw;
+    }
+
+    .fb-hero-grid{
+        gap:35px;
+    }
+
+    .fb-hero-copy h1{
+        font-size:54px;
+    }
+
+    .fb-community-visual{
+        min-height:410px;
+        transform:scale(.88);
+    }
+
+    .fb-heading{
+        margin-bottom:45px;
+    }
+
+    .fb-heading h2{
+        font-size:42px;
+    }
+
+    .fb-final{
+        padding:
+            60px
+            5vw
+            70px;
+    }
+}
+
+
+/* =========================================================
+   IPAD MINI
+   768 × 1024
+========================================================= */
+
+@media(max-width:900px){
+
+    .fb-hero{
+
+        min-height:auto;
+
+        padding:
+            95px
+            6vw
+            70px;
+    }
+
+    .fb-hero-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .fb-hero-copy p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .fb-hero-actions{
+        justify-content:center;
+    }
+
+    .fb-community-visual{
+        min-height:390px;
+    }
+
+    .fb-pulse-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .fb-event-track{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .fb-template-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .fb-story-layout{
+        grid-template-columns:1fr;
+    }
+
+    .fb-story-side{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .fb-why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .fb-dashboard-content{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .fb-progress-card{
+        grid-column:span 2;
+    }
+
+    .fb-final-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+
+/* =========================================================
+   SAMSUNG S8
+   360 × 740
+========================================================= */
+
+@media(max-width:380px){
+
+    .fb-section{
+        padding:
+            65px
+            14px;
+    }
+
+    .fb-heading{
+        margin-bottom:35px;
+    }
+
+    .fb-eyebrow{
+        font-size:7px;
+        letter-spacing:1.3px;
+    }
+
+    .fb-eyebrow::before,
+    .fb-eyebrow::after{
+        width:15px;
+    }
+
+    .fb-heading h2{
+        font-size:31px;
+        letter-spacing:-.8px;
+    }
+
+    .fb-heading p{
+        font-size:11px;
+        line-height:1.65;
+    }
+
+    .fb-hero{
+
+        min-height:
+            740px;
+
+        padding:
+            45px
+            14px
+            35px;
+    }
+
+    .fb-hero-grid{
+        gap:20px;
+    }
+
+    .fb-hero-eyebrow{
+        font-size:7px;
+        padding:7px 9px;
+        margin-bottom:14px;
+    }
+
+    .fb-hero-copy h1{
+
+        font-size:43px;
+
+        letter-spacing:-1.8px;
+
+        margin-bottom:15px;
+    }
+
+    .fb-hero-copy p{
+
+        font-size:11px;
+
+        line-height:1.65;
+
+        margin-bottom:20px;
+    }
+
+    .fb-btn{
+
+        min-height:38px;
+
+        padding:
+            0 15px;
+
+        border-radius:10px;
+
+        font-size:9px;
+    }
+
+    .fb-community-visual{
+
+        min-height:270px;
+
+        transform:scale(.75);
+
+        margin-top:-20px;
+    }
+
+    .fb-orbit{
+        width:330px;
+        height:330px;
+    }
+
+    .fb-orbit-two{
+        width:250px;
+        height:250px;
+    }
+
+    .fb-community-center{
+
+        width:170px;
+        height:170px;
+    }
+
+    .fb-community-center strong{
+        font-size:22px;
+    }
+
+    .fb-floating-card{
+
+        padding:9px 10px;
+
+        border-radius:10px;
+    }
+
+    .fb-floating-card strong{
+        font-size:12px;
+    }
+
+    .fb-floating-card span{
+        font-size:7px;
+    }
+
+    .fb-floating-card.one{
+        left:0;
+    }
+
+    .fb-floating-card.two{
+        right:0;
+    }
+
+    .fb-floating-card.three{
+        left:0;
+    }
+
+    .fb-pulse-grid{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
+    .fb-pulse-card{
+
+        min-height:145px;
+
+        padding:14px;
+
+        border-radius:15px;
+    }
+
+    .fb-pulse-icon{
+
+        width:32px;
+        height:32px;
+
+        border-radius:9px;
+
+        margin-bottom:14px;
+    }
+
+    .fb-pulse-icon svg{
+        width:15px;
+    }
+
+    .fb-pulse-card strong{
+        font-size:20px;
+    }
+
+    .fb-pulse-card span{
+        font-size:8px;
+    }
+
+    .fb-journey-list{
+        gap:12px;
+    }
+
+    .fb-journey-row,
+    .fb-journey-row:nth-child(even){
+
+        direction:ltr;
+
+        grid-template-columns:1fr;
+
+        min-height:auto;
+
+        border-radius:20px;
+    }
+
+    .fb-journey-image{
+        min-height:190px;
+    }
+
+    .fb-journey-content{
+        padding:22px;
+    }
+
+    .fb-step{
+        font-size:7px;
+    }
+
+    .fb-journey-content h3{
+        font-size:25px;
+    }
+
+    .fb-journey-content p{
+        font-size:10px;
+        margin-bottom:12px;
+    }
+
+    .fb-builder-shell{
+
+        grid-template-columns:1fr;
+
+        padding:10px;
+
+        border-radius:22px;
+    }
+
+    .fb-builder-menu{
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+    }
+
+    .fb-builder-option{
+        padding:11px;
+    }
+
+    .fb-builder-option strong{
+        font-size:10px;
+    }
+
+    .fb-builder-option span{
+        font-size:7px;
+    }
+
+    .fb-builder-preview{
+
+        min-height:280px;
+
+        padding:23px;
+
+        border-radius:18px;
+    }
+
+    .fb-builder-preview h3{
+        font-size:27px;
+    }
+
+    .fb-builder-preview p{
+        font-size:9px;
+    }
+
+    .fb-event-track{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+    }
+
+    .fb-flip{
+        height:320px;
+    }
+
+    .fb-flip-front img{
+        height:195px;
+    }
+
+    .fb-event-info h3{
+        font-size:20px;
+    }
+
+    .fb-volunteer-wall{
+
+        grid-template-columns:1fr 1fr;
+
+        grid-auto-rows:130px;
+
+        gap:8px;
+    }
+
+    .fb-volunteer-card{
+
+        padding:15px;
+
+        border-radius:16px;
+    }
+
+    .fb-volunteer-card.large{
+
+        grid-column:span 2;
+
+        grid-row:span 2;
+    }
+
+    .fb-volunteer-card strong{
+        font-size:15px;
+    }
+
+    .fb-volunteer-card span{
+        font-size:8px;
+    }
+
+    .fb-template-grid{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:8px;
+    }
+
+    .fb-template{
+
+        min-height:190px;
+
+        padding:15px;
+
+        border-radius:17px;
+    }
+
+    .fb-template-icon{
+
+        width:40px;
+
+        height:40px;
+
+        margin:
+            25px
+            0
+            15px;
+
+        border-radius:11px;
+    }
+
+    .fb-template h3{
+        font-size:17px;
+    }
+
+    .fb-template p{
+        font-size:8px;
+    }
+
+    .fb-story-main{
+        min-height:300px;
+        border-radius:20px;
+    }
+
+    .fb-story-overlay{
+        padding:20px;
+    }
+
+    .fb-story-overlay h3{
+        font-size:25px;
+    }
+
+    .fb-story-overlay p{
+        font-size:9px;
+    }
+
+    .fb-story-side{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:8px;
+    }
+
+    .fb-story-stat{
+
+        padding:17px;
+
+        border-radius:16px;
+    }
+
+    .fb-story-stat strong{
+        font-size:25px;
+    }
+
+    .fb-story-stat span{
+        font-size:8px;
+    }
+
+    .fb-dashboard-shell{
+        border-radius:20px;
+    }
+
+    .fb-dashboard-top{
+        height:50px;
+        padding:0 14px;
+    }
+
+    .fb-dashboard-content{
+
+        padding:10px;
+
+        gap:8px;
+    }
+
+    .fb-dashboard-card{
+
+        min-height:105px;
+
+        padding:14px;
+
+        border-radius:13px;
+    }
+
+    .fb-dashboard-card strong{
+        font-size:20px;
+        margin-top:12px;
+    }
+
+    .fb-why-grid{
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .fb-why-card{
+
+        min-height:190px;
+
+        padding:22px;
+
+        border-radius:19px;
+    }
+
+    .fb-why-card:nth-child(2){
+        transform:none;
+    }
+
+    .fb-why-card:nth-child(2):hover{
+        transform:translateY(-7px);
+    }
+
+    .fb-why-card h3{
+        font-size:21px;
+    }
+
+    .fb-final{
+
+        padding:
+            40px
+            14px
+            55px;
+    }
+
+    .fb-final-box{
+
+        min-height:330px;
+
+        padding:30px 24px;
+
+        border-radius:25px;
+    }
+
+    .fb-final-copy h2{
+        font-size:37px;
+    }
+
+    .fb-final-copy p{
+        font-size:10px;
+    }
+
+    .fb-final-box .fb-btn{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="fb-hero">
+
+    <div class="fb-hero-grid">
+
+        <div class="fb-hero-copy fb-reveal">
+
+            <div class="fb-hero-eyebrow">
+                SCHOOL COMMUNITY • FUNDRAISING
+            </div>
+
+            <h1>
+                When a school
+                <span>comes together.</span>
+            </h1>
+
+            <p>
+                FundBloom turns school fundraising and PTA events
+                into simple, cheerful experiences where families,
+                teachers, volunteers, and supporters can make an
+                impact together.
+            </p>
+
+            <div class="fb-hero-actions">
+
+                <a href="signup.html"
+                   class="fb-btn fb-btn-primary">
+
+                    Start a Campaign
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+                <a href="#campaign-builder"
+                   class="fb-btn fb-btn-secondary">
+
+                    Explore FundBloom
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="fb-community-visual fb-reveal">
+
+            <div class="fb-orbit"></div>
+
+            <div class="fb-orbit fb-orbit-two"></div>
+
+            <div class="fb-community-center">
+
+                <i data-lucide="users"></i>
+
+                <strong>1,248</strong>
+
+                <span>COMMUNITY MEMBERS</span>
+
+            </div>
+
+
+            <div class="fb-floating-card one">
+
+                <strong>$24.8K</strong>
+
+                <span>Raised Together</span>
+
+            </div>
+
+
+            <div class="fb-floating-card two">
+
+                <strong>86%</strong>
+
+                <span>Campaign Progress</span>
+
+            </div>
+
+
+            <div class="fb-floating-card three">
+
+                <strong>142</strong>
+
+                <span>Active Volunteers</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     COMMUNITY PULSE
+======================================================= -->
+
+<section class="fb-section fb-pulse">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                COMMUNITY PULSE
+            </div>
+
+            <h2>
+                Small contributions.
+                <span>Big momentum.</span>
+            </h2>
+
+            <p>
+                See how schools can bring fundraising,
+                participation, and community energy into
+                one connected experience.
+            </p>
+
+        </div>
+
+
+        <div class="fb-pulse-grid">
+
+            <article class="fb-pulse-card fb-reveal">
+
+                <div class="fb-pulse-icon">
+                    <i data-lucide="hand-coins"></i>
+                </div>
+
+                <strong>$24.8K</strong>
+
+                <span>Total community support</span>
+
+            </article>
+
+
+            <article class="fb-pulse-card fb-reveal">
+
+                <div class="fb-pulse-icon">
+                    <i data-lucide="heart-handshake"></i>
+                </div>
+
+                <strong>1,248</strong>
+
+                <span>People participating</span>
+
+            </article>
+
+
+            <article class="fb-pulse-card fb-reveal">
+
+                <div class="fb-pulse-icon">
+                    <i data-lucide="calendar-check"></i>
+                </div>
+
+                <strong>36</strong>
+
+                <span>Upcoming PTA events</span>
+
+            </article>
+
+
+            <article class="fb-pulse-card fb-reveal">
+
+                <div class="fb-pulse-icon">
+                    <i data-lucide="sprout"></i>
+                </div>
+
+                <strong>82%</strong>
+
+                <span>Campaign momentum</span>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     IDEA TO IMPACT
+======================================================= -->
+
+<section class="fb-section fb-journey">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                FROM IDEA TO IMPACT
+            </div>
+
+            <h2>
+                One idea can become
+                <span>a shared mission.</span>
+            </h2>
+
+            <p>
+                FundBloom gives school coordinators a simple
+                path from an early fundraising idea to a
+                measurable community outcome.
+            </p>
+
+        </div>
+
+
+        <div class="fb-journey-list">
+
+
+            <article class="fb-journey-row fb-reveal">
+
+                <div class="fb-journey-image">
+
+                    <img
+                        src="images/community-fundraising.jpg"
+                        alt="School community fundraising">
+
+                </div>
+
+                <div class="fb-journey-content">
+
+                    <span class="fb-step">
+                        01 — START
+                    </span>
+
+                    <h3>
+                        Bring the idea to life.
+                    </h3>
+
+                    <p>
+                        Choose a goal, give your campaign a
+                        purpose, and create a clear story that
+                        families and supporters can understand.
+                    </p>
+
+                    <a href="#campaign-builder"
+                       class="fb-mini-link">
+
+                        Build your idea
+                        <i data-lucide="arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="fb-journey-row fb-reveal">
+
+                <div class="fb-journey-image">
+
+                    <img
+                        src="images/school-event.jpg"
+                        alt="School PTA event">
+
+                </div>
+
+                <div class="fb-journey-content">
+
+                    <span class="fb-step">
+                        02 — CONNECT
+                    </span>
+
+                    <h3>
+                        Turn supporters into a community.
+                    </h3>
+
+                    <p>
+                        Share updates, invite families, organize
+                        volunteers, and create moments where
+                        everyone has a meaningful role.
+                    </p>
+
+                    <a href="#volunteer-wall"
+                       class="fb-mini-link">
+
+                        Bring people together
+                        <i data-lucide="arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="fb-journey-row fb-reveal">
+
+                <div class="fb-journey-image">
+
+                    <img
+                        src="images/school-impact.jpg"
+                        alt="Students celebrating school impact">
+
+                </div>
+
+                <div class="fb-journey-content">
+
+                    <span class="fb-step">
+                        03 — IMPACT
+                    </span>
+
+                    <h3>
+                        Show where the support goes.
+                    </h3>
+
+                    <p>
+                        Track progress and communicate outcomes
+                        so the entire school community can see
+                        what their combined effort achieved.
+                    </p>
+
+                    <a href="#impact-stories"
+                       class="fb-mini-link">
+
+                        See the impact
+                        <i data-lucide="arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CAMPAIGN BUILDER
+======================================================= -->
+
+<section
+    class="fb-section fb-builder"
+    id="campaign-builder">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                CAMPAIGN BUILDER
+            </div>
+
+            <h2>
+                Start with a goal.
+                <span>Build the story.</span>
+            </h2>
+
+            <p>
+                Pick the kind of campaign you are planning
+                and FundBloom turns the starting point into
+                a focused fundraising experience.
+            </p>
+
+        </div>
+
+
+        <div class="fb-builder-shell fb-reveal">
+
+            <div class="fb-builder-menu">
+
+                <button
+                    class="fb-builder-option active"
+                    data-title="A brighter learning space."
+                    data-copy="Bring families together to improve classrooms, libraries, technology, and everyday learning experiences."
+                    data-progress="68%">
+
+                    <strong>
+                        School Improvement
+                    </strong>
+
+                    <span>
+                        Spaces & resources
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="fb-builder-option"
+                    data-title="Make every event count."
+                    data-copy="Build support around an upcoming school event, celebration, trip, or community experience."
+                    data-progress="52%">
+
+                    <strong>
+                        PTA Event
+                    </strong>
+
+                    <span>
+                        Events & activities
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="fb-builder-option"
+                    data-title="Give every student a chance."
+                    data-copy="Create a focused campaign that helps provide opportunities, programs, and experiences for students."
+                    data-progress="81%">
+
+                    <strong>
+                        Student Support
+                    </strong>
+
+                    <span>
+                        Student opportunities
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="fb-builder-option"
+                    data-title="Grow something together."
+                    data-copy="Create a community-powered project where families and supporters can contribute toward a shared school goal."
+                    data-progress="63%">
+
+                    <strong>
+                        Community Project
+                    </strong>
+
+                    <span>
+                        Shared goals
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="fb-builder-preview">
+
+                <div class="fb-builder-label">
+                    LIVE CAMPAIGN PREVIEW
+                </div>
+
+                <h3 id="builderTitle">
+                    A brighter learning space.
+                </h3>
+
+                <p id="builderCopy">
+                    Bring families together to improve classrooms,
+                    libraries, technology, and everyday learning
+                    experiences.
+                </p>
+
+                <div class="fb-builder-progress">
+                    <span id="builderProgress"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PTA EVENTS
+======================================================= -->
+
+<section class="fb-section fb-events">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                PTA EVENTS
+            </div>
+
+            <h2>
+                Fundraising can feel
+                <span>like an event.</span>
+            </h2>
+
+            <p>
+                From family nights to school celebrations,
+                connect fundraising with the moments your
+                community already loves.
+            </p>
+
+        </div>
+
+
+        <div class="fb-event-track">
+
+
+            <article class="fb-flip fb-reveal">
+
+                <div class="fb-flip-inner">
+
+                    <div class="fb-flip-front">
+
+                        <img
+                            src="images/pta-night.jpg"
+                            alt="Family PTA night">
+
+                        <div class="fb-event-info">
+
+                            <small>
+                                FAMILY NIGHT
+                            </small>
+
+                            <h3>
+                                Together After School
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-flip-back">
+
+                        <h3>
+                            Together After School
+                        </h3>
+
+                        <p>
+                            Create a relaxed community evening
+                            where families meet, participate,
+                            and support a shared school goal.
+                        </p>
+
+                        <a href="signup.html"
+                           class="fb-btn fb-btn-secondary">
+
+                            Create Event
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="fb-flip fb-reveal">
+
+                <div class="fb-flip-inner">
+
+                    <div class="fb-flip-front">
+
+                        <img
+                            src="images/school-fair.jpg"
+                            alt="School fundraising fair">
+
+                        <div class="fb-event-info">
+
+                            <small>
+                                SCHOOL FAIR
+                            </small>
+
+                            <h3>
+                                Bloom Festival
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-flip-back">
+
+                        <h3>
+                            Bloom Festival
+                        </h3>
+
+                        <p>
+                            Bring games, activities, food,
+                            families, volunteers, and fundraising
+                            into one cheerful school experience.
+                        </p>
+
+                        <a href="signup.html"
+                           class="fb-btn fb-btn-secondary">
+
+                            Plan Event
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="fb-flip fb-reveal">
+
+                <div class="fb-flip-inner">
+
+                    <div class="fb-flip-front">
+
+                        <img
+                            src="images/student-challenge.jpg"
+                            alt="Student fundraising challenge">
+
+                        <div class="fb-event-info">
+
+                            <small>
+                                STUDENT CHALLENGE
+                            </small>
+
+                            <h3>
+                                Miles for Tomorrow
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-flip-back">
+
+                        <h3>
+                            Miles for Tomorrow
+                        </h3>
+
+                        <p>
+                            Turn a simple student challenge into
+                            an active community campaign with
+                            clear goals and visible progress.
+                        </p>
+
+                        <a href="signup.html"
+                           class="fb-btn fb-btn-secondary">
+
+                            Start Challenge
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     VOLUNTEER WALL
+======================================================= -->
+
+<section
+    class="fb-section fb-volunteers"
+    id="volunteer-wall">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                VOLUNTEER WALL
+            </div>
+
+            <h2>
+                Everyone has
+                <span>a role to play.</span>
+            </h2>
+
+            <p>
+                Make volunteering visible, organized, and easy
+                for parents, teachers, students, and community
+                supporters.
+            </p>
+
+        </div>
+
+
+        <div class="fb-volunteer-wall">
+
+
+            <article class="fb-volunteer-card large fb-reveal">
+
+                <i data-lucide="users-round"></i>
+
+                <strong>
+                    142 volunteers
+                </strong>
+
+                <span>
+                    are currently helping with campaigns,
+                    school events, family activities, and
+                    community projects.
+                </span>
+
+            </article>
+
+
+            <article class="fb-volunteer-card fb-reveal">
+
+                <i data-lucide="utensils"></i>
+
+                <strong>
+                    Event Crew
+                </strong>
+
+                <span>
+                    18 open spots
+                </span>
+
+            </article>
+
+
+            <article class="fb-volunteer-card orange fb-reveal">
+
+                <i data-lucide="camera"></i>
+
+                <strong>
+                    Story Team
+                </strong>
+
+                <span>
+                    6 open spots
+                </span>
+
+            </article>
+
+
+            <article class="fb-volunteer-card orange fb-reveal">
+
+                <i data-lucide="megaphone"></i>
+
+                <strong>
+                    Outreach
+                </strong>
+
+                <span>
+                    11 open spots
+                </span>
+
+            </article>
+
+
+            <article class="fb-volunteer-card fb-reveal">
+
+                <i data-lucide="package-check"></i>
+
+                <strong>
+                    Campaign Support
+                </strong>
+
+                <span>
+                    9 open spots
+                </span>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CAMPAIGN TEMPLATES
+======================================================= -->
+
+<section class="fb-section fb-templates">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                CAMPAIGN TEMPLATES
+            </div>
+
+            <h2>
+                A thoughtful start for
+                <span>every goal.</span>
+            </h2>
+
+            <p>
+                Choose a campaign direction and customize
+                it around your school's story.
+            </p>
+
+        </div>
+
+
+        <div class="fb-template-grid">
+
+
+            <article class="fb-template fb-reveal">
+
+                <span class="fb-template-number">
+                    01
+                </span>
+
+                <div class="fb-template-icon">
+                    <i data-lucide="book-open"></i>
+                </div>
+
+                <h3>
+                    Better Classrooms
+                </h3>
+
+                <p>
+                    Support learning spaces and essential
+                    classroom resources.
+                </p>
+
+            </article>
+
+
+            <article class="fb-template fb-reveal">
+
+                <span class="fb-template-number">
+                    02
+                </span>
+
+                <div class="fb-template-icon">
+                    <i data-lucide="party-popper"></i>
+                </div>
+
+                <h3>
+                    PTA Celebration
+                </h3>
+
+                <p>
+                    Plan a memorable community event with
+                    integrated fundraising.
+                </p>
+
+            </article>
+
+
+            <article class="fb-template fb-reveal">
+
+                <span class="fb-template-number">
+                    03
+                </span>
+
+                <div class="fb-template-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+
+                <h3>
+                    Student Opportunity
+                </h3>
+
+                <p>
+                    Build support for programs and experiences
+                    that benefit students.
+                </p>
+
+            </article>
+
+
+            <article class="fb-template fb-reveal">
+
+                <span class="fb-template-number">
+                    04
+                </span>
+
+                <div class="fb-template-icon">
+                    <i data-lucide="trees"></i>
+                </div>
+
+                <h3>
+                    Community Project
+                </h3>
+
+                <p>
+                    Rally families around a shared school
+                    improvement goal.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     IMPACT STORIES
+======================================================= -->
+
+<section
+    class="fb-section fb-stories"
+    id="impact-stories">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                IMPACT STORIES
+            </div>
+
+            <h2>
+                Show the community
+                <span>what happened next.</span>
+            </h2>
+
+            <p>
+                Fundraising becomes more meaningful when people
+                can see the result of their collective support.
+            </p>
+
+        </div>
+
+
+        <div class="fb-story-layout">
+
+
+            <div class="fb-story-main fb-reveal">
+
+                <img
+                    src="images/student-impact.jpg"
+                    alt="Students experiencing school impact">
+
+                <div class="fb-story-overlay">
+
+                    <small>
+                        COMMUNITY STORY
+                    </small>
+
+                    <h3>
+                        A library became a place
+                        students wanted to stay.
+                    </h3>
+
+                    <p>
+                        Families, teachers, and supporters
+                        worked together to create a brighter
+                        learning environment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="fb-story-side">
+
+
+                <div class="fb-story-stat fb-reveal">
+
+                    <strong>
+                        3.8K
+                    </strong>
+
+                    <span>
+                        students reached through
+                        community-supported projects
+                    </span>
+
+                </div>
+
+
+                <div class="fb-story-stat fb-reveal">
+
+                    <strong>
+                        94%
+                    </strong>
+
+                    <span>
+                        of supporters want to see
+                        campaign outcomes
+                    </span>
+
+                </div>
+
+
+                <div class="fb-story-stat fb-reveal">
+
+                    <strong>
+                        67
+                    </strong>
+
+                    <span>
+                        community projects completed
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     COORDINATOR DASHBOARD
+======================================================= -->
+
+<section class="fb-section fb-dashboard-preview">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                COORDINATOR DASHBOARD
+            </div>
+
+            <h2 style="color:#fff;">
+                Everything important.
+                <span>One clear view.</span>
+            </h2>
+
+            <p style="color:#AEB0C3;">
+                Keep campaigns, volunteers, events, progress,
+                and financial summaries connected from one
+                coordinator workspace.
+            </p>
+
+        </div>
+
+
+        <div class="fb-dashboard-shell fb-reveal">
+
+            <div class="fb-dashboard-top">
+
+                <strong>
+                    Welcome back, Coordinator
+                </strong>
+
+                <span>
+                    LIVE OVERVIEW
+                </span>
+
+            </div>
+
+
+            <div class="fb-dashboard-content">
+
+
+                <div class="fb-dashboard-card">
+
+                    <small>
+                        ACTIVE CAMPAIGN
+                    </small>
+
+                    <strong>
+                        $18,420
+                    </strong>
+
+                </div>
+
+
+                <div class="fb-dashboard-card">
+
+                    <small>
+                        VOLUNTEERS
+                    </small>
+
+                    <strong>
+                        142
+                    </strong>
+
+                </div>
+
+
+                <div class="fb-dashboard-card">
+
+                    <small>
+                        UPCOMING EVENTS
+                    </small>
+
+                    <strong>
+                        12
+                    </strong>
+
+                </div>
+
+
+                <div class="fb-dashboard-card fb-progress-card">
+
+                    <small>
+                        CAMPAIGN PROGRESS
+                    </small>
+
+                    <strong>
+                        76%
+                    </strong>
+
+                    <div class="fb-progress">
+
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fb-dashboard-card">
+
+                    <small>
+                        SUPPORTERS
+                    </small>
+
+                    <strong>
+                        1,248
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     WHY FUNDBLOOM
+======================================================= -->
+
+<section class="fb-section fb-why">
+
+    <div class="fb-container">
+
+        <div class="fb-heading fb-reveal">
+
+            <div class="fb-eyebrow">
+                WHY FUNDBLOOM
+            </div>
+
+            <h2>
+                Fundraising should feel
+                <span>human.</span>
+            </h2>
+
+            <p>
+                Designed around the real people behind every
+                school campaign — not complicated fundraising
+                spreadsheets.
+            </p>
+
+        </div>
+
+
+        <div class="fb-why-grid">
+
+
+            <article class="fb-why-card fb-reveal">
+
+                <div class="fb-why-icon">
+
+                    <i data-lucide="sparkles"></i>
+
+                </div>
+
+                <h3>
+                    Simple by design
+                </h3>
+
+                <p>
+                    Clear campaign tools help coordinators
+                    spend less time managing details and more
+                    time building community.
+                </p>
+
+            </article>
+
+
+            <article class="fb-why-card fb-reveal">
+
+                <div class="fb-why-icon">
+
+                    <i data-lucide="heart"></i>
+
+                </div>
+
+                <h3>
+                    Built for community
+                </h3>
+
+                <p>
+                    Families, teachers, volunteers, and
+                    supporters all have a meaningful place
+                    in the fundraising journey.
+                </p>
+
+            </article>
+
+
+            <article class="fb-why-card fb-reveal">
+
+                <div class="fb-why-icon">
+
+                    <i data-lucide="bar-chart-3"></i>
+
+                </div>
+
+                <h3>
+                    Clearer impact
+                </h3>
+
+                <p>
+                    Track progress and communicate outcomes
+                    so supporters understand what their
+                    contribution helped accomplish.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     FINAL CTA
+======================================================= -->
+
+<section class="fb-final">
+
+    <div class="fb-final-box fb-reveal">
+
+        <div class="fb-final-copy">
+
+            <small>
+                READY TO GROW TOGETHER?
+            </small>
+
+            <h2>
+                Your next school
+                story starts here.
+            </h2>
+
+            <p>
+                Bring your campaign, PTA events, volunteers,
+                and community together with FundBloom.
+            </p>
+
+        </div>
+
+
+        <a href="signup.html"
+           class="fb-btn">
+
+            Create Your Campaign
+
+            <i data-lucide="arrow-up-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+   LUCIDE
+========================================================= */
+
+lucide.createIcons();
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealItems =
+    document.querySelectorAll(".fb-reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("show");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+revealItems.forEach(item => {
+
+    revealObserver.observe(item);
+
+});
+
+
+/* =========================================================
+   CAMPAIGN BUILDER
+========================================================= */
+
+const builderOptions =
+    document.querySelectorAll(
+        ".fb-builder-option"
+    );
+
+const builderTitle =
+    document.getElementById(
+        "builderTitle"
+    );
+
+const builderCopy =
+    document.getElementById(
+        "builderCopy"
+    );
+
+const builderProgress =
+    document.getElementById(
+        "builderProgress"
+    );
+
+
+builderOptions.forEach(option => {
+
+    option.addEventListener(
+        "click",
+        () => {
+
+            builderOptions.forEach(item => {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            option.classList.add(
+                "active"
+            );
+
+
+            builderTitle.textContent =
+                option.dataset.title;
+
+
+            builderCopy.textContent =
+                option.dataset.copy;
+
+
+            builderProgress.style.width =
+                option.dataset.progress;
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   AUTOMATIC FLIP CARDS
+========================================================= */
+
+const flipCards =
+    document.querySelectorAll(
+        ".fb-flip"
+    );
+
+
+let activeFlip = 0;
+
+
+setInterval(() => {
+
+    if(!flipCards.length){
+        return;
+    }
+
+    flipCards.forEach(card => {
+
+        card.classList.remove(
+            "fb-auto-flip"
+        );
+
+        const inner =
+            card.querySelector(
+                ".fb-flip-inner"
+            );
+
+        inner.style.transform = "";
+
+    });
+
+
+    const current =
+        flipCards[activeFlip];
+
+    const inner =
+        current.querySelector(
+            ".fb-flip-inner"
+        );
+
+
+    if(
+        !window.matchMedia(
+            "(hover:hover)"
+        ).matches
+    ){
+
+        inner.style.transform =
+            "rotateY(180deg)";
+
+        setTimeout(() => {
+
+            inner.style.transform =
+                "";
+
+        },3500);
+
+    }
+
+
+    activeFlip++;
+
+    if(
+        activeFlip >= flipCards.length
+    ){
+        activeFlip = 0;
+    }
+
+},5000);
+
+
+/* =========================================================
+   CLICK FLIP ON TOUCH DEVICES
+========================================================= */
+
+flipCards.forEach(card => {
+
+    card.addEventListener(
+        "click",
+        () => {
+
+            const inner =
+                card.querySelector(
+                    ".fb-flip-inner"
+                );
+
+            const flipped =
+                inner.dataset.flipped === "true";
+
+
+            inner.style.transform =
+                flipped
+                    ? ""
+                    : "rotateY(180deg)";
+
+
+            inner.dataset.flipped =
+                flipped
+                    ? "false"
+                    : "true";
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>

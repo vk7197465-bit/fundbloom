@@ -1,0 +1,5469 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FundBloom | Coordinator Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="icon"
+    type="image"
+    href="images/l.png"
+>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --primary:#5B5CE2;
+    --secondary:#F4A261;
+
+    --bg:#F6F6FB;
+    --surface:#FFFFFF;
+    --surface-2:#F0F0F7;
+    --surface-3:#E8E8F2;
+
+    --text:#17172A;
+    --text-soft:#707083;
+    --text-faint:#9A9AAA;
+
+    --border:rgba(23,23,42,.09);
+
+    --success:#3FA66B;
+    --warning:#E3A33D;
+    --danger:#D85C68;
+    --info:#4D8FD9;
+
+    --shadow:0 18px 50px rgba(40,40,90,.08);
+    --shadow-small:0 8px 25px rgba(40,40,90,.06);
+
+    --sidebar-width:250px;
+    --top-height:74px;
+
+    --radius:18px;
+
+    --heading:"Playfair Display",serif;
+    --body:"DM Sans",sans-serif;
+
+    color-scheme:light;
+}
+
+
+/* =========================================================
+   SHARED FUNDBLOOM DARK THEME
+========================================================= */
+
+body.dark-theme{
+
+    --bg:#10111E;
+    --surface:#17182A;
+    --surface-2:#202136;
+    --surface-3:#292A42;
+
+    --text:#F6F6FA;
+    --text-soft:#AAAABC;
+    --text-faint:#7F8094;
+
+    --border:rgba(255,255,255,.09);
+
+    --shadow:0 20px 55px rgba(0,0,0,.28);
+    --shadow-small:0 8px 25px rgba(0,0,0,.2);
+
+    color-scheme:dark;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:var(--body);
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    border:0;
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+
+/* =========================================================
+   DASHBOARD SHELL
+========================================================= */
+
+.fb-dashboard{
+    min-height:100vh;
+    background:var(--bg);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.fb-sidebar{
+
+    position:fixed;
+
+    inset:0 auto 0 0;
+
+    width:var(--sidebar-width);
+
+    background:var(--surface);
+
+    border-right:1px solid var(--border);
+
+    display:flex;
+    flex-direction:column;
+
+    z-index:1000;
+
+    transition:
+        width .3s ease,
+        transform .3s ease,
+        background .3s ease;
+}
+
+[dir="rtl"] .fb-sidebar{
+
+    inset:0 0 0 auto;
+
+    border-right:0;
+
+    border-left:1px solid var(--border);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.fb-brand{
+
+    display:flex;
+    align-items:center;
+
+    gap:3px;
+
+    padding:20px 19px 19px;
+
+    flex-shrink:0;
+}
+
+.fb-logo-image{
+
+    width:48px;
+    height:48px;
+
+    object-fit:contain;
+
+    background:transparent;
+}
+
+.fb-brand-text{
+
+    display:flex;
+    flex-direction:column;
+
+    line-height:1;
+}
+
+.fb-brand-name{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    letter-spacing:-.8px;
+
+    white-space:nowrap;
+}
+
+.fb-brand-primary{
+    color:var(--primary);
+}
+
+.fb-brand-secondary{
+    color:var(--secondary);
+}
+
+.fb-brand-tagline{
+
+    margin-top:6px;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:1.8px;
+
+    color:var(--text-soft);
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   SIDEBAR LABEL
+========================================================= */
+
+.fb-side-label{
+
+    padding:10px 22px 8px;
+
+    color:var(--text-faint);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.fb-sidebar-nav{
+
+    padding:0 12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+    overflow-y:auto;
+}
+
+.fb-nav-item{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-height:44px;
+
+    padding:0 13px;
+
+    border-radius:12px;
+
+    color:var(--text-soft);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:.25s ease;
+
+    position:relative;
+}
+
+.fb-nav-item i{
+
+    width:18px;
+    height:18px;
+
+    flex-shrink:0;
+
+    stroke-width:1.8;
+}
+
+.fb-nav-item:hover{
+
+    background:var(--surface-2);
+
+    color:var(--text);
+}
+
+.fb-nav-item.active{
+
+    background:rgba(91,92,226,.10);
+
+    color:var(--primary);
+}
+
+.fb-nav-item.active::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-12px;
+
+    width:3px;
+    height:23px;
+
+    border-radius:0 4px 4px 0;
+
+    background:var(--primary);
+}
+
+[dir="rtl"] .fb-nav-item.active::before{
+
+    left:auto;
+
+    right:-12px;
+
+    border-radius:4px 0 0 4px;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.fb-sidebar-bottom{
+
+    margin-top:auto;
+
+    padding:12px;
+
+    border-top:1px solid var(--border);
+}
+
+.fb-coordinator-mini{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:11px;
+
+    margin-bottom:8px;
+
+    background:var(--surface-2);
+
+    border-radius:13px;
+}
+
+.fb-mini-avatar{
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #7778E9
+    );
+
+    color:#fff;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    flex-shrink:0;
+}
+
+.fb-mini-info{
+
+    min-width:0;
+}
+
+.fb-mini-info strong{
+
+    display:block;
+
+    font-size:12px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+.fb-mini-info span{
+
+    display:block;
+
+    color:var(--text-faint);
+
+    font-size:10px;
+
+    margin-top:3px;
+}
+
+.fb-logout{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:11px 12px;
+
+    color:var(--danger);
+
+    background:transparent;
+
+    border-radius:11px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    transition:.2s ease;
+}
+
+.fb-logout:hover{
+
+    background:rgba(216,92,104,.08);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.fb-main{
+
+    margin-left:var(--sidebar-width);
+
+    min-height:100vh;
+
+    transition:margin .3s ease;
+}
+
+[dir="rtl"] .fb-main{
+
+    margin-left:0;
+
+    margin-right:var(--sidebar-width);
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.fb-topbar{
+
+    height:var(--top-height);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:900;
+
+    background:rgba(246,246,251,.88);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 30px;
+
+    gap:20px;
+}
+
+body.dark-theme .fb-topbar{
+
+    background:rgba(16,17,30,.88);
+}
+
+.fb-mobile-menu{
+
+    display:none;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:10px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    place-items:center;
+}
+
+.fb-top-title{
+
+    min-width:0;
+
+    flex:1;
+}
+
+.fb-top-title small{
+
+    display:block;
+
+    color:var(--text-faint);
+
+    font-size:10px;
+
+    margin-bottom:3px;
+}
+
+.fb-top-title h1{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    letter-spacing:-.4px;
+}
+
+.fb-top-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.fb-top-action{
+
+    width:38px;
+
+    height:38px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:11px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    color:var(--text-soft);
+
+    position:relative;
+
+    transition:.2s ease;
+}
+
+.fb-top-action:hover{
+
+    color:var(--primary);
+
+    border-color:rgba(91,92,226,.25);
+}
+
+.fb-top-action i{
+
+    width:17px;
+
+    height:17px;
+}
+
+.fb-notification-dot{
+
+    position:absolute;
+
+    top:7px;
+
+    right:7px;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    border:1px solid var(--surface);
+}
+
+.fb-profile-button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:4px 9px 4px 4px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    margin-left:3px;
+}
+
+[dir="rtl"] .fb-profile-button{
+
+    padding:4px 4px 4px 9px;
+
+    margin-left:0;
+
+    margin-right:3px;
+}
+
+.fb-profile-avatar{
+
+    width:31px;
+
+    height:31px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:9px;
+
+    background:rgba(91,92,226,.12);
+
+    color:var(--primary);
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+.fb-profile-button span{
+
+    font-size:11px;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.fb-content{
+
+    width:min(94%,1450px);
+
+    margin:0 auto;
+
+    padding:28px 0 42px;
+}
+
+
+/* =========================================================
+   PAGE VIEW
+========================================================= */
+
+.fb-view{
+
+    display:none;
+
+    animation:fbFade .25s ease;
+}
+
+.fb-view.active{
+
+    display:block;
+}
+
+@keyframes fbFade{
+
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.fb-welcome{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    margin-bottom:24px;
+}
+
+.fb-welcome-copy small{
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:1.8px;
+
+    text-transform:uppercase;
+}
+
+.fb-welcome-copy h2{
+
+    font-family:var(--heading);
+
+    font-size:32px;
+
+    line-height:1.12;
+
+    font-weight:600;
+
+    letter-spacing:-.7px;
+
+    margin-top:8px;
+}
+
+.fb-welcome-copy p{
+
+    color:var(--text-soft);
+
+    font-size:13px;
+
+    margin-top:8px;
+
+    max-width:650px;
+
+    line-height:1.65;
+}
+
+.fb-date-chip{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 13px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+    border-radius:12px;
+
+    color:var(--text-soft);
+
+    font-size:11px;
+
+    white-space:nowrap;
+}
+
+.fb-date-chip i{
+
+    width:15px;
+
+    color:var(--secondary);
+}
+
+
+/* =========================================================
+   METRIC GRID
+========================================================= */
+
+.fb-metrics{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.fb-metric{
+
+    position:relative;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:20px;
+
+    min-height:143px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-small);
+}
+
+.fb-metric::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:95px;
+
+    height:95px;
+
+    border-radius:50%;
+
+    right:-35px;
+
+    bottom:-40px;
+
+    background:rgba(91,92,226,.055);
+}
+
+.fb-metric.orange::after{
+
+    background:rgba(244,162,97,.08);
+}
+
+.fb-metric-head{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:14px;
+}
+
+.fb-metric-icon{
+
+    width:35px;
+
+    height:35px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:10px;
+
+    color:var(--primary);
+
+    background:rgba(91,92,226,.10);
+}
+
+.fb-metric.orange .fb-metric-icon{
+
+    color:#D8873F;
+
+    background:rgba(244,162,97,.14);
+}
+
+.fb-metric-icon i{
+
+    width:17px;
+}
+
+.fb-metric-change{
+
+    font-size:9px;
+
+    font-weight:700;
+
+    color:var(--success);
+
+    background:rgba(63,166,107,.09);
+
+    padding:5px 7px;
+
+    border-radius:20px;
+}
+
+.fb-metric-value{
+
+    font-size:27px;
+
+    font-weight:700;
+
+    letter-spacing:-1px;
+}
+
+.fb-metric-label{
+
+    color:var(--text-soft);
+
+    font-size:11px;
+
+    margin-top:4px;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.fb-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.45fr)
+        minmax(320px,.85fr);
+
+    gap:18px;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.fb-panel{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:21px;
+
+    box-shadow:var(--shadow-small);
+}
+
+.fb-panel-head{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.fb-panel-title h3{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:-.2px;
+}
+
+.fb-panel-title p{
+
+    color:var(--text-faint);
+
+    font-size:10px;
+
+    margin-top:4px;
+}
+
+.fb-text-link{
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   CAMPAIGN PROGRESS
+========================================================= */
+
+.fb-campaign{
+
+    padding:14px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.fb-campaign:last-child{
+
+    border-bottom:0;
+
+    padding-bottom:0;
+}
+
+.fb-campaign-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:9px;
+}
+
+.fb-campaign-name{
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.fb-campaign-amount{
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:var(--primary);
+}
+
+.fb-progress{
+
+    width:100%;
+
+    height:7px;
+
+    border-radius:20px;
+
+    background:var(--surface-2);
+
+    overflow:hidden;
+}
+
+.fb-progress span{
+
+    display:block;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #7778E9
+    );
+}
+
+.fb-campaign-meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:8px;
+
+    color:var(--text-faint);
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.fb-activity{
+
+    display:flex;
+
+    gap:12px;
+
+    padding:13px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.fb-activity:last-child{
+
+    border-bottom:0;
+}
+
+.fb-activity-icon{
+
+    width:33px;
+
+    height:33px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:10px;
+
+    background:rgba(91,92,226,.09);
+
+    color:var(--primary);
+}
+
+.fb-activity-icon.orange{
+
+    background:rgba(244,162,97,.12);
+
+    color:#D8873F;
+}
+
+.fb-activity-icon.green{
+
+    background:rgba(63,166,107,.10);
+
+    color:var(--success);
+}
+
+.fb-activity-icon i{
+
+    width:15px;
+}
+
+.fb-activity-body{
+
+    min-width:0;
+}
+
+.fb-activity-body strong{
+
+    display:block;
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+.fb-activity-body p{
+
+    color:var(--text-soft);
+
+    font-size:10px;
+
+    margin-top:4px;
+
+    line-height:1.45;
+}
+
+.fb-activity-time{
+
+    color:var(--text-faint);
+
+    font-size:9px;
+
+    margin-left:auto;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.fb-actions-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:9px;
+}
+
+.fb-action{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:12px;
+
+    background:var(--surface-2);
+
+    border:1px solid transparent;
+
+    border-radius:12px;
+
+    color:var(--text);
+
+    text-align:left;
+
+    transition:.2s ease;
+}
+
+[dir="rtl"] .fb-action{
+
+    text-align:right;
+}
+
+.fb-action:hover{
+
+    border-color:rgba(91,92,226,.2);
+
+    background:rgba(91,92,226,.07);
+}
+
+.fb-action-icon{
+
+    width:31px;
+
+    height:31px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex-shrink:0;
+
+    background:var(--surface);
+
+    border-radius:9px;
+
+    color:var(--primary);
+}
+
+.fb-action-icon i{
+
+    width:15px;
+}
+
+.fb-action strong{
+
+    display:block;
+
+    font-size:10px;
+}
+
+.fb-action span{
+
+    display:block;
+
+    color:var(--text-faint);
+
+    font-size:8px;
+
+    margin-top:2px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.fb-section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:20px;
+
+    margin-bottom:20px;
+}
+
+.fb-section-header small{
+
+    color:var(--primary);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+}
+
+.fb-section-header h2{
+
+    font-family:var(--heading);
+
+    font-size:27px;
+
+    margin-top:7px;
+}
+
+.fb-section-header p{
+
+    color:var(--text-soft);
+
+    font-size:11px;
+
+    line-height:1.5;
+
+    max-width:600px;
+
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.fb-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    min-height:39px;
+
+    padding:0 15px;
+
+    border-radius:10px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    transition:.2s ease;
+}
+
+.fb-btn i{
+
+    width:14px;
+}
+
+.fb-btn-primary{
+
+    color:#fff;
+
+    background:var(--primary);
+
+    box-shadow:0 8px 20px rgba(91,92,226,.18);
+}
+
+.fb-btn-primary:hover{
+
+    transform:translateY(-1px);
+
+    filter:brightness(.97);
+}
+
+.fb-btn-secondary{
+
+    color:var(--text);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+}
+
+.fb-btn-secondary:hover{
+
+    border-color:rgba(91,92,226,.3);
+
+    color:var(--primary);
+}
+
+
+/* =========================================================
+   CAMPAIGN SETUP
+========================================================= */
+
+.fb-form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+}
+
+.fb-field{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+}
+
+.fb-field.full{
+
+    grid-column:1/-1;
+}
+
+.fb-field label{
+
+    font-size:10px;
+
+    font-weight:700;
+
+    color:var(--text-soft);
+}
+
+.fb-field input,
+.fb-field select,
+.fb-field textarea{
+
+    width:100%;
+
+    min-height:42px;
+
+    padding:0 12px;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface-2);
+
+    color:var(--text);
+
+    outline:none;
+
+    font-size:11px;
+
+    transition:.2s ease;
+}
+
+.fb-field textarea{
+
+    padding:12px;
+
+    min-height:95px;
+
+    resize:vertical;
+}
+
+.fb-field input:focus,
+.fb-field select:focus,
+.fb-field textarea:focus{
+
+    border-color:rgba(91,92,226,.45);
+
+    box-shadow:
+        0 0 0 3px rgba(91,92,226,.08);
+}
+
+.fb-form-actions{
+
+    grid-column:1/-1;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:8px;
+
+    padding-top:5px;
+}
+
+
+/* =========================================================
+   DONATION TABLE
+========================================================= */
+
+.fb-table-wrap{
+
+    overflow-x:auto;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+}
+
+.fb-table{
+
+    width:100%;
+
+    min-width:650px;
+
+    border-collapse:collapse;
+}
+
+.fb-table th{
+
+    text-align:left;
+
+    background:var(--surface-2);
+
+    color:var(--text-faint);
+
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    padding:12px 14px;
+}
+
+[dir="rtl"] .fb-table th{
+
+    text-align:right;
+}
+
+.fb-table td{
+
+    padding:13px 14px;
+
+    border-top:1px solid var(--border);
+
+    font-size:10px;
+
+    color:var(--text-soft);
+}
+
+.fb-table td strong{
+
+    color:var(--text);
+
+    font-size:10px;
+}
+
+.fb-status{
+
+    display:inline-flex;
+
+    padding:5px 8px;
+
+    border-radius:20px;
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+.fb-status.success{
+
+    color:var(--success);
+
+    background:rgba(63,166,107,.09);
+}
+
+.fb-status.pending{
+
+    color:var(--warning);
+
+    background:rgba(227,163,61,.10);
+}
+
+
+/* =========================================================
+   VOLUNTEERS
+========================================================= */
+
+.fb-volunteer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:14px;
+}
+
+.fb-volunteer{
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:17px;
+
+    background:var(--surface);
+}
+
+.fb-volunteer-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+}
+
+.fb-volunteer-avatar{
+
+    width:38px;
+
+    height:38px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:11px;
+
+    color:var(--primary);
+
+    background:rgba(91,92,226,.10);
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.fb-volunteer h4{
+
+    font-size:11px;
+}
+
+.fb-volunteer p{
+
+    color:var(--text-faint);
+
+    font-size:9px;
+
+    margin-top:3px;
+}
+
+.fb-volunteer-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding-top:12px;
+
+    border-top:1px solid var(--border);
+
+    color:var(--text-soft);
+
+    font-size:9px;
+}
+
+.fb-volunteer-role{
+
+    color:var(--primary);
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   REPORTS
+========================================================= */
+
+.fb-report-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.5fr)
+        minmax(260px,.8fr);
+
+    gap:18px;
+}
+
+.fb-report-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:21px;
+}
+
+.fb-report-number{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-top:8px;
+}
+
+.fb-report-label{
+
+    color:var(--text-soft);
+
+    font-size:10px;
+}
+
+.fb-report-bars{
+
+    height:220px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:13px;
+
+    padding-top:20px;
+}
+
+.fb-bar-column{
+
+    flex:1;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    gap:7px;
+
+    text-align:center;
+}
+
+.fb-bar{
+
+    width:100%;
+
+    max-width:34px;
+
+    margin:auto;
+
+    border-radius:8px 8px 3px 3px;
+
+    background:linear-gradient(
+        to top,
+        var(--primary),
+        #898AEF
+    );
+}
+
+.fb-bar-label{
+
+    color:var(--text-faint);
+
+    font-size:8px;
+}
+
+.fb-finance-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0;
+}
+
+.fb-finance-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:13px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.fb-finance-row:last-child{
+
+    border-bottom:0;
+}
+
+.fb-finance-row span{
+
+    color:var(--text-soft);
+
+    font-size:10px;
+}
+
+.fb-finance-row strong{
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+.fb-notification-list{
+
+    max-width:850px;
+}
+
+.fb-notification{
+
+    display:flex;
+
+    gap:13px;
+
+    padding:17px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.fb-notification-icon{
+
+    width:37px;
+
+    height:37px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:11px;
+
+    background:rgba(91,92,226,.10);
+
+    color:var(--primary);
+
+    flex-shrink:0;
+}
+
+.fb-notification-icon i{
+
+    width:16px;
+}
+
+.fb-notification-body{
+
+    flex:1;
+}
+
+.fb-notification-body strong{
+
+    font-size:11px;
+}
+
+.fb-notification-body p{
+
+    color:var(--text-soft);
+
+    font-size:10px;
+
+    line-height:1.5;
+
+    margin-top:4px;
+}
+
+.fb-notification-time{
+
+    color:var(--text-faint);
+
+    font-size:9px;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.fb-profile-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        280px
+        minmax(0,1fr);
+
+    gap:18px;
+}
+
+.fb-profile-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:24px;
+
+    text-align:center;
+}
+
+.fb-profile-large{
+
+    width:76px;
+
+    height:76px;
+
+    margin:0 auto 14px;
+
+    border-radius:22px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #8788EC
+        );
+
+    color:#fff;
+
+    font-size:21px;
+
+    font-weight:700;
+}
+
+.fb-profile-card h3{
+
+    font-size:15px;
+}
+
+.fb-profile-card p{
+
+    color:var(--text-soft);
+
+    font-size:10px;
+
+    margin-top:5px;
+}
+
+.fb-profile-stat{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:11px 0;
+
+    border-top:1px solid var(--border);
+
+    margin-top:17px;
+
+    font-size:9px;
+}
+
+.fb-profile-stat span{
+
+    color:var(--text-faint);
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.fb-toast{
+
+    position:fixed;
+
+    right:24px;
+
+    bottom:24px;
+
+    z-index:3000;
+
+    min-width:260px;
+
+    padding:14px 16px;
+
+    border-radius:13px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:.3s ease;
+}
+
+[dir="rtl"] .fb-toast{
+
+    right:auto;
+
+    left:24px;
+}
+
+.fb-toast.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+.fb-toast i{
+
+    color:var(--success);
+}
+
+.fb-toast span{
+
+    font-size:10px;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.fb-sidebar-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(10,10,20,.42);
+
+    backdrop-filter:blur(2px);
+
+    z-index:950;
+}
+
+
+/* =========================================================
+   RESPONSIVE — NEST HUB / SMALL LAPTOP
+========================================================= */
+
+@media(max-width:1100px){
+
+    :root{
+        --sidebar-width:225px;
+    }
+
+    .fb-metrics{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .fb-grid,
+    .fb-report-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .fb-volunteer-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .fb-profile-layout{
+
+        grid-template-columns:230px 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   IPAD MINI
+========================================================= */
+
+@media(max-width:850px){
+
+    :root{
+        --sidebar-width:240px;
+    }
+
+    .fb-sidebar{
+
+        transform:translateX(-105%);
+
+        box-shadow:var(--shadow);
+    }
+
+    [dir="rtl"] .fb-sidebar{
+
+        transform:translateX(105%);
+    }
+
+    .fb-sidebar.open{
+
+        transform:translateX(0);
+    }
+
+    .fb-sidebar-overlay.show{
+
+        display:block;
+    }
+
+    .fb-main,
+    [dir="rtl"] .fb-main{
+
+        margin-left:0;
+
+        margin-right:0;
+    }
+
+    .fb-mobile-menu{
+
+        display:grid;
+    }
+
+    .fb-topbar{
+
+        padding:0 18px;
+    }
+
+    .fb-content{
+
+        width:min(92%,720px);
+    }
+
+    .fb-welcome-copy h2{
+
+        font-size:28px;
+    }
+
+    .fb-volunteer-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+/* =========================================================
+   SAMSUNG S8+ / MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    :root{
+        --top-height:66px;
+    }
+
+    .fb-topbar{
+
+        gap:9px;
+
+        padding:0 12px;
+    }
+
+    .fb-top-title small{
+
+        display:none;
+    }
+
+    .fb-top-title h1{
+
+        font-size:14px;
+    }
+
+    .fb-profile-button{
+
+        padding:3px;
+
+        border:0;
+
+        background:transparent;
+    }
+
+    .fb-profile-button span{
+
+        display:none;
+    }
+
+    .fb-top-actions{
+
+        gap:4px;
+    }
+
+    .fb-top-action{
+
+        width:34px;
+
+        height:34px;
+    }
+
+    .fb-content{
+
+        width:calc(100% - 24px);
+
+        padding-top:20px;
+    }
+
+    .fb-welcome{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:12px;
+
+        margin-bottom:18px;
+    }
+
+    .fb-welcome-copy h2{
+
+        font-size:25px;
+    }
+
+    .fb-welcome-copy p{
+
+        font-size:11px;
+    }
+
+    .fb-date-chip{
+
+        font-size:9px;
+    }
+
+    .fb-metrics{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:9px;
+    }
+
+    .fb-metric{
+
+        min-height:125px;
+
+        padding:14px;
+    }
+
+    .fb-metric-value{
+
+        font-size:22px;
+    }
+
+    .fb-metric-label{
+
+        font-size:9px;
+    }
+
+    .fb-metric-head{
+
+        margin-bottom:10px;
+    }
+
+    .fb-metric-icon{
+
+        width:31px;
+
+        height:31px;
+    }
+
+    .fb-panel{
+
+        padding:15px;
+
+        border-radius:15px;
+    }
+
+    .fb-grid{
+
+        gap:12px;
+
+        margin-bottom:12px;
+    }
+
+    .fb-section-header{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+    .fb-section-header h2{
+
+        font-size:23px;
+    }
+
+    .fb-form-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .fb-field.full{
+
+        grid-column:auto;
+    }
+
+    .fb-form-actions{
+
+        grid-column:auto;
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+    }
+
+    .fb-volunteer-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .fb-profile-layout{
+
+        grid-template-columns:1fr;
+    }
+
+    .fb-profile-card{
+
+        padding:20px;
+    }
+
+    .fb-actions-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .fb-toast{
+
+        left:12px;
+
+        right:12px;
+
+        min-width:0;
+
+        bottom:12px;
+    }
+
+    [dir="rtl"] .fb-toast{
+
+        left:12px;
+
+        right:12px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media(max-width:370px){
+
+    .fb-metrics{
+
+        grid-template-columns:1fr;
+    }
+
+    .fb-metric{
+
+        min-height:110px;
+    }
+
+    .fb-top-action:nth-child(2){
+
+        display:none;
+    }
+
+    .fb-welcome-copy h2{
+
+        font-size:23px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="fb-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="fb-sidebar"
+        id="fbSidebar"
+    >
+
+        <a
+            href="index.html"
+            class="fb-brand"
+        >
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+
+                    <span class="fb-brand-primary">
+                        Fund
+                    </span><span class="fb-brand-secondary">
+                        Bloom
+                    </span>
+
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <div class="fb-side-label">
+            Coordinator Workspace
+        </div>
+
+
+        <nav class="fb-sidebar-nav">
+
+
+            <a
+                href="#dashboard"
+                class="fb-nav-item active"
+                data-view="dashboard"
+            >
+
+                <i data-lucide="layout-dashboard"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="#campaigns"
+                class="fb-nav-item"
+                data-view="campaigns"
+            >
+
+                <i data-lucide="megaphone"></i>
+
+                <span>
+                    Campaigns
+                </span>
+
+            </a>
+
+
+            <a
+                href="#donations"
+                class="fb-nav-item"
+                data-view="donations"
+            >
+
+                <i data-lucide="hand-coins"></i>
+
+                <span>
+                    Donation Progress
+                </span>
+
+            </a>
+
+
+            <a
+                href="#volunteers"
+                class="fb-nav-item"
+                data-view="volunteers"
+            >
+
+                <i data-lucide="users-round"></i>
+
+                <span>
+                    Volunteers
+                </span>
+
+            </a>
+
+
+            <a
+                href="#reports"
+                class="fb-nav-item"
+                data-view="reports"
+            >
+
+                <i data-lucide="file-chart-column"></i>
+
+                <span>
+                    Financial Reports
+                </span>
+
+            </a>
+
+
+            <div class="fb-side-label">
+                Workspace
+            </div>
+
+
+            <a
+                href="#notifications"
+                class="fb-nav-item"
+                data-view="notifications"
+            >
+
+                <i data-lucide="bell"></i>
+
+                <span>
+                    Notifications
+                </span>
+
+            </a>
+
+
+            <a
+                href="#profile"
+                class="fb-nav-item"
+                data-view="profile"
+            >
+
+                <i data-lucide="circle-user-round"></i>
+
+                <span>
+                    Coordinator Profile
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="fb-sidebar-bottom">
+
+
+            <div class="fb-coordinator-mini">
+
+                <div class="fb-mini-avatar">
+                    SC
+                </div>
+
+                <div class="fb-mini-info">
+
+                    <strong>
+                        School Coordinator
+                    </strong>
+
+                    <span>
+                        Fundraising workspace
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="fb-logout"
+                id="fbLogout"
+            >
+
+                <i data-lucide="log-out"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </aside>
+
+
+    <div
+        class="fb-sidebar-overlay"
+        id="fbOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="fb-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="fb-topbar">
+
+
+            <button
+                class="fb-mobile-menu"
+                id="fbMobileMenu"
+                aria-label="Open dashboard menu"
+            >
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+
+            <div class="fb-top-title">
+
+                <small>
+                    FundBloom Coordinator Workspace
+                </small>
+
+                <h1 id="fbTopTitle">
+                    School Coordinator Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="fb-top-actions">
+
+
+                <!-- Theme -->
+
+                <button
+                    class="fb-top-action"
+                    id="fbTheme"
+                    title="Toggle dark mode"
+                    aria-label="Toggle theme"
+                >
+
+                    <i data-lucide="moon"></i>
+
+                </button>
+
+
+                <!-- RTL -->
+
+                <button
+                    class="fb-top-action"
+                    id="fbRTL"
+                    title="Switch RTL / LTR"
+                    aria-label="Toggle direction"
+                >
+
+                    <i data-lucide="arrow-left-right"></i>
+
+                </button>
+
+
+                <!-- Notifications -->
+
+                <button
+                    class="fb-top-action"
+                    id="fbNotificationButton"
+                    title="Notifications"
+                    data-view-button="notifications"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span class="fb-notification-dot"></span>
+
+                </button>
+
+
+                <!-- Profile -->
+
+                <button
+                    class="fb-profile-button"
+                    id="fbProfileButton"
+                    data-view-button="profile"
+                >
+
+                    <span class="fb-profile-avatar">
+                        SC
+                    </span>
+
+                    <span>
+                        Coordinator
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div class="fb-content">
+
+
+            <!-- =================================================
+                 DASHBOARD VIEW
+            ================================================== -->
+
+            <section
+                class="fb-view active"
+                id="view-dashboard"
+            >
+
+
+                <div class="fb-welcome">
+
+
+                    <div class="fb-welcome-copy">
+
+                        <small>
+                            SCHOOL COORDINATOR DASHBOARD
+                        </small>
+
+                        <h2>
+                            Welcome back, Coordinator.
+                        </h2>
+
+                        <p>
+                            Manage fundraising campaigns, monitor donation progress,
+                            coordinate event volunteers, and review financial summaries
+                            from one focused workspace.
+                        </p>
+
+                    </div>
+
+
+                    <div class="fb-date-chip">
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span id="fbCurrentDate">
+                            Current fundraising cycle
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- METRICS -->
+
+                <div class="fb-metrics">
+
+
+                    <div class="fb-metric">
+
+                        <div class="fb-metric-head">
+
+                            <div class="fb-metric-icon">
+
+                                <i data-lucide="megaphone"></i>
+
+                            </div>
+
+                            <span class="fb-metric-change">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="fb-metric-value">
+                            08
+                        </div>
+
+                        <div class="fb-metric-label">
+                            Active Campaigns
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-metric orange">
+
+                        <div class="fb-metric-head">
+
+                            <div class="fb-metric-icon">
+
+                                <i data-lucide="hand-coins"></i>
+
+                            </div>
+
+                            <span class="fb-metric-change">
+                                +12.8%
+                            </span>
+
+                        </div>
+
+                        <div class="fb-metric-value">
+                            $42.8K
+                        </div>
+
+                        <div class="fb-metric-label">
+                            Donation Progress
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-metric">
+
+                        <div class="fb-metric-head">
+
+                            <div class="fb-metric-icon">
+
+                                <i data-lucide="users-round"></i>
+
+                            </div>
+
+                            <span class="fb-metric-change">
+                                31 Joined
+                            </span>
+
+                        </div>
+
+                        <div class="fb-metric-value">
+                            64
+                        </div>
+
+                        <div class="fb-metric-label">
+                            Event Volunteers
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-metric orange">
+
+                        <div class="fb-metric-head">
+
+                            <div class="fb-metric-icon">
+
+                                <i data-lucide="file-chart-column"></i>
+
+                            </div>
+
+                            <span class="fb-metric-change">
+                                Updated
+                            </span>
+
+                        </div>
+
+                        <div class="fb-metric-value">
+                            $31.4K
+                        </div>
+
+                        <div class="fb-metric-label">
+                            Reported Funds
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- MAIN DASHBOARD GRID -->
+
+                <div class="fb-grid">
+
+
+                    <!-- CAMPAIGN PROGRESS -->
+
+                    <div class="fb-panel">
+
+                        <div class="fb-panel-head">
+
+                            <div class="fb-panel-title">
+
+                                <h3>
+                                    Campaign Progress
+                                </h3>
+
+                                <p>
+                                    Current donation movement across active campaigns
+                                </p>
+
+                            </div>
+
+                            <a
+                                href="#campaigns"
+                                class="fb-text-link"
+                                data-view-link="campaigns"
+                            >
+                                Manage campaigns
+                            </a>
+
+                        </div>
+
+
+                        <div class="fb-campaign">
+
+                            <div class="fb-campaign-top">
+
+                                <span class="fb-campaign-name">
+                                    Spring School Drive
+                                </span>
+
+                                <span class="fb-campaign-amount">
+                                    $18,450 / $25,000
+                                </span>
+
+                            </div>
+
+                            <div class="fb-progress">
+
+                                <span style="width:74%"></span>
+
+                            </div>
+
+                            <div class="fb-campaign-meta">
+
+                                <span>
+                                    74% reached
+                                </span>
+
+                                <span>
+                                    12 days remaining
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="fb-campaign">
+
+                            <div class="fb-campaign-top">
+
+                                <span class="fb-campaign-name">
+                                    Library Growth Fund
+                                </span>
+
+                                <span class="fb-campaign-amount">
+                                    $11,280 / $15,000
+                                </span>
+
+                            </div>
+
+                            <div class="fb-progress">
+
+                                <span style="width:75%"></span>
+
+                            </div>
+
+                            <div class="fb-campaign-meta">
+
+                                <span>
+                                    75% reached
+                                </span>
+
+                                <span>
+                                    18 days remaining
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="fb-campaign">
+
+                            <div class="fb-campaign-top">
+
+                                <span class="fb-campaign-name">
+                                    Community Event Fund
+                                </span>
+
+                                <span class="fb-campaign-amount">
+                                    $7,120 / $12,000
+                                </span>
+
+                            </div>
+
+                            <div class="fb-progress">
+
+                                <span style="width:59%"></span>
+
+                            </div>
+
+                            <div class="fb-campaign-meta">
+
+                                <span>
+                                    59% reached
+                                </span>
+
+                                <span>
+                                    24 days remaining
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- RECENT ACTIVITY -->
+
+                    <div class="fb-panel">
+
+                        <div class="fb-panel-head">
+
+                            <div class="fb-panel-title">
+
+                                <h3>
+                                    Recent Activity
+                                </h3>
+
+                                <p>
+                                    Latest coordinator updates
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="fb-activity">
+
+                            <div class="fb-activity-icon green">
+
+                                <i data-lucide="circle-check"></i>
+
+                            </div>
+
+                            <div class="fb-activity-body">
+
+                                <strong>
+                                    Donation milestone reached
+                                </strong>
+
+                                <p>
+                                    Spring School Drive crossed 70%.
+                                </p>
+
+                            </div>
+
+                            <span class="fb-activity-time">
+                                12m
+                            </span>
+
+                        </div>
+
+
+                        <div class="fb-activity">
+
+                            <div class="fb-activity-icon orange">
+
+                                <i data-lucide="user-plus"></i>
+
+                            </div>
+
+                            <div class="fb-activity-body">
+
+                                <strong>
+                                    New volunteer sign-up
+                                </strong>
+
+                                <p>
+                                    3 volunteers joined the school event.
+                                </p>
+
+                            </div>
+
+                            <span class="fb-activity-time">
+                                35m
+                            </span>
+
+                        </div>
+
+
+                        <div class="fb-activity">
+
+                            <div class="fb-activity-icon">
+
+                                <i data-lucide="file-text"></i>
+
+                            </div>
+
+                            <div class="fb-activity-body">
+
+                                <strong>
+                                    Financial report updated
+                                </strong>
+
+                                <p>
+                                    Monthly fundraising summary is ready.
+                                </p>
+
+                            </div>
+
+                            <span class="fb-activity-time">
+                                1h
+                            </span>
+
+                        </div>
+
+
+                        <div class="fb-activity">
+
+                            <div class="fb-activity-icon">
+
+                                <i data-lucide="megaphone"></i>
+
+                            </div>
+
+                            <div class="fb-activity-body">
+
+                                <strong>
+                                    Campaign setup saved
+                                </strong>
+
+                                <p>
+                                    Community Event Fund was updated.
+                                </p>
+
+                            </div>
+
+                            <span class="fb-activity-time">
+                                2h
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="fb-panel">
+
+
+                    <div class="fb-panel-head">
+
+                        <div class="fb-panel-title">
+
+                            <h3>
+                                Coordinator Actions
+                            </h3>
+
+                            <p>
+                                Move directly into the work that needs attention
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-actions-grid">
+
+
+                        <button
+                            class="fb-action"
+                            data-view-button="campaigns"
+                        >
+
+                            <span class="fb-action-icon">
+
+                                <i data-lucide="plus"></i>
+
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Set Up Campaign
+                                </strong>
+
+                                <span>
+                                    Create a fundraising campaign
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="fb-action"
+                            data-view-button="donations"
+                        >
+
+                            <span class="fb-action-icon">
+
+                                <i data-lucide="chart-no-axes-combined"></i>
+
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Track Donations
+                                </strong>
+
+                                <span>
+                                    Review donation progress
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="fb-action"
+                            data-view-button="volunteers"
+                        >
+
+                            <span class="fb-action-icon">
+
+                                <i data-lucide="user-round-plus"></i>
+
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Manage Volunteers
+                                </strong>
+
+                                <span>
+                                    Review event sign-ups
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="fb-action"
+                            data-view-button="reports"
+                        >
+
+                            <span class="fb-action-icon">
+
+                                <i data-lucide="file-bar-chart"></i>
+
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Financial Summary
+                                </strong>
+
+                                <span>
+                                    Review fundraising reports
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 CAMPAIGNS VIEW
+            ================================================== -->
+
+            <section
+                class="fb-view"
+                id="view-campaigns"
+            >
+
+
+                <div class="fb-section-header">
+
+                    <div>
+
+                        <small>
+                            FUNDRAISING CAMPAIGNS
+                        </small>
+
+                        <h2>
+                            Set up a new campaign.
+                        </h2>
+
+                        <p>
+                            Create and organize school fundraising campaigns
+                            with clear goals and campaign details.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="fb-btn fb-btn-primary"
+                        id="fbSaveCampaign"
+                    >
+
+                        <i data-lucide="save"></i>
+
+                        Save Campaign
+
+                    </button>
+
+                </div>
+
+
+                <div class="fb-panel">
+
+
+                    <form
+                        class="fb-form-grid"
+                        id="fbCampaignForm"
+                    >
+
+
+                        <div class="fb-field">
+
+                            <label>
+                                Campaign Name
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="e.g. Spring School Drive"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="fb-field">
+
+                            <label>
+                                Fundraising Goal
+                            </label>
+
+                            <input
+                                type="number"
+                                placeholder="25000"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="fb-field">
+
+                            <label>
+                                Campaign Start
+                            </label>
+
+                            <input
+                                type="date"
+                            >
+
+                        </div>
+
+
+                        <div class="fb-field">
+
+                            <label>
+                                Campaign End
+                            </label>
+
+                            <input
+                                type="date"
+                            >
+
+                        </div>
+
+
+                        <div class="fb-field">
+
+                            <label>
+                                Campaign Focus
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    School Fundraising
+                                </option>
+
+                                <option>
+                                    Community Fund
+                                </option>
+
+                                <option>
+                                    School Event
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="fb-field">
+
+                            <label>
+                                Campaign Status
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Active
+                                </option>
+
+                                <option>
+                                    Draft
+                                </option>
+
+                                <option>
+                                    Scheduled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="fb-field full">
+
+                            <label>
+                                Campaign Description
+                            </label>
+
+                            <textarea
+                                placeholder="Describe what the school is raising funds for..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="fb-form-actions">
+
+                            <button
+                                type="reset"
+                                class="fb-btn fb-btn-secondary"
+                            >
+                                Clear
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="fb-btn fb-btn-primary"
+                            >
+
+                                <i data-lucide="check"></i>
+
+                                Create Campaign
+
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 DONATIONS VIEW
+            ================================================== -->
+
+            <section
+                class="fb-view"
+                id="view-donations"
+            >
+
+
+                <div class="fb-section-header">
+
+                    <div>
+
+                        <small>
+                            DONATION PROGRESS
+                        </small>
+
+                        <h2>
+                            Track fundraising in real time.
+                        </h2>
+
+                        <p>
+                            Monitor current campaign progress, received donations,
+                            and campaign targets from one view.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fb-metrics">
+
+
+                    <div class="fb-metric">
+
+                        <div class="fb-metric-head">
+
+                            <div class="fb-metric-icon">
+
+                                <i data-lucide="wallet"></i>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-metric-value">
+                            $42.8K
+                        </div>
+
+                        <div class="fb-metric-label">
+                            Total Donations
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-metric orange">
+
+                        <div class="fb-metric-head">
+
+                            <div class="fb-metric-icon">
+
+                                <i data-lucide="target"></i>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-metric-value">
+                            $58K
+                        </div>
+
+                        <div class="fb-metric-label">
+                            Combined Goals
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-metric">
+
+                        <div class="fb-metric-head">
+
+                            <div class="fb-metric-icon">
+
+                                <i data-lucide="trending-up"></i>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-metric-value">
+                            73.8%
+                        </div>
+
+                        <div class="fb-metric-label">
+                            Overall Progress
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-metric orange">
+
+                        <div class="fb-metric-head">
+
+                            <div class="fb-metric-icon">
+
+                                <i data-lucide="receipt"></i>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-metric-value">
+                            486
+                        </div>
+
+                        <div class="fb-metric-label">
+                            Recorded Donations
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="fb-panel">
+
+
+                    <div class="fb-panel-head">
+
+                        <div class="fb-panel-title">
+
+                            <h3>
+                                Donation Activity
+                            </h3>
+
+                            <p>
+                                Current donation records and campaign progress
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-table-wrap">
+
+
+                        <table class="fb-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Campaign
+                                    </th>
+
+                                    <th>
+                                        Progress
+                                    </th>
+
+                                    <th>
+                                        Goal
+                                    </th>
+
+                                    <th>
+                                        Donations
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <strong>
+                                            Spring School Drive
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        $18,450
+                                    </td>
+
+                                    <td>
+                                        $25,000
+                                    </td>
+
+                                    <td>
+                                        218
+                                    </td>
+
+                                    <td>
+
+                                        <span class="fb-status success">
+                                            On Track
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <strong>
+                                            Library Growth Fund
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        $11,280
+                                    </td>
+
+                                    <td>
+                                        $15,000
+                                    </td>
+
+                                    <td>
+                                        147
+                                    </td>
+
+                                    <td>
+
+                                        <span class="fb-status success">
+                                            On Track
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <strong>
+                                            Community Event Fund
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        $7,120
+                                    </td>
+
+                                    <td>
+                                        $12,000
+                                    </td>
+
+                                    <td>
+                                        121
+                                    </td>
+
+                                    <td>
+
+                                        <span class="fb-status pending">
+                                            Building
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 VOLUNTEERS VIEW
+            ================================================== -->
+
+            <section
+                class="fb-view"
+                id="view-volunteers"
+            >
+
+
+                <div class="fb-section-header">
+
+                    <div>
+
+                        <small>
+                            EVENT VOLUNTEERS
+                        </small>
+
+                        <h2>
+                            Manage volunteer sign-ups.
+                        </h2>
+
+                        <p>
+                            Review volunteer participation and organize people
+                            who have signed up to support school fundraising events.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="fb-btn fb-btn-primary"
+                        id="fbVolunteerNotify"
+                    >
+
+                        <i data-lucide="send"></i>
+
+                        Notify Volunteers
+
+                    </button>
+
+                </div>
+
+
+                <div class="fb-volunteer-grid">
+
+
+                    <div class="fb-volunteer">
+
+                        <div class="fb-volunteer-top">
+
+                            <div class="fb-volunteer-avatar">
+                                AM
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Alex Morgan
+                                </h4>
+
+                                <p>
+                                    Spring School Event
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-volunteer-meta">
+
+                            <span>
+                                Event Support
+                            </span>
+
+                            <span class="fb-volunteer-role">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-volunteer">
+
+                        <div class="fb-volunteer-top">
+
+                            <div class="fb-volunteer-avatar">
+                                JR
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Jordan Reed
+                                </h4>
+
+                                <p>
+                                    Community Event
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-volunteer-meta">
+
+                            <span>
+                                Registration
+                            </span>
+
+                            <span class="fb-volunteer-role">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-volunteer">
+
+                        <div class="fb-volunteer-top">
+
+                            <div class="fb-volunteer-avatar">
+                                SK
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Samira Khan
+                                </h4>
+
+                                <p>
+                                    Library Fund Event
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-volunteer-meta">
+
+                            <span>
+                                Event Support
+                            </span>
+
+                            <span class="fb-volunteer-role">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-volunteer">
+
+                        <div class="fb-volunteer-top">
+
+                            <div class="fb-volunteer-avatar">
+                                DL
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Daniel Lee
+                                </h4>
+
+                                <p>
+                                    Spring School Event
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-volunteer-meta">
+
+                            <span>
+                                Donation Desk
+                            </span>
+
+                            <span class="fb-volunteer-role">
+                                Pending
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-volunteer">
+
+                        <div class="fb-volunteer-top">
+
+                            <div class="fb-volunteer-avatar">
+                                RN
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Riley Nelson
+                                </h4>
+
+                                <p>
+                                    Community Event
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-volunteer-meta">
+
+                            <span>
+                                Event Support
+                            </span>
+
+                            <span class="fb-volunteer-role">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fb-volunteer">
+
+                        <div class="fb-volunteer-top">
+
+                            <div class="fb-volunteer-avatar">
+                                CT
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Casey Taylor
+                                </h4>
+
+                                <p>
+                                    Library Fund Event
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="fb-volunteer-meta">
+
+                            <span>
+                                Registration
+                            </span>
+
+                            <span class="fb-volunteer-role">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 REPORTS VIEW
+            ================================================== -->
+
+            <section
+                class="fb-view"
+                id="view-reports"
+            >
+
+
+                <div class="fb-section-header">
+
+                    <div>
+
+                        <small>
+                            FINANCIAL SUMMARY
+                        </small>
+
+                        <h2>
+                            Understand your fundraising results.
+                        </h2>
+
+                        <p>
+                            Review campaign totals and financial summary information
+                            for the school's fundraising activity.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="fb-btn fb-btn-primary"
+                        id="fbExportReport"
+                    >
+
+                        <i data-lucide="download"></i>
+
+                        Generate Summary
+
+                    </button>
+
+                </div>
+
+
+                <div class="fb-report-grid">
+
+
+                    <div class="fb-report-card">
+
+
+                        <div class="fb-panel-title">
+
+                            <h3>
+                                Fundraising Overview
+                            </h3>
+
+                            <p>
+                                Donation progress by reporting period
+                            </p>
+
+                        </div>
+
+
+                        <div class="fb-report-bars">
+
+
+                            <div class="fb-bar-column">
+
+                                <div
+                                    class="fb-bar"
+                                    style="height:42%"
+                                ></div>
+
+                                <span class="fb-bar-label">
+                                    Jan
+                                </span>
+
+                            </div>
+
+
+                            <div class="fb-bar-column">
+
+                                <div
+                                    class="fb-bar"
+                                    style="height:58%"
+                                ></div>
+
+                                <span class="fb-bar-label">
+                                    Feb
+                                </span>
+
+                            </div>
+
+
+                            <div class="fb-bar-column">
+
+                                <div
+                                    class="fb-bar"
+                                    style="height:51%"
+                                ></div>
+
+                                <span class="fb-bar-label">
+                                    Mar
+                                </span>
+
+                            </div>
+
+
+                            <div class="fb-bar-column">
+
+                                <div
+                                    class="fb-bar"
+                                    style="height:76%"
+                                ></div>
+
+                                <span class="fb-bar-label">
+                                    Apr
+                                </span>
+
+                            </div>
+
+
+                            <div class="fb-bar-column">
+
+                                <div
+                                    class="fb-bar"
+                                    style="height:68%"
+                                ></div>
+
+                                <span class="fb-bar-label">
+                                    May
+                                </span>
+
+                            </div>
+
+
+                            <div class="fb-bar-column">
+
+                                <div
+                                    class="fb-bar"
+                                    style="height:91%"
+                                ></div>
+
+                                <span class="fb-bar-label">
+                                    Jun
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="fb-report-card">
+
+
+                        <div class="fb-panel-title">
+
+                            <h3>
+                                Financial Summary
+                            </h3>
+
+                            <p>
+                                Current reporting totals
+                            </p>
+
+                        </div>
+
+
+                        <div class="fb-finance-list">
+
+
+                            <div class="fb-finance-row">
+
+                                <span>
+                                    Donations received
+                                </span>
+
+                                <strong>
+                                    $42,850
+                                </strong>
+
+                            </div>
+
+
+                            <div class="fb-finance-row">
+
+                                <span>
+                                    Active campaign goals
+                                </span>
+
+                                <strong>
+                                    $58,000
+                                </strong>
+
+                            </div>
+
+
+                            <div class="fb-finance-row">
+
+                                <span>
+                                    Campaign progress
+                                </span>
+
+                                <strong>
+                                    73.8%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="fb-finance-row">
+
+                                <span>
+                                    Active campaigns
+                                </span>
+
+                                <strong>
+                                    08
+                                </strong>
+
+                            </div>
+
+
+                            <div class="fb-finance-row">
+
+                                <span>
+                                    Volunteer sign-ups
+                                </span>
+
+                                <strong>
+                                    64
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 NOTIFICATIONS VIEW
+            ================================================== -->
+
+            <section
+                class="fb-view"
+                id="view-notifications"
+            >
+
+
+                <div class="fb-section-header">
+
+                    <div>
+
+                        <small>
+                            COORDINATOR NOTIFICATIONS
+                        </small>
+
+                        <h2>
+                            Keep up with campaign activity.
+                        </h2>
+
+                        <p>
+                            Important updates about donations, campaigns,
+                            volunteers, and financial summaries.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fb-panel fb-notification-list">
+
+
+                    <div class="fb-notification">
+
+                        <div class="fb-notification-icon">
+
+                            <i data-lucide="trending-up"></i>
+
+                        </div>
+
+                        <div class="fb-notification-body">
+
+                            <strong>
+                                Donation progress updated
+                            </strong>
+
+                            <p>
+                                Spring School Drive has reached 74% of its fundraising goal.
+                            </p>
+
+                        </div>
+
+                        <span class="fb-notification-time">
+                            12 min ago
+                        </span>
+
+                    </div>
+
+
+                    <div class="fb-notification">
+
+                        <div class="fb-notification-icon">
+
+                            <i data-lucide="user-plus"></i>
+
+                        </div>
+
+                        <div class="fb-notification-body">
+
+                            <strong>
+                                New volunteer sign-ups
+                            </strong>
+
+                            <p>
+                                Three new volunteers joined the upcoming school event.
+                            </p>
+
+                        </div>
+
+                        <span class="fb-notification-time">
+                            35 min ago
+                        </span>
+
+                    </div>
+
+
+                    <div class="fb-notification">
+
+                        <div class="fb-notification-icon">
+
+                            <i data-lucide="file-chart-column"></i>
+
+                        </div>
+
+                        <div class="fb-notification-body">
+
+                            <strong>
+                                Financial summary updated
+                            </strong>
+
+                            <p>
+                                The latest fundraising summary is ready for coordinator review.
+                            </p>
+
+                        </div>
+
+                        <span class="fb-notification-time">
+                            1 hour ago
+                        </span>
+
+                    </div>
+
+
+                    <div class="fb-notification">
+
+                        <div class="fb-notification-icon">
+
+                            <i data-lucide="megaphone"></i>
+
+                        </div>
+
+                        <div class="fb-notification-body">
+
+                            <strong>
+                                Campaign information changed
+                            </strong>
+
+                            <p>
+                                Community Event Fund campaign details were updated.
+                            </p>
+
+                        </div>
+
+                        <span class="fb-notification-time">
+                            2 hours ago
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 PROFILE VIEW
+            ================================================== -->
+
+            <section
+                class="fb-view"
+                id="view-profile"
+            >
+
+
+                <div class="fb-section-header">
+
+                    <div>
+
+                        <small>
+                            COORDINATOR PROFILE
+                        </small>
+
+                        <h2>
+                            Your FundBloom workspace.
+                        </h2>
+
+                        <p>
+                            Coordinator information and fundraising workspace details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fb-profile-layout">
+
+
+                    <div class="fb-profile-card">
+
+
+                        <div class="fb-profile-large">
+                            SC
+                        </div>
+
+
+                        <h3>
+                            School Coordinator
+                        </h3>
+
+
+                        <p>
+                            FundBloom Fundraising Workspace
+                        </p>
+
+
+                        <div class="fb-profile-stat">
+
+                            <span>
+                                Active Campaigns
+                            </span>
+
+                            <strong>
+                                08
+                            </strong>
+
+                        </div>
+
+
+                        <div class="fb-profile-stat">
+
+                            <span>
+                                Volunteers
+                            </span>
+
+                            <strong>
+                                64
+                            </strong>
+
+                        </div>
+
+
+                        <div class="fb-profile-stat">
+
+                            <span>
+                                Donation Progress
+                            </span>
+
+                            <strong>
+                                73.8%
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="fb-panel">
+
+
+                        <div class="fb-panel-head">
+
+                            <div class="fb-panel-title">
+
+                                <h3>
+                                    Coordinator Information
+                                </h3>
+
+                                <p>
+                                    Workspace profile details
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="fb-form-grid">
+
+
+                            <div class="fb-field">
+
+                                <label>
+                                    Role
+                                </label>
+
+                                <input
+                                    type="text"
+                                    value="School Coordinator"
+                                    readonly
+                                >
+
+                            </div>
+
+
+                            <div class="fb-field">
+
+                                <label>
+                                    Workspace
+                                </label>
+
+                                <input
+                                    type="text"
+                                    value="School Fundraising"
+                                    readonly
+                                >
+
+                            </div>
+
+
+                            <div class="fb-field">
+
+                                <label>
+                                    Campaigns Managed
+                                </label>
+
+                                <input
+                                    type="text"
+                                    value="8 active campaigns"
+                                    readonly
+                                >
+
+                            </div>
+
+
+                            <div class="fb-field">
+
+                                <label>
+                                    Volunteer Management
+                                </label>
+
+                                <input
+                                    type="text"
+                                    value="64 event sign-ups"
+                                    readonly
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="fb-toast"
+    id="fbToast"
+>
+
+    <i data-lucide="circle-check"></i>
+
+    <span id="fbToastText">
+        Action completed.
+    </span>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   LUCIDE
+========================================================= */
+
+lucide.createIcons();
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const sidebar =
+    document.getElementById("fbSidebar");
+
+const overlay =
+    document.getElementById("fbOverlay");
+
+const mobileMenu =
+    document.getElementById("fbMobileMenu");
+
+const topTitle =
+    document.getElementById("fbTopTitle");
+
+const toast =
+    document.getElementById("fbToast");
+
+const toastText =
+    document.getElementById("fbToastText");
+
+
+/* =========================================================
+   VIEW TITLES
+========================================================= */
+
+const viewTitles = {
+
+    dashboard:
+        "School Coordinator Dashboard",
+
+    campaigns:
+        "Fundraising Campaigns",
+
+    donations:
+        "Donation Progress",
+
+    volunteers:
+        "Event Volunteers",
+
+    reports:
+        "Financial Reports",
+
+    notifications:
+        "Coordinator Notifications",
+
+    profile:
+        "Coordinator Profile"
+
+};
+
+
+/* =========================================================
+   OPEN VIEW
+========================================================= */
+
+function openView(view){
+
+    document
+        .querySelectorAll(".fb-view")
+        .forEach(section => {
+
+            section.classList.remove("active");
+
+        });
+
+
+    const target =
+        document.getElementById(
+            "view-" + view
+        );
+
+
+    if(target){
+
+        target.classList.add("active");
+
+    }
+
+
+    document
+        .querySelectorAll(".fb-nav-item")
+        .forEach(item => {
+
+            item.classList.toggle(
+                "active",
+                item.dataset.view === view
+            );
+
+        });
+
+
+    if(viewTitles[view]){
+
+        topTitle.textContent =
+            viewTitles[view];
+
+    }
+
+
+    history.replaceState(
+        null,
+        "",
+        "#" + view
+    );
+
+
+    closeSidebar();
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* =========================================================
+   SIDEBAR NAV
+========================================================= */
+
+document
+    .querySelectorAll(".fb-nav-item")
+    .forEach(item => {
+
+        item.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                openView(
+                    item.dataset.view
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   BUTTON VIEW LINKS
+========================================================= */
+
+document
+    .querySelectorAll("[data-view-button]")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                openView(
+                    button.dataset.viewButton
+                );
+
+            }
+        );
+
+    });
+
+
+document
+    .querySelectorAll("[data-view-link]")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                openView(
+                    link.dataset.viewLink
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   HASH ROUTING
+========================================================= */
+
+function loadHash(){
+
+    const hash =
+        window.location.hash.replace(
+            "#",
+            ""
+        );
+
+
+    if(viewTitles[hash]){
+
+        openView(hash);
+
+    }else{
+
+        openView("dashboard");
+
+    }
+
+}
+
+loadHash();
+
+
+window.addEventListener(
+    "hashchange",
+    loadHash
+);
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+function openSidebar(){
+
+    sidebar.classList.add("open");
+
+    overlay.classList.add("show");
+
+}
+
+
+function closeSidebar(){
+
+    sidebar.classList.remove("open");
+
+    overlay.classList.remove("show");
+
+}
+
+
+mobileMenu.addEventListener(
+    "click",
+    openSidebar
+);
+
+
+overlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+/* =========================================================
+   SHARED FUNDBLOOM THEME
+========================================================= */
+
+const themeButton =
+    document.getElementById("fbTheme");
+
+
+const THEME_KEY =
+    "fundBloomTheme";
+
+
+function updateThemeIcon(){
+
+    if(!themeButton) return;
+
+
+    const isDark =
+        document.body.classList.contains(
+            "dark-theme"
+        );
+
+
+    themeButton.innerHTML =
+        isDark
+            ? '<i data-lucide="sun"></i>'
+            : '<i data-lucide="moon"></i>';
+
+
+    themeButton.setAttribute(
+        "title",
+        isDark
+            ? "Switch to light mode"
+            : "Switch to dark mode"
+    );
+
+
+    themeButton.setAttribute(
+        "aria-label",
+        isDark
+            ? "Switch to light mode"
+            : "Switch to dark mode"
+    );
+
+
+    lucide.createIcons();
+
+}
+
+
+function applyTheme(theme){
+
+    if(
+        theme !== "dark" &&
+        theme !== "light"
+    ){
+
+        theme = "light";
+
+    }
+
+
+    if(theme === "dark"){
+
+        document.body.classList.add(
+            "dark-theme"
+        );
+
+    }else{
+
+        document.body.classList.remove(
+            "dark-theme"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        THEME_KEY,
+        theme
+    );
+
+
+    updateThemeIcon();
+
+}
+
+
+const savedTheme =
+    localStorage.getItem(
+        THEME_KEY
+    ) || "light";
+
+
+applyTheme(savedTheme);
+
+
+if(themeButton){
+
+    themeButton.addEventListener(
+        "click",
+        () => {
+
+            const isDark =
+                document.body.classList.contains(
+                    "dark-theme"
+                );
+
+
+            applyTheme(
+                isDark
+                    ? "light"
+                    : "dark"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SHARED FUNDBLOOM RTL / LTR
+========================================================= */
+
+const rtlButton =
+    document.getElementById("fbRTL");
+
+
+const DIRECTION_KEY =
+    "fundBloomDirection";
+
+
+function applyDirection(direction){
+
+    if(
+        direction !== "rtl" &&
+        direction !== "ltr"
+    ){
+
+        direction = "ltr";
+
+    }
+
+
+    document.documentElement.dir =
+        direction;
+
+
+    localStorage.setItem(
+        DIRECTION_KEY,
+        direction
+    );
+
+
+    if(rtlButton){
+
+        rtlButton.setAttribute(
+            "title",
+            direction === "rtl"
+                ? "Switch to LTR"
+                : "Switch to RTL"
+        );
+
+
+        rtlButton.setAttribute(
+            "aria-label",
+            direction === "rtl"
+                ? "Switch to LTR"
+                : "Switch to RTL"
+        );
+
+    }
+
+}
+
+
+const savedDirection =
+    localStorage.getItem(
+        DIRECTION_KEY
+    ) || "ltr";
+
+
+applyDirection(savedDirection);
+
+
+if(rtlButton){
+
+    rtlButton.addEventListener(
+        "click",
+        () => {
+
+            const currentDirection =
+                document.documentElement.dir ||
+                "ltr";
+
+
+            applyDirection(
+                currentDirection === "rtl"
+                    ? "ltr"
+                    : "rtl"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CROSS-PAGE SETTINGS SYNC
+========================================================= */
+
+window.addEventListener(
+    "storage",
+    event => {
+
+
+        if(event.key === THEME_KEY){
+
+            applyTheme(
+                event.newValue || "light"
+            );
+
+        }
+
+
+        if(event.key === DIRECTION_KEY){
+
+            applyDirection(
+                event.newValue || "ltr"
+            );
+
+        }
+
+
+    }
+);
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+
+function showToast(message){
+
+    toastText.textContent =
+        message;
+
+
+    toast.classList.add("show");
+
+
+    clearTimeout(toastTimer);
+
+
+    toastTimer =
+        setTimeout(
+            () => {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            3000
+        );
+
+}
+
+
+/* =========================================================
+   CAMPAIGN FORM
+========================================================= */
+
+const campaignForm =
+    document.getElementById(
+        "fbCampaignForm"
+    );
+
+
+campaignForm.addEventListener(
+    "submit",
+    event => {
+
+        event.preventDefault();
+
+
+        showToast(
+            "Fundraising campaign saved successfully."
+        );
+
+
+        campaignForm.reset();
+
+    }
+);
+
+
+/* =========================================================
+   VOLUNTEER NOTIFICATION
+========================================================= */
+
+document
+    .getElementById("fbVolunteerNotify")
+    .addEventListener(
+        "click",
+        () => {
+
+            showToast(
+                "Volunteer notification prepared."
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   FINANCIAL REPORT
+========================================================= */
+
+document
+    .getElementById("fbExportReport")
+    .addEventListener(
+        "click",
+        () => {
+
+            showToast(
+                "Financial summary generated successfully."
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   SAVE CAMPAIGN BUTTON
+========================================================= */
+
+document
+    .getElementById("fbSaveCampaign")
+    .addEventListener(
+        "click",
+        () => {
+
+            campaignForm.requestSubmit();
+
+        }
+    );
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+document
+    .getElementById("fbLogout")
+    .addEventListener(
+        "click",
+        () => {
+
+
+            const confirmed =
+                confirm(
+                    "Are you sure you want to log out?"
+                );
+
+
+            if(confirmed){
+
+                window.location.href =
+                    "login.html";
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   CURRENT DATE
+========================================================= */
+
+const currentDate =
+    document.getElementById(
+        "fbCurrentDate"
+    );
+
+
+const date =
+    new Date();
+
+
+currentDate.textContent =
+    date.toLocaleDateString(
+        undefined,
+        {
+            month:"short",
+            day:"numeric",
+            year:"numeric"
+        }
+    );
+
+
+/* =========================================================
+   RE-CREATE ICONS
+========================================================= */
+
+lucide.createIcons();
+
+</script>
+
+
+</body>
+
+</html>

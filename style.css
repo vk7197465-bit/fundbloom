@@ -1,0 +1,2785 @@
+
+   
+/* =========================================================
+   FUNDBLOOM — UNIVERSAL ACTIVE LINK
+========================================================= */
+
+.fb-nav-link.active,
+.fb-sidebar-link.active,
+.fb-menu-link.active{
+
+    color:var(--primary) !important;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(91,92,226,.14),
+            rgba(91,92,226,.05)
+        ) !important;
+
+}
+
+
+/* dashboard/sidebar indicator */
+
+.fb-sidebar-link.active{
+
+    position:relative;
+
+}
+
+
+.fb-sidebar-link.active::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:7px;
+    bottom:7px;
+
+    width:3px;
+
+    border-radius:
+        0 5px 5px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+html[dir="rtl"]
+.fb-sidebar-link.active::before{
+
+    left:auto;
+    right:0;
+
+    border-radius:
+        5px 0 0 5px;
+
+}
+
+
+/* icons */
+
+.fb-nav-link.active svg,
+.fb-sidebar-link.active svg,
+.fb-menu-link.active svg{
+
+    color:var(--primary);
+
+}
+        /* =========================================================
+           FUND BLOOM DESIGN TOKENS
+        ========================================================= */
+
+        :root {
+            --primary: #5B5CE2;
+            --primary-dark: #5B5CE2;
+            --primary-soft: rgba(91, 92, 226, 0.10);
+--bg:white;
+            --secondary: #F4A261;
+            --secondary-dark: #F4A261;
+            --secondary-soft: rgba(244, 162, 97, 0.13);
+
+            --text: #171827;
+            --text-soft: #66697D;
+
+            --white: #ffffff;
+            --surface: #ffffff;
+            --surface-2: #F7F7FC;
+
+            --border: rgba(23, 24, 39, 0.09);
+
+            --shadow-sm:
+                0 8px 25px rgba(23, 24, 39, 0.06);
+
+            --shadow-lg:
+                0 25px 70px rgba(23, 24, 39, 0.12);
+
+            --header-height: 82px;
+
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+
+            --transition: .35s cubic-bezier(.2, .8, .2, 1);
+        }
+
+
+        /* =========================================================
+           DARK MODE
+        ========================================================= */
+
+        body.dark-theme {
+
+            --text: #F4F4FA;
+            --text-soft: #A6A8BB;
+--bg:black;
+            --surface: #15162A;
+            --surface-2: #10111F;
+
+            --white: #15162A;
+
+            --border: rgba(255, 255, 255, 0.09);
+
+            --shadow-sm:
+                0 8px 25px rgba(0, 0, 0, 0.20);
+
+            --shadow-lg:
+                0 25px 70px rgba(0, 0, 0, 0.35);
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--surface-2);
+            color: var(--text);
+            transition:
+                background var(--transition),
+                color var(--transition);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            border: 0;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .fb-header {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+
+            width: 100%;
+
+            background:
+                var(--bg);
+
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            border-bottom: 1px solid var(--border);
+
+            transition:
+                background var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .fb-header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+
+        .fb-header-inner {
+
+            width: min(1440px, calc(100% - 60px));
+            min-height: var(--header-height);
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 28px;
+        }
+
+
+        /* =========================================================
+           LOGO
+        ========================================================= */
+
+        .fb-brand {
+
+            display: flex;
+            align-items: center;
+
+            gap: 3px;
+
+            flex-shrink: 0;
+        }
+
+        .fb-logo-image {
+
+            width: 48px;
+            height: 48px;
+
+            object-fit: contain;
+
+            background: transparent;
+        }
+
+        .fb-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .fb-brand-name {
+
+
+            font-size: 24px;
+            font-weight: 600;
+
+            letter-spacing: -0.8px;
+            white-space: nowrap;
+        }
+
+        .fb-brand-primary {
+            color: var(--primary);
+        }
+
+        .fb-brand-secondary {
+            color: var(--secondary);
+        }
+
+        .fb-brand-tagline {
+
+            margin-top: 6px;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            letter-spacing: 1.8px;
+
+            color: var(--text-soft);
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================================
+           DESKTOP NAVIGATION
+        ========================================================= */
+
+        .fb-main-nav {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 4px;
+
+            flex: 1;
+        }
+
+        .fb-nav-link {
+
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+
+            padding: 12px 13px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: var(--text);
+
+            border-radius: 10px;
+
+            transition: var(--transition);
+        }
+
+        .fb-nav-link::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 14px;
+            right: 14px;
+            bottom: 5px;
+
+            height: 2px;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                90deg,
+                var(--primary),
+                var(--secondary)
+            );
+
+            transform: scaleX(0);
+            transform-origin: center;
+
+            transition: var(--transition);
+        }
+
+        .fb-nav-link:hover {
+            color: var(--text);
+            background: var(--primary-soft);
+        }
+
+        .fb-nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .fb-nav-link svg {
+            width: 15px;
+            height: 15px;
+            transition: var(--transition);
+        }
+
+
+        /* =========================================================
+   HOME DROPDOWN — FIXED
+========================================================= */
+
+.fb-home-dropdown {
+    position: relative;
+}
+
+/* Keep dropdown open while moving from Home into menu */
+.fb-home-dropdown:hover .fb-dropdown,
+.fb-home-dropdown:focus-within .fb-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+.fb-home-dropdown:hover .fb-nav-link svg,
+.fb-home-dropdown:focus-within .fb-nav-link svg {
+    transform: rotate(180deg);
+}
+
+.fb-dropdown {
+    position: absolute;
+
+    /* NO GAP */
+    top: calc(100% - 1px);
+    left: 50%;
+
+    width: 205px;
+    padding: 10px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-lg);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(-50%, 10px);
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease,
+        transform .25s cubic-bezier(.2,.8,.2,1);
+
+    z-index: 10000;
+}
+
+/* Invisible bridge removes the hover gap */
+.fb-dropdown::after {
+    content: "";
+    position: absolute;
+
+    top: -14px;
+    left: 0;
+
+    width: 100%;
+    height: 14px;
+
+    background: transparent;
+}
+
+/* Premium arrow */
+.fb-dropdown::before {
+    content: "";
+
+    position: absolute;
+
+    top: -6px;
+    left: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    background: var(--surface);
+
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+
+    transform: translateX(-50%) rotate(45deg);
+
+    z-index: 0;
+}
+
+.fb-dropdown-heading {
+    position: relative;
+    z-index: 1;
+
+    padding: 12px 14px 9px;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: var(--text-soft);
+}
+
+.fb-dropdown-link {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    transition: var(--transition);
+}
+
+.fb-dropdown-link strong {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.fb-dropdown-link span {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-soft);
+}
+
+.fb-dropdown-link:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-soft),
+            var(--secondary-soft)
+        );
+
+    transform: translateX(4px);
+}
+        .fb-dropdown::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: -6px;
+            left: 50%;
+
+            width: 12px;
+            height: 12px;
+
+            background: var(--surface);
+
+            border-left: 1px solid var(--border);
+            border-top: 1px solid var(--border);
+
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .fb-dropdown-heading {
+
+            padding: 12px 14px 9px;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            color: var(--text-soft);
+        }
+
+        .fb-dropdown-link {
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 3px;
+
+            padding: 14px;
+
+            border-radius: 12px;
+
+            transition: var(--transition);
+        }
+
+        .fb-dropdown-link strong {
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .fb-dropdown-link span {
+
+            font-size: 12px;
+            line-height: 1.5;
+
+            color: var(--text-soft);
+        }
+
+        .fb-dropdown-link:hover {
+            background: linear-gradient(
+                135deg,
+                var(--primary-soft),
+                var(--secondary-soft)
+            );
+            transform: translateX(4px);
+        }
+
+
+        /* =========================================================
+           HEADER ACTIONS
+        ========================================================= */
+
+        .fb-header-actions {
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            flex-shrink: 0;
+        }
+
+        .fb-control-btn {
+
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            color: var(--text);
+
+            transition: var(--transition);
+        }
+
+        .fb-control-btn:hover {
+
+            color: var(--primary);
+
+            border-color: var(--primary);
+
+            transform: translateY(-2px);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .fb-control-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+
+        /* =========================================================
+           LOGIN BUTTON
+        ========================================================= */
+
+        .fb-login-btn {
+
+            position: relative;
+
+            min-height: 44px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 20px;
+
+            border-radius: 12px;
+
+            color: #fff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            font-size: 14px;
+            font-weight: 800;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 25px rgba(91, 92, 226, .20);
+
+            transition: var(--transition);
+        }
+
+        .fb-login-btn::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    transparent 20%,
+                    rgba(255,255,255,.25),
+                    transparent 70%
+                );
+
+            transform: translateX(-120%);
+
+            transition: .7s;
+        }
+
+        .fb-login-btn:hover::before {
+            transform: translateX(120%);
+        }
+
+        .fb-login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 15px 35px rgba(91, 92, 226, .30);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU BUTTON
+        ========================================================= */
+
+        .fb-menu-btn {
+
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            place-items: center;
+
+            border-radius: 12px;
+
+            background: var(--primary-soft);
+
+            color: var(--primary);
+
+            border: 1px solid rgba(91,92,226,.15);
+        }
+
+        .fb-menu-btn svg {
+            width: 21px;
+            height: 21px;
+        }
+
+
+        /* =========================================================
+           MOBILE NAVIGATION
+        ========================================================= */
+
+        .fb-mobile-menu {
+
+            display: none;
+
+            width: min(100% - 24px, 600px);
+
+            margin: 10px auto 14px;
+
+            padding: 12px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            box-shadow: var(--shadow-lg);
+
+            max-height: calc(100vh - 110px);
+
+            overflow-y: auto;
+        }
+
+        .fb-mobile-menu.active {
+            display: block;
+            animation: mobileMenu .3s ease forwards;
+        }
+
+        @keyframes mobileMenu {
+
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fb-mobile-link {
+
+            width: 100%;
+
+            min-height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 15px;
+
+            color: var(--text);
+
+            font-size: 15px;
+            font-weight: 700;
+
+            border-radius: 12px;
+
+            transition: var(--transition);
+        }
+
+        .fb-mobile-link:hover {
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+
+        /* =========================================================
+           MOBILE HOME DROPDOWN
+        ========================================================= */
+
+        .fb-mobile-home-head {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            min-height: 50px;
+
+            padding: 0 15px;
+
+            border-radius: 12px;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: var(--transition);
+        }
+
+        .fb-mobile-home-head:hover {
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+        .fb-mobile-home-head svg {
+            transition: var(--transition);
+        }
+
+        .fb-mobile-home-head.open svg {
+            transform: rotate(180deg);
+        }
+
+        .fb-mobile-submenu {
+
+            display: none;
+
+            margin: 2px 8px 8px;
+
+            padding: 7px;
+
+            background: var(--surface-2);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+        }
+
+        .fb-mobile-submenu.active {
+            display: block;
+        }
+
+        .fb-mobile-sub-link {
+
+            display: block;
+
+            padding: 12px 13px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: var(--text-soft);
+
+            transition: var(--transition);
+        }
+
+        .fb-mobile-sub-link:hover {
+            color: var(--primary);
+            background: var(--primary-soft);
+        }
+
+
+        /* =========================================================
+           MOBILE LOGIN
+        ========================================================= */
+
+        .fb-mobile-login {
+
+            margin-top: 10px;
+
+            width: 100%;
+
+            min-height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            color: #fff;
+
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .fb-footer {
+
+            position: relative;
+
+            margin-top: 100px;
+
+            background: var(--bg);
+
+            border-top: 1px solid var(--border);
+
+            overflow: hidden;
+        }
+
+        .fb-footer::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            top: -300px;
+            right: -180px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(91,92,226,.13),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+        }
+
+        .fb-footer::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            bottom: -300px;
+            left: -160px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(244,162,97,.12),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .fb-footer-inner {
+
+            position: relative;
+            z-index: 1;
+
+            width: min(1440px, calc(100% - 60px));
+
+            margin: auto;
+
+            padding:
+                75px 0 35px;
+        }
+
+
+        /* =========================================================
+           FOOTER TOP
+        ========================================================= */
+
+        .fb-footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(280px, 1.5fr)
+                repeat(3, minmax(170px, 1fr))
+                minmax(250px, 1.2fr);
+
+            gap: 50px;
+
+            padding-bottom: 55px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        /* =========================================================
+           FOOTER BRAND
+        ========================================================= */
+
+        .fb-footer-brand {
+
+            max-width: 360px;
+        }
+
+        .fb-footer-logo {
+
+            display: inline-flex;
+            align-items: center;
+
+            gap: 11px;
+
+            margin-bottom: 20px;
+        }
+
+        .fb-footer-logo img {
+
+            width: 50px;
+            height: 50px;
+
+            object-fit: contain;
+        }
+
+        .fb-footer-brand-name {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        .fb-footer-description {
+
+            max-width: 340px;
+
+            color: var(--text);
+font-weight: 600;
+            font-size: 14px;
+            line-height: 1.8;
+margin-top: 8px;
+            margin-bottom: 24px;
+        }
+
+
+        /* =========================================================
+           FOOTER MINI BADGE
+        ========================================================= */
+
+        .fb-footer-badge {
+
+            display: inline-flex;
+            align-items: center;
+
+            padding: 8px 12px;
+
+            border-radius: 50px;
+
+            background: var(--primary-soft);
+
+            border: 1px solid rgba(91,92,226,.12);
+
+            color: var(--primary);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: .5px;
+        }
+
+
+        /* =========================================================
+           FOOTER COLUMN
+        ========================================================= */
+
+        .fb-footer-column h3 {
+
+            position: relative;
+
+            display: inline-block;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            margin-bottom: 22px;
+        }
+
+        .fb-footer-column h3::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 28px;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            border-radius: 10px;
+        }
+
+        .fb-footer-links {
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 11px;
+        }
+
+        .fb-footer-links a {
+
+            width: fit-content;
+
+            color: var(--text);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .fb-footer-links a:hover {
+
+            color: var(--primary);
+
+            transform: translateX(5px);
+        }
+
+
+        /* =========================================================
+           NEWSLETTER
+        ========================================================= */
+
+        .fb-newsletter-box {
+
+            padding: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--primary-soft),
+                    var(--secondary-soft)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+        }
+
+        .fb-newsletter-box h3 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+        }
+
+        .fb-newsletter-box p {
+
+            color: var(--text-soft);
+
+            font-size: 13px;
+            line-height: 1.6;
+
+            margin-bottom: 17px;
+        }
+
+        .fb-newsletter-form {
+
+            display: flex;
+
+            padding: 5px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+        }
+
+        .fb-newsletter-form input {
+
+            min-width: 0;
+            flex: 1;
+
+            border: 0;
+            outline: 0;
+
+            padding: 0 10px;
+
+            color: var(--text);
+
+            background: transparent;
+
+            font-size: 12px;
+        }
+
+        .fb-newsletter-form button {
+
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 9px;
+
+            background: var(--primary);
+
+            color: #fff;
+
+            transition: var(--transition);
+        }
+
+        .fb-newsletter-form button:hover {
+            background: var(--secondary);
+            transform: translateX(2px);
+        }
+
+        .fb-newsletter-form svg {
+            width: 16px;
+            height: 16px;
+        }
+
+
+        /* =========================================================
+           FOOTER SOCIAL
+        ========================================================= */
+
+        .fb-socials {
+
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 18px;
+        }
+
+        .fb-social {
+
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            color: var(--text-soft);
+
+            transition: var(--transition);
+        }
+
+        .fb-social:hover {
+
+            color: #fff;
+
+            background: var(--primary);
+
+            border-color: var(--primary);
+
+            transform: translateY(-3px);
+        }
+
+        .fb-social svg {
+            width: 15px;
+            height: 15px;
+        }
+
+
+        /* =========================================================
+           FOOTER BOTTOM
+        ========================================================= */
+
+        .fb-footer-bottom {
+
+            padding-top: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .fb-copyright {
+
+            color: var(--text-soft);
+
+            font-size: 12px;
+        }
+
+        .fb-bottom-links {
+
+            display: flex;
+            align-items: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .fb-bottom-links a {
+
+            color: var(--text-soft);
+
+            font-size: 12px;
+
+            transition: var(--transition);
+        }
+
+        .fb-bottom-links a:hover {
+            color: var(--primary);
+        }
+
+
+        /* =========================================================
+           RTL
+        ========================================================= */
+
+        html[dir="rtl"] .fb-dropdown {
+            left: auto;
+            right: 50%;
+
+            transform:
+                translate(50%, 10px);
+        }
+
+        html[dir="rtl"] .fb-home-dropdown:hover .fb-dropdown {
+
+            transform:
+                translate(50%, 0);
+        }
+
+        html[dir="rtl"] .fb-footer-links a:hover {
+            transform: translateX(-5px);
+        }
+
+        html[dir="rtl"] .fb-mobile-link,
+        html[dir="rtl"] .fb-mobile-home-head {
+            text-align: right;
+        }
+
+
+        /* =========================================================
+           LARGE DESKTOP
+        ========================================================= */
+
+        @media (max-width: 1250px) {
+
+            .fb-header-inner,
+            .fb-footer-inner {
+                width: min(100% - 40px, 1200px);
+            }
+
+            .fb-main-nav {
+                gap: 0;
+            }
+
+            .fb-nav-link {
+                padding-left: 9px;
+                padding-right: 9px;
+
+                font-size: 13px;
+            }
+
+            .fb-footer-grid {
+                grid-template-columns:
+                    minmax(260px, 1.4fr)
+                    repeat(3, minmax(150px, 1fr));
+            }
+
+            .fb-newsletter-column {
+                grid-column: span 2;
+            }
+        }
+
+
+        /* =========================================================
+           NEST HUB
+           1024 x 600
+        ========================================================= */
+
+        @media (max-width: 1050px) {
+
+            :root {
+                --header-height: 74px;
+            }
+
+            .fb-header-inner {
+
+                width: calc(100% - 32px);
+
+                min-height: 74px;
+
+                gap: 15px;
+            }
+
+            .fb-main-nav {
+                display: none;
+            }
+
+            .fb-header-actions {
+                margin-left: auto;
+            }
+
+            .fb-menu-btn {
+                display: grid;
+            }
+
+            .fb-brand-tagline {
+                display: none;
+            }
+
+            .fb-brand-name {
+                font-size: 23px;
+            }
+
+            .fb-logo-image {
+                width: 43px;
+                height: 43px;
+            }
+
+            .fb-footer-grid {
+                grid-template-columns:
+                    repeat(3, minmax(190px, 1fr));
+            }
+
+            .fb-footer-brand {
+                grid-column: span 3;
+                max-width: 650px;
+            }
+
+            .fb-newsletter-column {
+                grid-column: span 3;
+            }
+        }
+
+
+        /* =========================================================
+           IPAD MINI
+           768 x 1024
+        ========================================================= */
+
+        @media (max-width: 820px) {
+
+            .fb-header-inner {
+
+                width: calc(100% - 28px);
+
+                min-height: 70px;
+            }
+
+            .fb-header-actions {
+                gap: 6px;
+            }
+
+            .fb-control-btn {
+
+                width: 40px;
+                height: 40px;
+            }
+
+            .fb-login-btn {
+                display: none;
+            }
+
+            .fb-menu-btn {
+
+                width: 42px;
+                height: 42px;
+            }
+
+            .fb-footer-inner {
+
+                width: calc(100% - 32px);
+
+                padding-top: 60px;
+            }
+
+            .fb-footer-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(170px, 1fr));
+
+                gap: 38px 28px;
+            }
+
+            .fb-footer-brand {
+                grid-column: span 2;
+            }
+
+            .fb-newsletter-column {
+                grid-column: span 2;
+            }
+
+            .fb-footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        /* =========================================================
+           SAMSUNG S8
+           360 x 740
+        ========================================================= */
+
+        @media (max-width: 480px) {
+
+            :root {
+                --header-height: 66px;
+            }
+
+            .fb-header-inner {
+
+                width: calc(100% - 20px);
+
+                min-height: 66px;
+
+                gap: 8px;
+            }
+
+            .fb-brand {
+
+                gap: 7px;
+
+                min-width: 0;
+            }
+
+            .fb-logo-image {
+
+                width: 38px;
+                height: 38px;
+            }
+
+            .fb-brand-name {
+                font-size: 20px;
+                letter-spacing: -.5px;
+            }
+
+            .fb-brand-tagline {
+                display: none;
+            }
+
+            .fb-header-actions {
+                gap: 5px;
+            }
+
+            .fb-control-btn {
+
+                width: 37px;
+                height: 37px;
+
+                border-radius: 10px;
+            }
+
+            .fb-control-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .fb-menu-btn {
+
+                width: 38px;
+                height: 38px;
+
+                border-radius: 10px;
+            }
+
+            .fb-menu-btn svg {
+                width: 19px;
+                height: 19px;
+            }
+
+            .fb-mobile-menu {
+
+                width: calc(100% - 16px);
+
+                margin-top: 8px;
+
+                padding: 9px;
+
+                border-radius: 17px;
+            }
+
+            .fb-mobile-link,
+            .fb-mobile-home-head {
+
+                min-height: 48px;
+
+                padding-left: 12px;
+                padding-right: 12px;
+
+                font-size: 14px;
+            }
+
+            .fb-mobile-sub-link {
+                font-size: 13px;
+            }
+
+            .fb-mobile-login {
+                min-height: 48px;
+                font-size: 14px;
+            }
+
+            .fb-footer {
+                margin-top: 70px;
+            }
+
+            .fb-footer-inner {
+
+                width: calc(100% - 28px);
+
+                padding-top: 50px;
+                padding-bottom: 25px;
+            }
+
+            .fb-footer-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 34px;
+            }
+
+            .fb-footer-brand,
+            .fb-newsletter-column {
+                grid-column: span 1;
+            }
+
+            .fb-footer-brand-name {
+                font-size: 23px;
+            }
+
+            .fb-footer-description {
+                font-size: 13px;
+            }
+
+            .fb-newsletter-box {
+                padding: 20px;
+            }
+
+            .fb-footer-bottom {
+
+                padding-top: 22px;
+
+                gap: 14px;
+            }
+
+            .fb-bottom-links {
+                gap: 13px;
+            }
+        }
+
+
+        /* =========================================================
+           VERY SMALL DEVICES
+        ========================================================= */
+
+        @media (max-width: 360px) {
+
+            .fb-brand-name {
+                font-size: 18px;
+            }
+
+            .fb-logo-image {
+                width: 34px;
+                height: 34px;
+            }
+
+            .fb-control-btn {
+                width: 34px;
+                height: 34px;
+            }
+
+            .fb-menu-btn {
+                width: 35px;
+                height: 35px;
+            }
+        }
+.fb-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fb-social {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    text-decoration: none;
+}
+
+/* Instagram */
+.fb-social:nth-child(1) {
+    color: var(--primary);
+}
+
+/* LinkedIn */
+.fb-social:nth-child(2) {
+    color: var(--primary);
+}
+
+/* YouTube */
+.fb-social:nth-child(3) {
+    color: var(--primary);
+}
+.fb-social:nth-child(4) {
+    color: var(--primary);
+}
+
+
+
+.fb-social i {
+    font-size: 17px;
+}
+/* =========================================
+   SMALL FOOTER CONTACT LINKS
+========================================= */
+
+.fb-footer-contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.fb-footer-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.fb-footer-contact-link:hover {
+    color: var(--primary);
+    transform: translateX(3px);
+}
+
+.fb-small-contact-icon {
+    width: 26px;
+    height: 26px;
+
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    color: var(--primary);
+    background: var(--primary-soft);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.fb-small-contact-icon i,
+.fb-small-contact-icon svg {
+    width: 13px;
+    height: 13px;
+}
+
+.fb-footer-contact-link:hover .fb-small-contact-icon {
+    color: #fff;
+    background: var(--primary);
+}
+
+
+/* RTL */
+html[dir="rtl"] .fb-footer-contact-link:hover {
+    transform: translateX(-3px);
+}
+/* =========================================================
+   RESPONSIVE SYSTEM
+   CLEAN / STABLE / NO LAYOUT BREAKING
+========================================================= */
+
+
+/* =========================================================
+   1250px
+   Compact desktop
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    /* ---------- HEADER ---------- */
+
+    .fb-header-inner {
+        width: calc(100% - 40px);
+        max-width: 1200px;
+    }
+
+    .fb-main-nav {
+        gap: 0;
+    }
+
+    .fb-nav-link {
+        padding-left: 9px;
+        padding-right: 9px;
+        font-size: 13px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .fb-footer-inner {
+        width: calc(100% - 40px);
+        max-width: 1200px;
+    }
+
+    .fb-footer-grid {
+        grid-template-columns:
+            minmax(220px, 1.4fr)
+            repeat(3, minmax(130px, 1fr));
+        gap: 35px;
+    }
+
+    .fb-newsletter-column {
+        grid-column: span 2;
+    }
+
+}
+
+
+/* =========================================================
+   1050px
+   NEST HUB / TABLET LANDSCAPE
+   1024 × 600
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    :root {
+        --header-height: 74px;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .fb-header-inner {
+
+        width: calc(100% - 32px);
+
+        min-height: 74px;
+
+        gap: 15px;
+    }
+
+    /* Hide desktop navigation */
+    .fb-main-nav {
+        display: none;
+    }
+
+    /* Keep actions visible */
+    .fb-header-actions {
+
+        margin-left: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        flex-shrink: 0;
+    }
+
+    /* Show menu */
+    .fb-menu-btn {
+
+        display: grid;
+
+        place-items: center;
+
+        flex-shrink: 0;
+    }
+
+    /* Keep logo visible */
+    .fb-brand {
+
+        min-width: 0;
+
+        flex-shrink: 1;
+    }
+
+    .fb-logo-image {
+
+        width: 43px;
+        height: 43px;
+
+        flex-shrink: 0;
+    }
+
+    .fb-brand-name {
+        font-size: 23px;
+    }
+
+    .fb-brand-tagline {
+        display: none;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    .fb-mobile-menu {
+        width: min(calc(100% - 24px), 600px);
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .fb-footer-inner {
+        width: calc(100% - 32px);
+    }
+
+    .fb-footer-grid {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 35px 25px;
+    }
+
+    .fb-footer-brand {
+
+        grid-column: 1 / -1;
+
+        max-width: 650px;
+    }
+
+    .fb-newsletter-column {
+
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   820px
+   IPAD MINI / TABLET PORTRAIT
+   768 × 1024
+========================================================= */
+
+@media (max-width: 820px) {
+
+    :root {
+        --header-height: 70px;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .fb-header-inner {
+
+        width: calc(100% - 28px);
+
+        min-height: 70px;
+
+        gap: 12px;
+    }
+
+    .fb-header-actions {
+
+        margin-left: auto;
+
+        gap: 6px;
+
+        flex-shrink: 0;
+    }
+
+    .fb-control-btn {
+
+        width: 40px;
+        height: 40px;
+
+        flex-shrink: 0;
+    }
+
+    /* Desktop login hidden */
+    .fb-login-btn {
+        display: none;
+    }
+
+    /* Mobile menu visible */
+    .fb-menu-btn {
+
+        display: grid;
+
+        width: 42px;
+        height: 42px;
+
+        place-items: center;
+
+        flex-shrink: 0;
+    }
+
+    .fb-brand {
+
+        min-width: 0;
+
+        flex: 1;
+    }
+
+    .fb-brand-name {
+
+        font-size: 22px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    .fb-mobile-menu {
+
+        width: calc(100% - 28px);
+
+        max-width: 600px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .fb-footer-inner {
+
+        width: calc(100% - 32px);
+
+        padding-top: 60px;
+    }
+
+    .fb-footer-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 38px 28px;
+    }
+
+    .fb-footer-brand {
+
+        grid-column: 1 / -1;
+
+        max-width: 100%;
+    }
+
+    .fb-newsletter-column {
+
+        grid-column: 1 / -1;
+    }
+
+    .fb-footer-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   600px
+   LARGE MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .fb-header-inner {
+
+        width: calc(100% - 22px);
+
+        gap: 8px;
+    }
+
+    .fb-brand-name {
+        font-size: 21px;
+    }
+
+    .fb-control-btn {
+
+        width: 38px;
+        height: 38px;
+    }
+
+    .fb-menu-btn {
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .fb-footer-inner {
+
+        width: calc(100% - 28px);
+
+        padding-top: 50px;
+    }
+
+    .fb-footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+    }
+
+    .fb-footer-brand,
+    .fb-newsletter-column {
+
+        grid-column: 1;
+    }
+
+    .fb-footer-bottom {
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .fb-bottom-links {
+
+        gap: 14px;
+
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =========================================================
+   480px
+   MOBILE
+   Samsung S8 / 360–480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    :root {
+        --header-height: 66px;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .fb-header-inner {
+
+        width: calc(100% - 20px);
+
+        min-height: 66px;
+
+        gap: 7px;
+    }
+
+    .fb-brand {
+
+        gap: 7px;
+
+        min-width: 0;
+
+        flex: 1;
+    }
+
+    .fb-logo-image {
+
+        width: 38px;
+        height: 38px;
+
+        flex-shrink: 0;
+    }
+
+    .fb-brand-name {
+
+        font-size: 20px;
+
+        letter-spacing: -.5px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+    .fb-brand-tagline {
+        display: none;
+    }
+
+
+    /* =====================================================
+       HEADER ACTIONS
+    ===================================================== */
+
+    .fb-header-actions {
+
+        margin-left: auto;
+
+        gap: 5px;
+
+        flex-shrink: 0;
+    }
+
+    .fb-control-btn {
+
+        width: 37px;
+        height: 37px;
+
+        border-radius: 10px;
+
+        flex-shrink: 0;
+    }
+
+    .fb-control-btn svg {
+
+        width: 16px;
+        height: 16px;
+    }
+
+    .fb-login-btn {
+        display: none;
+    }
+
+    .fb-menu-btn {
+
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        display: grid;
+
+        place-items: center;
+
+        flex-shrink: 0;
+    }
+
+    .fb-menu-btn svg {
+
+        width: 19px;
+        height: 19px;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    .fb-mobile-menu {
+
+        width: calc(100% - 16px);
+
+        max-width: none;
+
+        margin: 8px auto 12px;
+
+        padding: 9px;
+
+        border-radius: 17px;
+
+        max-height: calc(100vh - 82px);
+
+        overflow-y: auto;
+    }
+
+    .fb-mobile-link,
+    .fb-mobile-home-head {
+
+        min-height: 48px;
+
+        padding-left: 12px;
+        padding-right: 12px;
+
+        font-size: 14px;
+    }
+
+    .fb-mobile-sub-link {
+
+        padding: 11px 12px;
+
+        font-size: 13px;
+    }
+
+    .fb-mobile-login {
+
+        min-height: 48px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .fb-footer {
+
+        margin-top: 70px;
+    }
+
+    .fb-footer-inner {
+
+        width: calc(100% - 28px);
+
+        padding-top: 50px;
+
+        padding-bottom: 25px;
+    }
+
+    .fb-footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 34px;
+    }
+
+    .fb-footer-brand,
+    .fb-newsletter-column {
+
+        grid-column: 1;
+    }
+
+    .fb-footer-brand-name {
+        font-size: 23px;
+    }
+
+    .fb-footer-description {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .fb-newsletter-box {
+
+        padding: 20px;
+    }
+
+    .fb-newsletter-form {
+
+        width: 100%;
+    }
+
+    .fb-footer-bottom {
+
+        padding-top: 22px;
+
+        gap: 14px;
+    }
+
+    .fb-bottom-links {
+
+        gap: 13px;
+
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =========================================================
+   360px
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    :root {
+        --header-height: 62px;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .fb-header-inner {
+
+        width: calc(100% - 14px);
+
+        min-height: 62px;
+
+        gap: 5px;
+    }
+
+    .fb-brand {
+
+        gap: 5px;
+    }
+
+    .fb-logo-image {
+
+        width: 34px;
+        height: 34px;
+    }
+
+    .fb-brand-name {
+
+        font-size: 18px;
+
+        letter-spacing: -.4px;
+    }
+
+
+    /* =====================================================
+       ACTIONS
+    ===================================================== */
+
+    .fb-header-actions {
+
+        gap: 4px;
+    }
+
+    .fb-control-btn {
+
+        width: 34px;
+        height: 34px;
+
+        border-radius: 9px;
+    }
+
+    .fb-control-btn svg {
+
+        width: 15px;
+        height: 15px;
+    }
+
+    .fb-menu-btn {
+
+        width: 35px;
+        height: 35px;
+
+        border-radius: 9px;
+    }
+
+    .fb-menu-btn svg {
+
+        width: 18px;
+        height: 18px;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    .fb-mobile-menu {
+
+        width: calc(100% - 10px);
+
+        margin-top: 6px;
+
+        padding: 7px;
+
+        border-radius: 15px;
+    }
+
+    .fb-mobile-link,
+    .fb-mobile-home-head {
+
+        min-height: 46px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+        font-size: 13px;
+    }
+
+    .fb-mobile-sub-link {
+
+        min-height: 40px;
+
+        padding: 10px;
+
+        font-size: 12px;
+    }
+
+    .fb-mobile-login {
+
+        min-height: 46px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .fb-footer {
+
+        margin-top: 55px;
+    }
+
+    .fb-footer-inner {
+
+        width: calc(100% - 22px);
+
+        padding-top: 42px;
+
+        padding-bottom: 22px;
+    }
+
+    .fb-footer-grid {
+
+        gap: 28px;
+    }
+
+    .fb-footer-brand-name {
+
+        font-size: 21px;
+    }
+
+    .fb-footer-description {
+
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+    .fb-newsletter-box {
+
+        padding: 17px;
+    }
+
+    .fb-footer-bottom {
+
+        padding-top: 18px;
+
+        gap: 12px;
+    }
+
+    .fb-bottom-links {
+
+        gap: 10px;
+
+        font-size: 12px;
+    }
+
+}
+/* =========================================================
+   FUNDBLOOM — CURRENT PAGE
+   UNIVERSAL ACTIVE STATE
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   DESKTOP NORMAL LINK
+--------------------------------------------------------- */
+
+.fb-nav-link.fb-current-page{
+
+    color:var(--primary) !important;
+
+    background:
+        rgba(91,92,226,.10) !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   HOME PARENT
+   Active when Home 1 OR Home 2 is selected
+--------------------------------------------------------- */
+
+.fb-home-dropdown > .fb-nav-link.fb-current-page{
+
+    color:var(--primary) !important;
+
+    background:
+        rgba(91,92,226,.10) !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   HOME 1 / HOME 2 DROPDOWN
+--------------------------------------------------------- */
+
+.fb-dropdown-link.fb-current-page{
+
+    color:var(--primary) !important;
+
+    background:
+        rgba(91,92,226,.12) !important;
+
+}
+
+
+/* Home 2 active indicator */
+
+.fb-dropdown-link.fb-current-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    width:3px;
+
+    height:22px;
+
+    border-radius:0 4px 4px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+/* ---------------------------------------------------------
+   RTL DROPDOWN
+--------------------------------------------------------- */
+
+html[dir="rtl"]
+.fb-dropdown-link.fb-current-page::before{
+
+    left:auto;
+
+    right:0;
+
+    border-radius:
+        4px 0 0 4px;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE NORMAL LINKS
+--------------------------------------------------------- */
+
+.fb-mobile-link.fb-current-page{
+
+    color:var(--primary) !important;
+
+    background:
+        rgba(91,92,226,.10) !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE HOME 1 / HOME 2
+--------------------------------------------------------- */
+
+.fb-mobile-sub-link.fb-current-page{
+
+    color:var(--primary) !important;
+
+    background:
+        rgba(91,92,226,.12) !important;
+
+    font-weight:700;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE HOME PARENT
+--------------------------------------------------------- */
+
+.fb-mobile-home.fb-current-page{
+
+    color:var(--primary) !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   DARK MODE
+--------------------------------------------------------- */
+
+html[data-theme="dark"]
+.fb-nav-link.fb-current-page{
+
+    color:#B8B9FF !important;
+
+    background:
+        rgba(91,92,226,.18) !important;
+
+}
+
+
+html[data-theme="dark"]
+.fb-dropdown-link.fb-current-page{
+
+    color:#B8B9FF !important;
+
+    background:
+        rgba(91,92,226,.20) !important;
+
+}
+
+
+html[data-theme="dark"]
+.fb-mobile-link.fb-current-page{
+
+    color:#B8B9FF !important;
+
+    background:
+        rgba(91,92,226,.18) !important;
+
+}
+
+
+html[data-theme="dark"]
+.fb-mobile-sub-link.fb-current-page{
+
+    color:#B8B9FF !important;
+
+    background:
+        rgba(91,92,226,.20) !important;
+
+}

@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<title>FundBloom | Login</title>
+
+<link rel="icon" type="image/png" href="images/l.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<style>
+
+/* =========================================================
+   FUNDBLOOM LOGIN
+   SAME THEME SYSTEM AS INDEX
+========================================================= */
+
+:root{
+
+    --primary:#5B5CE2;
+    --secondary:#F4A261;
+
+    --bg:#F8F8FC;
+    --surface:#FFFFFF;
+    --surface-2:#F1F1F8;
+
+    --text:#17172A;
+    --muted:#707083;
+
+    --border:rgba(23,23,42,.09);
+
+    --heading:"Playfair Display",serif;
+    --body:"DM Sans",sans-serif;
+
+    --danger:#D9534F;
+
+    --shadow:
+        0 25px 70px rgba(23,23,42,.10);
+
+}
+
+
+/* =========================================================
+   DARK THEME
+   SAME AS INDEX
+========================================================= */
+
+body.dark-theme{
+
+    --bg:#10111E;
+    --surface:#17182A;
+    --surface-2:#202136;
+
+    --text:#F5F5FA;
+    --muted:#A8A8BA;
+
+    --border:rgba(255,255,255,.09);
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.38);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+}
+
+
+body{
+
+    font-family:var(--body);
+
+    color:var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 5% 5%,
+            rgba(91,92,226,.12),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 95% 95%,
+            rgba(244,162,97,.11),
+            transparent 28%
+        ),
+
+        var(--bg);
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+
+}
+
+
+button,
+input{
+
+    font:inherit;
+
+}
+
+
+button{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+/* =========================================================
+   AUTH PAGE
+========================================================= */
+
+.fb-auth-page{
+
+    width:100%;
+    height:100dvh;
+
+    min-height:500px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:16px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================================
+   DECORATIVE ORBITS
+========================================================= */
+
+.fb-auth-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border:1px solid
+        rgba(91,92,226,.10);
+
+    border-radius:50%;
+
+    top:-270px;
+    left:-180px;
+
+}
+
+
+.fb-auth-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:380px;
+    height:380px;
+
+    border:1px solid
+        rgba(244,162,97,.10);
+
+    border-radius:50%;
+
+    right:-220px;
+    bottom:-240px;
+
+}
+
+
+html[dir="rtl"] .fb-auth-page::before{
+
+    left:auto;
+    right:-180px;
+
+}
+
+
+html[dir="rtl"] .fb-auth-page::after{
+
+    right:auto;
+    left:-220px;
+
+}
+
+
+/* =========================================================
+   TOP CONTROLS
+========================================================= */
+
+.fb-auth-controls{
+
+    position:fixed;
+
+    top:15px;
+    right:17px;
+
+    display:flex;
+
+    gap:7px;
+
+    z-index:20;
+
+}
+
+
+html[dir="rtl"] .fb-auth-controls{
+
+    right:auto;
+    left:17px;
+
+}
+
+
+/* =========================================================
+   CONTROL BUTTON
+========================================================= */
+
+.fb-auth-control{
+
+    width:36px;
+    height:36px;
+
+    border:1px solid var(--border);
+
+    border-radius:11px;
+
+    background:var(--surface);
+
+    color:var(--muted);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 7px 20px rgba(20,22,50,.06);
+
+    transition:
+        transform .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+
+}
+
+
+.fb-auth-control:hover{
+
+    color:var(--primary);
+
+    border-color:
+        rgba(91,92,226,.35);
+
+    transform:translateY(-2px);
+
+}
+
+
+.fb-auth-control:active{
+
+    transform:translateY(0);
+
+}
+
+
+.fb-auth-control svg{
+
+    width:16px;
+    height:16px;
+
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.fb-auth-card{
+
+    width:min(100%,430px);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow);
+
+    padding:25px 31px 21px;
+
+    position:relative;
+
+    z-index:2;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+/* =========================================================
+   CARD TOP ACCENT
+========================================================= */
+
+.fb-auth-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:70px;
+    height:3px;
+
+    border-radius:
+        0 0 10px 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.fb-auth-brand{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:15px;
+
+}
+
+
+.fb-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:3px;
+
+    text-decoration:none;
+
+    flex-shrink:0;
+
+}
+
+
+.fb-logo-image{
+
+    width:43px;
+    height:43px;
+
+    object-fit:contain;
+
+    background:transparent;
+
+}
+
+
+.fb-brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1;
+
+}
+
+
+.fb-brand-name{
+
+    font-size:25px;
+
+    font-weight:600;
+
+    letter-spacing:-.8px;
+
+    white-space:nowrap;
+
+}
+
+
+.fb-brand-primary{
+
+    color:var(--primary);
+
+}
+
+
+.fb-brand-secondary{
+
+    color:var(--secondary);
+
+}
+
+
+.fb-brand-tagline{
+
+    margin-top:5px;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:1.55px;
+
+    color:var(--muted);
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.fb-auth-heading{
+
+    text-align:center;
+
+    margin-bottom:17px;
+
+}
+
+
+.fb-auth-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    font-size:9px;
+
+    font-weight:600;
+
+    letter-spacing:1.6px;
+
+    color:var(--primary);
+
+    margin-bottom:5px;
+
+}
+
+
+.fb-auth-eyebrow::before,
+.fb-auth-eyebrow::after{
+
+    content:"";
+
+    width:14px;
+    height:1px;
+
+    background:var(--primary);
+
+}
+
+
+.fb-auth-heading h1{
+
+    font-family:var(--heading);
+
+    font-size:27px;
+
+    line-height:1.1;
+
+    letter-spacing:-.5px;
+
+    margin-bottom:5px;
+
+}
+
+
+.fb-auth-heading p{
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    color:var(--muted);
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.fb-auth-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+
+.fb-field{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+
+.fb-field label{
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.fb-input-wrap{
+
+    position:relative;
+
+}
+
+
+.fb-input{
+
+    width:100%;
+
+    height:41px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:var(--surface-2);
+
+    color:var(--text);
+
+    outline:none;
+
+    padding:0 12px;
+
+    font-size:12px;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.fb-input::placeholder{
+
+    color:var(--muted);
+
+    opacity:.72;
+
+}
+
+
+.fb-input:focus{
+
+    background:var(--surface);
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(91,92,226,.08);
+
+}
+
+
+.fb-password-input{
+
+    padding-right:40px;
+
+}
+
+
+html[dir="rtl"] .fb-password-input{
+
+    padding-right:12px;
+    padding-left:40px;
+
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+.fb-password-toggle{
+
+    position:absolute;
+
+    right:9px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:25px;
+    height:25px;
+
+    border:0;
+
+    background:transparent;
+
+    color:var(--muted);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+}
+
+
+html[dir="rtl"] .fb-password-toggle{
+
+    right:auto;
+    left:9px;
+
+}
+
+
+.fb-password-toggle:hover{
+
+    color:var(--primary);
+
+}
+
+
+.fb-password-toggle svg{
+
+    width:14px;
+    height:14px;
+
+}
+
+
+/* =========================================================
+   REMEMBER / FORGOT
+========================================================= */
+
+.fb-form-row{
+
+    min-height:19px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+}
+
+
+.fb-remember{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    cursor:pointer;
+
+}
+
+
+.fb-remember input{
+
+    width:12px;
+    height:12px;
+
+    accent-color:var(--primary);
+
+    cursor:pointer;
+
+}
+
+
+.fb-forgot{
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+}
+
+
+.fb-forgot:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.fb-auth-btn{
+
+    width:100%;
+    height:42px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            110deg,
+            var(--primary),
+            #7677E9
+        );
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 9px 20px
+        rgba(91,92,226,.20);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.fb-auth-btn:hover{
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 12px 23px
+        rgba(91,92,226,.27);
+
+}
+
+
+.fb-auth-btn:active{
+
+    transform:translateY(0);
+
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.fb-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin:13px 0 10px;
+
+}
+
+
+.fb-divider span{
+
+    flex:1;
+
+    height:1px;
+
+    background:var(--border);
+
+}
+
+
+.fb-divider p{
+
+    font-size:9px;
+
+    color:var(--muted);
+
+    letter-spacing:.6px;
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+========================================================= */
+
+.fb-social-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:7px;
+
+}
+
+
+.fb-social-btn{
+
+    width:100%;
+    height:38px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    font-size:9px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.fb-social-btn:hover{
+
+    background:var(--surface-2);
+
+    border-color:
+        rgba(91,92,226,.3);
+
+    transform:translateY(-1px);
+
+}
+
+
+.fb-social-btn svg{
+
+    width:15px;
+    height:15px;
+
+}
+
+
+.fb-apple-logo{
+
+    width:15px;
+    height:17px;
+
+    display:block;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.fb-auth-footer{
+
+    border-top:1px solid var(--border);
+
+    margin-top:13px;
+
+    padding-top:12px;
+
+    text-align:center;
+
+    font-size:10px;
+
+    color:var(--muted);
+
+}
+
+
+.fb-auth-footer a{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    font-size:10px;
+
+    text-decoration:none;
+
+}
+
+
+.fb-auth-footer a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* =========================================================
+   SAMSUNG S8
+   360 × 740
+========================================================= */
+
+@media(max-width:380px){
+
+    .fb-auth-page{
+
+        padding:10px;
+
+        min-height:500px;
+
+    }
+
+
+    .fb-auth-controls{
+
+        top:8px;
+        right:9px;
+
+    }
+
+
+    html[dir="rtl"] .fb-auth-controls{
+
+        right:auto;
+        left:9px;
+
+    }
+
+
+    .fb-auth-control{
+
+        width:33px;
+        height:33px;
+
+        border-radius:9px;
+
+    }
+
+
+    .fb-auth-card{
+
+        width:100%;
+
+        max-width:340px;
+
+        padding:
+            19px 16px 15px;
+
+        border-radius:19px;
+
+    }
+
+
+    .fb-auth-brand{
+
+        margin-bottom:11px;
+
+    }
+
+
+    .fb-logo-image{
+
+        width:37px;
+        height:37px;
+
+    }
+
+
+    .fb-brand-name{
+
+        font-size:22px;
+
+    }
+
+
+    .fb-brand-tagline{
+
+        font-size:7px;
+
+        letter-spacing:1.3px;
+
+    }
+
+
+    .fb-auth-heading{
+
+        margin-bottom:13px;
+
+    }
+
+
+    .fb-auth-heading h1{
+
+        font-size:23px;
+
+    }
+
+
+    .fb-auth-heading p{
+
+        font-size:8px;
+
+    }
+
+
+    .fb-auth-form{
+
+        gap:8px;
+
+    }
+
+
+    .fb-field{
+
+        gap:4px;
+
+    }
+
+
+    .fb-field label{
+
+        font-size:8px;
+
+    }
+
+
+    .fb-input{
+
+        height:38px;
+
+        border-radius:9px;
+
+        font-size:9px;
+
+    }
+
+
+    .fb-auth-btn{
+
+        height:39px;
+
+        border-radius:9px;
+
+        font-size:9px;
+
+    }
+
+
+    .fb-divider{
+
+        margin:10px 0 8px;
+
+    }
+
+
+    .fb-social-btn{
+
+        height:35px;
+
+        border-radius:9px;
+
+        font-size:8px;
+
+    }
+
+
+    .fb-auth-footer{
+
+        margin-top:10px;
+
+        padding-top:9px;
+
+        font-size:7px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SHORT SCREENS
+========================================================= */
+
+@media(max-height:620px){
+
+    .fb-auth-page{
+
+        padding:6px;
+
+    }
+
+
+    .fb-auth-card{
+
+        padding-top:15px;
+        padding-bottom:12px;
+
+    }
+
+
+    .fb-auth-brand{
+
+        margin-bottom:8px;
+
+    }
+
+
+    .fb-auth-heading{
+
+        margin-bottom:9px;
+
+    }
+
+
+    .fb-auth-form{
+
+        gap:6px;
+
+    }
+
+
+    .fb-divider{
+
+        margin:8px 0 6px;
+
+    }
+
+
+    .fb-auth-footer{
+
+        margin-top:7px;
+        padding-top:7px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RTL FORM ALIGNMENT
+========================================================= */
+
+html[dir="rtl"] .fb-auth-heading{
+
+    text-align:center;
+
+}
+
+
+html[dir="rtl"] .fb-field label{
+
+    text-align:right;
+
+}
+
+
+html[dir="rtl"] .fb-form-row{
+
+    flex-direction:row;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="fb-auth-page">
+
+
+    <!-- =====================================================
+         CONTROLS
+    ====================================================== -->
+
+    <div class="fb-auth-controls">
+
+
+        <button
+            type="button"
+            class="fb-auth-control"
+            id="rtlToggle"
+            aria-label="Toggle direction">
+
+            <i data-lucide="arrow-left-right"></i>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="fb-auth-control"
+            id="themeToggle"
+            aria-label="Toggle theme">
+
+            <i data-lucide="moon"></i>
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGIN CARD
+    ====================================================== -->
+
+    <section class="fb-auth-card">
+
+
+        <!-- =================================================
+             BRAND
+        ================================================== -->
+
+        <div class="fb-auth-brand">
+
+            <a
+                href="index.html"
+                class="fb-brand">
+
+
+                <img
+                    src="images/l.png"
+                    alt="FundBloom Logo"
+                    class="fb-logo-image">
+
+
+                <span class="fb-brand-text">
+
+
+                    <span class="fb-brand-name">
+
+                        <span class="fb-brand-primary">
+                            Fund
+                        </span>
+
+                        <span class="fb-brand-secondary">
+                            Bloom
+                        </span>
+
+                    </span>
+
+
+                    <span class="fb-brand-tagline">
+                        SCHOOL FUNDRAISING
+                    </span>
+
+
+                </span>
+
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             HEADING
+        ================================================== -->
+
+        <div class="fb-auth-heading">
+
+
+            <div class="fb-auth-eyebrow">
+                SCHOOL FUNDRAISING
+            </div>
+
+
+            <h1>
+                Welcome Back
+            </h1>
+
+
+            <p>
+                Sign in to manage your campaigns,
+                donations and school events.
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             LOGIN FORM
+        ================================================== -->
+
+        <form
+            class="fb-auth-form"
+            id="loginForm">
+
+
+            <!-- EMAIL -->
+
+            <div class="fb-field">
+
+
+                <label for="loginEmail">
+                    Email Address
+                </label>
+
+
+                <input
+                    class="fb-input"
+                    id="loginEmail"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required>
+
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="fb-field">
+
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+
+                <div class="fb-input-wrap">
+
+
+                    <input
+                        class="fb-input fb-password-input"
+                        id="loginPassword"
+                        name="password"
+                        type="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required>
+
+
+                    <button
+                        type="button"
+                        class="fb-password-toggle"
+                        data-password="loginPassword"
+                        aria-label="Show password">
+
+
+                        <i data-lucide="eye"></i>
+
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- REMEMBER / FORGOT -->
+
+            <div class="fb-form-row">
+
+
+                <label class="fb-remember">
+
+
+                    <input
+                        type="checkbox"
+                        id="rememberMe">
+
+
+                    <span>
+                        Remember Me
+                    </span>
+
+
+                </label>
+
+
+                <a
+                    href="#"
+                    class="fb-forgot">
+
+                    Forgot Password?
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- LOGIN -->
+
+            <button
+                type="submit"
+                class="fb-auth-btn">
+
+                Login
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- =================================================
+             DIVIDER
+        ================================================== -->
+
+        <div class="fb-divider">
+
+
+            <span></span>
+
+
+            <p>
+                OR CONTINUE WITH
+            </p>
+
+
+            <span></span>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             SOCIAL LOGIN
+        ================================================== -->
+
+        <div class="fb-social-grid">
+
+
+            <!-- GOOGLE -->
+
+            <button
+                type="button"
+                class="fb-social-btn">
+
+
+                <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+
+
+                    <path
+                        fill="#4285F4"
+                        d="M21.35 12.27c0-.79-.07-1.55-.22-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.7 2.91-4.2 2.91-7.42z"/>
+
+
+                    <path
+                        fill="#34A853"
+                        d="M12 21.5c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.7-1.72-5.47-4.03H3.29v2.53A9.74 9.74 0 0 0 12 21.5z"/>
+
+
+                    <path
+                        fill="#FBBC05"
+                        d="M6.53 13.58A5.86 5.86 0 0 1 6.22 12c0-.55.1-1.08.31-1.58V7.89H3.29A9.5 9.5 0 0 0 2.25 12c0 1.48.35 2.88 1.04 4.11l3.24-2.53z"/>
+
+
+                    <path
+                        fill="#EA4335"
+                        d="M12 6.39c1.43 0 2.72.49 3.73 1.46l2.8-2.8C16.83 3.48 14.62 2.5 12 2.5a9.74 9.74 0 0 0-8.71 5.39l3.24 2.53C7.3 8.11 9.46 6.39 12 6.39z"/>
+
+
+                </svg>
+
+
+                Google
+
+
+            </button>
+
+
+
+            <!-- APPLE -->
+
+            <button
+                type="button"
+                class="fb-social-btn">
+
+
+                <svg
+                    class="fb-apple-logo"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+
+
+                    <path
+                        fill="currentColor"
+                        d="M17.05 12.67c-.02-2.14 1.75-3.17 1.83-3.22a3.94 3.94 0 0 0-3.1-1.68c-1.3-.14-2.54.77-3.2.77-.67 0-1.7-.75-2.8-.73a4.13 4.13 0 0 0-3.47 2.12c-1.5 2.6-.38 6.44 1.06 8.55.71 1.03 1.55 2.18 2.66 2.14 1.07-.04 1.48-.69 2.78-.69 1.29 0 1.66.69 2.79.67 1.16-.02 1.9-1.05 2.61-2.09a8.5 8.5 0 0 0 1.19-2.42 3.75 3.75 0 0 1-2.35-3.42zM14.95 6.4a3.73 3.73 0 0 0 .85-2.7 3.84 3.84 0 0 0-2.46 1.27 3.57 3.57 0 0 0-.88 2.6 3.18 3.18 0 0 0 2.49-1.17z"/>
+
+
+                </svg>
+
+
+                Apple
+
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             SIGN UP
+        ================================================== -->
+
+        <div class="fb-auth-footer">
+
+
+            Don't have an account?
+
+
+            <a href="signup.html">
+                Create Account
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FUNDBLOOM GLOBAL SCRIPT
+     SAME SYSTEM AS INDEX / HOME-2 / CAMPAIGN
+========================================================= -->
+
+<script>
+
+(function(){
+
+    "use strict";
+
+
+    /* =========================================================
+       INITIALIZE LUCIDE
+    ========================================================= */
+
+    if(window.lucide){
+
+        lucide.createIcons();
+
+    }
+
+
+    /* =========================================================
+       SHARED FUNDBLOOM KEYS
+    ========================================================= */
+
+    const THEME_KEY =
+        "fundBloomTheme";
+
+    const DIRECTION_KEY =
+        "fundBloomDirection";
+
+
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
+
+    const themeToggle =
+        document.getElementById(
+            "themeToggle"
+        );
+
+
+    const rtlToggle =
+        document.getElementById(
+            "rtlToggle"
+        );
+
+
+    /* =========================================================
+       APPLY THEME
+    ========================================================= */
+
+    function applyTheme(theme){
+
+        if(
+            theme !== "dark" &&
+            theme !== "light"
+        ){
+
+            theme = "light";
+
+        }
+
+
+        if(theme === "dark"){
+
+            document.body.classList.add(
+                "dark-theme"
+            );
+
+        }else{
+
+            document.body.classList.remove(
+                "dark-theme"
+            );
+
+        }
+
+
+        localStorage.setItem(
+            THEME_KEY,
+            theme
+        );
+
+
+        updateThemeIcon();
+
+    }
+
+
+    /* =========================================================
+       THEME ICON
+    ========================================================= */
+
+    function updateThemeIcon(){
+
+        if(!themeToggle){
+
+            return;
+
+        }
+
+
+        const isDark =
+            document.body.classList.contains(
+                "dark-theme"
+            );
+
+
+        themeToggle.innerHTML =
+            isDark
+
+                ? '<i data-lucide="sun"></i>'
+
+                : '<i data-lucide="moon"></i>';
+
+
+        if(window.lucide){
+
+            lucide.createIcons();
+
+        }
+
+    }
+
+
+    /* =========================================================
+       LOAD SAVED THEME
+    ========================================================= */
+
+    const savedTheme =
+        localStorage.getItem(
+            THEME_KEY
+        ) || "light";
+
+
+    applyTheme(savedTheme);
+
+
+    /* =========================================================
+       THEME BUTTON
+    ========================================================= */
+
+    if(themeToggle){
+
+        themeToggle.addEventListener(
+            "click",
+            function(){
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark-theme"
+                    );
+
+
+                const nextTheme =
+                    isDark
+                        ? "light"
+                        : "dark";
+
+
+                applyTheme(
+                    nextTheme
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       APPLY RTL / LTR
+    ========================================================= */
+
+    function applyDirection(direction){
+
+        if(
+            direction !== "rtl" &&
+            direction !== "ltr"
+        ){
+
+            direction = "ltr";
+
+        }
+
+
+        document.documentElement.dir =
+            direction;
+
+
+        localStorage.setItem(
+            DIRECTION_KEY,
+            direction
+        );
+
+
+        document.documentElement.setAttribute(
+            "data-direction",
+            direction
+        );
+
+
+        if(window.lucide){
+
+            lucide.createIcons();
+
+        }
+
+    }
+
+
+    /* =========================================================
+       LOAD SAVED DIRECTION
+    ========================================================= */
+
+    const savedDirection =
+        localStorage.getItem(
+            DIRECTION_KEY
+        ) || "ltr";
+
+
+    applyDirection(
+        savedDirection
+    );
+
+
+    /* =========================================================
+       RTL BUTTON
+    ========================================================= */
+
+    if(rtlToggle){
+
+        rtlToggle.addEventListener(
+            "click",
+            function(){
+
+                const currentDirection =
+                    document.documentElement.dir ||
+                    "ltr";
+
+
+                const nextDirection =
+                    currentDirection === "rtl"
+                        ? "ltr"
+                        : "rtl";
+
+
+                applyDirection(
+                    nextDirection
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       PASSWORD SHOW / HIDE
+    ========================================================= */
+
+    document
+        .querySelectorAll(
+            ".fb-password-toggle"
+        )
+        .forEach(function(button){
+
+            button.addEventListener(
+                "click",
+                function(){
+
+                    const input =
+                        document.getElementById(
+                            button.dataset.password
+                        );
+
+
+                    if(!input){
+
+                        return;
+
+                    }
+
+
+                    const isPassword =
+                        input.type ===
+                        "password";
+
+
+                    input.type =
+                        isPassword
+                            ? "text"
+                            : "password";
+
+
+                    button.innerHTML =
+                        isPassword
+
+                            ? '<i data-lucide="eye-off"></i>'
+
+                            : '<i data-lucide="eye"></i>';
+
+
+                    button.setAttribute(
+                        "aria-label",
+                        isPassword
+                            ? "Hide password"
+                            : "Show password"
+                    );
+
+
+                    if(window.lucide){
+
+                        lucide.createIcons();
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =========================================================
+       LOGIN FORM
+    ========================================================= */
+
+    const loginForm =
+        document.getElementById(
+            "loginForm"
+        );
+
+
+    if(loginForm){
+
+        loginForm.addEventListener(
+            "submit",
+            function(event){
+
+                event.preventDefault();
+
+                /*
+                 * Connect your real login
+                 * authentication here.
+                 */
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       CROSS-PAGE SETTINGS SYNC
+    ========================================================= */
+
+    window.addEventListener(
+        "storage",
+        function(event){
+
+
+            if(
+                event.key ===
+                THEME_KEY
+            ){
+
+                applyTheme(
+                    event.newValue ||
+                    "light"
+                );
+
+            }
+
+
+            if(
+                event.key ===
+                DIRECTION_KEY
+            ){
+
+                applyDirection(
+                    event.newValue ||
+                    "ltr"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       FINAL ICON INITIALIZATION
+    ========================================================= */
+
+    if(window.lucide){
+
+        lucide.createIcons();
+
+    }
+
+})();
+
+</script>
+
+
+</body>
+
+</html>

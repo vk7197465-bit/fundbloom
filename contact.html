@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FundBloom | School Fundraising Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="contact.css">
+<link rel="icon" type="image/png" href="images/l.png">
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+
+<header class="fb-header" id="fbHeader">
+
+    <div class="fb-header-inner">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="fb-brand">
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+                    <span class="fb-brand-primary">Fund</span><span class="fb-brand-secondary">Bloom</span>
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING 
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <!-- DESKTOP NAV -->
+
+        <nav class="fb-main-nav">
+
+
+            <!-- HOME -->
+
+            <div class="fb-home-dropdown">
+
+                <a href="index.html" class="fb-nav-link">
+
+                    Home
+
+                    <i data-lucide="chevron-down"></i>
+
+                </a>
+
+
+                <div class="fb-dropdown">
+
+                    <div class="fb-dropdown-heading">
+                        Explore FundBloom
+                    </div>
+
+
+                    <a href="index.html" class="fb-dropdown-link">
+
+                        <strong>Home 1</strong>
+
+                       
+                    </a>
+
+
+                    <a href="home-2.html" class="fb-dropdown-link">
+
+                        <strong>Home 2</strong>
+
+                      
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- OTHER NAV -->
+
+            <a href="how-it-works.html" class="fb-nav-link">
+                How It Works
+            </a>
+
+            <a href="campaign-templates.html" class="fb-nav-link">
+                Campaign Templates
+            </a>
+
+            <a href="pricing.html" class="fb-nav-link">
+                Pricing
+            </a>
+
+            <a href="contact.html" class="fb-nav-link">
+                Contact
+            </a>
+
+            <a href="dashboard.html" class="fb-nav-link">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <!-- ACTIONS -->
+
+        <div class="fb-header-actions">
+
+
+            <!-- DARK -->
+
+            <button
+                class="fb-control-btn"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
+                title="Dark / Light"
+            >
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+            <!-- RTL -->
+
+            <button
+                class="fb-control-btn"
+                id="rtlToggle"
+                aria-label="Toggle RTL"
+                title="RTL / LTR"
+            >
+
+                <i data-lucide="arrow-left-right"></i>
+
+            </button>
+
+
+            <!-- DESKTOP LOGIN -->
+
+            <a
+                href="login.html"
+                class="fb-login-btn"
+            >
+                Login
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="fb-menu-btn"
+                id="menuToggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         MOBILE MENU
+    ========================================================= -->
+
+    <div class="fb-mobile-menu" id="mobileMenu">
+
+
+        <!-- HOME -->
+
+        <div class="fb-mobile-home">
+
+            <div
+                class="fb-mobile-home-head"
+                id="mobileHomeToggle"
+            >
+
+                <span>Home</span>
+
+                <i data-lucide="chevron-down"></i>
+
+            </div>
+
+
+            <div
+                class="fb-mobile-submenu"
+                id="mobileHomeSubmenu"
+            >
+
+                <a
+                    href="index.html"
+                    class="fb-mobile-sub-link"
+                >
+                    Home 1
+                </a>
+
+                <a
+                    href="home-2.html"
+                    class="fb-mobile-sub-link"
+                >
+                    Home 2
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALL NAV ITEMS -->
+
+        <a
+            href="how-it-works.html"
+            class="fb-mobile-link"
+        >
+            <span>How It Works</span>
+        </a>
+
+
+        <a
+            href="campaign-templates.html"
+            class="fb-mobile-link"
+        >
+            <span>Campaign Templates</span>
+        </a>
+
+
+        <a
+            href="pricing.html"
+            class="fb-mobile-link"
+        >
+            <span>Pricing</span>
+        </a>
+
+
+        <a
+            href="contact.html"
+            class="fb-mobile-link"
+        >
+            <span>Contact</span>
+        </a>
+
+
+        <a
+            href="dashboard.html"
+            class="fb-mobile-link"
+        >
+            <span>Dashboard</span>
+        </a>
+
+
+        <!-- LOGIN ALSO INSIDE MENU -->
+
+        <a
+            href="login.html"
+            class="fb-mobile-login"
+        >
+            Login
+        </a>
+
+    </div>
+
+</header>
+
+
+
+
+
+
+
+
+
+<!-- =====================================================
+01 — HERO
+===================================================== -->
+
+<section class="fc-hero">
+
+<div class="fc-container">
+
+<div class="fc-hero-inner">
+
+
+<div class="fc-hero-label">
+
+<span></span>
+
+FUND BLOOM CONTACT
+
+</div>
+
+
+<h1>
+
+Let's grow something
+
+<span
+class="fc-typing"
+id="fcTyping"></span>
+
+</h1>
+
+
+<p>
+
+Questions about campaigns, donations,
+school fundraising, or your FundBloom account?
+Start a conversation with our team.
+
+</p>
+
+
+<div class="fc-hero-actions">
+
+<a
+href="#contact-form"
+class="fc-btn fc-btn-primary">
+
+Start a Conversation
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+
+<a
+href="#faq"
+class="fc-btn fc-btn-outline">
+
+View FAQs
+
+</a>
+
+</div>
+
+
+<div class="fc-hero-meta">
+
+<div class="fc-meta-item">
+
+<i class="fa-solid fa-clock"></i>
+
+Quick Response
+
+</div>
+
+
+<div class="fc-meta-item">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Trusted Support
+
+</div>
+
+
+<div class="fc-meta-item">
+
+<i class="fa-solid fa-heart"></i>
+
+Human Assistance
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+02 — MAP + CONTACT FORM
+===================================================== -->
+
+<section
+class="fc-section fc-contact"
+id="contact-form">
+
+<div class="fc-container">
+
+
+<div class="fc-heading">
+
+<div class="fc-eyebrow">
+
+FIND & CONNECT
+
+</div>
+
+
+<h2>
+
+A simple way to reach us.
+
+</h2>
+
+
+<p>
+
+Send your question and we'll help
+you find the right next step.
+
+</p>
+
+</div>
+
+
+
+<div class="fc-contact-grid">
+
+
+<!-- MAP -->
+
+<div class="fc-map">
+
+<iframe
+src="https://www.google.com/maps?q=Bengaluru,India&output=embed"
+loading="lazy"
+title="FundBloom location map">
+</iframe>
+
+
+<div class="fc-map-card">
+
+<small>
+FUND BLOOM
+</small>
+
+<strong>
+Bengaluru, India
+</strong>
+
+<span>
+Connecting schools,
+families & communities.
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- FORM -->
+
+<div class="fc-form-box">
+
+
+<div class="fc-form-top">
+
+<span>
+CONTACT FORM
+</span>
+
+<h3>
+Tell us what you need.
+</h3>
+
+<p>
+Fill in the details and we'll get back to you.
+</p>
+
+</div>
+
+
+<form class="fc-form">
+
+
+<div class="fc-form-row">
+
+<div class="fc-field">
+
+<label>
+Your Name
+</label>
+
+<input
+type="text"
+placeholder="Enter your name"
+required>
+
+</div>
+
+
+<div class="fc-field">
+
+<label>
+Email Address
+</label>
+
+<input
+type="email"
+placeholder="you@example.com"
+required>
+
+</div>
+
+</div>
+
+
+
+<div class="fc-form-row">
+
+<div class="fc-field">
+
+<label>
+Phone
+</label>
+
+<input
+type="tel"
+placeholder="Your phone number">
+
+</div>
+
+
+<div class="fc-field">
+
+<label>
+I'm contacting about
+</label>
+
+<select>
+
+<option>
+Select a topic
+</option>
+
+<option>
+School Campaign
+</option>
+
+<option>
+Donation
+</option>
+
+<option>
+Fundraising Support
+</option>
+
+<option>
+Account Help
+</option>
+
+<option>
+Partnership
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+
+<div class="fc-field">
+
+<label>
+Your Message
+</label>
+
+<textarea
+placeholder="How can we help?"></textarea>
+
+</div>
+
+
+
+<button
+type="submit"
+class="fc-btn fc-btn-primary">
+
+Send Message
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+03 — CONTACT COMPASS
+===================================================== -->
+
+<section class="fc-section fc-compass">
+
+<div class="fc-container">
+
+<div class="fc-compass-layout">
+
+
+<div class="fc-compass-intro">
+
+<div class="fc-eyebrow">
+
+CHOOSE YOUR DIRECTION
+
+</div>
+
+
+<h2>
+
+Wherever your question starts,
+we'll help you find the way.
+
+</h2>
+
+
+<p>
+
+Fundraising can involve many moving pieces.
+Use the direction that best describes what
+you are trying to accomplish.
+
+</p>
+
+
+<a
+href="#contact-form"
+class="fc-btn fc-btn-primary">
+
+Find Support
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+
+
+<div class="fc-compass-panel">
+
+
+<div class="fc-compass-ring">
+
+
+<div class="fc-orbit one">
+
+<i class="fa-solid fa-school"></i>
+
+<span>
+SCHOOLS
+</span>
+
+</div>
+
+
+<div class="fc-orbit two">
+
+<i class="fa-solid fa-hand-holding-heart"></i>
+
+<span>
+DONATIONS
+</span>
+
+</div>
+
+
+<div class="fc-orbit three">
+
+<i class="fa-solid fa-users"></i>
+
+<span>
+COMMUNITY
+</span>
+
+</div>
+
+
+<div class="fc-orbit four">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>
+ACCOUNT
+</span>
+
+</div>
+
+
+<div class="fc-compass-center">
+
+<i class="fa-solid fa-compass"></i>
+
+<span>
+YOUR<br>
+NEXT STEP
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+04 — CONVERSATION WALL
+===================================================== -->
+<section class="fc-section fc-wall">
+
+    <div class="fc-container">
+
+        <!-- =================================================
+             CENTER HEADING
+        ================================================== -->
+
+        <div class="fc-wall-heading">
+
+            <div class="fc-eyebrow">
+                <span></span>
+                CONTACT FUND BLOOM
+                <span></span>
+            </div>
+
+            <h2>
+                Let's start a
+                <em>conversation.</em>
+            </h2>
+
+            <p>
+                Have a question about fundraising, PTA events,
+                donations, or your school account? Reach out
+                and we'll help you find the right next step.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FOUR CONTACT CARDS
+        ================================================== -->
+
+        <div class="fc-wall-details">
+
+
+            <!-- EMAIL -->
+            <div class="fc-wall-card">
+
+                <div class="fc-wall-card-top">
+
+                    <div class="fc-wall-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+
+                    <span class="fc-wall-number">
+                        01
+                    </span>
+
+                </div>
+
+                <div class="fc-wall-card-content">
+
+                    <small>
+                        EMAIL
+                    </small>
+
+                    <strong>
+                        support@fundbloom.com
+                    </strong>
+
+                    <p>
+                        For general questions and platform support.
+                    </p>
+
+                </div>
+
+                <div class="fc-wall-card-line"></div>
+
+            </div>
+
+
+            <!-- PHONE -->
+            <div class="fc-wall-card">
+
+                <div class="fc-wall-card-top">
+
+                    <div class="fc-wall-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <span class="fc-wall-number">
+                        02
+                    </span>
+
+                </div>
+
+                <div class="fc-wall-card-content">
+
+                    <small>
+                        PHONE
+                    </small>
+
+                    <strong>
+                        +91 63611 99543
+                    </strong>
+
+                    <p>
+                        For direct assistance during support hours.
+                    </p>
+
+                </div>
+
+                <div class="fc-wall-card-line"></div>
+
+            </div>
+
+
+            <!-- LOCATION -->
+            <div class="fc-wall-card">
+
+                <div class="fc-wall-card-top">
+
+                    <div class="fc-wall-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <span class="fc-wall-number">
+                        03
+                    </span>
+
+                </div>
+
+                <div class="fc-wall-card-content">
+
+                    <small>
+                        LOCATION
+                    </small>
+
+                    <strong>
+                        Bengaluru, Karnataka
+                    </strong>
+
+                    <p>
+                        FundBloom support and community operations.
+                    </p>
+
+                </div>
+
+                <div class="fc-wall-card-line"></div>
+
+            </div>
+
+
+            <!-- HOURS -->
+            <div class="fc-wall-card">
+
+                <div class="fc-wall-card-top">
+
+                    <div class="fc-wall-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <span class="fc-wall-number">
+                        04
+                    </span>
+
+                </div>
+
+                <div class="fc-wall-card-content">
+
+                    <small>
+                        SUPPORT HOURS
+                    </small>
+
+                    <strong>
+                        Monday — Friday
+                    </strong>
+
+                    <p>
+                        9 AM — 6 PM · We're ready to help.
+                    </p>
+
+                </div>
+
+                <div class="fc-wall-card-line"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+05 — FAQ
+===================================================== -->
+
+<section
+class="fc-section fc-faq"
+id="faq">
+
+<div class="fc-container">
+
+
+<div class="fc-heading">
+
+<div class="fc-eyebrow">
+
+QUICK ANSWERS
+
+</div>
+
+
+<h2>
+
+Before you reach out.
+
+</h2>
+
+
+<p>
+
+A few common questions about FundBloom support.
+
+</p>
+
+</div>
+
+
+
+<div class="fc-faq-list">
+
+
+<div class="fc-faq-item">
+
+<button class="fc-faq-question">
+
+How quickly will I receive a response?
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="fc-faq-answer">
+
+<p>
+
+Our support team aims to respond to
+messages as quickly as possible during
+support hours.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fc-faq-item">
+
+<button class="fc-faq-question">
+
+Can you help me create a school campaign?
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="fc-faq-answer">
+
+<p>
+
+Yes. We can help explain campaign setup,
+fundraising tools, supporter communication,
+and available platform features.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fc-faq-item">
+
+<button class="fc-faq-question">
+
+Can I contact FundBloom about donations?
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="fc-faq-answer">
+
+<p>
+
+Yes. Include the relevant campaign or
+donation information so our team can
+understand your request.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fc-faq-item">
+
+<button class="fc-faq-question">
+
+Do you support community fundraising?
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="fc-faq-answer">
+
+<p>
+
+FundBloom can support fundraising
+conversations involving schools,
+families, supporters, and communities.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="fc-faq-item">
+
+<button class="fc-faq-question">
+
+What should I include in a support request?
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="fc-faq-answer">
+
+<p>
+
+Include your name, email, topic, and a
+short description of the question or issue.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =====================================================
+07 — CTA
+===================================================== -->
+
+<section class="fc-cta">
+
+<div class="fc-container">
+
+<div class="fc-cta-box">
+
+
+<div class="fc-cta-copy">
+
+<small>
+READY WHEN YOU ARE
+</small>
+
+<h2>
+Have an idea worth growing?
+</h2>
+
+<p>
+Let's turn your fundraising question
+into a clear next step.
+</p>
+
+</div>
+
+
+<a
+href="#contact-form"
+class="fc-btn">
+
+Talk to FundBloom
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+TYPING
+========================================================= */
+
+const fcTyping =
+document.getElementById("fcTyping");
+
+const fcWords = [
+
+    "together.",
+    "with purpose.",
+    "for your school.",
+    "for your community.",
+    "worth believing in."
+
+];
+
+let fcWordIndex = 0;
+
+let fcCharIndex = 0;
+
+let fcDeleting = false;
+
+
+function fcType(){
+
+    const word =
+    fcWords[fcWordIndex];
+
+
+    if(!fcDeleting){
+
+        fcTyping.textContent =
+        word.substring(
+            0,
+            fcCharIndex + 1
+        );
+
+        fcCharIndex++;
+
+
+        if(fcCharIndex === word.length){
+
+            fcDeleting = true;
+
+            setTimeout(
+                fcType,
+                1400
+            );
+
+            return;
+
+        }
+
+    }
+
+    else{
+
+        fcTyping.textContent =
+        word.substring(
+            0,
+            fcCharIndex - 1
+        );
+
+        fcCharIndex--;
+
+
+        if(fcCharIndex === 0){
+
+            fcDeleting = false;
+
+            fcWordIndex =
+            (fcWordIndex + 1)
+            % fcWords.length;
+
+        }
+
+    }
+
+
+    setTimeout(
+
+        fcType,
+
+        fcDeleting
+        ? 45
+        : 75
+
+    );
+
+}
+
+fcType();
+
+
+
+/* =========================================================
+FAQ
+========================================================= */
+
+const fcFaqItems =
+document.querySelectorAll(
+    ".fc-faq-item"
+);
+
+
+fcFaqItems.forEach(item => {
+
+    const question =
+    item.querySelector(
+        ".fc-faq-question"
+    );
+
+
+    question.addEventListener(
+        "click",
+        () => {
+
+
+            fcFaqItems.forEach(
+                other => {
+
+                    if(other !== item){
+
+                        other.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            item.classList.toggle(
+                "active"
+            );
+
+        }
+    );
+
+});
+
+
+
+
+
+/* =========================================================
+FORM
+========================================================= */
+
+document.querySelector(".fc-form")
+.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+    }
+);
+
+</script>
+
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="fb-footer">
+
+    <div class="fb-footer-inner">
+
+
+        <div class="fb-footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="fb-footer-brand">
+
+   <a href="index.html" class="fb-brand">
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+                    <span class="fb-brand-primary">Fund</span><span class="fb-brand-secondary">Bloom</span>
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING 
+                </span>
+
+            </span>
+
+        </a>
+
+
+                <p class="fb-footer-description">
+
+                    FundBloom brings schools, PTAs, families and
+                    supporters together through simple, engaging
+                    and community-powered fundraising.
+
+                </p>
+
+
+                <span class="fb-footer-badge">
+
+                    SCHOOL • COMMUNITY • IMPACT
+
+                </span>
+
+
+                <div class="fb-socials">
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="Facebook"
+                    >
+                     <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="Instagram"
+                    >
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="YouTube"
+                    >
+                             <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="LinkedIn"
+                    >
+                         <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLORE -->
+
+            <div class="fb-footer-column">
+
+                <h3>Explore</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    
+
+                    <a href="how-it-works.html">
+                        How It Works
+                    </a>
+
+                    <a href="campaign-templates.html">
+                        Campaign Templates
+                    </a>
+
+                    <a href="pricing.html">
+                        Pricing
+                    </a>
+<a href="contact.html">
+                       Contact
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- PLATFORM -->
+
+            <div class="fb-footer-column">
+
+                <h3>Platform</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                    <a href="login.html">
+                        Coordinator Login
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="#">
+                        Start a Campaign
+                    </a>
+
+                    <a href="#">
+                        Fundraising Ideas
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCHOOL -->
+
+            <div class="fb-footer-column">
+
+                <h3>For Schools</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="#">
+                        PTA Events
+                    </a>
+
+                    <a href="#">
+                        School Campaigns
+                    </a>
+
+                    <a href="#">
+                        Community Giving
+                    </a>
+
+                    <a href="#">
+                        Coordinator Resources
+                    </a>
+
+                    <a href="#">
+                        Support Center
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWSLETTER -->
+<div class="fb-footer-column">
+
+    <h3>For Contact</h3>
+
+    <div class="fb-footer-contact-links">
+
+        <a href="tel:6361199543" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                <i data-lucide="phone"></i>
+            </span>
+            <span>999999543</span>
+        </a>
+
+        <a href="mailto:fundblom@gmail.com" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                <i data-lucide="mail"></i>
+            </span>
+            <span>fundblom@gmail.com</span>
+        </a>
+
+        <a href="#" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                     <i class="fa-brands fa-facebook-f"></i>
+            </span>
+            <span>fundfacebook.com</span>
+        </a>
+
+        <a href="#" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                      <i class="fa-brands fa-instagram"></i>
+            </span>
+            <span>fundInstagram.com</span>
+        </a>
+
+      
+
+    </div>
+
+</div>
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="fb-footer-bottom">
+
+
+            <p class="fb-copyright">
+
+                © <span id="currentYear"></span>
+                FundBloom. All rights reserved.
+
+            </p>
+
+
+            <div class="fb-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    /* =========================================================
+       INITIALIZE LUCIDE
+    ========================================================= */
+
+    lucide.createIcons();
+
+
+    /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
+
+    const header = document.getElementById("fbHeader");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 15) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+    /* =========================================================
+       DARK / LIGHT MODE
+    ========================================================= */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const savedTheme =
+        localStorage.getItem("fundBloomTheme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-theme");
+
+    }
+
+
+    function updateThemeIcon() {
+
+        themeToggle.innerHTML =
+            document.body.classList.contains("dark-theme")
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+
+        lucide.createIcons();
+
+    }
+
+
+    updateThemeIcon();
+
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-theme");
+
+        const dark =
+            document.body.classList.contains("dark-theme");
+
+        localStorage.setItem(
+            "fundBloomTheme",
+            dark ? "dark" : "light"
+        );
+
+        updateThemeIcon();
+
+    });
+
+
+    /* =========================================================
+       RTL / LTR
+    ========================================================= */
+
+    const rtlToggle =
+        document.getElementById("rtlToggle");
+
+    const savedDirection =
+        localStorage.getItem("fundBloomDirection");
+
+    if (savedDirection === "rtl") {
+
+        document.documentElement.dir = "rtl";
+
+    } else {
+
+        document.documentElement.dir = "ltr";
+
+    }
+
+
+    rtlToggle.addEventListener("click", () => {
+
+        const isRTL =
+            document.documentElement.dir === "rtl";
+
+        document.documentElement.dir =
+            isRTL ? "ltr" : "rtl";
+
+        localStorage.setItem(
+            "fundBloomDirection",
+            isRTL ? "ltr" : "rtl"
+        );
+
+    });
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+
+    menuToggle.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("active");
+
+        const opened =
+            mobileMenu.classList.contains("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            opened
+        );
+
+        menuToggle.innerHTML =
+            opened
+                ? '<i data-lucide="x"></i>'
+                : '<i data-lucide="menu"></i>';
+
+        lucide.createIcons();
+
+    });
+
+
+    /* =========================================================
+       MOBILE HOME DROPDOWN
+    ========================================================= */
+
+    const mobileHomeToggle =
+        document.getElementById("mobileHomeToggle");
+
+    const mobileHomeSubmenu =
+        document.getElementById("mobileHomeSubmenu");
+
+
+    mobileHomeToggle.addEventListener("click", () => {
+
+        mobileHomeSubmenu.classList.toggle("active");
+
+        mobileHomeToggle.classList.toggle("open");
+
+    });
+
+
+    /* =========================================================
+       CLOSE MOBILE MENU AFTER NAVIGATION
+    ========================================================= */
+
+    document
+        .querySelectorAll(".fb-mobile-link, .fb-mobile-sub-link, .fb-mobile-login")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.innerHTML =
+                    '<i data-lucide="menu"></i>';
+
+                lucide.createIcons();
+
+            });
+
+        });
+
+
+    /* =========================================================
+       ESCAPE CLOSE
+    ========================================================= */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            mobileMenu.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.innerHTML =
+                '<i data-lucide="menu"></i>';
+
+            lucide.createIcons();
+
+        }
+
+    });
+
+
+    /* =========================================================
+       NEWSLETTER
+    ========================================================= */
+
+    const newsletterForm =
+        document.getElementById("newsletterForm");
+
+
+    newsletterForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("newsletterEmail");
+
+        if (!email.value.trim()) {
+            return;
+        }
+
+        email.value = "";
+
+        alert(
+            "Thank you! You are now subscribed to FundBloom."
+        );
+
+    });
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+
+    /* =========================================================
+       RE-INITIALIZE ICONS
+    ========================================================= */
+
+    lucide.createIcons();
+
+</script>
+<script>
+/* =========================================================
+   FUNDBLOOM
+   UNIVERSAL CURRENT PAGE ACTIVE SYSTEM
+   Works for:
+   - Header navigation
+   - Dropdown navigation
+   - Dashboard sidebar
+   - Mobile navigation
+   - RTL
+   - Dark mode
+   - index.html
+   - Query strings
+   - Hash links
+========================================================= */
+
+(function () {
+
+    "use strict";
+
+
+    function normalizePath(url) {
+
+        try {
+
+            const parsed =
+                new URL(
+                    url,
+                    window.location.origin
+                );
+
+            let path =
+                parsed.pathname
+                    .replace(/\\/g, "/")
+                    .replace(/\/+/g, "/");
+
+            /*
+             * Remove final slash
+             */
+            if (
+                path.length > 1 &&
+                path.endsWith("/")
+            ) {
+                path =
+                    path.slice(
+                        0,
+                        -1
+                    );
+            }
+
+            /*
+             * Convert root to index.html
+             */
+            if (
+                path === "" ||
+                path === "/"
+            ) {
+                return "index.html";
+            }
+
+            /*
+             * Get filename only
+             */
+            return path
+                .split("/")
+                .pop()
+                .toLowerCase();
+
+        }
+
+        catch (error) {
+
+            return "";
+
+        }
+
+    }
+
+
+    function setActivePage() {
+
+        const currentPage =
+            normalizePath(
+                window.location.href
+            );
+
+
+        /*
+         * IMPORTANT:
+         * Search all navigation links.
+         *
+         * This means the same code works
+         * for header + sidebar + mobile menu.
+         */
+
+        const links =
+            document.querySelectorAll(
+                "a[href]"
+            );
+
+
+        links.forEach(function (link) {
+
+            /*
+             * Remove previous state
+             */
+            link.classList.remove(
+                "active"
+            );
+
+            link.removeAttribute(
+                "aria-current"
+            );
+
+
+            const href =
+                link.getAttribute(
+                    "href"
+                );
+
+
+            if (!href) {
+                return;
+            }
+
+
+            const cleanHref =
+                href.trim();
+
+
+            /*
+             * Ignore:
+             * # links
+             * javascript links
+             * mail links
+             * telephone links
+             * external websites
+             */
+
+            if (
+                cleanHref === "#" ||
+                cleanHref.startsWith("#") ||
+                cleanHref.startsWith(
+                    "javascript:"
+                ) ||
+                cleanHref.startsWith(
+                    "mailto:"
+                ) ||
+                cleanHref.startsWith(
+                    "tel:"
+                )
+            ) {
+                return;
+            }
+
+
+            /*
+             * External URL?
+             */
+            let targetURL;
+
+            try {
+
+                targetURL =
+                    new URL(
+                        cleanHref,
+                        window.location.href
+                    );
+
+            }
+
+            catch (error) {
+
+                return;
+
+            }
+
+
+            /*
+             * Don't activate external websites
+             */
+            if (
+                targetURL.origin !==
+                window.location.origin
+            ) {
+                return;
+            }
+
+
+            const targetPage =
+                normalizePath(
+                    targetURL.href
+                );
+
+
+            /*
+             * Exact page match
+             */
+
+            if (
+                targetPage ===
+                currentPage
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+            }
+
+        });
+
+
+        /*
+         * Special case:
+         * Root URL / should activate index.html
+         */
+
+        if (
+            currentPage ===
+            "index.html"
+        ) {
+
+            links.forEach(function (link) {
+
+                const href =
+                    link.getAttribute(
+                        "href"
+                    );
+
+                if (!href) return;
+
+
+                const targetPage =
+                    normalizePath(
+                        href
+                    );
+
+
+                if (
+                    targetPage ===
+                    "index.html"
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                    link.setAttribute(
+                        "aria-current",
+                        "page"
+                    );
+
+                }
+
+            });
+
+        }
+
+    }
+
+
+    /*
+     * Run after the entire document
+     * has loaded.
+     */
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            setActivePage
+        );
+
+    }
+    else {
+
+        setActivePage();
+
+    }
+
+
+})();
+</script>
+</body>
+</html>
