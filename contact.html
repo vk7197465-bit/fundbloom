@@ -102,7 +102,7 @@
                 </div>
 
             </div>
-
+ 
 
             <!-- OTHER NAV -->
 
@@ -238,7 +238,7 @@
 
 
         <!-- ALL NAV ITEMS -->
-
+ 
         <a
             href="how-it-works.html"
             class="fb-mobile-link"
@@ -299,110 +299,275 @@
 
 
 
+<section class="fb-contact-hero">
 
-<!-- =====================================================
-01 — HERO
-===================================================== -->
+    <!-- Background image -->
+    <div class="fb-contact-bg">
+        <img src="images/f.webp" alt="FundBloom school community">
+    </div>
 
-<section class="fc-hero">
+    <!-- Cinematic overlay -->
+    <div class="fb-contact-overlay"></div>
 
-<div class="fc-container">
+    <!-- Decorative glow -->
+    <div class="fb-contact-glow fb-glow-one"></div>
+    <div class="fb-contact-glow fb-glow-two"></div>
 
-<div class="fc-hero-inner">
+    <!-- Content -->
+    <div class="fb-contact-content">
 
+        <div class="fb-contact-eyebrow">
+            <span></span>
+            CONNECT WITH FUNDBLOOM
+            <span></span>
+        </div>
 
-<div class="fc-hero-label">
+        <h1>
+            Let's Grow Your
+            <span>School Community</span>
+        </h1>
 
-<span></span>
+        <!--
+            Fixed height prevents layout jumping
+            while typing text changes.
+        -->
+        <div class="fb-contact-type-wrap">
 
-FUND BLOOM CONTACT
+            <span
+                id="fbContactTyping"
+                class="fb-contact-typing-text"
+            ></span>
 
-</div>
+            <span class="fb-contact-cursor"></span>
 
+        </div>
 
-<h1>
+        <p class="fb-contact-description">
+            Have a question, planning a fundraiser, or preparing
+            your next PTA event? Connect with FundBloom and turn
+            your school's ideas into meaningful community impact.
+        </p>
 
-Let's grow something
+        <div class="fb-contact-actions">
 
-<span
-class="fc-typing"
-id="fcTyping"></span>
+            <a
+                href="#contact-form"
+                class="fb-contact-btn fb-contact-btn-primary"
+            >
+                Start a Conversation
 
-</h1>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
 
+            <a
+                href="mailto:support@fundbloom.com"
+                class="fb-contact-btn fb-contact-btn-outline"
+            >
+                <i class="fa-regular fa-envelope"></i>
 
-<p>
+                support@fundbloom.com
+            </a>
 
-Questions about campaigns, donations,
-school fundraising, or your FundBloom account?
-Start a conversation with our team.
+        </div>
 
-</p>
+        <!-- Bottom information -->
 
+        <div class="fb-contact-meta">
 
-<div class="fc-hero-actions">
+            <div class="fb-contact-meta-item">
 
-<a
-href="#contact-form"
-class="fc-btn fc-btn-primary">
+                <i class="fa-solid fa-location-dot"></i>
 
-Start a Conversation
+                <span>
+                    Bengaluru, Karnataka
+                </span>
 
-<i class="fa-solid fa-arrow-right"></i>
+            </div>
 
-</a>
+            <span class="fb-meta-divider"></span>
 
+            <div class="fb-contact-meta-item">
 
-<a
-href="#faq"
-class="fc-btn fc-btn-outline">
+                <i class="fa-solid fa-phone"></i>
 
-View FAQs
+                <span>
+                    +91 63611 99543
+                </span>
 
-</a>
+            </div>
 
-</div>
+            <span class="fb-meta-divider"></span>
 
+            <div class="fb-contact-meta-item">
 
-<div class="fc-hero-meta">
+                <i class="fa-regular fa-clock"></i>
 
-<div class="fc-meta-item">
+                <span>
+                    We're here to help
+                </span>
 
-<i class="fa-solid fa-clock"></i>
+            </div>
 
-Quick Response
+        </div>
 
-</div>
+    </div>
 
+    <!-- Scroll indicator -->
 
-<div class="fc-meta-item">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-Trusted Support
-
-</div>
-
-
-<div class="fc-meta-item">
-
-<i class="fa-solid fa-heart"></i>
-
-Human Assistance
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
 
 </section>
 
 
+<script>
 
+/* =========================================================
+   FUNDBLOOM — PREMIUM STABLE TYPING
+   No layout shift
+   No image disturbance
+   No content jumping
+========================================================= */
+
+(function(){
+
+    const element =
+        document.getElementById(
+            "fbContactTyping"
+        );
+
+    if(!element) return;
+
+
+    const phrases = [
+
+        "We're here to help your school make a bigger impact.",
+
+        "Let's turn your next fundraiser into a community story.",
+
+        "Have an idea? Let's bring it to life together.",
+
+        "Your school's community journey starts with a conversation."
+
+    ];
+
+
+    let phraseIndex = 0;
+
+    let charIndex = 0;
+
+    let deleting = false;
+
+
+    const typeSpeed = 48;
+
+    const deleteSpeed = 27;
+
+    const pauseTyping = 1900;
+
+    const pauseDeleting = 450;
+
+
+    function typeText(){
+
+        const phrase =
+            phrases[phraseIndex];
+
+
+        /* ==============================
+           TYPING
+        ============================== */
+
+        if(!deleting){
+
+            charIndex++;
+
+            element.textContent =
+                phrase.substring(
+                    0,
+                    charIndex
+                );
+
+
+            if(
+                charIndex >=
+                phrase.length
+            ){
+
+                deleting = true;
+
+                setTimeout(
+                    typeText,
+                    pauseTyping
+                );
+
+                return;
+            }
+
+
+            setTimeout(
+                typeText,
+                typeSpeed
+            );
+
+            return;
+        }
+
+
+        /* ==============================
+           DELETING
+        ============================== */
+
+        charIndex--;
+
+        element.textContent =
+            phrase.substring(
+                0,
+                charIndex
+            );
+
+
+        if(charIndex <= 0){
+
+            deleting = false;
+
+            phraseIndex =
+                (
+                    phraseIndex + 1
+                ) % phrases.length;
+
+
+            setTimeout(
+                typeText,
+                pauseDeleting
+            );
+
+            return;
+        }
+
+
+        setTimeout(
+            typeText,
+            deleteSpeed
+        );
+    }
+
+
+    /*
+       Start after browser paint
+       so hero image renders first.
+    */
+
+    window.requestAnimationFrame(function(){
+
+        setTimeout(
+            typeText,
+            600
+        );
+
+    });
+
+})();
+
+</script>
 <!-- =====================================================
 02 — MAP + CONTACT FORM
 ===================================================== -->
@@ -1386,12 +1551,6 @@ document.querySelector(".fc-form")
 
                 </p>
 
-
-                <span class="fb-footer-badge">
-
-                    SCHOOL • COMMUNITY • IMPACT
-
-                </span>
 
 
                 <div class="fb-socials">

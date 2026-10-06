@@ -27,6 +27,62 @@
 
 <style>
 
+.fb-profile-details{
+    position:absolute;
+    top:calc(100% + 12px);
+    right:0;
+    width:220px;
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:var(--surface);
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+    z-index:9999;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-8px);
+    transition:.3s ease;
+}
+
+.fb-profile-details.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.fb-profile-details strong{
+    display:block;
+    margin-bottom:10px;
+    color:var(--text);
+    font:700 15px var(--body);
+}
+
+.fb-profile-details p{
+    margin:7px 0;
+    color:var(--muted);
+    font:400 11px/1.6 var(--body);
+}
+
+.fb-profile-button{
+    cursor:pointer;
+}
+
+@media(max-width:600px){
+    .fb-profile-details{
+        position:fixed;
+        top:70px;
+        left:12px;
+        right:12px;
+        width:auto;
+    }
+}
+
+html[dir="rtl"] .fb-profile-details{
+    right:auto;
+    left:0;
+}
+
 /* =========================================================
    ROOT
 ========================================================= */
@@ -2469,7 +2525,344 @@ body.dark-theme .fb-topbar{
     }
 
 }
+/* =========================================================
+   ADMIN PROFILE
+========================================================= */
 
+.fb-admin-profile{
+    position:relative;
+}
+
+
+.fb-profile-button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    cursor:pointer;
+
+}
+
+
+.fb-profile-button > i{
+
+    width:15px;
+    height:15px;
+
+    color:var(--muted);
+
+    transition:.25s ease;
+
+}
+
+
+.fb-profile-button[aria-expanded="true"] > i{
+
+    transform:rotate(180deg);
+
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.fb-profile-details{
+
+    position:absolute;
+
+    top:calc(100% + 12px);
+
+    right:0;
+
+    width:300px;
+
+    padding:14px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.16);
+
+    z-index:9999;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translateY(-8px)
+        scale(.98);
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease,
+        transform .2s ease;
+
+}
+
+
+.fb-profile-details.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================================================
+   ADMIN HEADER
+========================================================= */
+
+.fb-admin-profile-head{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:4px 2px 14px;
+
+}
+
+
+.fb-admin-avatar{
+
+    width:44px;
+    height:44px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+
+.fb-admin-profile-head strong{
+
+    display:block;
+
+    color:var(--text);
+
+    font-size:14px;
+
+}
+
+
+.fb-admin-profile-head span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.fb-admin-profile-info{
+
+    padding:10px 2px;
+
+    border-top:1px solid var(--border);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+.fb-admin-profile-info > div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:8px 0;
+
+}
+
+
+.fb-admin-profile-info span{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+}
+
+
+.fb-admin-profile-info strong{
+
+    color:var(--text);
+
+    font-size:11px;
+
+    text-align:right;
+
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.fb-admin-profile-option,
+.fb-admin-profile-logout{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:11px 9px;
+
+    margin-top:5px;
+
+    border:0;
+
+    border-radius:10px;
+
+    background:transparent;
+
+    font-family:var(--body);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    color:var(--text);
+
+    transition:.2s ease;
+
+}
+
+
+.fb-admin-profile-option:hover{
+
+    background:var(--surface-2);
+
+    color:var(--primary);
+
+}
+
+
+.fb-admin-profile-option svg,
+.fb-admin-profile-logout svg{
+
+    width:16px;
+    height:16px;
+
+}
+
+
+.fb-admin-profile-logout{
+
+    color:#d94a4a;
+
+}
+
+
+.fb-admin-profile-logout:hover{
+
+    background:rgba(217,74,74,.08);
+
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+[dir="rtl"] .fb-profile-details{
+
+    right:auto;
+
+    left:0;
+
+}
+
+
+[dir="rtl"] .fb-admin-profile-info strong{
+
+    text-align:left;
+
+}
+
+
+[dir="rtl"] .fb-admin-profile-option,
+[dir="rtl"] .fb-admin-profile-logout{
+
+    text-align:right;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .fb-profile-details{
+
+        position:fixed;
+
+        top:70px;
+
+        left:12px;
+
+        right:12px;
+
+        width:auto;
+
+    }
+
+}
 </style>
 
 </head>
@@ -2778,24 +3171,337 @@ body.dark-theme .fb-topbar{
 
 
                 <!-- Profile -->
+<!-- =====================================================
+     ADMIN PROFILE DROPDOWN
+===================================================== -->
 
-                <button
-                    class="fb-profile-button"
-                    id="fbProfileButton"
-                    data-view-button="profile"
-                >
+<div class="fb-admin-profile">
 
-                    <span class="fb-profile-avatar">
-                        SC
-                    </span>
+    <button
+        class="fb-profile-button"
+        id="fbProfileButton"
+        type="button"
+        aria-expanded="false"
+        aria-haspopup="true"
+    >
 
-                    <span>
-                        Coordinator
-                    </span>
+        <span class="fb-profile-avatar">
+            AD
+        </span>
 
-                </button>
+        <span>
+            Admin
+        </span>
+
+        <i data-lucide="chevron-down"></i>
+
+    </button>
 
 
+    <div
+        class="fb-profile-details"
+        id="fbProfileDetails"
+    >
+
+        <!-- Admin Header -->
+
+        <div class="fb-admin-profile-head">
+
+            <div class="fb-admin-avatar">
+                AD
+            </div>
+
+            <div>
+
+                <strong>
+                    Admin
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Admin Information -->
+
+        <div class="fb-admin-profile-info">
+
+            <div>
+
+                <span>
+                    Admin Name
+                </span>
+
+                <strong>
+                    Admin
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Role
+                </span>
+
+                <strong>
+                    Administrator
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Admin Role
+                </span>
+
+                <strong>
+                    Full Dashboard Access
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Profile -->
+
+        <button
+            type="button"
+            class="fb-admin-profile-option"
+            id="fbAdminProfile"
+        >
+
+            <i data-lucide="user"></i>
+
+            <span>
+                My Profile
+            </span>
+
+        </button>
+
+
+        <!-- Settings -->
+
+        <button
+            type="button"
+            class="fb-admin-profile-option"
+            id="fbAdminSettings"
+        >
+
+            <i data-lucide="settings"></i>
+
+            <span>
+                Account Settings
+            </span>
+
+        </button>
+
+
+        <!-- Logout -->
+
+        <button
+            type="button"
+            class="fb-admin-profile-logout"
+            id="fbAdminLogout"
+        >
+
+            <i data-lucide="log-out"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   ADMIN PROFILE DROPDOWN
+========================================================= */
+
+const fbProfileButton =
+    document.getElementById("fbProfileButton");
+
+const fbProfileDetails =
+    document.getElementById("fbProfileDetails");
+
+
+if(
+    fbProfileButton &&
+    fbProfileDetails
+){
+
+    fbProfileButton.addEventListener(
+        "click",
+        function(event){
+
+            event.stopPropagation();
+
+            const isOpen =
+                fbProfileDetails.classList.contains("active");
+
+
+            fbProfileDetails.classList.toggle(
+                "active"
+            );
+
+
+            fbProfileButton.setAttribute(
+                "aria-expanded",
+                !isOpen
+            );
+
+        }
+    );
+
+
+    fbProfileDetails.addEventListener(
+        "click",
+        function(event){
+
+            event.stopPropagation();
+
+        }
+    );
+
+
+    document.addEventListener(
+        "click",
+        function(){
+
+            fbProfileDetails.classList.remove(
+                "active"
+            );
+
+            fbProfileButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MY PROFILE
+========================================================= */
+
+const fbAdminProfile =
+    document.getElementById("fbAdminProfile");
+
+
+if(fbAdminProfile){
+
+    fbAdminProfile.addEventListener(
+        "click",
+        function(){
+
+            fbProfileDetails.classList.remove(
+                "active"
+            );
+
+            fbProfileButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            if(typeof openView === "function"){
+
+                openView("profile");
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ACCOUNT SETTINGS
+========================================================= */
+
+const fbAdminSettings =
+    document.getElementById("fbAdminSettings");
+
+
+if(fbAdminSettings){
+
+    fbAdminSettings.addEventListener(
+        "click",
+        function(){
+
+            fbProfileDetails.classList.remove(
+                "active"
+            );
+
+            fbProfileButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            if(typeof showToast === "function"){
+
+                showToast(
+                    "Account settings opened."
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+const fbAdminLogout =
+    document.getElementById("fbAdminLogout");
+
+
+if(fbAdminLogout){
+
+    fbAdminLogout.addEventListener(
+        "click",
+        function(){
+
+            const confirmed =
+                confirm(
+                    "Are you sure you want to log out?"
+                );
+
+
+            if(confirmed){
+
+                window.location.href =
+                    "login.html";
+
+            }
+
+        }
+    );
+
+}
+
+</script>
             </div>
 
         </header>

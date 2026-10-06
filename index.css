@@ -1,3 +1,61 @@
+:root{
+
+    --primary:#5B5CE2;
+    --secondary:#F4A261;
+
+    --bg:#F8F8FC;
+    --bg-soft:#F1F1F8;
+
+    --surface:#FFFFFF;
+    --surface-2:#F5F5FA;
+
+    --text:#171827;
+    --text-soft:#5E6074;
+    --muted:#88899A;
+
+    --line:rgba(23,24,39,.10);
+
+    --primary-soft:rgba(91,92,226,.09);
+    --secondary-soft:rgba(244,162,97,.12);
+
+    --shadow:
+        0 30px 80px rgba(42,42,94,.10);
+
+    --shadow-small:
+        0 15px 40px rgba(42,42,94,.07);
+
+    --radius-xl:38px;
+    --radius-lg:28px;
+    --radius-md:20px;
+
+    --max-width:1240px;
+
+    --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+[data-theme="dark"]{
+
+    --bg:#0E0F1B;
+    --bg-soft:#141526;
+
+    --surface:#171829;
+    --surface-2:#1D1E31;
+
+    --text:#F5F5FA;
+    --text-soft:#B9BACB;
+    --muted:#85869A;
+
+    --line:rgba(255,255,255,.09);
+
+    --primary-soft:rgba(91,92,226,.15);
+    --secondary-soft:rgba(244,162,97,.12);
+
+    --shadow:
+        0 30px 80px rgba(0,0,0,.35);
+
+    --shadow-small:
+        0 15px 40px rgba(0,0,0,.25);
+}
 
 /* =========================================================
    FUNDBLOOM HERO ONLY
@@ -82,7 +140,7 @@
 
     font-family: "DM Sans", sans-serif;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: 0.16em;
     line-height: 1.4;
 
@@ -185,7 +243,7 @@
 
     font-family: "DM Sans", sans-serif;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
 
     text-decoration: none;
 
@@ -735,13 +793,13 @@
 
 .fb-hero-community-text {
     font-family: "DM Sans", sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     line-height: 1.4;
 
     text-align: right;
 
-    color: #77778a;
+    color:var(--text);
 }
 
 
@@ -788,9 +846,9 @@
 
 .fb-hero-floating span:not(.fb-hero-floating-icon):not(.fb-hero-floating-check):not(.fb-hero-supporter-avatar) {
     font-family: "DM Sans", sans-serif;
-    font-size: 9px;
-    font-weight: 500;
-    color: #89899a;
+    font-size: 12px;
+    font-weight: 600;
+    color:var(--text);
 }
 
 .fb-hero-floating-icon {
@@ -876,14 +934,14 @@
 .fb-hero-mini-badge {
     position: absolute;
 
-    right: 4px;
-    bottom: 23px;
+    right: 1px;
+    bottom: 0px;
 
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 17px;
 
-    padding: 8px 11px;
+    padding: 1px 11px;
 
     border: 1px solid rgba(91,92,226,0.12);
     border-radius: 10px;
@@ -892,16 +950,16 @@
     background: rgba(255,255,255,0.8);
 
     font-family: "DM Sans", sans-serif;
-    font-size: 9px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 600;
 
     box-shadow:
         0 10px 25px rgba(40,40,70,0.07);
 }
 
 .fb-hero-mini-badge svg {
-    width: 13px;
-    height: 13px;
+    width: 16px;
+    height: 20px;
 }
 
 
@@ -4244,7 +4302,7 @@ html[dir="rtl"]
 
     line-height:1.8;
 
-    font-weight:400;
+    font-weight:600;
 
 }
 
@@ -4320,9 +4378,9 @@ html[dir="rtl"]
 
     color:var(--fb-community-primary);
 
-    font-size:9px;
+    font-size:12px;
 
-    font-weight:700;
+    font-weight:600;
 
     letter-spacing:1.5px;
 
@@ -4399,7 +4457,7 @@ html[dir="rtl"]
 
     line-height:1.8;
 
-    font-weight:400;
+    font-weight:600;
 
 }
 
@@ -4672,7 +4730,7 @@ html[dir="rtl"]
 
     color:var(--fb-community-muted);
 
-    font-size:10px;
+    font-size:12px;
 
     line-height:1.55;
 
@@ -4697,9 +4755,9 @@ html[dir="rtl"]
 
     color:var(--fb-community-primary);
 
-    font-size:8px;
+    font-size:12px;
 
-    font-weight:700;
+    font-weight:600;
 
     letter-spacing:1px;
 
@@ -4726,9 +4784,9 @@ html[dir="rtl"]
 
     color:var(--fb-community-muted);
 
-    font-size:10px;
+    font-size:12px;
 
-    font-weight:500;
+    font-weight:600;
 
 }
 
@@ -5305,9 +5363,9 @@ html[dir="rtl"]
 
     color:var(--text);
 
-    font-size:12px;
+    font-size:14px;
 
-    font-weight:700;
+    font-weight:600;
 
 }
 
@@ -5320,7 +5378,7 @@ html[dir="rtl"]
 
     opacity:.58;
 
-    font-size:9px;
+    font-size:12px;
 
 }
 
@@ -5539,9 +5597,9 @@ html[dir="rtl"]
 
     color:var(--text);
 
-    font-size:10px;
+    font-size:12px;
 
-    font-weight:700;
+    font-weight:600;
 
 }
 
@@ -5558,7 +5616,7 @@ html[dir="rtl"]
 
     opacity:.55;
 
-    font-size:8px;
+    font-size:12px;
 
 }
 
@@ -7091,13 +7149,12 @@ html[dir="rtl"]
 
     border-radius:100px;
 
-    background:var(--primary);
 
     color:var(--text);
 
     font-family:"DM Sans",sans-serif;
 
-    font-size:12px;
+    font-size:14px;
     font-weight:600;
 
     letter-spacing:1.6px;
@@ -9647,8 +9704,8 @@ body.rtl-mode .fb-contact-submit{
 
 .fb-story-featured-label{
     font-family:"DM Sans",sans-serif;
-    font-size:8px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:600;
     letter-spacing:1.7px;
 
     color:var(--secondary);
@@ -9684,7 +9741,8 @@ body.rtl-mode .fb-contact-submit{
     margin:13px 0 22px;
 
     font-family:"DM Sans",sans-serif;
-    font-size:12px;
+    font-size:14px;
+    font-weight: 600px;
     line-height:1.7;
 
     color:var(--text);
@@ -9723,8 +9781,8 @@ body.rtl-mode .fb-contact-submit{
     color:#fff;
 
     font-family:"DM Sans",sans-serif;
-    font-size:10px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:600;
 }
 
 .fb-story-person-info{
@@ -9735,15 +9793,15 @@ body.rtl-mode .fb-contact-submit{
 
 .fb-story-person-info strong{
     font-family:"DM Sans",sans-serif;
-    font-size:11px;
-    font-weight:800;
+    font-size:13px;
+    font-weight:600;
 
     color:var(--text);
 }
 
 .fb-story-person-info small{
     font-family:"DM Sans",sans-serif;
-    font-size:9px;
+    font-size:12px;
 
     color:var(--text);
     opacity:.52;
@@ -9805,7 +9863,7 @@ body.rtl-mode .fb-contact-submit{
 
 .fb-story-featured-impact span{
     font-family:"DM Sans",sans-serif;
-    font-size:8px;
+    font-size:12px;
     text-transform:uppercase;
     letter-spacing:1px;
 
@@ -9900,13 +9958,13 @@ body.rtl-mode .fb-contact-submit{
 
 .fb-story-card-person strong{
     font-family:"DM Sans",sans-serif;
-    font-size:10px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:600;
 }
 
 .fb-story-card-person small{
     font-family:"DM Sans",sans-serif;
-    font-size:8px;
+    font-size:12px;
 
     opacity:.48;
 }
@@ -9915,8 +9973,8 @@ body.rtl-mode .fb-contact-submit{
     margin-left:auto;
 
     font-family:"DM Sans",sans-serif;
-    font-size:9px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:600;
     letter-spacing:1px;
 
     color:var(--secondary);
@@ -9980,8 +10038,8 @@ body.rtl-mode .fb-contact-submit{
     gap:5px;
 
     font-family:"DM Sans",sans-serif;
-    font-size:8px;
-    font-weight:700;
+    font-size:12px;
+    font-weight:600;
 
     color:var(--text);
     opacity:.52;
@@ -10046,8 +10104,8 @@ body.rtl-mode .fb-contact-submit{
 
 .fb-stories-strip-intro span{
     font-family:"DM Sans",sans-serif;
-    font-size:7px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:600;
     letter-spacing:1.5px;
 
     color:var(--secondary);
@@ -10101,13 +10159,13 @@ body.rtl-mode .fb-contact-submit{
 
 .fb-stories-strip-stat strong{
     font-family:"DM Sans",sans-serif;
-    font-size:9px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:600;
 }
 
 .fb-stories-strip-stat small{
     font-family:"DM Sans",sans-serif;
-    font-size:7px;
+    font-size:11px;
 
     line-height:1.35;
 

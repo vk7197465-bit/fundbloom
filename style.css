@@ -601,7 +601,7 @@ html[dir="rtl"]
 
             background: var(--surface);
 
-            border: 1px solid var(--border);
+            border: 1px solid var(--primary);
 
             color: var(--text);
 
@@ -629,71 +629,56 @@ html[dir="rtl"]
            LOGIN BUTTON
         ========================================================= */
 
-        .fb-login-btn {
+       .fb-login-btn {
+    position: relative;
 
-            position: relative;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-            min-height: 44px;
+    padding: 0 20px;
 
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+    border-radius: 12px;
 
-            padding: 0 20px;
+    color: #fff;
 
-            border-radius: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
 
-            color: #fff;
+    font-size: 14px;
+    font-weight: 800;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-dark)
-                );
+    overflow: hidden;
 
-            font-size: 14px;
-            font-weight: 800;
+    box-shadow:
+        0 10px 25px rgba(91, 92, 226, .20);
 
-            overflow: hidden;
+  
+}
 
-            box-shadow:
-                0 10px 25px rgba(91, 92, 226, .20);
 
-            transition: var(--transition);
-        }
+/* Minimal floating hover */
+.fb-login-btn:hover {
+    color: #ffffff;
 
-        .fb-login-btn::before {
+    background: #4d4ed1;
 
-            content: "";
+    transform: translateY(-2px);
 
-            position: absolute;
+    box-shadow:
+        0 14px 28px rgba(91, 92, 226, .24);
+}
 
-            inset: 0;
 
-            background:
-                linear-gradient(
-                    120deg,
-                    transparent 20%,
-                    rgba(255,255,255,.25),
-                    transparent 70%
-                );
-
-            transform: translateX(-120%);
-
-            transition: .7s;
-        }
-
-        .fb-login-btn:hover::before {
-            transform: translateX(120%);
-        }
-
-        .fb-login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow:
-                0 15px 35px rgba(91, 92, 226, .30);
-        }
-
+/* Optional: return smoothly */
+.fb-login-btn:active {
+    transform: translateY(0);
+}
 
         /* =========================================================
            MOBILE MENU BUTTON
@@ -1277,7 +1262,6 @@ margin-top: 8px;
 
             color: #fff;
 
-            background: var(--primary);
 
             border-color: var(--primary);
 

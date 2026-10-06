@@ -291,8 +291,8 @@ body.dark-mode{
 
     background:rgba(91,92,226,.9);
 
-    font-size:8px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:600;
     letter-spacing:1px;
 }
 
@@ -309,7 +309,7 @@ body.dark-mode{
 
     margin:0;
 
-    font-size:10px;
+    font-size:13px;
     line-height:1.55;
 
     opacity:.84;
@@ -370,8 +370,9 @@ body.dark-mode{
 .fb-h2-hero-float small{
     display:block;
 
-    font-size:7px;
-
+    font-size:10px;
+color: var(--secondary);
+font-weight: 600;
     opacity:.5;
 }
 
@@ -432,12 +433,20 @@ body.dark-mode{
 
     color:var(--primary);
 
-    font-size:11px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:600;
     letter-spacing:2px;
 }
 
 .fb-h2-hero-eyebrow::before{
+    content:"";
+
+    width:30px;
+    height:2px;
+
+    background:var(--secondary);
+}
+.fb-h2-hero-eyebrow::after{
     content:"";
 
     width:30px;
@@ -631,7 +640,7 @@ body.dark-mode{
 .fb-h2-dashboard-point span{
     display:block;
 
-    margin-top:2px;
+    margin-top:6px;
 
     font-size:14px;
 

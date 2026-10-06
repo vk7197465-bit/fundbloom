@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FundBloom | School Fundraising Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="About.css">
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+
+<header class="fb-header" id="fbHeader">
+
+    <div class="fb-header-inner">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="fb-brand">
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+                    <span class="fb-brand-primary">Fund</span><span class="fb-brand-secondary">Bloom</span>
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING 
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <!-- DESKTOP NAV -->
+
+        <nav class="fb-main-nav">
+
+
+            <!-- HOME -->
+
+            <div class="fb-home-dropdown">
+
+                <a href="index.html" class="fb-nav-link">
+
+                    Home
+
+                    <i data-lucide="chevron-down"></i>
+
+                </a>
+
+
+                <div class="fb-dropdown">
+
+                    <div class="fb-dropdown-heading">
+                        Explore FundBloom
+                    </div>
+
+
+                    <a href="index.html" class="fb-dropdown-link">
+
+                        <strong>Home 1</strong>
+
+                       
+                    </a>
+
+
+                    <a href="home-2.html" class="fb-dropdown-link">
+
+                        <strong>Home 2</strong>
+
+                      
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- OTHER NAV -->
+              
+
+            <a href="how-it-works.html" class="fb-nav-link">
+                How It Works
+            </a>
+
+            <a href="campaign-templates.html" class="fb-nav-link">
+                Campaign Templates
+            </a>
+
+            <a href="pricing.html" class="fb-nav-link">
+                Pricing
+            </a>
+
+            <a href="contact.html" class="fb-nav-link">
+                Contact
+            </a>
+
+            <a href="dashboard.html" class="fb-nav-link">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <!-- ACTIONS -->
+
+        <div class="fb-header-actions">
+
+
+            <!-- DARK -->
+
+            <button
+                class="fb-control-btn"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
+                title="Dark / Light"
+            >
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+            <!-- RTL -->
+
+            <button
+                class="fb-control-btn"
+                id="rtlToggle"
+                aria-label="Toggle RTL"
+                title="RTL / LTR"
+            >
+
+                <i data-lucide="arrow-left-right"></i>
+
+            </button>
+
+
+            <!-- DESKTOP LOGIN -->
+
+            <a
+                href="login.html"
+                class="fb-login-btn"
+            >
+                Login
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="fb-menu-btn"
+                id="menuToggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         MOBILE MENU
+    ========================================================= -->
+
+    <div class="fb-mobile-menu" id="mobileMenu">
+
+
+        <!-- HOME -->
+
+        <div class="fb-mobile-home">
+
+            <div
+                class="fb-mobile-home-head"
+                id="mobileHomeToggle"
+            >
+
+                <span>Home</span>
+
+                <i data-lucide="chevron-down"></i>
+
+            </div>
+
+
+            <div
+                class="fb-mobile-submenu"
+                id="mobileHomeSubmenu"
+            >
+
+                <a
+                    href="index.html"
+                    class="fb-mobile-sub-link"
+                >
+                    Home 1
+                </a>
+
+                <a
+                    href="home-2.html"
+                    class="fb-mobile-sub-link"
+                >
+                    Home 2
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALL NAV ITEMS -->
+ 
+        <a
+            href="how-it-works.html"
+            class="fb-mobile-link"
+        >
+            <span>How It Works</span>
+        </a>
+
+
+        <a
+            href="campaign-templates.html"
+            class="fb-mobile-link"
+        >
+            <span>Campaign Templates</span>
+        </a>
+
+
+        <a
+            href="pricing.html"
+            class="fb-mobile-link"
+        >
+            <span>Pricing</span>
+        </a>
+
+
+        <a
+            href="contact.html"
+            class="fb-mobile-link"
+        >
+            <span>Contact</span>
+        </a>
+
+
+        <a
+            href="dashboard.html"
+            class="fb-mobile-link"
+        >
+            <span>Dashboard</span>
+        </a>
+
+
+        <!-- LOGIN ALSO INSIDE MENU -->
+
+        <a
+            href="login.html"
+            class="fb-mobile-login"
+        >
+            Login
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="fb-pricing-hero">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+            <!-- LEFT : ORBIT -->
+            <div class="hero-orbit-area">
+
+                <div class="orbit-stage">
+
+                    <div class="orbit-ring orbit-ring-1"></div>
+                    <div class="orbit-ring orbit-ring-2"></div>
+                    <div class="orbit-ring orbit-ring-3"></div>
+                    <div class="orbit-ring orbit-ring-4"></div>
+
+                    <div class="orbit-path orbit-path-a">
+                        <div class="orbit-node">
+                            <div class="node-card">
+                                <span></span>
+                                <small>Campaigns</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbit-path orbit-path-b">
+                        <div class="orbit-node">
+                            <div class="node-card secondary-node">
+                                <span></span>
+                                <small>Donations</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbit-path orbit-path-c">
+                        <div class="orbit-node">
+                            <div class="node-card">
+                                <span></span>
+                                <small>Insights</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orbit-center">
+                        <div class="center-inner">
+                            <strong>FB</strong>
+                            <span>FundBloom</span>
+                        </div>
+                    </div>
+
+                    <div class="orbit-label orbit-label-one">
+                        <i></i>
+                        Community
+                    </div>
+
+                    <div class="orbit-label orbit-label-two">
+                        <i></i>
+                        Growth
+                    </div>
+
+                    <div class="orbit-label orbit-label-three">
+                        <i></i>
+                        Impact
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT : HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    FUND BLOOM PRICING
+                </div>
+
+                <h1 class="hero-title">
+                    Pricing that
+                    <em>moves</em>
+                    your mission forward.
+                </h1>
+
+                <div class="hero-typing">
+                    <span id="typingText"></span>
+                </div>
+
+                <p class="hero-description">
+                    Flexible tools for school fundraising teams,
+                    designed to help you build campaigns, coordinate
+                    communities, understand progress and report impact
+                    without unnecessary complexity.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#plans" class="fb-btn fb-btn-primary">
+                        Explore Plans
+                        <i data-lucide="arrow-down-right"></i>
+                    </a>
+
+                    <a href="#comparison" class="fb-btn fb-btn-secondary">
+                        Compare Features
+                        <i data-lucide="layout-list"></i>
+                    </a>
+
+                </div>
+
+                <div class="hero-proof">
+
+                    <div class="proof-item">
+                        <i data-lucide="check"></i>
+                        No complicated setup
+                    </div>
+
+                    <div class="proof-item">
+                        <i data-lucide="refresh-cw"></i>
+                        Flexible upgrades
+                    </div>
+
+                    <div class="proof-item">
+                        <i data-lucide="bar-chart-3"></i>
+                        Clear reporting
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     PLANS
+====================================================== -->
+
+<section class="fb-plans" id="plans">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">
+                SIMPLE PLANS
+            </div>
+
+            <h2>
+                Choose the room
+                your campaign needs.
+            </h2>
+
+            <p>
+                Start with the essentials, expand your community tools,
+                or bring deeper coordination and reporting into one place.
+            </p>
+
+        </div>
+
+
+        <div class="billing-bar">
+
+            <button class="billing-option active" data-billing="monthly">
+                Monthly
+            </button>
+
+            <button class="billing-option" data-billing="yearly">
+                Yearly
+            </button>
+
+        </div>
+
+
+        <div class="plan-grid">
+
+            <!-- PLAN 1 -->
+
+            <article class="plan-card">
+
+                <span class="plan-number">01</span>
+
+                <h3 class="plan-name">
+                    Starter
+                </h3>
+
+                <p class="plan-description">
+                    A focused foundation for small school campaigns.
+                </p>
+
+                <div class="plan-price">
+
+                    <strong
+                        data-monthly="$19"
+                        data-yearly="$15"
+                    >
+                        $19
+                    </strong>
+
+                    <span>/ month</span>
+
+                </div>
+
+                <div class="plan-divider"></div>
+
+                <div class="plan-features">
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Campaign creation
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Donation tracking
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Basic campaign insights
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Community sharing
+                    </div>
+
+                </div>
+
+                <a href="#" class="fb-btn fb-btn-secondary plan-button">
+                    Start with Starter
+                </a>
+
+            </article>
+
+
+            <!-- PLAN 2 -->
+
+            <article class="plan-card popular">
+
+                <span class="popular-badge">
+                    Popular
+                </span>
+
+                <span class="plan-number">02</span>
+
+                <h3 class="plan-name">
+                    Community
+                </h3>
+
+                <p class="plan-description">
+                    Built for schools growing participation and reach.
+                </p>
+
+                <div class="plan-price">
+
+                    <strong
+                        data-monthly="$49"
+                        data-yearly="$39"
+                    >
+                        $49
+                    </strong>
+
+                    <span>/ month</span>
+
+                </div>
+
+                <div class="plan-divider"></div>
+
+                <div class="plan-features">
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Everything in Starter
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Volunteer coordination
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Team collaboration
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Advanced campaign insights
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Financial summaries
+                    </div>
+
+                </div>
+
+                <a href="#" class="fb-btn fb-btn-primary plan-button">
+                    Choose Community
+                </a>
+
+            </article>
+
+
+            <!-- PLAN 3 -->
+
+            <article class="plan-card">
+
+                <span class="plan-number">03</span>
+
+                <h3 class="plan-name">
+                    Impact
+                </h3>
+
+                <p class="plan-description">
+                    Deeper coordination for larger fundraising programs.
+                </p>
+
+                <div class="plan-price">
+
+                    <strong
+                        data-monthly="$89"
+                        data-yearly="$71"
+                    >
+                        $89
+                    </strong>
+
+                    <span>/ month</span>
+
+                </div>
+
+                <div class="plan-divider"></div>
+
+                <div class="plan-features">
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Everything in Community
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Multi-campaign management
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Detailed reporting
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Financial analytics
+                    </div>
+
+                    <div class="plan-feature">
+                        <i data-lucide="check"></i>
+                        Priority support
+                    </div>
+
+                </div>
+
+                <a href="#" class="fb-btn fb-btn-secondary plan-button">
+                    Build Your Impact
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     COMPARISON
+====================================================== -->
+
+<section class="fb-comparison" id="comparison">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">
+                FEATURE MAP
+            </div>
+
+            <h2>
+                See exactly
+                what grows with you.
+            </h2>
+
+            <p>
+                Compare the core capabilities across every FundBloom plan
+                before deciding how much support your campaign needs.
+            </p>
+
+        </div>
+
+
+        <div class="comparison-board">
+
+            <div class="comparison-head">
+
+                <div>
+                    Capability
+                </div>
+
+                <div>
+                    Starter
+                </div>
+
+                <div class="highlight">
+                    Community
+                </div>
+
+                <div>
+                    Impact
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Campaign Builder
+                    <span class="feature-note">
+                        Create and organize fundraising campaigns
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Donation Tracking
+                    <span class="feature-note">
+                        Monitor incoming contributions
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Volunteer Coordination
+                    <span class="feature-note">
+                        Organize people around campaign events
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Advanced Insights
+                    <span class="feature-note">
+                        Understand campaign performance
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check secondary">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Financial Reporting
+                    <span class="feature-note">
+                        Review structured financial summaries
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check secondary">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row reveal">
+
+                <div class="feature-name">
+                    Multi-Campaign Management
+                    <span class="feature-note">
+                        Coordinate multiple fundraising initiatives
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check">
+                        —
+                    </span>
+                </div>
+
+                <div>
+                    <span class="check active">
+                        <i data-lucide="check"></i>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     HOW PRICING WORKS
+====================================================== -->
+
+<section class="fb-how">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">
+                HOW IT WORKS
+            </div>
+
+            <h2>
+                Your plan can evolve
+                with the campaign.
+            </h2>
+
+            <p>
+                FundBloom keeps the path simple: establish your foundation,
+                grow participation, then unlock deeper campaign intelligence.
+            </p>
+
+        </div>
+
+
+        <div class="journey-wrap">
+
+            <svg
+                class="journey-svg"
+                viewBox="0 0 1100 500"
+                preserveAspectRatio="none"
+            >
+
+                <path
+                    class="journey-line"
+                    d="M40 105 C280 30, 370 410, 570 250 S820 120, 1060 390"
+                />
+
+                <path
+                    class="journey-line-accent"
+                    d="M40 105 C280 30, 370 410, 570 250 S820 120, 1060 390"
+                />
+
+                <circle
+                    class="journey-dot"
+                    r="7"
+                >
+
+                    <animateMotion
+                        dur="7s"
+                        repeatCount="indefinite"
+                        path="M40 105 C280 30, 370 410, 570 250 S820 120, 1060 390"
+                    />
+
+                </circle>
+
+            </svg>
+
+
+            <article class="journey-point">
+
+                <div class="journey-number">
+                    01
+                </div>
+
+                <h3>
+                    Start with clarity.
+                </h3>
+
+                <p>
+                    Choose the foundation that gives your school
+                    the tools needed to launch a focused campaign.
+                </p>
+
+                <span class="journey-tag">
+                    Foundation
+                </span>
+
+            </article>
+
+
+            <article class="journey-point">
+
+                <div class="journey-number">
+                    02
+                </div>
+
+                <h3>
+                    Grow participation.
+                </h3>
+
+                <p>
+                    Bring volunteers, teams and community activity
+                    into one coordinated fundraising experience.
+                </p>
+
+                <span class="journey-tag">
+                    Community
+                </span>
+
+            </article>
+
+
+            <article class="journey-point">
+
+                <div class="journey-number">
+                    03
+                </div>
+
+                <h3>
+                    Understand impact.
+                </h3>
+
+                <p>
+                    Move beyond campaign activity with deeper
+                    insights, financial summaries and reporting.
+                </p>
+
+                <span class="journey-tag">
+                    Impact
+                </span>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     VALUE / IMPACT
+====================================================== -->
+
+<section class="fb-impact">
+
+    <div class="container">
+
+        <div class="impact-intro">
+
+            <div>
+
+                <div class="eyebrow">
+                    VALUE IN MOTION
+                </div>
+
+                <h2>
+                    One platform.
+                    Four kinds of momentum.
+                </h2>
+
+            </div>
+
+            <p>
+                The value of FundBloom is not only in collecting donations.
+                It connects campaign planning, community participation,
+                financial visibility and measurable progress.
+            </p>
+
+        </div>
+
+
+        <div class="impact-list">
+
+            <article class="impact-item">
+
+                <div class="impact-number">
+                    01
+                </div>
+
+                <div class="impact-title">
+                    Build
+                </div>
+
+                <div class="impact-copy">
+                    Turn an idea into a structured campaign with
+                    clear goals and organized fundraising activity.
+                </div>
+
+                <div class="impact-icon">
+                    <i data-lucide="layers-3"></i>
+                </div>
+
+            </article>
+
+
+            <article class="impact-item">
+
+                <div class="impact-number">
+                    02
+                </div>
+
+                <div class="impact-title">
+                    Engage
+                </div>
+
+                <div class="impact-copy">
+                    Give families, volunteers and school communities
+                    clearer ways to participate.
+                </div>
+
+                <div class="impact-icon">
+                    <i data-lucide="users"></i>
+                </div>
+
+            </article>
+
+
+            <article class="impact-item">
+
+                <div class="impact-number">
+                    03
+                </div>
+
+                <div class="impact-title">
+                    Understand
+                </div>
+
+                <div class="impact-copy">
+                    Bring campaign activity and financial information
+                    into a clearer operational picture.
+                </div>
+
+                <div class="impact-icon">
+                    <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+
+            </article>
+
+
+            <article class="impact-item">
+
+                <div class="impact-number">
+                    04
+                </div>
+
+                <div class="impact-title">
+                    Report
+                </div>
+
+                <div class="impact-copy">
+                    Turn campaign progress into useful summaries
+                    for coordinators and school teams.
+                </div>
+
+                <div class="impact-icon">
+                    <i data-lucide="file-chart-column"></i>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FAQ
+====================================================== -->
+
+<section class="fb-faq">
+
+    <div class="container">
+
+        <div class="faq-grid">
+
+            <div class="faq-intro">
+
+                <div class="eyebrow">
+                    QUESTIONS
+                </div>
+
+                <h2>
+                    Pricing,
+                    without the guesswork.
+                </h2>
+
+                <p>
+                    Explore the most common questions about plans,
+                    upgrades, campaign management and reporting.
+                </p>
+
+            </div>
+
+
+            <div class="faq-list">
+
+                <div class="faq-item active">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can I change my plan later?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. The plan structure is designed to let
+                            your school move to a different level as
+                            campaign requirements change.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can we manage multiple campaigns?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Multi-campaign management is included in the
+                            Impact plan, allowing larger fundraising programs
+                            to organize multiple initiatives.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Is volunteer coordination included?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Volunteer coordination is available from the
+                            Community plan and is expanded within the
+                            Impact experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can coordinators review financial reports?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Financial summaries and deeper reporting
+                            capabilities become available as you move
+                            into the Community and Impact plans.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Is yearly billing available?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Use the Monthly and Yearly selector above
+                            to preview the yearly pricing structure.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button class="faq-question">
+
+                        <span>
+                            Do all plans include campaign creation?
+                        </span>
+
+                        <i data-lucide="plus"></i>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Campaign creation is included across all three
+                            plans, with additional coordination, insights
+                            and reporting capabilities added at higher levels.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="fb-final">
+
+    <div class="container">
+
+        <div class="final-cta">
+
+            <div class="final-content">
+
+                <div class="eyebrow">
+                    READY TO GROW
+                </div>
+
+                <h2>
+                    Give your next campaign
+                    room to bloom.
+                </h2>
+
+                <p>
+                    Start with the tools you need today and expand
+                    when your fundraising community is ready.
+                </p>
+
+                <a href="#plans" class="fb-btn fb-btn-primary">
+                    Explore FundBloom Plans
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     THEME CONTROL
+====================================================== -->
+
+
+<script>
+
+/* =========================================================
+   LUCIDE
+========================================================= */
+
+lucide.createIcons();
+
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+const typingElement = document.getElementById("typingText");
+
+const typingWords = [
+    "Start with clarity.",
+    "Grow with confidence.",
+    "Build community.",
+    "Measure impact."
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    const currentWord = typingWords[wordIndex];
+
+    if(!deleting){
+
+        typingElement.textContent =
+            currentWord.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === currentWord.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1800);
+
+            return;
+        }
+
+    }else{
+
+        typingElement.textContent =
+            currentWord.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex =
+                (wordIndex + 1) % typingWords.length;
+
+        }
+
+    }
+
+    setTimeout(
+        typeEffect,
+        deleting ? 45 : 75
+    );
+
+}
+
+typeEffect();
+
+
+/* =========================================================
+   BILLING SWITCH
+========================================================= */
+
+const billingButtons =
+    document.querySelectorAll(".billing-option");
+
+const priceElements =
+    document.querySelectorAll(".plan-price strong");
+
+billingButtons.forEach(button => {
+
+    button.addEventListener("click",() => {
+
+        billingButtons.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const billing =
+            button.dataset.billing;
+
+        priceElements.forEach(price => {
+
+            price.textContent =
+                price.dataset[billing];
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+const faqItems =
+    document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+    const question =
+        item.querySelector(".faq-question");
+
+    const answer =
+        item.querySelector(".faq-answer");
+
+    if(item.classList.contains("active")){
+        answer.style.maxHeight =
+            answer.scrollHeight + "px";
+    }
+
+    question.addEventListener("click",() => {
+
+        const wasActive =
+            item.classList.contains("active");
+
+        faqItems.forEach(other => {
+
+            other.classList.remove("active");
+
+            const otherAnswer =
+                other.querySelector(".faq-answer");
+
+            otherAnswer.style.maxHeight = null;
+
+        });
+
+        if(!wasActive){
+
+            item.classList.add("active");
+
+            answer.style.maxHeight =
+                answer.scrollHeight + "px";
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   COMPARISON SCROLL REVEAL
+========================================================= */
+
+const comparisonRows =
+    document.querySelectorAll(".comparison-row.reveal");
+
+const rowObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    rowObserver.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.15
+        }
+    );
+
+comparisonRows.forEach(row => {
+    rowObserver.observe(row);
+});
+
+
+/* =========================================================
+   THEME
+========================================================= */
+
+const themeControl =
+    document.getElementById("themeControl");
+
+const savedTheme =
+    localStorage.getItem("fundbloom-theme");
+
+if(savedTheme){
+    document.documentElement.dataset.theme =
+        savedTheme;
+}
+
+function updateThemeIcon(){
+
+    const isDark =
+        document.documentElement.dataset.theme === "dark";
+
+    themeControl.innerHTML =
+        `<i data-lucide="${isDark ? "sun" : "moon"}"></i>`;
+
+    lucide.createIcons();
+
+}
+
+updateThemeIcon();
+
+themeControl.addEventListener("click",() => {
+
+    const isDark =
+        document.documentElement.dataset.theme === "dark";
+
+    document.documentElement.dataset.theme =
+        isDark ? "light" : "dark";
+
+    localStorage.setItem(
+        "fundbloom-theme",
+        isDark ? "light" : "dark"
+    );
+
+    updateThemeIcon();
+
+});
+
+
+/* =========================================================
+   SMOOTH PLAN LINKS
+========================================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click",event => {
+
+        const target =
+            document.querySelector(link.getAttribute("href"));
+
+        if(target){
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="fb-footer">
+
+    <div class="fb-footer-inner">
+
+
+        <div class="fb-footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="fb-footer-brand">
+
+   <a href="index.html" class="fb-brand">
+
+            <img
+                src="images/l.png"
+                alt="FundBloom Logo"
+                class="fb-logo-image"
+            >
+
+            <span class="fb-brand-text">
+
+                <span class="fb-brand-name">
+                    <span class="fb-brand-primary">Fund</span><span class="fb-brand-secondary">Bloom</span>
+                </span>
+
+                <span class="fb-brand-tagline">
+                    SCHOOL FUNDRAISING 
+                </span>
+
+            </span>
+
+        </a>
+
+
+                <p class="fb-footer-description">
+
+                    FundBloom brings schools, PTAs, families and
+                    supporters together through simple, engaging
+                    and community-powered fundraising.
+
+                </p>
+
+
+                <span class="fb-footer-badge">
+
+                    SCHOOL • COMMUNITY • IMPACT
+
+                </span>
+
+
+                <div class="fb-socials">
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="Facebook"
+                    >
+                     <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="Instagram"
+                    >
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="YouTube"
+                    >
+                             <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="fb-social"
+                        aria-label="LinkedIn"
+                    >
+                         <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLORE -->
+
+            <div class="fb-footer-column">
+
+                <h3>Explore</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    
+
+                    <a href="how-it-works.html">
+                        How It Works
+                    </a>
+
+                    <a href="campaign-templates.html">
+                        Campaign Templates
+                    </a>
+
+                    <a href="pricing.html">
+                        Pricing
+                    </a>
+<a href="contact.html">
+                       Contact
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- PLATFORM -->
+
+            <div class="fb-footer-column">
+
+                <h3>Platform</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                    <a href="login.html">
+                        Coordinator Login
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="#">
+                        Start a Campaign
+                    </a>
+
+                    <a href="#">
+                        Fundraising Ideas
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCHOOL -->
+
+            <div class="fb-footer-column">
+
+                <h3>For Schools</h3>
+
+                <div class="fb-footer-links">
+
+                    <a href="#">
+                        PTA Events
+                    </a>
+
+                    <a href="#">
+                        School Campaigns
+                    </a>
+
+                    <a href="#">
+                        Community Giving
+                    </a>
+
+                    <a href="#">
+                        Coordinator Resources
+                    </a>
+
+                    <a href="#">
+                        Support Center
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWSLETTER -->
+<div class="fb-footer-column">
+
+    <h3>For Contact</h3>
+
+    <div class="fb-footer-contact-links">
+
+        <a href="tel:6361199543" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                <i data-lucide="phone"></i>
+            </span>
+            <span>999999543</span>
+        </a>
+
+        <a href="mailto:fundblom@gmail.com" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                <i data-lucide="mail"></i>
+            </span>
+            <span>fundblom@gmail.com</span>
+        </a>
+
+        <a href="#" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                     <i class="fa-brands fa-facebook-f"></i>
+            </span>
+            <span>fundfacebook.com</span>
+        </a>
+
+        <a href="#" class="fb-footer-contact-link">
+            <span class="fb-small-contact-icon">
+                      <i class="fa-brands fa-instagram"></i>
+            </span>
+            <span>fundInstagram.com</span>
+        </a>
+
+      
+
+    </div>
+
+</div>
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="fb-footer-bottom">
+
+
+            <p class="fb-copyright">
+
+                © <span id="currentYear"></span>
+                FundBloom. All rights reserved.
+
+            </p>
+
+
+            <div class="fb-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    /* =========================================================
+       INITIALIZE LUCIDE
+    ========================================================= */
+
+    lucide.createIcons();
+
+
+    /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
+
+    const header = document.getElementById("fbHeader");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 15) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+    /* =========================================================
+       DARK / LIGHT MODE
+    ========================================================= */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const savedTheme =
+        localStorage.getItem("fundBloomTheme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-theme");
+
+    }
+
+
+    function updateThemeIcon() {
+
+        themeToggle.innerHTML =
+            document.body.classList.contains("dark-theme")
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+
+        lucide.createIcons();
+
+    }
+
+
+    updateThemeIcon();
+
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-theme");
+
+        const dark =
+            document.body.classList.contains("dark-theme");
+
+        localStorage.setItem(
+            "fundBloomTheme",
+            dark ? "dark" : "light"
+        );
+
+        updateThemeIcon();
+
+    });
+
+
+    /* =========================================================
+       RTL / LTR
+    ========================================================= */
+
+    const rtlToggle =
+        document.getElementById("rtlToggle");
+
+    const savedDirection =
+        localStorage.getItem("fundBloomDirection");
+
+    if (savedDirection === "rtl") {
+
+        document.documentElement.dir = "rtl";
+
+    } else {
+
+        document.documentElement.dir = "ltr";
+
+    }
+
+
+    rtlToggle.addEventListener("click", () => {
+
+        const isRTL =
+            document.documentElement.dir === "rtl";
+
+        document.documentElement.dir =
+            isRTL ? "ltr" : "rtl";
+
+        localStorage.setItem(
+            "fundBloomDirection",
+            isRTL ? "ltr" : "rtl"
+        );
+
+    });
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+
+    menuToggle.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("active");
+
+        const opened =
+            mobileMenu.classList.contains("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            opened
+        );
+
+        menuToggle.innerHTML =
+            opened
+                ? '<i data-lucide="x"></i>'
+                : '<i data-lucide="menu"></i>';
+
+        lucide.createIcons();
+
+    });
+
+
+    /* =========================================================
+       MOBILE HOME DROPDOWN
+    ========================================================= */
+
+    const mobileHomeToggle =
+        document.getElementById("mobileHomeToggle");
+
+    const mobileHomeSubmenu =
+        document.getElementById("mobileHomeSubmenu");
+
+
+    mobileHomeToggle.addEventListener("click", () => {
+
+        mobileHomeSubmenu.classList.toggle("active");
+
+        mobileHomeToggle.classList.toggle("open");
+
+    });
+
+
+    /* =========================================================
+       CLOSE MOBILE MENU AFTER NAVIGATION
+    ========================================================= */
+
+    document
+        .querySelectorAll(".fb-mobile-link, .fb-mobile-sub-link, .fb-mobile-login")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.innerHTML =
+                    '<i data-lucide="menu"></i>';
+
+                lucide.createIcons();
+
+            });
+
+        });
+
+
+    /* =========================================================
+       ESCAPE CLOSE
+    ========================================================= */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            mobileMenu.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.innerHTML =
+                '<i data-lucide="menu"></i>';
+
+            lucide.createIcons();
+
+        }
+
+    });
+
+
+    /* =========================================================
+       NEWSLETTER
+    ========================================================= */
+
+    const newsletterForm =
+        document.getElementById("newsletterForm");
+
+
+    newsletterForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("newsletterEmail");
+
+        if (!email.value.trim()) {
+            return;
+        }
+
+        email.value = "";
+
+        alert(
+            "Thank you! You are now subscribed to FundBloom."
+        );
+
+    });
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+
+    /* =========================================================
+       RE-INITIALIZE ICONS
+    ========================================================= */
+
+    lucide.createIcons();
+
+</script>
+
+</body>
+</html>

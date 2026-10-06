@@ -79,43 +79,73 @@ background: var(--bg);
 /* =========================================================
    COMMON EYEBROW
 ========================================================= */
+.fbtemplates-premium .fbtemp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
-.fbtemplates-premium .fbtemp-eyebrow{
+    margin-bottom: 16px;
 
-    display:inline-flex;
+    color: var(--primary);
 
-    align-items:center;
-    justify-content:center;
-    gap:10px;
+    font-size: 13px;
+    font-weight: 600;
 
-    margin-bottom:16px;
+    letter-spacing: .19em;
+    text-transform: uppercase;
 
-    color:var(--secondary);
-
-    font-size:13px;
-    font-weight:600;
-
-    letter-spacing:.19em;
-    text-transform:uppercase;
-
-    text-align:center;
+    text-align: center;
 }
-
 
 .fbtemplates-premium .fbtemp-eyebrow::before,
-.fbtemplates-premium .fbtemp-eyebrow::after{
+.fbtemplates-premium .fbtemp-eyebrow::after {
+    content: "";
 
-    content:"";
+    width: 34px;
+    height: 2px;
 
-    width:24px;
-    height:1px;
+    flex: 0 0 34px;
 
-    background:currentColor;
+    border-radius: 999px;
 
-    opacity:.55;
+    background: var(--secondary);
+
+    opacity: .75;
 }
 
+.fbtemplates-premium .fbtemp-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 
+    width: fit-content;
+    margin: 0 auto 16px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .19em;
+    text-transform: uppercase;
+
+    text-align: center;
+}
+
+.fbtemplates-premium .fbtemp-eyebrow-line {
+    display: block;
+
+    width: 34px;
+    min-width: 34px;
+    height: 2px;
+
+    border-radius: 50px;
+
+    background: var(--secondary);
+
+    opacity: .8;
+}
 /* =========================================================
    COMMON SECTION HEADING
 ========================================================= */
@@ -287,6 +317,7 @@ background: var(--bg);
 
 .fbtemplates-premium .fbtemp-hero-copy .fbtemp-eyebrow::before{
     display:none;
+    
 }
 
 
@@ -735,7 +766,7 @@ color: var(--primary);
 
     max-width:470px;
 
-    color:var(--text);
+    color:var(--fb-white);
 
     font-size:14px;
 
@@ -885,14 +916,10 @@ color: var(--primary);
 
     border-radius:19px;
 
-    color:#fff;
+    color:var(--text);
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(20,20,34,.87),
-            rgba(20,20,34,.56)
-        );
+    var(--bg);
 
     backdrop-filter:blur(10px);
 }

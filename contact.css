@@ -270,105 +270,386 @@ BUTTON
     border-color:var(--primary);
 }
 
-/* =========================================================
-   01 — HERO
-   LTR  → IMAGE LEFT | CONTENT RIGHT
-   RTL  → CONTENT LEFT | IMAGE RIGHT
-========================================================= */
-
-.fc-hero {
-    min-height: 590px;
-    display: flex;
-    align-items: stretch;
-    position: relative;
-    overflow: hidden;
-    background: var(--bg);
-}
-
-/* CONTAINER */
-.fc-hero .fc-container {
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-    padding: 0;
-}
 
 
 /* =========================================================
-   HERO CONTENT
+   ROOT FALLBACKS
 ========================================================= */
 
-.fc-hero-inner {
-    width: 50%;
-    min-height: 590px;
+:root{
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    --primary:#5B5CE2;
 
-    padding: 60px 7% 60px 6%;
+    --secondary:#F4A261;
 
-    text-align: left;
+    --bg:#F8F8FC;
 
-    position: relative;
-    z-index: 3;
+    --surface:#FFFFFF;
 
-    background: var(--bg);
+    --surface-2:#F1F1F8;
 
-    margin-left: auto;
-    margin-right: 0;
+    --text:#17172A;
+
+    --muted:#707083;
+
+    --border:rgba(23,23,42,.10);
+
+    --primary-soft:rgba(91,92,226,.12);
+
+    --secondary-soft:rgba(244,162,97,.13);
+
+    --text-soft:#66667A;
+
+    --heading:"Playfair Display",serif;
+
+    --body:"DM Sans",sans-serif;
+
+    --ease:cubic-bezier(.22,1,.36,1);
 }
 
 
 /* =========================================================
-   HERO IMAGE
+   DARK THEME
 ========================================================= */
 
-.fc-hero::before {
-    content: "";
+html[data-theme="dark"]{
 
-    position: absolute;
+    --bg:#10111E;
 
-    top: 0;
-    left: 0;
+    --surface:#17182A;
 
-    width: 50%;
-    height: 100%;
+    --surface-2:#202136;
 
-    background-image: url("images/f.webp");
-    background-size: cover;
-    background-position: center;
+    --text:#F5F5FA;
 
-    z-index: 1;
+    --muted:#A8A8BA;
+
+    --text-soft:#B5B5C7;
+
+    --border:rgba(255,255,255,.10);
+
+    --primary-soft:rgba(91,92,226,.18);
+
+    --secondary-soft:rgba(244,162,97,.16);
 }
 
 
 /* =========================================================
-   IMAGE DECORATION
+   HERO
 ========================================================= */
 
-.fc-hero::after {
-    content: "";
+.fb-contact-hero{
 
-    position: absolute;
+    position:relative;
 
-    width: 260px;
-    height: 260px;
+    width:100%;
 
-    left: -100px;
-    bottom: -100px;
+    min-height:680px;
 
-    background-image: url("images/f.webp");
-    background-size: cover;
-    background-position: center;
+    display:flex;
 
-    border: 1px solid rgba(255,255,255,.35);
+    align-items:center;
 
-    border-radius: 50%;
+    justify-content:center;
 
-    z-index: 2;
+    overflow:hidden;
 
-    pointer-events: none;
+    isolation:isolate;
+
+    background:#11121d;
+
+    color:#fff;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.fb-contact-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-5;
+
+    overflow:hidden;
+}
+
+
+.fb-contact-bg img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transform:scale(1.04);
+
+    animation:
+        fbHeroImage
+        14s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes fbHeroImage{
+
+    from{
+
+        transform:scale(1.04);
+    }
+
+    to{
+
+        transform:scale(1.10);
+    }
+}
+
+
+/* =========================================================
+   CINEMATIC OVERLAY
+========================================================= */
+
+.fb-contact-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-4;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(8,9,18,.72) 0%,
+            rgba(8,9,18,.48) 35%,
+            rgba(8,9,18,.65) 100%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(8,9,18,.55),
+            rgba(8,9,18,.18),
+            rgba(8,9,18,.55)
+        );
+}
+
+
+/* =========================================================
+   CENTER GLOW
+========================================================= */
+
+.fb-contact-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(91,92,226,.22),
+            rgba(91,92,226,.07) 35%,
+            transparent 70%
+        );
+
+    filter:blur(15px);
+
+    pointer-events:none;
+
+    z-index:-3;
+
+    animation:
+        fbCenterGlow
+        7s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes fbCenterGlow{
+
+    0%,
+    100%{
+
+        opacity:.65;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.92);
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   DECORATIVE GLOW
+========================================================= */
+
+.fb-contact-glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    filter:blur(2px);
+
+    z-index:-2;
+
+    opacity:.5;
+}
+
+
+.fb-glow-one{
+
+    width:240px;
+
+    height:240px;
+
+    top:-100px;
+
+    left:-70px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(91,92,226,.30),
+            transparent 70%
+        );
+
+    animation:
+        fbFloatGlow
+        8s
+        ease-in-out
+        infinite;
+}
+
+
+.fb-glow-two{
+
+    width:280px;
+
+    height:280px;
+
+    bottom:-130px;
+
+    right:-90px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(244,162,97,.28),
+            transparent 70%
+        );
+
+    animation:
+        fbFloatGlow
+        9s
+        ease-in-out
+        infinite
+        reverse;
+}
+
+
+@keyframes fbFloatGlow{
+
+    0%,
+    100%{
+
+        transform:translate(0,0);
+    }
+
+    50%{
+
+        transform:translate(25px,-20px);
+    }
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.fb-contact-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(
+        900px,
+        calc(100% - 40px)
+    );
+
+    margin-inline:auto;
+
+    padding-block:90px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    animation:
+        fbContentIn
+        1s
+        var(--ease)
+        both;
+}
+
+
+@keyframes fbContentIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
 }
 
 
@@ -376,35 +657,42 @@ BUTTON
    EYEBROW
 ========================================================= */
 
-.fc-hero-label {
-    display: inline-flex;
+.fb-contact-eyebrow{
 
-    align-items: center;
+    display:flex;
 
-    gap: 8px;
+    align-items:center;
 
-    width: fit-content;
+    justify-content:center;
 
-    color: var(--primary);
+    gap:13px;
 
-    font-size: 10px;
+    margin-bottom:24px;
 
-    font-weight: 700;
+    color:#F4A261;
 
-    letter-spacing: 2px;
+    font-family:var(--body);
 
-    margin-bottom: 17px;
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    line-height:1;
 }
 
-.fc-hero-label span {
-    width: 7px;
-    height: 7px;
 
-    flex-shrink: 0;
+.fb-contact-eyebrow span{
 
-    border-radius: 50%;
+    width:34px;
 
-    background: var(--secondary);
+    height:1px;
+
+    background:#F4A261;
+    color: var(--primary);
+
+    opacity:.85;
 }
 
 
@@ -412,56 +700,159 @@ BUTTON
    HEADING
 ========================================================= */
 
-.fc-hero h1 {
-    font-family: var(--heading);
+.fb-contact-content h1{
 
-    font-size: clamp(42px, 5vw, 68px);
+    margin:0;
 
-    line-height: 1.04;
+    max-width:850px;
 
-    letter-spacing: -2px;
+    font-family:var(--heading);
 
-    max-width: 600px;
+    font-size:clamp(
+        48px,
+        6.5vw,
+        82px
+    );
 
-    margin: 0 0 18px;
+    font-weight:600;
 
-    color: var(--text);
+    line-height:1.03;
+
+    letter-spacing:-2.5px;
+
+    color:#fff;
+
+    text-shadow:
+        0 8px 35px rgba(0,0,0,.25);
+}
+
+
+.fb-contact-content h1 span{
+
+    display:block;
+
+    margin-top:7px;
+
+    color:#F4A261;
+
+    background:
+        linear-gradient(
+            90deg,
+            #F4A261,
+            #FFD0A8,
+            #F4A261
+        );
+
+    background-size:200% auto;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:
+        fbTextShimmer
+        5s
+        linear
+        infinite;
+}
+
+
+@keyframes fbTextShimmer{
+
+    to{
+
+        background-position:
+            200% center;
+    }
 }
 
 
 /* =========================================================
-   TYPING
+   TYPING WRAPPER
+   FIXED HEIGHT = NO LAYOUT SHIFT
 ========================================================= */
 
-.fc-typing {
-    color: var(--primary);
+.fb-contact-type-wrap{
 
-    white-space: nowrap;
+    width:min(
+        700px,
+        100%
+    );
+
+    min-height:32px;
+
+    margin-top:26px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-family:var(--body);
+
+    font-size:17px;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+    text-shadow:
+        0 3px 18px rgba(0,0,0,.5);
+
+    overflow:hidden;
 }
 
-.fc-typing::after {
-    content: "";
 
-    display: inline-block;
+.fb-contact-typing-text{
 
-    width: 2px;
-    height: .8em;
+    display:inline-block;
 
-    margin-left: 5px;
-
-    vertical-align: middle;
-
-    background: var(--secondary);
-
-    animation: blink .8s infinite;
+    min-width:1px;
 }
 
-@keyframes blink {
 
-    50% {
-        opacity: 0;
+/* =========================================================
+   TYPING CURSOR
+========================================================= */
+
+.fb-contact-cursor{
+
+    width:2px;
+
+    height:21px;
+
+    margin-inline-start:7px;
+
+    background:#F4A261;
+
+    flex:0 0 auto;
+
+    animation:
+        fbCursor
+        .8s
+        steps(1)
+        infinite;
+}
+
+
+@keyframes fbCursor{
+
+    0%,
+    45%{
+
+        opacity:1;
     }
 
+    46%,
+    100%{
+
+        opacity:0;
+    }
 }
 
 
@@ -469,16 +860,25 @@ BUTTON
    DESCRIPTION
 ========================================================= */
 
-.fc-hero p {
-    max-width: 500px;
+.fb-contact-description{
 
-    margin: 0;
+    width:min(
+        650px,
+        100%
+    );
 
-    color: var(--muted);
+    margin:18px auto 0;
 
-    font-size: 13px;
+    color:rgba(255,255,255,.80);
 
-    line-height: 1.8;
+    font-family:var(--body);
+
+    font-size:13px;
+
+    line-height:1.85;
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.5);
 }
 
 
@@ -486,276 +886,584 @@ BUTTON
    BUTTONS
 ========================================================= */
 
-.fc-hero-actions {
-    display: flex;
+.fb-contact-actions{
 
-    justify-content: flex-start;
+    display:flex;
 
-    gap: 10px;
+    align-items:center;
 
-    margin-top: 27px;
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:13px;
+
+    margin-top:31px;
+}
+
+
+.fb-contact-btn{
+
+    min-height:48px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding-inline:22px;
+
+    border-radius:50px;
+
+    font-family:var(--body);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:
+        transform .35s var(--ease),
+        box-shadow .35s ease,
+        background .35s ease,
+        border-color .35s ease;
+}
+
+
+.fb-contact-btn-primary{
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #7778ee
+        );
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 12px 35px
+        rgba(91,92,226,.35);
+}
+
+
+.fb-contact-btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(91,92,226,.50);
+}
+
+
+.fb-contact-btn-outline{
+
+    color:#fff;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:1px solid
+        rgba(255,255,255,.28);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+}
+
+
+.fb-contact-btn-outline:hover{
+
+    transform:translateY(-4px);
+
+    background:
+        rgba(255,255,255,.15);
+
+    border-color:#F4A261;
 }
 
 
 /* =========================================================
-   META
+   META INFORMATION
 ========================================================= */
 
-.fc-hero-meta {
-    display: flex;
+.fb-contact-meta{
 
-    justify-content: flex-start;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    flex-wrap: wrap;
+    justify-content:center;
 
-    gap: 18px;
+    flex-wrap:wrap;
 
-    margin-top: 35px;
+    gap:17px;
+
+    margin-top:39px;
+
+    padding-top:19px;
+
+    border-top:1px solid
+        rgba(255,255,255,.16);
+
+    width:min(
+        700px,
+        100%
+    );
 }
 
-.fc-meta-item {
-    display: flex;
 
-    align-items: center;
+.fb-contact-meta-item{
 
-    gap: 7px;
+    display:flex;
 
-    color: var(--muted);
+    align-items:center;
 
-    font-size: 10px;
+    gap:7px;
+
+    color:rgba(255,255,255,.72);
+
+    font-family:var(--body);
+
+    font-size:9px;
+
+    font-weight:600;
 }
 
-.fc-meta-item i {
-    color: var(--primary);
 
-    font-size: 11px;
+.fb-contact-meta-item i{
+
+    color:#F4A261;
+
+    font-size:10px;
+}
+
+
+.fb-meta-divider{
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.35);
 }
 
 
 /* =========================================================
-   DARK MODE
+   SCROLL INDICATOR
 ========================================================= */
 
-[data-theme="dark"] .fc-hero-inner {
-    background: var(--bg);
+.fb-contact-scroll{
+
+    position:absolute;
+
+    bottom:24px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:rgba(255,255,255,.55);
+
+    font-family:var(--body);
+
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    z-index:6;
+
+    white-space:nowrap;
 }
 
-[data-theme="dark"] .fc-hero::after {
-    border-color: rgba(255,255,255,.18);
+
+.fb-contact-scroll i{
+
+    color:#F4A261;
+
+    font-size:11px;
+
+    animation:
+        fbScrollArrow
+        1.7s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes fbScrollArrow{
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+        opacity:.5;
+    }
+
+    50%{
+
+        transform:translateY(6px);
+
+        opacity:1;
+    }
 }
 
 
 /* =========================================================
    RTL
-   CONTENT LEFT | IMAGE RIGHT
 ========================================================= */
 
-html[dir="rtl"] .fc-hero {
-    direction: rtl;
+html[dir="rtl"] .fb-contact-content{
+
+    direction:rtl;
 }
 
 
-/* CONTENT LEFT */
+html[dir="rtl"] .fb-contact-eyebrow{
 
-html[dir="rtl"] .fc-hero-inner {
-    margin-left: 0;
-    margin-right: auto;
-
-    padding-left: 6%;
-    padding-right: 7%;
-
-    text-align: right;
+    direction:rtl;
 }
 
 
-/* IMAGE RIGHT */
+html[dir="rtl"] .fb-contact-btn-primary i{
 
-html[dir="rtl"] .fc-hero::before {
-    left: auto;
-    right: 0;
-}
-
-
-/* DECORATION RIGHT */
-
-html[dir="rtl"] .fc-hero::after {
-    left: auto;
-    right: -100px;
-}
-
-
-/* RTL BUTTONS */
-
-html[dir="rtl"] .fc-hero-actions {
-    justify-content: flex-start;
-}
-
-
-/* RTL META */
-
-html[dir="rtl"] .fc-hero-meta {
-    justify-content: flex-start;
+    transform:rotate(180deg);
 }
 
 
 /* =========================================================
    TABLET
+   iPad Mini / 768px — 1024px
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width:1024px){
 
-    .fc-hero {
-        min-height: 520px;
+    .fb-contact-hero{
+
+        min-height:620px;
     }
 
-    .fc-hero-inner {
-        min-height: 520px;
+    .fb-contact-content{
 
-        padding: 50px 5%;
+        width:min(
+            760px,
+            calc(100% - 40px)
+        );
+
+        padding-block:80px;
     }
 
-    .fc-hero h1 {
-        font-size: clamp(38px, 5.5vw, 54px);
+    .fb-contact-content h1{
+
+        font-size:clamp(
+            44px,
+            7vw,
+            68px
+        );
     }
 
+    .fb-contact-description{
+
+        font-size:12.5px;
+    }
 }
 
 
 /* =========================================================
    MOBILE
+   Samsung S8+ / 360px — 767px
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width:767px){
 
-    .fc-hero {
-        display: block;
+    .fb-contact-hero{
 
-        min-height: auto;
+        min-height:650px;
+
+        align-items:center;
     }
 
-    .fc-hero .fc-container {
-        width: 100%;
+    .fb-contact-bg img{
+
+        object-position:center;
+
+        animation:none;
+
+        transform:scale(1.08);
     }
 
+    .fb-contact-overlay{
 
-    /* -----------------------------------------
-       TEXT
-    ----------------------------------------- */
+        background:
 
-    .fc-hero-inner {
-        width: 100%;
-
-        min-height: auto;
-
-        padding: 70px 8% 55px;
-
-        text-align: center;
-
-        align-items: center;
-
-        margin: 0;
+            linear-gradient(
+                180deg,
+                rgba(8,9,18,.78),
+                rgba(8,9,18,.58),
+                rgba(8,9,18,.80)
+            );
     }
 
+    .fb-contact-content{
 
-    /* -----------------------------------------
-       IMAGE
-    ----------------------------------------- */
+        width:calc(100% - 30px);
 
-    .fc-hero::before {
-        position: relative;
-
-        display: block;
-
-        width: 100%;
-        height: 300px;
-
-        left: auto;
-        right: auto;
-
-        background-position: center;
+        padding-block:65px 80px;
     }
 
+    .fb-contact-eyebrow{
 
-    .fc-hero::after {
-        display: none;
+        gap:9px;
+
+        margin-bottom:20px;
+
+        font-size:8px;
+
+        letter-spacing:2px;
     }
 
+    .fb-contact-eyebrow span{
 
-    /* -----------------------------------------
-       RTL MOBILE
-    ----------------------------------------- */
-
-    html[dir="rtl"] .fc-hero-inner {
-        width: 100%;
-
-        margin: 0;
-
-        padding: 70px 8% 55px;
-
-        text-align: center;
-
-        align-items: center;
+        width:23px;
     }
 
-    html[dir="rtl"] .fc-hero::before {
-        left: auto;
-        right: auto;
+    .fb-contact-content h1{
+
+        font-size:
+            clamp(
+                39px,
+                11vw,
+                56px
+            );
+
+        line-height:1.06;
+
+        letter-spacing:-1.5px;
     }
 
+    .fb-contact-content h1 span{
 
-    /* -----------------------------------------
-       LABEL
-    ----------------------------------------- */
-
-    .fc-hero-label {
-        justify-content: center;
+        margin-top:5px;
     }
 
+    .fb-contact-type-wrap{
 
-    /* -----------------------------------------
-       HEADING
-    ----------------------------------------- */
+        min-height:48px;
 
-    .fc-hero h1 {
-        font-size: clamp(40px, 11vw, 55px);
+        margin-top:20px;
 
-        letter-spacing: -1.5px;
+        font-size:13px;
+
+        padding-inline:5px;
+
+        box-sizing:border-box;
     }
 
+    .fb-contact-cursor{
 
-    /* -----------------------------------------
-       DESCRIPTION
-    ----------------------------------------- */
+        height:17px;
 
-    .fc-hero p {
-        font-size: 12px;
-
-        max-width: 480px;
+        margin-inline-start:5px;
     }
 
+    .fb-contact-description{
 
-    /* -----------------------------------------
-       ACTIONS
-    ----------------------------------------- */
+        margin-top:13px;
 
-    .fc-hero-actions {
-        justify-content: center;
+        font-size:11.5px;
 
-        flex-wrap: wrap;
+        line-height:1.75;
     }
 
+    .fb-contact-actions{
 
-    /* -----------------------------------------
-       META
-    ----------------------------------------- */
+        width:100%;
 
-    .fc-hero-meta {
-        justify-content: center;
+        flex-direction:column;
+
+        margin-top:25px;
+
+        gap:10px;
     }
 
+    .fb-contact-btn{
+
+        width:min(
+            310px,
+            100%
+        );
+
+        box-sizing:border-box;
+
+        min-height:46px;
+    }
+
+    .fb-contact-meta{
+
+        gap:10px;
+
+        margin-top:27px;
+
+        padding-top:15px;
+    }
+
+    .fb-contact-meta-item{
+
+        font-size:8px;
+    }
+
+    .fb-meta-divider{
+
+        display:none;
+    }
+
+    .fb-contact-scroll{
+
+        bottom:13px;
+
+        font-size:6px;
+    }
 }
+
+
+/* =========================================================
+   SMALL MOBILE
+   360px — 430px
+========================================================= */
+
+@media (max-width:430px){
+
+    .fb-contact-hero{
+
+        min-height:680px;
+    }
+
+    .fb-contact-content{
+
+        width:calc(100% - 22px);
+
+        padding-block:55px 75px;
+    }
+
+    .fb-contact-content h1{
+
+        font-size:38px;
+    }
+
+    .fb-contact-type-wrap{
+
+        font-size:12px;
+
+        min-height:45px;
+    }
+
+    .fb-contact-description{
+
+        font-size:10.8px;
+    }
+
+    .fb-contact-meta{
+
+        flex-direction:column;
+
+        gap:8px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL
+   320px — 359px
+========================================================= */
+
+@media (max-width:359px){
+
+    .fb-contact-hero{
+
+        min-height:650px;
+    }
+
+    .fb-contact-content h1{
+
+        font-size:34px;
+    }
+
+    .fb-contact-type-wrap{
+
+        font-size:11px;
+
+        min-height:42px;
+    }
+
+    .fb-contact-description{
+
+        font-size:10px;
+    }
+
+    .fb-contact-btn{
+
+        font-size:10px;
+
+        min-height:44px;
+    }
+
+    .fb-contact-scroll{
+
+        display:none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    .fb-contact-bg img,
+    .fb-contact-hero::before,
+    .fb-contact-glow,
+    .fb-contact-content,
+    .fb-contact-content h1 span,
+    .fb-contact-cursor,
+    .fb-contact-scroll i{
+
+        animation:none !important;
+    }
+
+    .fb-contact-bg img{
+
+        transform:scale(1.04);
+    }
+
+    .fb-contact-btn{
+
+        transition:none;
+    }
+}
+
+
 /* =========================================================
 02 — MAP + FORM
 ========================================================= */
